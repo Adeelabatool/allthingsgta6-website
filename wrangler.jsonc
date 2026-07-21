@@ -1,6 +1,6 @@
 // Cloudflare Workers config — used by "npx wrangler deploy" after "npm run build"
 {
-  "name": "allthingsgta6",
+  "name": "allthingsgta6-website",
   "main": ".output/server/index.mjs",
   "build": { "command": "npm run build" },
   "compatibility_date": "2026-01-01",
