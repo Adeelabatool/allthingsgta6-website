@@ -3,11 +3,12 @@ import { SiteShell } from "@/components/SiteShell";
 import type { ReactNode } from "react";
 
 export function PillarHub({
-  eyebrow, title, lede, sections,
+  eyebrow, title, lede, intro, sections,
 }: {
   eyebrow: string;
   title: string;
   lede: string;
+  intro?: string;
   sections: { title: string; items: { href: string; label: string; desc?: string }[] }[];
 }) {
   return (
@@ -15,6 +16,7 @@ export function PillarHub({
       <header className="container-page pt-12 pb-8">
         <span className="chip chip-hot">{eyebrow}</span>
         <h1 className="heading-display text-4xl md:text-7xl mt-4 max-w-4xl">{title}</h1>
+        {intro && <p className="mt-4 max-w-3xl text-foreground/90 leading-relaxed">{intro}</p>}
         <p className="mt-4 text-lg text-muted-foreground max-w-3xl">{lede}</p>
       </header>
       <div className="container-page pb-16 space-y-10">
