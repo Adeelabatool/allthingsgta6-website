@@ -6,8 +6,8 @@ import { analyses } from "@/data/analysis";
 export const Route = createFileRoute("/gta-6-news")({
   head: () => ({
     meta: [
-      { title: "GTA 6 News Hub — All Updates, Leaks & Trailers" },
-      { name: "description", content: "The complete GTA 6 news hub: Rockstar updates, leaks, trailer news, release updates, and analysis — all in one place." },
+      { title: "GTA 6 News Hub, All Updates, Leaks & Trailers" },
+      { name: "description", content: "The complete GTA 6 news hub: Rockstar updates, leaks, trailer news, release updates, and analysis, all in one place." },
       { property: "og:title", content: "GTA 6 News Hub — AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/gta-6-news" },
     ],
