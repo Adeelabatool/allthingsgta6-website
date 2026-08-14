@@ -14,7 +14,7 @@ export const Route = createFileRoute("/gta-6-vehicles")({
   }),
   component: () => (
     <PillarHub
-      eyebrow="SEO Hub · Vehicles"
+      eyebrow="Guide · Vehicles"
       title="GTA 6 Vehicles"
       lede="Sports, super, SUV, off-road, motorcycle, and police — the vehicle classes that fill Vice City's streets."
       sections={[

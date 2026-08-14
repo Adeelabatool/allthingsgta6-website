@@ -22,7 +22,7 @@ function ReleaseDateHub() {
     <SiteShell>
       <header className="container-page pt-12 pb-8 grid lg:grid-cols-[1.2fr_1fr] gap-10 items-center">
         <div>
-          <span className="chip chip-hot">SEO Hub · Release</span>
+          <span className="chip chip-hot">Guide · Release</span>
           <h1 className="heading-display text-4xl md:text-7xl mt-4">GTA 6 Release Date</h1>
           <p className="mt-4 text-lg text-muted-foreground">
             Grand Theft Auto VI launches <strong className="text-primary">November 19, 2026</strong> on PlayStation 5 and Xbox Series X|S. Pre-orders are live now. PC release TBA, expected 6–18 months later based on Rockstar's RDR2 precedent.

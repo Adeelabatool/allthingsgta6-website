@@ -78,12 +78,16 @@ export function SiteShell({ children }: { children: ReactNode }) {
             </p>
           </div>
           <FooterCol title="Sections" links={primaryNav} />
-          <FooterCol title="SEO Hubs" links={pillarNav} />
+          <FooterCol title="Guides" links={pillarNav} />
           <div>
-            <div className="font-semibold mb-2">Disclaimer</div>
+            <div className="font-semibold mb-2">About</div>
             <p className="text-muted-foreground">
-              Unofficial fan-run intelligence site. Specs, dates, and leaks are speculative unless cited.
+              Unofficial fan-run site. We label information as confirmed, reported, or speculation — and never invent
+              specs or stats.
             </p>
+            <Link to="/about" className="mt-2 inline-block text-accent hover:underline">
+              Editorial standards →
+            </Link>
           </div>
         </div>
         <div className="border-t border-border/40 py-4 text-center text-xs text-muted-foreground">
