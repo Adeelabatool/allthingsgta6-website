@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as AnalysisRouteImport } from './routes/analysis'
 import { Route as Gta6CharactersRouteImport } from './routes/gta-6-characters'
 import { Route as Gta6MapRouteImport } from './routes/gta-6-map'
@@ -37,6 +38,11 @@ import { Route as WikiTypeSlugRouteImport } from './routes/wiki.$type.$slug'
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AnalysisRoute = AnalysisRouteImport.update({
@@ -157,6 +163,7 @@ const WikiTypeSlugRoute = WikiTypeSlugRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analysis': typeof AnalysisRouteWithChildren
   '/gta-6-characters': typeof Gta6CharactersRoute
   '/gta-6-map': typeof Gta6MapRoute
@@ -183,6 +190,7 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/gta-6-characters': typeof Gta6CharactersRoute
   '/gta-6-map': typeof Gta6MapRoute
   '/gta-6-news': typeof Gta6NewsRoute
@@ -206,6 +214,7 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/analysis': typeof AnalysisRouteWithChildren
   '/gta-6-characters': typeof Gta6CharactersRoute
   '/gta-6-map': typeof Gta6MapRoute
@@ -234,6 +243,7 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/analysis'
     | '/gta-6-characters'
     | '/gta-6-map'
@@ -260,6 +270,7 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/gta-6-characters'
     | '/gta-6-map'
     | '/gta-6-news'
@@ -282,6 +293,7 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/analysis'
     | '/gta-6-characters'
     | '/gta-6-map'
@@ -309,6 +321,7 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   AnalysisRoute: typeof AnalysisRouteWithChildren
   Gta6CharactersRoute: typeof Gta6CharactersRoute
   Gta6MapRoute: typeof Gta6MapRoute
@@ -329,6 +342,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/analysis': {
@@ -555,6 +575,7 @@ const WikiRouteWithChildren = WikiRoute._addFileChildren(WikiRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   AnalysisRoute: AnalysisRouteWithChildren,
   Gta6CharactersRoute: Gta6CharactersRoute,
   Gta6MapRoute: Gta6MapRoute,

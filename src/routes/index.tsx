@@ -170,14 +170,14 @@ function Index() {
       {/* Tools Preview */}
       <Section title="Interactive Tools" subtitle="Engage with the data" href="/tools">
         <div className="grid gap-4 md:grid-cols-3">
-          <ToolCard href="/tools/countdown" title="Live Tracker" desc="Time since GTA 6 release." icon="🟢" />
+          <ToolCard href="/tools/countdown" title="Release Countdown" desc="Time remaining until GTA 6 launches." icon="🟢" />
           <ToolCard href="/tools/hype-calculator" title="Hype Calculator" desc="Quantify your anticipation." icon="📈" />
           <ToolCard href="/tools/vehicle-comparator" title="Vehicle Comparator" desc="Side-by-side spec tables." icon="🏎️" />
         </div>
       </Section>
 
       {/* System Requirements */}
-      <Section title="System Requirements" subtitle="Estimated / speculative based on leaks & modern AAA benchmarks">
+      <Section title="System Requirements" subtitle="Confirmed console platforms · PC not yet announced by Rockstar">
         <SystemReqsTable />
       </Section>
     </SiteShell>
@@ -248,9 +248,9 @@ function HeroCountdown() {
   return (
     <div className="border border-border/60 bg-card/85 backdrop-blur-xl rounded-[14px] p-5">
       <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent mb-1">
-        Estimated Release
+        Confirmed Release
       </div>
-      <div className="text-lg font-bold mb-4">Fall 2026</div>
+      <div className="text-lg font-bold mb-4">November 19, 2026</div>
       <div className="grid grid-cols-4 gap-1.5">
         {cells.map((c) => (
           <div

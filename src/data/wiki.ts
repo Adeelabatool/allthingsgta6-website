@@ -29,9 +29,9 @@ export const wiki: WikiEntry[] = [
     type: "characters",
     name: "Jason",
     overview:
-      "Jason is one of two playable protagonists in Grand Theft Auto VI. A former military operative turned petty criminal, he forms the calmer half of the Jason–Lucia duo.",
+      "Jason is one of two playable protagonists in Grand Theft Auto VI. Rockstar frames him as someone who has 'been involved in criminal life' and drawn to trouble; he forms the calmer half of the Jason–Lucia duo.",
     background:
-      "Trailer footage and leaked dialogue suggest Jason served overseas before drifting into Vice City's gig-crime economy. He meets Lucia in or shortly after her prison stint.",
+      "A widely repeated fan theory holds that Jason has a military background, but Rockstar has not confirmed this — it is inference from the trailer, not an official detail. What Rockstar's own description supports is that Jason knows Vice City's criminal underworld and partners with Lucia.",
     roleInGta6:
       "Co-protagonist alongside Lucia. The pair is positioned as a modern Bonnie-and-Clyde, with Jason providing tactical execution to Lucia's instinct.",
     details: [

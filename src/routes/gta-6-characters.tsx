@@ -14,7 +14,7 @@ export const Route = createFileRoute("/gta-6-characters")({
   }),
   component: () => (
     <PillarHub
-      eyebrow="SEO Hub · Characters"
+      eyebrow="Guide · Characters"
       title="The People of GTA 6"
       lede="Jason and Lucia — Rockstar's first dual-protagonist Bonnie-and-Clyde duo — plus the gangs, cops, and crews that shape Vice City."
       sections={[

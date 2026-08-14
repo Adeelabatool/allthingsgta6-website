@@ -14,7 +14,7 @@ export const Route = createFileRoute("/gta-6-map")({
   }),
   component: () => (
     <PillarHub
-      eyebrow="SEO Hub · Map"
+      eyebrow="Guide · Map"
       title="The GTA 6 Map"
       lede="The state of Leonida — Vice City, rural panhandle, the Everglades, and the Keys. Roughly 2x the size of GTA V's San Andreas."
       sections={[

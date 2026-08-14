@@ -98,33 +98,33 @@ export const news: NewsItem[] = [
   },
   {
     slug: "insider-leak-analysis",
-    title: "Insider Leak Analysis: Verifying the 2022 Source Code Leak",
+    title: "Revisiting the 2022 GTA 6 Leak: What Was Confirmed, What Wasn't",
     summary:
-      "Two years after the infamous source leak, we cross-check which leaked details have proven accurate.",
+      "The September 2022 breach leaked dozens of development clips. Here we track which specific claims have since been confirmed by Rockstar — and which remain unverified.",
     category: "leaks",
     date: "2026-04-05",
-    source: { label: "GTAForums Verification Thread", url: "https://gtaforums.com" },
+    source: { label: "Rockstar Newswire (official statement, Sept 2022)", url: "https://www.rockstargames.com/newswire" },
     whatHappened:
-      "Of ~90 leaked clips from the 2022 breach, roughly 70% of mechanics shown have appeared in subsequent trailers or Rockstar communications.",
+      "In September 2022, dozens of early development clips were stolen and posted online. Rockstar publicly confirmed the breach was genuine in a Newswire statement. Some elements shown in that footage — the Vice City / Florida-inspired setting and the dual protagonists Jason and Lucia — were later confirmed by the December 2023 reveal trailer. Many other details shown in the clips have never been officially addressed.",
     analysis:
-      "The high accuracy rate validates the leak as legitimate work-in-progress footage rather than fabricated content.",
+      "Rockstar confirmed the leak's authenticity, but 'authentic early build footage' is not the same as 'final feature list' — a lot of what was shown was placeholder or work-in-progress and may not ship. We deliberately avoid publishing a single accuracy percentage, because no complete, sourced tally of every leaked claim vs. its confirmation status exists; any such number circulating online is an estimate, not a measured figure.",
     meansForGta6:
-      "Remaining unconfirmed leaks (dual-protagonist swap mechanics, robbery progression, AI dialogue) gain credibility as likely shipping features.",
+      "Confirmed by later official material: the Leonida/Vice City setting and the Jason–Lucia dual protagonists. Still unverified: specific mechanics such as robbery progression, protagonist-swap details, and dynamic AI dialogue. Treat those as plausible-but-unconfirmed until Rockstar shows them.",
   },
   {
     slug: "map-speculation-update",
-    title: "GTA 6 Map Speculation: Leona County and Beyond",
+    title: "GTA 6 Map Speculation: The State of Leonida and Beyond",
     summary:
-      "New trailer frames suggest a map roughly 2x the size of GTA V's San Andreas with multiple distinct biomes.",
+      "Trailer frames point to a map set across the fictional state of Leonida, with fan estimates putting it roughly 2x the size of GTA V's San Andreas.",
     category: "leaks",
     date: "2026-03-28",
-    source: { label: "DigitalFoundry", url: "https://www.digitalfoundry.net" },
+    source: { label: "Rockstar Trailer 1 (Rockstar Newswire)", url: "https://www.rockstargames.com/newswire" },
     whatHappened:
-      "Frame analysis of trailer aerial shots indicates a state ('Leone') containing Vice City, Keys-like islands, Everglades-style swamps, and rural panhandle.",
+      "Rockstar's reveal trailer confirms the game is set in the fictional state of Leonida, centered on Vice City. Aerial and establishing shots also show Keys-like islands, Everglades-style wetlands, and rural areas. Rockstar has not published an official map or a total size figure.",
     analysis:
-      "If accurate, this is Rockstar's largest open world ever. Streaming this on PS5/XSX hardware requires significant tech investment, supporting NVMe-only requirements.",
+      "The confirmed setting is Leonida and Vice City; everything about total map area remains fan estimate, not a Rockstar figure. If the community size estimates are close, this would be Rockstar's largest open world, which is consistent with the game shipping on SSD-based consoles only.",
     meansForGta6:
-      "Expect storage requirements ~150GB+ and a much richer ecosystem of activities per square mile than GTA V.",
+      "Treat any specific square-mileage or '2x San Andreas' claim as unverified fan measurement until Rockstar shows a map. Install size is also unannounced; prior Rockstar titles (RDR2 ~150GB) are the only reference point.",
     related: [{ type: "pillar", href: "/gta-6-map", label: "GTA 6 Map Hub" }],
   },
   {

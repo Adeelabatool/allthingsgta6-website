@@ -14,7 +14,7 @@ export const Route = createFileRoute("/gta-6-weapons")({
   }),
   component: () => (
     <PillarHub
-      eyebrow="SEO Hub · Weapons"
+      eyebrow="Guide · Weapons"
       title="GTA 6 Weapons"
       lede="From sidearms to heavy weapons, with expected RDR2-style holstering, modding, and stealth takedowns."
       sections={[

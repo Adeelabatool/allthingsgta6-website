@@ -41,6 +41,7 @@ const staticPages = [
   ["/tools/hype-calculator", "monthly", "0.5"],
   ["/tools/map", "monthly", "0.5"],
   ["/tools/vehicle-comparator", "monthly", "0.5"],
+  ["/about", "monthly", "0.5"],
 ];
 
 const urls = [
