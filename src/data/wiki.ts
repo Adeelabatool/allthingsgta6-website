@@ -128,14 +128,14 @@ export const wiki: WikiEntry[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “Cal Hampton GTA 6,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “Cal Hampton GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -253,14 +253,14 @@ export const wiki: WikiEntry[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “Boobie Ike GTA 6,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “Boobie Ike GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -379,14 +379,14 @@ export const wiki: WikiEntry[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “Raul Bautista GTA 6,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “Raul Bautista GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -539,14 +539,14 @@ export const wiki: WikiEntry[] = [
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “Jason Duval GTA 6,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+              "For “Jason Duval GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-              "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],
@@ -577,7 +577,7 @@ export const wiki: WikiEntry[] = [
           },
           {
             label: "Rockstar Games - GTA VI Screenshots",
-            needsReview: true,
+            url: "https://www.rockstargames.com/VI/downloads/screenshots",
           },
           {
             label: "PC Gamer - GTA 6 Characters",
@@ -724,14 +724,14 @@ export const wiki: WikiEntry[] = [
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “Lucia Caminos GTA 6,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+              "For “Lucia Caminos GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-              "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],
@@ -762,7 +762,7 @@ export const wiki: WikiEntry[] = [
           },
           {
             label: "Rockstar Games - GTA VI Screenshots",
-            needsReview: true,
+            url: "https://www.rockstargames.com/VI/downloads/screenshots",
           },
           {
             label: "PC Gamer - GTA 6 Characters",
@@ -936,7 +936,7 @@ export const wiki: WikiEntry[] = [
           {
             heading: "Vice City’s role in GTA VI",
             body: [
-              "Rockstar’s tagline “Vice City, USA” makes the city the cultural center of the game, but GTA VI clearly extends beyond it into the wider state of Leonida. That means this page should explain Vice City as an urban entity, not as a synonym for the entire map.",
+              "Rockstar’s tagline “Vice City, USA” makes the city the cultural centre of the game, but GTA VI clearly extends beyond it into the wider state of Leonida. Vice City is therefore a city within Leonida, not a synonym for the whole map.",
               "Official imagery shows beaches, high-rise districts, nightlife, highways, ports, shopping, dense pedestrian spaces and social-media satire. The city is both a location and a narrative machine for fame, crime, money and spectacle.",
             ],
           },
@@ -957,14 +957,14 @@ export const wiki: WikiEntry[] = [
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “GTA 6 Vice City,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+              "For “GTA 6 Vice City,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-              "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],
@@ -995,7 +995,7 @@ export const wiki: WikiEntry[] = [
           },
           {
             label: "Rockstar Games - GTA VI Screenshots",
-            needsReview: true,
+            url: "https://www.rockstargames.com/VI/downloads/screenshots",
           },
           {
             label: "PC Gamer - GTA 6 Map",
@@ -1197,7 +1197,7 @@ export const wiki: WikiEntry[] = [
             heading: "Wanted level: what is visible",
             body: [
               "The Extended Look includes a substantial police pursuit, and TechRadar’s live analysis notes a six-star wanted display. PC Gamer’s breakdown also reports descriptive information tied to the protagonists, clothing, vehicle and whether they are together.",
-              "These are stronger observations than generic claims that GTA VI “has smarter police.” A dedicated page should record the exact behavior shown and avoid anthropomorphic marketing language.",
+              "These are specific, checkable observations rather than a general claim that GTA VI “has smarter police.” What follows records the behaviour actually shown, in plain terms.",
             ],
           },
           {
@@ -1217,14 +1217,14 @@ export const wiki: WikiEntry[] = [
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “GTA 6 wanted system,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+              "For “GTA 6 wanted system,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-              "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],

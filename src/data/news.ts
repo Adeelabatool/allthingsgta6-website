@@ -179,14 +179,14 @@ export const news: NewsItem[] = [
         heading: "Character switching and partnership gameplay",
         body: [
           "The Extended Look visibly reinforces Jason and Lucia as a two-protagonist system. Scenes show them operating together and separately, and contemporary breakdowns report switching behavior reminiscent of GTA V. The key editorial distinction is that the existence of two playable leads is established, while the exact rules for free-roam switching, mission restrictions and cooldowns are not fully documented by Rockstar.",
-          "For SEO and answer engines, the useful phrasing is direct: GTA VI has two central playable protagonists, Jason Duval and Lucia Caminos. The Extended Look shows both participating in robberies, driving and combat. It does not yet provide a complete official rulebook for when the player can switch between them.",
+          "Put plainly: GTA VI has two central playable protagonists, Jason Duval and Lucia Caminos. The Extended Look shows both participating in robberies, driving and combat. It does not yet provide a complete official rulebook for when the player can switch between them.",
         ],
       },
       {
         heading: "Combat, weapons and tactical behavior",
         body: [
           "The presentation shows more than generic shooting. PC Gamer’s breakdown notes a visible reticle, body-part targeting in some sequences, contextual crime choices and a separate item-management feel that recalls Red Dead Redemption 2. TechRadar also highlights a visible weapon wheel and in-car combat during the major police pursuit. These are strong observations, but they should be described as mechanics shown in the footage rather than a final exhaustive combat system.",
-          "This is where a dedicated weapons page can provide information gain. Instead of copying a list of gun names, each weapon should carry a source field, appearance field and confidence label. The Extended Look can then be cited as a new evidence source without silently converting visual identification into official naming.",
+          "This is where our weapons hub goes further than a list of gun names: each weapon carries its source, where it appeared, and a confidence label. The Extended Look is cited there as a new evidence source without turning a visual identification into an official name.",
         ],
       },
       {
@@ -379,7 +379,7 @@ export const news: NewsItem[] = [
         heading: "The August 2026 timeline",
         body: [
           "August became the most important GTA VI information month since pre-orders opened. Rockstar promoted the Extended Look, released the long-form in-game presentation on August 27, and the gaming press rapidly published mechanic-by-mechanic analysis. The official release date remained November 19, 2026, and Take-Two continued to reaffirm the schedule in investor-facing communication.",
-          "The monthly news page should record events by date, not by hype level. That lets readers distinguish an official Rockstar release, a Take-Two corporate statement, a media preview, a leak and a community interpretation. It also gives AI systems a clean chronological structure to retrieve.",
+          "Events below are ordered by date rather than by how much attention they attracted. That makes it easy to tell an official Rockstar release from a Take-Two corporate statement, a media preview, a leak, or a community interpretation.",
         ],
       },
       {
@@ -392,7 +392,7 @@ export const news: NewsItem[] = [
       {
         heading: "Leaks versus official information",
         body: [
-          "August also produced widely circulated unofficial footage and map claims. Even when leaked material looks authentic, it can represent an unfinished build and can be altered or removed. The page should summarize the existence of major reporting only when newsworthy, avoid hosting unauthorized media, and keep leaked claims out of “confirmed” tables.",
+          "August also produced widely circulated unofficial footage and map claims. Even when leaked material looks authentic, it can represent an unfinished build and can be altered or removed. We note that such reporting exists when it is genuinely newsworthy, do not host unauthorised media, and keep leaked claims out of the confirmed tables entirely.",
           "This separation is particularly important now that official footage is abundant. There is less reason to use uncertain leaks to answer questions that Rockstar has already addressed directly.",
         ],
       },
@@ -549,7 +549,7 @@ export const news: NewsItem[] = [
         heading: "What the Vintage Vice City Pack includes",
         body: [
           "Rockstar Support lists a 1955 Vapid Stanier Sedan and Garage, outfits and hairstyles, and an exclusive weapon pattern. These are official named preorder benefits, so they can be described without “reportedly” or “appears to.”",
-          "Because preorder items may be cosmetic or convenience-oriented rather than core story content, the article should avoid framing them as necessary to experience GTA VI.",
+          "Preorder items appear to be cosmetic or convenience-oriented rather than core story content, so none of them is necessary to experience GTA VI.",
         ],
       },
       {
@@ -563,14 +563,14 @@ export const news: NewsItem[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 preorder,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 preorder,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],

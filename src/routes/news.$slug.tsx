@@ -7,6 +7,7 @@ import { LastVerified } from "@/components/LastVerified";
 import { newsBySlug, publicNews, type NewsItem } from "@/data/news";
 import { articleHead } from "@/lib/seo";
 import { publishedTimestamp } from "@/lib/publishing";
+import { liveLinks } from "@/lib/related";
 
 export const Route = createFileRoute("/news/$slug")({
   loader: ({ params }) => {
@@ -130,13 +131,13 @@ function NewsArticle() {
           </div>
         ) : null}
 
-        {n.related && n.related.length > 0 && (
+        {liveLinks(n.related).length > 0 && (
           <div className="mt-10 surface p-5">
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
               Related Intel
             </div>
             <ul className="space-y-2">
-              {n.related.map((r: NonNullable<typeof n.related>[number]) => (
+              {liveLinks(n.related).map((r) => (
                 <li key={r.href}>
                   <a href={r.href} className="text-accent hover:underline">
                     {r.label} →

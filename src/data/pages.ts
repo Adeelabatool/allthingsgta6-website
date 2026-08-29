@@ -131,7 +131,7 @@ export const pages: SitePage[] = [
       {
         heading: "Sports, nightlife and downtime",
         body: [
-          "Basketball is visible in recent footage, while nightlife, bars/clubs, domestic scenes and social spaces are repeatedly shown. The page should distinguish an actual playable sports activity from a location that merely contains people doing something in the background.",
+          "Basketball is visible in recent footage, while nightlife, bars and clubs, domestic scenes and social spaces are repeatedly shown. We separate an activity you can actually play from a location that merely contains people doing something in the background — footage alone rarely settles which is which.",
           "After launch, convert this pre-release evidence table into a proper activity guide with locations, rewards and unlock requirements.",
         ],
       },
@@ -139,14 +139,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 activities,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 activities,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -262,7 +262,7 @@ export const pages: SitePage[] = [
       {
         heading: "Are more characters coming?",
         body: [
-          "Almost certainly. Rockstar has already expanded the official roster beyond the two protagonists and continues to publish character-focused clips and screenshots.",
+          "Rockstar has not said how large the final cast is. It has already expanded the official roster beyond the two protagonists and continues to publish character-focused clips and screenshots, so more names are likely — but that is an expectation, not an announcement.",
           "This page will be updated when Rockstar confirms additional names.",
         ],
       },
@@ -344,14 +344,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 characters,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 characters,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -381,11 +381,11 @@ export const pages: SitePage[] = [
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/downloads/screenshots",
       },
       {
         label: "Rockstar Games - GTA VI Videos",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/media/videos",
       },
       {
         label: "PC Gamer - GTA 6 Characters",
@@ -486,9 +486,9 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "A canonical gameplay feature matrix",
+        heading: "The gameplay feature matrix",
         body: [
-          "The August Extended Look finally gives GTA VI enough official in-game footage to support a real gameplay hub. The page should not read like one long trailer reaction. It should organize systems: protagonists, movement, driving, combat, crime planning, wanted response, world interaction, activities, customization, economy and exploration.",
+          "The August Extended Look finally gives GTA VI enough official in-game footage to describe gameplay as a set of systems rather than a run of trailer moments. Those systems are protagonists, movement, driving, combat, crime planning, wanted response, world interaction, activities, customization, economy and exploration.",
           "For each system, include an evidence status and source. This makes the page durable as new trailers add details.",
         ],
       },
@@ -580,14 +580,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 gameplay,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 gameplay,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -728,7 +728,7 @@ export const pages: SitePage[] = [
       {
         heading: "A region matrix by environment and economy",
         body: [
-          "Vice City: dense urban economy, nightlife and tourism. Leonida Keys: islands, boats and smuggling networks. Grassrivers: wetlands and wildlife. Port Gellhorn: rougher coastal economy. Ambrosia: industrial production. Mount Kalaga: wilderness and outdoor recreation. This framework creates original information gain without inventing exact mission content.",
+          "Vice City: dense urban economy, nightlife and tourism. Leonida Keys: islands, boats and smuggling networks. Grassrivers: wetlands and wildlife. Port Gellhorn: rougher coastal economy. Ambrosia: industrial production. Mount Kalaga: wilderness and outdoor recreation. Reading the regions by environment and economy tells you something useful about each one without inventing mission content Rockstar has not shown.",
           "As additional official entities appear, add them under these environmental/economic categories.",
         ],
       },
@@ -742,14 +742,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Leonida,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 Leonida,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -779,7 +779,7 @@ export const pages: SitePage[] = [
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/downloads/screenshots",
       },
       {
         label: "GamesRadar - GTA 6 Locations",
@@ -923,14 +923,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 locations,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 locations,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -960,7 +960,7 @@ export const pages: SitePage[] = [
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/downloads/screenshots",
       },
       {
         label: "GamesRadar - GTA 6 Locations",
@@ -1086,7 +1086,7 @@ export const pages: SitePage[] = [
         heading: "The official map layer",
         body: [
           "Rockstar has confirmed a state-scale setting called Leonida and six headline regions: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park. The company has also published dozens of screenshots grouped by characters and locations, giving the official layer far more depth than a single map image would.",
-          "This page should treat those six regions as the top-level geography until Rockstar publishes a complete map. Community reconstructions can be useful, but they belong in a separate layer with different confidence labeling.",
+          "Those six regions are the top-level geography until Rockstar publishes a complete map. Community reconstructions can be useful, but they sit in a separate layer here with their own confidence labelling.",
         ],
       },
       {
@@ -1121,7 +1121,7 @@ export const pages: SitePage[] = [
         heading: "A map page built for future updates",
         body: [
           "Use a stable table with columns for location, type, status, first official appearance, evidence source and dedicated page. When Rockstar publishes the final map, add coordinates or official boundaries without rewriting the page from zero.",
-          "This updateable data structure is also strong for AI retrieval because it turns each location into a clear entity with attributes rather than burying names inside long prose.",
+          "Treating every location as a named entity with its own attributes, rather than burying names inside long prose, is also what makes the page quick to update as Rockstar adds detail.",
         ],
       },
       {
@@ -1139,10 +1139,10 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "A better map table than “location + description”",
+        heading: "Beyond “location + description”",
         body: [
           "Use columns for official name, geography type, confirmed source, associated characters, known businesses/institutions, travel mode relevance and status. For example, Leonida Keys can connect to Jason/Brian and watercraft; Grassrivers can connect to wetlands, wildlife and airboat-style travel; Mount Kalaga can connect to outdoor exploration.",
-          "That table is genuinely useful to users and answer engines because it converts scattered official marketing into a consistent dataset.",
+          "The value of that table is that it turns scattered official marketing into one consistent, comparable set of records.",
         ],
       },
       {
@@ -1156,14 +1156,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 map,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 map,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1193,7 +1193,7 @@ export const pages: SitePage[] = [
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/downloads/screenshots",
       },
       {
         label: "PC Gamer - GTA 6 Map",
@@ -1310,7 +1310,7 @@ export const pages: SitePage[] = [
         heading: "What Rockstar has actually confirmed",
         body: [
           "Rockstar’s June preorder announcement calls GTA VI a single-player experience coming November 19, 2026. That is the strongest current statement about the launch product. Rockstar has not published a detailed GTA VI-era online mode launch date, feature list or branding structure.",
-          "The page should lead with that fact rather than assuming “GTA 6 Online” is a day-one product.",
+          "That is the starting point here, rather than an assumption that “GTA 6 Online” is a day-one product.",
         ],
       },
       {
@@ -1331,14 +1331,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Online,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 Online,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1487,21 +1487,21 @@ export const pages: SitePage[] = [
         heading: "What counts as real evidence for a PC version",
         body: [
           "A Rockstar Newswire post, official platform listing, Take-Two release schedule or Rockstar Support update would be strong evidence. Retail database entries, speculative hardware requirement pages and “insider” dates should remain outside the confirmed box.",
-          "When PC is eventually announced, this page should immediately pivot from prediction control to requirements, storefronts, features and launch-date comparison.",
+          "When PC is eventually announced, this page will switch from managing predictions to covering requirements, storefronts, features and how the PC launch compares with the console one.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 PC release date,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 PC release date,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1644,14 +1644,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 platforms,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 platforms,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1793,7 +1793,7 @@ export const pages: SitePage[] = [
       {
         heading: "Why regional pricing should be handled separately",
         body: [
-          "A US MSRP should not be converted into another country’s final price with a currency calculator and presented as official. Regional storefronts may use different list prices, taxes and local policies. The page should provide official regional values only when a platform or Rockstar store publishes them.",
+          "A US MSRP converted with a currency calculator is not another country’s official price. Regional storefronts may use different list prices, taxes and local policies, so regional figures appear here only once a platform or the Rockstar Store publishes them.",
           "That same rule applies to sales. A temporary retailer discount is not a new MSRP.",
         ],
       },
@@ -1801,14 +1801,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 price,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 price,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1967,13 +1967,13 @@ export const pages: SitePage[] = [
         heading: "Release-date timeline and prior changes",
         body: [
           "A release-date page should preserve history because older search results and social posts continue to circulate. GTA VI was previously associated with earlier launch windows before Rockstar announced November 19, 2026. The current page should put the present date first, then keep an “older dates” section that is clearly historical.",
-          "This is an important anti-confusion pattern for AI retrieval. If an old date appears without temporal framing, an answer engine can surface it as current. Each superseded date should therefore be paired with language such as “previously scheduled” and the date on which Rockstar changed it.",
+          "Superseded dates are always marked as such. An old date quoted without that framing is the most common way outdated GTA 6 release information keeps circulating, so each one here is paired with the wording “previously scheduled” and the date Rockstar changed it.",
         ],
       },
       {
         heading: "Launch timing, preload and format",
         body: [
-          "Rockstar says preorders opened at midnight local time, and digital preload begins at local midnight on November 12. Exact playable unlock behavior can vary by storefront and region, so the page should avoid inventing a universal hour unless the relevant store publishes it.",
+          "Rockstar says preorders opened at midnight local time, and digital preload begins at local midnight on November 12. Exact playable unlock behavior can vary by storefront and region, so we do not quote a universal unlock hour unless the relevant store publishes one.",
           "The code-in-box decision also deserves a prominent explanation because “physical” normally implies a disc. Rockstar Support explicitly says a disc is not included. Readers buying the boxed Standard Edition should expect a download code and should plan for the same large digital installation workflow as other digital buyers.",
         ],
       },
@@ -1988,7 +1988,7 @@ export const pages: SitePage[] = [
         heading: "What would justify changing this page",
         body: [
           "The canonical date should only change after a first-party source changes: Rockstar Games, Rockstar Support, Take-Two, PlayStation or Xbox storefront data. Retailer placeholder dates, social-media rumors and anonymous claims should never overwrite the official date.",
-          "Add a visible “Last verified” line near the top. For a high-demand launch query, freshness is part of the product. Readers and answer engines should be able to tell when the date, price and preload details were last checked.",
+          "A “Last verified” line sits near the top of this page for that reason. On a release-date question, knowing when the date, price and preload details were last checked matters nearly as much as the answer itself.",
         ],
       },
       {
@@ -2016,14 +2016,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 release date,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 release date,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -2187,10 +2187,10 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Frame-by-frame databases versus editorial synthesis",
+        heading: "How this differs from a shot-by-shot index",
         body: [
-          "Tracker.gg’s GTA 6 Database provides a strong shot-by-shot competitor model. AllThingsGTA6 does not need to duplicate 183-shot indexing to compete. Instead, link every major reveal to a topic hub and maintain evidence status.",
-          "This creates a more navigable knowledge graph: trailers are sources; map, characters, vehicles, weapons and gameplay are entities and systems.",
+          "Tracker.gg’s GTA 6 Database indexes the Extended Look shot by shot, all 183 of them, and it is the better tool if that is what you need. This page does something different: it takes each major reveal, records its evidence status, and connects it to the hub that covers it in depth.",
+          "The trailers are treated as sources; the map, characters, vehicles, weapons and gameplay are the things those sources tell us about.",
         ],
       },
       {
@@ -2225,14 +2225,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 trailers,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 trailers,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -2258,7 +2258,7 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Videos",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/media/videos",
       },
       {
         label: "Rockstar Games - GTA VI Trailer 1",
@@ -2386,21 +2386,21 @@ export const pages: SitePage[] = [
         heading: "Upgrade path matters",
         body: [
           "Rockstar Support says Standard Edition owners can buy the Ultimate Edition Upgrade separately later. Physical code-in-box buyers can upgrade after redeeming their game code. That means the decision is not necessarily permanent at checkout.",
-          "For undecided players, this lowers the risk of choosing Standard. The article should avoid artificial urgency and simply explain what is exclusive and what can be added later.",
+          "For undecided players, that lowers the risk of choosing Standard. There is no deadline pressure worth manufacturing here: what matters is which content is exclusive and which can be added later.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Ultimate Edition,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 Ultimate Edition,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -2425,8 +2425,8 @@ export const pages: SitePage[] = [
     ],
     sources: [
       {
-        label: "Rockstar Games - GTA VI Editions",
-        needsReview: true,
+        label: "Rockstar Games - GTA VI Ultimate Edition",
+        url: "https://www.rockstargames.com/VI/ultimate-edition",
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
@@ -2532,7 +2532,7 @@ export const pages: SitePage[] = [
       {
         heading: "Explore next",
         body: [
-          "Planned sub-databases should cover:",
+          "Deeper vehicle breakdowns are planned for:",
           "GTA 6 supercars",
           "motorcycles",
           "boats",
@@ -2543,52 +2543,78 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Build the vehicle page around evidence, not just count",
+        heading: "Evidence, not just count",
         body: [
-          "GTABase currently says it has identified more than 230 vehicles, while PC Gamer openly notes that many vehicle names are visual identifications rather than official confirmations. That creates a clear opportunity: AllThingsGTA6 should not compete on the biggest number. It should compete on the cleanest provenance.",
-          "Every vehicle record should include name, category, official-name status, first source, latest source, image/frame, real-world resemblance if useful, and confidence. A car visible in a trailer is “shown”; it is only “officially named” when Rockstar names it in a screenshot, edition benefit or other first-party text.",
+          "GTABase currently says it has identified more than 230 vehicles, while PC Gamer openly notes that many vehicle names are visual identifications rather than official confirmations. We have deliberately not chased the largest total. What follows is organised by how each name was established.",
+          "Each vehicle record carries a name, category, official-name status, first source, latest source, image or frame, real-world resemblance where useful, and a confidence level. A car visible in a trailer is “shown”; it is only “officially named” when Rockstar names it in a screenshot, edition benefit or other first-party text.",
         ],
+        table: {
+          head: ["Provenance", "What it means"],
+          rows: [
+            ["Officially named", "Rockstar prints the vehicle name in first-party text."],
+            ["Officially shown", "The vehicle is visible in Rockstar footage but not named."],
+            ["Visually identified", "The model is matched from official imagery by eye."],
+            [
+              "Community identification",
+              "The specific name is inferred by the community, not Rockstar.",
+            ],
+            ["Unknown", "Seen but not identifiable with confidence."],
+          ],
+        },
       },
       {
         heading: "Officially named vehicle anchors",
         body: [
-          "Rockstar’s Ultimate Edition and preorder materials provide several strong named anchors, including the 1995 Grotti Cheetah, 1955 Vapid Stanier Sedan, 1967 Vapid Dominator Buggy, Vapid Ganado/Ganado Retro Build, Dinka Enduro Motorcycle, Crest Kayak, Shitzu Squalo and Jason’s Safehouse Vehicles as a benefit category. These should sit in an “officially named” table above the larger visually identified catalog.",
-          "This lets answer engines retrieve a reliable list even if the full database contains hundreds of less-certain visual matches.",
+          "Rockstar’s Ultimate Edition and preorder materials provide several strong named anchors, including the 1995 Grotti Cheetah, 1955 Vapid Stanier Sedan, 1967 Vapid Dominator Buggy, Vapid Ganado/Ganado Retro Build, Dinka Enduro Motorcycle, Crest Kayak, Shitzu Squalo and Jason’s Safehouse Vehicles as a benefit category. These are the officially named set, kept separate from the larger visually identified catalogue.",
+          "That separation means the reliable list stays readable even though the full catalogue contains hundreds of less certain visual matches.",
         ],
+        table: {
+          head: ["Vehicle", "Named in"],
+          rows: [
+            ["1995 Grotti Cheetah", "Rockstar Ultimate Edition"],
+            ["1955 Vapid Stanier Sedan", "Rockstar Ultimate Edition"],
+            ["1967 Vapid Dominator Buggy", "Rockstar Ultimate Edition"],
+            ["Vapid Ganado / Ganado Retro Build", "Rockstar Ultimate Edition"],
+            ["Dinka Enduro Motorcycle", "Rockstar Ultimate Edition"],
+            ["Crest Kayak", "Rockstar Ultimate Edition"],
+            ["Shitzu Squalo", "Rockstar Ultimate Edition"],
+            ["Jason’s Safehouse Vehicles (benefit category)", "Rockstar Ultimate Edition"],
+          ],
+        },
       },
       {
-        heading: "Cars, bikes, boats and aircraft need separate completeness signals",
+        heading: "Completeness by category",
         body: [
-          "A single vehicle total hides category coverage. Split the database into cars, motorcycles, bicycles if confirmed, boats/watercraft, aircraft and service/emergency vehicles. For each category, show how many are officially named and how many are visually identified.",
-          "That creates original data from your own evidence taxonomy instead of repeating somebody else’s total.",
+          "A single vehicle total hides how well each category is actually covered. The catalogue is split into cars, motorcycles, bicycles where confirmed, boats and watercraft, aircraft, and service or emergency vehicles — each showing how many entries are officially named and how many are visually identified.",
+          "The result is a picture of what is genuinely known per category, rather than one headline number.",
         ],
       },
       {
         heading: "Real-world counterparts are not official names",
         body: [
           "GTA vehicles intentionally resemble real automobiles, but a likely Ferrari, Ford or Chevrolet inspiration should never replace the in-game name. Keep “real-world counterpart” in a separate field with language such as “resembles” or “commonly compared with.”",
-          "This is especially important for image search and AI answers, where a loose comparison can be flattened into a false factual identity.",
+          "The distinction matters because a loose visual comparison is easily repeated until it hardens into a false factual identity.",
         ],
       },
       {
         heading: "Vehicle functionality observations",
         body: [
           "The Extended Look adds context beyond identification. It shows highway driving, police pursuits, in-car shooting, boats and other movement systems. Dedicated records can note observed use - pursuit, robbery escape, leisure, marine travel - without claiming every vehicle supports every mechanic.",
-          "If Rockstar later documents customization, damage, fuel or ownership systems, add those as structured attributes rather than burying them in prose.",
+          "If Rockstar later documents customization, damage, fuel or ownership systems, those become fields on each vehicle record rather than remarks buried in prose.",
         ],
       },
       {
-        heading: "How this page can outrank a larger database",
+        heading: "Why provenance beats catalogue size",
         body: [
-          "Competing databases have scale and age. The differentiator should be transparency: a visible methodology, exact source links, confidence filters, last-seen dates and correction history. A smaller table with verifiable evidence can be more useful for factual queries than a larger catalog mixing official names with community identification.",
-          "The page should also link out to dedicated high-interest vehicles only when there is enough unique material for a standalone entity page.",
+          "Older databases have scale on their side. What this one offers instead is transparency: a stated method, exact source links, confidence filters, last-seen dates and a correction history. For a factual question, a smaller table you can check beats a larger catalogue that mixes official names with community identification.",
+          "Individual vehicles get their own page only when there is enough verified material to justify one.",
         ],
       },
       {
-        heading: "Recommended vehicle record schema",
+        heading: "What each vehicle record contains",
         body: [
-          "Each vehicle entry should use a repeatable record: in-game name, manufacturer, category, official-name status, first official appearance, latest appearance, edition/bonus status, associated character, real-world resemblance, and evidence link. Optional launch-era fields can later add price, spawn locations, performance stats and customization.",
-          "The schema creates internal consistency and enables filtered pages such as “officially named GTA VI cars,” “boats shown in Leonida,” or “Ultimate Edition vehicles” without writing duplicate articles.",
+          "Every vehicle entry uses the same record: in-game name, manufacturer, category, official-name status, first official appearance, latest appearance, edition or bonus status, associated character, real-world resemblance, and an evidence link. Price, spawn locations, performance stats and customization will be added once the game is out.",
+          "Keeping the shape consistent is what makes views like “officially named GTA VI cars,” “boats shown in Leonida” or “Ultimate Edition vehicles” possible without writing the same article three times.",
         ],
       },
       {
@@ -2601,29 +2627,29 @@ export const pages: SitePage[] = [
       {
         heading: "Watercraft and Leonida geography",
         body: [
-          "Leonida’s Keys, coastline and wetlands make boats and smaller watercraft strategically important to the vehicle taxonomy. Rockstar’s edition material names the Shitzu Squalo and Crest Kayak, while official footage shows broader marine travel. This is a chance to build a more complete watercraft section than a car-first competitor page.",
+          "Leonida’s Keys, coastline and wetlands make boats and smaller watercraft unusually important. Rockstar’s edition material names the Shitzu Squalo and Crest Kayak, while official footage shows broader marine travel. Watercraft therefore get the same depth here as cars rather than a footnote.",
           "Link watercraft records to Leonida Keys, Grassrivers and activities such as diving or kayaking when the evidence supports the connection.",
         ],
       },
       {
-        heading: "Correction and confidence policy",
+        heading: "Corrections and confidence",
         body: [
-          "Visual car identification is inherently error-prone. Publish a short methodology that invites corrections and records them. If an apparent model is later officially named differently, update the record and note the correction date rather than silently erasing the earlier identification.",
-          "This transparency is a defensible E-E-A-T signal for a fan database because it shows how claims are verified and revised.",
+          "Visual car identification is inherently error-prone. Corrections are welcome and are recorded rather than absorbed silently: if an apparent model is later officially named differently, the record is updated and the correction dated.",
+          "Showing how a claim was verified, and how it was later revised, is the only real basis on which a fan database earns trust.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 vehicles,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 vehicles,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -2648,12 +2674,12 @@ export const pages: SitePage[] = [
     ],
     sources: [
       {
-        label: "Rockstar Games - GTA VI Editions",
-        needsReview: true,
+        label: "Rockstar Games - GTA VI Ultimate Edition",
+        url: "https://www.rockstargames.com/VI/ultimate-edition",
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/downloads/screenshots",
       },
       {
         label: "PC Gamer - GTA 6 Cars",
@@ -2750,33 +2776,50 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Database policy",
+        heading: "What each weapon record stores",
         body: [
-          "Every weapon entry should record:",
+          "Every weapon entry records:",
           "Evidence source: trailer, screenshot, Extended Look or Rockstar edition page.",
           "Last verified date.",
-          "This turns the weapons page into a reliable reference rather than a copied list.",
+          "That is what makes this a reference you can check rather than a list you have to trust.",
         ],
       },
       {
-        heading: "Start with the evidence taxonomy",
+        heading: "The evidence taxonomy",
         body: [
-          "PC Gamer currently identifies 19 guns from trailers and screenshots, and GamesRadar has expanded its list after the Extended Look. Those pages are useful visual catalogs, but the number itself should not become AllThingsGTA6’s headline truth unless each item is verified under a consistent method.",
-          "Use four buckets: Officially Named; Visually Identified; Observed but Unnamed; Unconfirmed/Reported. This instantly explains why two sites can publish different weapon totals without one necessarily being dishonest.",
+          "PC Gamer currently identifies 19 guns from trailers and screenshots, and GamesRadar has expanded its list after the Extended Look. Those are useful visual catalogues, but we do not adopt any of those totals as a headline figure, because each item still has to be verified under one consistent method.",
+          "Four buckets do that work: Officially Named, Visually Identified, Observed but Unnamed, and Unconfirmed or Reported. They also explain why two sites can publish different weapon totals without either being dishonest.",
         ],
+        table: {
+          head: ["Provenance", "What it means"],
+          rows: [
+            ["Officially named", "Rockstar names the weapon in first-party text."],
+            ["Visually identified", "The weapon is matched from official imagery by eye."],
+            ["Observed but unnamed", "Clearly present in official footage with no published name."],
+            ["Unconfirmed or reported", "Third-party claim Rockstar has not documented."],
+          ],
+        },
       },
       {
         heading: "Officially named weapons and variants",
         body: [
-          "Rockstar’s Ultimate Edition material explicitly names the Hawk and Little Morgan Revolvers and personalized weapon variants. The preorder package also includes an exclusive weapon pattern. These are first-party weapon facts and should anchor the confirmed table.",
-          "Other guns visible in official trailers can be cataloged, but their names should be described as visual identification until Rockstar supplies an in-game label or official caption.",
+          "Rockstar’s Ultimate Edition material explicitly names the Hawk and Little Morgan Revolvers and personalized weapon variants. The preorder package also includes an exclusive weapon pattern. These are first-party weapon facts, and they anchor the confirmed table below.",
+          "Other guns visible in official trailers are catalogued as visual identification until Rockstar supplies an in-game label or official caption.",
         ],
+        table: {
+          head: ["Weapon", "Named in"],
+          rows: [
+            ["Hawk & Little Morgan Revolvers", "Rockstar Ultimate Edition"],
+            ["Personalized weapon variants (category)", "Rockstar Ultimate Edition"],
+            ["Exclusive preorder weapon pattern (category)", "Rockstar preorder material"],
+          ],
+        },
       },
       {
         heading: "What the Extended Look adds to weapon-system coverage",
         body: [
           "The new footage shows a weapon wheel, gunfights, in-car shooting and more tactical-looking aiming. PC Gamer notes reticle and body-part targeting observations; TechRadar highlights the weapon wheel and chase combat. These are evidence about the weapon system, not merely the weapon list.",
-          "A strong page therefore has two halves: catalog and mechanics. That is richer than a 19-item list with real-world gun comparisons.",
+          "So this page has two halves: the catalogue of what exists, and what the footage shows about how weapons behave.",
         ],
       },
       {
@@ -2790,7 +2833,7 @@ export const pages: SitePage[] = [
         heading: "Customization claims need restraint",
         body: [
           "Rockstar officially confirms personalized weapon variants as an Ultimate Edition benefit, but that is not the same as a full public description of GTA VI’s general weapon customization system. If attachments, finishes or gunsmith systems appear in footage, label them as observed until Rockstar explains the rules.",
-          "The page should link to gameplay for combat behavior and editions for premium weapon benefits, reducing duplicate explanation.",
+          "Combat behaviour is covered on the gameplay hub and premium weapon benefits on the edition pages, so neither is repeated here.",
         ],
       },
       {
@@ -2807,10 +2850,10 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Why the “19 guns” number should be contextualized",
+        heading: "Why the “19 guns” figure needs context",
         body: [
-          "PC Gamer’s 19-gun count is a careful visual-identification project, not an official Rockstar statement that GTA VI contains exactly 19 guns. Treat it as a competitor methodology benchmark and a reported identification total. Your own database can show a different number if your inclusion rules differ, as long as the rules are explicit.",
-          "The safest headline is “weapons shown or named so far,” followed by category counts with evidence status.",
+          "PC Gamer’s 19-gun count is a careful visual-identification project, not an official Rockstar statement that GTA VI contains exactly 19 guns. It is a reported identification total, and a well-documented one. Our own count can differ because our inclusion rules differ — which is why those rules are stated above rather than left implicit.",
+          "The honest headline is therefore “weapons shown or named so far,” with counts given per category and per evidence status rather than as a single total.",
         ],
       },
       {
@@ -2831,14 +2874,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 weapons,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 weapons,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -2863,12 +2906,12 @@ export const pages: SitePage[] = [
     ],
     sources: [
       {
-        label: "Rockstar Games - GTA VI Editions",
-        needsReview: true,
+        label: "Rockstar Games - GTA VI Ultimate Edition",
+        url: "https://www.rockstargames.com/VI/ultimate-edition",
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
-        needsReview: true,
+        url: "https://www.rockstargames.com/VI/downloads/screenshots",
       },
       {
         label: "PC Gamer - GTA 6 Weapons List",
@@ -2997,14 +3040,14 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 PC requirements,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 PC requirements,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],

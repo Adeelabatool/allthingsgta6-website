@@ -19,6 +19,8 @@ import {
 } from "@/lib/publishing";
 import { news, publicNews, newsBySlug, newsByCategory } from "@/data/news";
 import { pages, publicPages, pageByPath } from "@/data/pages";
+import { readFileSync } from "node:fs";
+import { isLinkTargetLive, liveLinks } from "@/lib/related";
 import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
 import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
@@ -235,6 +237,105 @@ const badLinks = [
 if (badLinks.length) console.log("      unresolved:", [...new Set(badLinks)].join(", "));
 ok("every contextual link resolves to a real route", badLinks.length === 0);
 
+group("contextual links never outrun their target");
+type Rel = { href: string };
+const articleLinks: { from: string; at: Date | null; rel: Rel[] }[] = [
+  ...pages.map((p) => ({
+    from: p.path,
+    at: p.status === "draft" ? null : new Date(p.publishAt!),
+    rel: (p.related ?? []) as Rel[],
+  })),
+  ...news.map((n) => ({
+    from: `/news/${n.slug}`,
+    at: n.status === "draft" ? null : new Date(n.publishAt ?? n.date),
+    rel: (n.related ?? []) as Rel[],
+  })),
+  ...analyses.map((a) => ({
+    from: `/analysis/${a.slug}`,
+    at: a.status === "draft" ? null : new Date(a.publishAt ?? a.date),
+    rel: (a.related ?? []) as Rel[],
+  })),
+  ...wiki.map((w) => ({
+    from: `/wiki/${w.type}/${w.slug}`,
+    at: w.status === "draft" ? null : new Date(w.publishAt ?? "2020-01-01"),
+    rel: (w.related ?? []) as Rel[],
+  })),
+];
+
+let deadRendered = 0;
+let deferred = 0;
+for (const a of articleLinks) {
+  if (!a.at) continue;
+  const shown = liveLinks(a.rel, a.at);
+  deferred += a.rel.length - shown.length;
+  for (const l of shown) if (!isLinkTargetLive(l.href, a.at)) deadRendered++;
+}
+ok("no article ever renders a link to a page that is not live yet", deadRendered === 0);
+ok("the gate actually defers premature links", deferred > 0);
+ok(
+  "a link to a page published later is withheld at first",
+  !liveLinks([{ href: "/gta-6-gameplay" }], new Date("2026-08-29T18:00:00Z")).length,
+);
+ok(
+  "and appears once that page is live",
+  liveLinks([{ href: "/gta-6-gameplay" }], new Date("2026-09-21T00:00:00Z")).length === 1,
+);
+ok(
+  "a draft target is never linkable, even far in the future",
+  !isLinkTargetLive("/gta-6-pc-release-date", new Date("2099-01-01T00:00:00Z")),
+);
+ok(
+  "an existing hub route is always linkable",
+  isLinkTargetLive("/gta-6-map", new Date("2026-08-29T00:00:00Z")),
+);
+ok("an unknown route is never linkable", !isLinkTargetLive("/no-such-page"));
+
+const extractLd = (html: string) => {
+  const m = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s);
+  return m ? JSON.parse(m[1].replace(/\\u003c/g, "<")) : null;
+};
+
+group("editorial fields stay private");
+const mixedSchema = extractLd(
+  renderToStaticMarkup(
+    <ArticleJsonLd
+      type="Article"
+      headline="H"
+      description="D"
+      path="/x"
+      datePublished="2026-08-29"
+      sources={[
+        { label: "Linked source", url: "https://www.rockstargames.com/VI" },
+        { label: "Unresolved source", needsReview: true },
+      ]}
+    />,
+  ),
+);
+ok(
+  "structured data never carries the needsReview flag",
+  !JSON.stringify(mixedSchema).includes("needsReview"),
+);
+ok("only the linked source becomes a citation", mixedSchema.citation.length === 1);
+ok(
+  "the flagged source is absent from citations",
+  !JSON.stringify(mixedSchema.citation).includes("Unresolved source"),
+);
+// The flag must be unreachable from markup, not merely unused today.
+const renderers = [
+  "src/components/LongFormArticle.tsx",
+  "src/routes/news.$slug.tsx",
+  "src/routes/analysis.$slug.tsx",
+  "src/routes/wiki.$type.$slug.tsx",
+].map((f) => readFileSync(f, "utf8"));
+ok(
+  "no renderer references needsReview at all",
+  renderers.every((src) => !src.includes("needsReview")),
+);
+ok(
+  "every renderer links a source only when it has a url",
+  renderers.every((src) => src.includes("src.url ?") || src.includes("s.url ?")),
+);
+
 group("source references");
 type Src = { label: string; url?: string; needsReview?: boolean };
 const allSources: { where: string; src: Src }[] = [];
@@ -307,11 +408,7 @@ ok("ISO date renders long-form", formatVerifiedDate("2026-08-29") === "August 29
 ok("unparseable date passes through", formatVerifiedDate("whenever") === "whenever");
 
 group("structured data");
-const extract = (html: string) => {
-  const m = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s);
-  return m ? JSON.parse(m[1].replace(/\\u003c/g, "<")) : null;
-};
-const article = extract(
+const article = extractLd(
   renderToStaticMarkup(
     <ArticleJsonLd
       type="NewsArticle"
@@ -332,7 +429,7 @@ ok("dateModified reflects lastVerified", article.dateModified === "2026-08-29");
 ok("first-party source cited", article.citation[0].url.includes("rockstargames.com"));
 ok("no FAQ schema is ever emitted", !JSON.stringify(article).includes("FAQ"));
 
-const evergreen = extract(
+const evergreen = extractLd(
   renderToStaticMarkup(
     <ArticleJsonLd
       type="Article"
@@ -346,7 +443,7 @@ const evergreen = extract(
 ok("Article type for evergreen pages", evergreen["@type"] === "Article");
 ok("dateModified falls back to datePublished", evergreen.dateModified === "2026-08-29");
 
-const crumbs = extract(
+const crumbs = extractLd(
   renderToStaticMarkup(
     <BreadcrumbJsonLd
       crumbs={[{ label: "Home", href: "/" }, { label: "News", href: "/news" }, { label: "Story" }]}

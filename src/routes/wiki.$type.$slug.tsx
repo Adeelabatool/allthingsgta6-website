@@ -6,6 +6,7 @@ import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import { wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
 import { articleHead } from "@/lib/seo";
+import { liveLinks } from "@/lib/related";
 
 export const Route = createFileRoute("/wiki/$type/$slug")({
   loader: ({ params }) => {
@@ -144,13 +145,13 @@ function WikiEntryPage() {
         </div>
 
         <aside className="space-y-6">
-          {w.related?.length ? (
+          {liveLinks(w.related).length ? (
             <div className="surface p-5">
               <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
                 Related Entries
               </div>
               <ul className="space-y-2">
-                {w.related.map((r) => (
+                {liveLinks(w.related).map((r) => (
                   <li key={r.href}>
                     <a href={r.href} className="text-accent hover:underline">
                       {r.label} →

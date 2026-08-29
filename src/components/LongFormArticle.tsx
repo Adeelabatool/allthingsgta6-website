@@ -5,6 +5,7 @@ import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import type { PageSection, SitePage } from "@/data/pages";
 import { publishedTimestamp } from "@/lib/publishing";
+import { liveLinks } from "@/lib/related";
 
 /**
  * Renders a long-form hub, guide or entity page: direct answer, sections with
@@ -78,13 +79,13 @@ export function LongFormArticle({ page }: { page: SitePage }) {
           </div>
         ) : null}
 
-        {page.related?.length ? (
+        {liveLinks(page.related).length ? (
           <div className="mt-10 surface p-5">
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
               Continue reading
             </div>
             <ul className="space-y-2.5">
-              {page.related.map((r) => (
+              {liveLinks(page.related).map((r) => (
                 <li key={r.href}>
                   <a href={r.href} className="text-accent hover:underline font-semibold">
                     {r.label} →

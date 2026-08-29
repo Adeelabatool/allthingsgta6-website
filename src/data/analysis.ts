@@ -134,14 +134,14 @@ export const analyses: AnalysisArticle[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Standard vs Ultimate,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 Standard vs Ultimate,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -166,8 +166,8 @@ export const analyses: AnalysisArticle[] = [
     ],
     sources: [
       {
-        label: "Rockstar Games - GTA VI Editions",
-        needsReview: true,
+        label: "Rockstar Games - GTA VI Ultimate Edition",
+        url: "https://www.rockstargames.com/VI/ultimate-edition",
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
@@ -265,7 +265,7 @@ export const analyses: AnalysisArticle[] = [
         heading: "Trailer 2 as the bridge to the character reveal",
         body: [
           "Trailer 2 gave Jason and Lucia far more narrative context and was followed by Rockstar’s extensive People & Places material. A modern breakdown should therefore cross-reference the trailer with the official profiles rather than speculating about every face in isolation.",
-          "This improves both accuracy and internal linking.",
+          "Keeping those apart is what stops a trailer reading from drifting into invention.",
         ],
       },
       {
@@ -285,14 +285,14 @@ export const analyses: AnalysisArticle[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Trailer 2,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 Trailer 2,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -317,8 +317,8 @@ export const analyses: AnalysisArticle[] = [
     ],
     sources: [
       {
-        label: "Rockstar Games - GTA VI Videos",
-        needsReview: true,
+        label: "Rockstar Games - GTA VI Trailer 2",
+        url: "https://www.rockstargames.com/videos/cpys7u21",
       },
       {
         label: "PC Gamer - GTA 6 Trailer 2 Details",
@@ -457,14 +457,14 @@ export const analyses: AnalysisArticle[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 map vs GTA 5,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+          "For “GTA 6 map vs GTA 5,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-          "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -618,21 +618,21 @@ export const analyses: AnalysisArticle[] = [
           {
             heading: "What later material corrected or clarified",
             body: [
-              "Jason’s biography, Lucia’s fuller backstory, the six headline regions and named supporting cast all came later. The article should mark these as “later confirmed” instead of rewriting history and implying Trailer 1 said more than it did.",
+              "Jason’s biography, Lucia’s fuller backstory, the six headline regions and the named supporting cast all came later. Those are marked here as “later confirmed” rather than folded back into Trailer 1, which would imply the trailer said more than it did.",
             ],
           },
           {
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “GTA 6 Trailer 1,” this matters because pre-release GTA coverage changes quickly. A status-based page can stay useful after each reveal without rewriting older observations as if they had always been official.",
+              "For “GTA 6 Trailer 1,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Pre-release coverage should leave room for unknowns. Rockstar has not published every mechanic, every character, every location, every item or every platform detail. When the evidence stops, the article should say “not announced” or “not yet confirmed” rather than convert a reasonable assumption into a fact.",
-              "This restraint is not a lack of depth. It is part of the page’s information gain because it tells readers exactly where reliable knowledge ends.",
+              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
+              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],
