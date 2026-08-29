@@ -34,7 +34,7 @@ export interface SitePage extends Publishable {
    * Sources and verification. Many plan sources are cited by publisher and
    * title with no URL on record; those stay text-only rather than inventing one.
    */
-  sources?: { label: string; url?: string }[];
+  sources?: { label: string; url?: string; needsReview?: boolean }[];
   /** Contextual links placed where a reader's intent genuinely changes. */
   related?: { href: string; label: string; desc?: string }[];
   /** Breadcrumb trail below Home. Defaults to the page title alone. */
@@ -172,12 +172,15 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+        url: "https://www.rockstargames.com/VI/an-extended-look",
       },
       {
         label: "PC Gamer - GTA 6 Gameplay Reveal Breakdown",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-gameplay-reveal-details-breakdown/",
       },
       {
         label: "The Verge - GTA VI Extended Look",
+        needsReview: true,
       },
     ],
     related: [
@@ -374,15 +377,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
+        needsReview: true,
       },
       {
         label: "Rockstar Games - GTA VI Videos",
+        needsReview: true,
       },
       {
         label: "PC Gamer - GTA 6 Characters",
+        url: "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters/",
       },
     ],
     related: [
@@ -606,15 +613,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+        url: "https://www.rockstargames.com/VI/an-extended-look",
       },
       {
         label: "PC Gamer - GTA 6 Gameplay Reveal Breakdown",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-gameplay-reveal-details-breakdown/",
       },
       {
         label: "TechRadar - GTA 6 Extended Look Live Breakdown",
+        url: "https://www.techradar.com/news/live/gta-6-extended-look",
       },
       {
         label: "WIRED - Takeaways From the GTA VI Extended Look",
+        needsReview: true,
       },
     ],
     related: [
@@ -764,12 +775,15 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
+        needsReview: true,
       },
       {
         label: "GamesRadar - GTA 6 Locations",
+        url: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-locations/",
       },
     ],
     related: [
@@ -942,15 +956,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
+        needsReview: true,
       },
       {
         label: "GamesRadar - GTA 6 Locations",
+        url: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-locations/",
       },
       {
         label: "PC Gamer - GTA 6 Map",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta6-map/",
       },
     ],
     related: [
@@ -1171,18 +1189,23 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
+        needsReview: true,
       },
       {
         label: "PC Gamer - GTA 6 Map",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta6-map/",
       },
       {
         label: "GTABase - GTA 6 Map",
+        url: "https://www.gtabase.com/gta-6/map/",
       },
       {
         label: "GamesRadar - GTA 6 Locations",
+        url: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-locations/",
       },
     ],
     related: [
@@ -1341,15 +1364,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games Newswire - Pre-Order Grand Theft Auto VI on June 25",
+        url: "https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25",
       },
       {
         label: "Take-Two - Rockstar Games Announces Pre-Orders for Grand Theft Auto VI",
+        url: "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
       },
       {
         label: "Rockstar Games - Grand Theft Auto VI",
+        url: "https://www.rockstargames.com/VI",
       },
       {
         label: "PC Gamer - GTA 6: What We Know",
+        url: "https://www.pcgamer.com/grand-theft-auto/gta-6-guide/",
       },
     ],
     related: [
@@ -1500,12 +1527,15 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
       {
         label: "PC Gamer - GTA 6 PC Release Date",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-pc-release-date/",
       },
       {
         label: "PC Gamer - GTA 6: What We Know",
+        url: "https://www.pcgamer.com/grand-theft-auto/gta-6-guide/",
       },
     ],
     related: [
@@ -1647,12 +1677,15 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Grand Theft Auto VI",
+        url: "https://www.rockstargames.com/VI",
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
       {
         label: "PlayStation Store - Grand Theft Auto VI",
+        url: "https://store.playstation.com/en-us/product/EP1004-PPSA01547_00-GTAVISTANDARD001",
       },
     ],
     related: [
@@ -1801,12 +1834,15 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Take-Two - Rockstar Games Announces Pre-Orders for Grand Theft Auto VI",
+        url: "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
       },
       {
         label: "Rockstar Store - Grand Theft Auto VI",
+        url: "https://store.rockstargames.com/game/buy-gta-vi",
       },
       {
         label: "PlayStation Store - Grand Theft Auto VI",
+        url: "https://store.playstation.com/en-us/product/EP1004-PPSA01547_00-GTAVISTANDARD001",
       },
     ],
     related: [
@@ -2013,15 +2049,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - Grand Theft Auto VI",
+        url: "https://www.rockstargames.com/VI",
       },
       {
         label: "Rockstar Games Newswire - Pre-Order Grand Theft Auto VI on June 25",
+        url: "https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25",
       },
       {
         label: "Take-Two - Rockstar Games Announces Pre-Orders for Grand Theft Auto VI",
+        url: "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
     ],
     related: [
@@ -2218,15 +2258,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Videos",
+        needsReview: true,
       },
       {
         label: "Rockstar Games - GTA VI Trailer 1",
+        url: "https://www.rockstargames.com/videos/rkoCtr1r",
       },
       {
         label: "GTA 6 Database / Tracker - Trailers and Previews",
+        url: "https://tracker.gg/gta6/previews/",
       },
       {
         label: "PC Gamer - GTA 6: What We Know",
+        url: "https://www.pcgamer.com/grand-theft-auto/gta-6-guide/",
       },
     ],
     related: [
@@ -2382,15 +2426,19 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Editions",
+        needsReview: true,
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
       {
         label: "Take-Two - Rockstar Games Announces Pre-Orders for Grand Theft Auto VI",
+        url: "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
       },
       {
         label: "Rockstar Store - Grand Theft Auto VI",
+        url: "https://store.rockstargames.com/game/buy-gta-vi",
       },
     ],
     related: [
@@ -2601,18 +2649,23 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Editions",
+        needsReview: true,
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
+        needsReview: true,
       },
       {
         label: "PC Gamer - GTA 6 Cars",
+        url: "https://www.pcgamer.com/gta-6-cars-list/",
       },
       {
         label: "GTABase - GTA 6 Vehicles Database",
+        url: "https://www.gtabase.com/gta-6/vehicles/",
       },
       {
         label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+        url: "https://www.rockstargames.com/VI/an-extended-look",
       },
     ],
     related: [
@@ -2811,18 +2864,23 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Editions",
+        needsReview: true,
       },
       {
         label: "Rockstar Games - GTA VI Screenshots",
+        needsReview: true,
       },
       {
         label: "PC Gamer - GTA 6 Weapons List",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-weapons-list/",
       },
       {
         label: "GamesRadar - GTA 6 Weapons",
+        url: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-weapons/",
       },
       {
         label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+        url: "https://www.rockstargames.com/VI/an-extended-look",
       },
     ],
     related: [
@@ -2972,9 +3030,11 @@ export const pages: SitePage[] = [
     sources: [
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
       {
         label: "PC Gamer - GTA 6 PC Release Date",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-pc-release-date/",
       },
     ],
     related: [

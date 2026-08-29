@@ -28,8 +28,12 @@ export interface NewsItem extends Publishable {
   sections?: PageSection[];
   /** Per-article evidence status table. */
   evidence?: EvidenceRow[];
-  /** Sources and verification, first-party first. URL omitted when not on record. */
-  sources?: { label: string; url?: string }[];
+  /**
+   * Sources and verification, first-party first. `url` is present only where the
+   * canonical source was actually verified; `needsReview` marks the rest for an
+   * editor rather than shipping a guessed link.
+   */
+  sources?: { label: string; url?: string; needsReview?: boolean }[];
   /**
    * Set only to consolidate this URL onto another page. Absent means the
    * article canonicalises to itself, which is the default for everything.
@@ -229,21 +233,27 @@ export const news: NewsItem[] = [
     sources: [
       {
         label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+        url: "https://www.rockstargames.com/VI/an-extended-look",
       },
       {
         label: "Rockstar Games - Grand Theft Auto VI",
+        url: "https://www.rockstargames.com/VI",
       },
       {
         label: "PC Gamer - GTA 6 Gameplay Reveal Breakdown",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-gameplay-reveal-details-breakdown/",
       },
       {
         label: "GTA 6 Database / Tracker - Extended Look Scene-by-Scene Breakdown",
+        url: "https://tracker.gg/gta6/trailers/netflix-extended-look/",
       },
       {
         label: "TechRadar - GTA 6 Extended Look Live Breakdown",
+        url: "https://www.techradar.com/news/live/gta-6-extended-look",
       },
       {
         label: "WIRED - Takeaways From the GTA VI Extended Look",
+        needsReview: true,
       },
     ],
     related: [
@@ -409,15 +419,19 @@ export const news: NewsItem[] = [
     sources: [
       {
         label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+        url: "https://www.rockstargames.com/VI/an-extended-look",
       },
       {
         label: "Rockstar Games Newswire - Pre-Order Grand Theft Auto VI on June 25",
+        url: "https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25",
       },
       {
         label: "Rockstar Games - Grand Theft Auto VI",
+        url: "https://www.rockstargames.com/VI",
       },
       {
         label: "PC Gamer - GTA 6: What We Know",
+        url: "https://www.pcgamer.com/grand-theft-auto/gta-6-guide/",
       },
     ],
     related: [
@@ -582,15 +596,19 @@ export const news: NewsItem[] = [
     sources: [
       {
         label: "Rockstar Games Newswire - Pre-Order Grand Theft Auto VI on June 25",
+        url: "https://www.rockstargames.com/newswire/article/5171972o3ak5oa/pre-order-grand-theft-auto-vi-on-june-25",
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
       {
         label: "Rockstar Store - Grand Theft Auto VI",
+        url: "https://store.rockstargames.com/game/buy-gta-vi",
       },
       {
         label: "Take-Two - Rockstar Games Announces Pre-Orders for Grand Theft Auto VI",
+        url: "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
       },
     ],
     related: [

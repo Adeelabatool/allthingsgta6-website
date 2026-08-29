@@ -44,7 +44,7 @@ export function ArticleJsonLd(props: {
    * Sources the article cites. Many are cited by publisher and title without a
    * URL; only those carrying one become schema citations.
    */
-  sources?: { label: string; url?: string }[];
+  sources?: { label: string; url?: string; needsReview?: boolean }[];
 }) {
   const url = absoluteUrl(props.path);
   const data: Record<string, unknown> = {

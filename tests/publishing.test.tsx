@@ -235,6 +235,73 @@ const badLinks = [
 if (badLinks.length) console.log("      unresolved:", [...new Set(badLinks)].join(", "));
 ok("every contextual link resolves to a real route", badLinks.length === 0);
 
+group("source references");
+type Src = { label: string; url?: string; needsReview?: boolean };
+const allSources: { where: string; src: Src }[] = [];
+const collect = (where: string, list?: Src[]) =>
+  (list ?? []).forEach((src) => allSources.push({ where, src }));
+for (const p of pages) collect(`page ${p.path}`, p.sources);
+for (const n of news) collect(`news/${n.slug}`, n.sources);
+for (const a of analyses) {
+  collect(`analysis/${a.slug}`, a.sources);
+  collect(`analysis/${a.slug}`, (a.pendingRevision?.changes as { sources?: Src[] })?.sources);
+}
+for (const w of wiki) {
+  collect(`wiki/${w.slug}`, w.sources);
+  collect(`wiki/${w.slug}`, (w.pendingRevision?.changes as { sources?: Src[] })?.sources);
+}
+
+const linked = allSources.filter(({ src }) => src.url);
+const review = allSources.filter(({ src }) => src.needsReview);
+
+ok("every source is either linked or flagged", linked.length + review.length === allSources.length);
+ok(
+  "no source is both linked and flagged",
+  allSources.every(({ src }) => !(src.url && src.needsReview)),
+);
+ok(
+  "every source URL is https",
+  linked.every(({ src }) => src.url!.startsWith("https://")),
+);
+ok(
+  "every source URL parses as a URL",
+  linked.every(({ src }) => {
+    try {
+      new URL(src.url!);
+      return true;
+    } catch {
+      return false;
+    }
+  }),
+);
+ok(
+  "no source URL carries a tracking query",
+  linked.every(({ src }) => !src.url!.includes("utm_")),
+);
+ok(
+  "a flagged source ships no link rather than a guessed one",
+  review.every(({ src }) => src.url === undefined),
+);
+ok(
+  "first-party labels are all resolved or explicitly flagged",
+  allSources
+    .filter(({ src }) => /^(Rockstar|Take-Two|PlayStation)/.test(src.label))
+    .every(({ src }) => src.url || src.needsReview),
+);
+
+// Only sources carrying a URL become schema citations; flagged ones must not.
+const citationCount = new Set(linked.map(({ src }) => src.url)).size;
+ok("linked sources resolve to distinct canonical URLs", citationCount > 0);
+
+const queue = [...new Set(review.map(({ src }) => src.label))].sort();
+console.log(`\n      linked ${linked.length}/${allSources.length} source entries`);
+console.log(`      editorial review queue — ${review.length} entries, ${queue.length} distinct:`);
+for (const label of queue) {
+  const n = review.filter(({ src }) => src.label === label).length;
+  console.log(`        · ${label} (${n})`);
+}
+console.log("");
+
 group("freshness formatting");
 ok("ISO date renders long-form", formatVerifiedDate("2026-08-29") === "August 29, 2026");
 ok("unparseable date passes through", formatVerifiedDate("whenever") === "whenever");

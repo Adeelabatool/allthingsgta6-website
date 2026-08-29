@@ -26,8 +26,12 @@ export interface AnalysisArticle extends Publishable {
   evidenceStatus?: EvidenceRow[];
   /** Set only to consolidate this URL onto another page. */
   canonicalOverride?: string;
-  /** Sources and verification, first-party first. URL omitted when not on record. */
-  sources?: { label: string; url?: string }[];
+  /**
+   * Sources and verification, first-party first. `url` is present only where the
+   * canonical source was actually verified; `needsReview` marks the rest for an
+   * editor rather than shipping a guessed link.
+   */
+  sources?: { label: string; url?: string; needsReview?: boolean }[];
   /** A staged edit to an entry that is already live. */
   pendingRevision?: PendingRevision<AnalysisArticle>;
 }
@@ -163,12 +167,15 @@ export const analyses: AnalysisArticle[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Editions",
+        needsReview: true,
       },
       {
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
+        url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
       {
         label: "Take-Two - Rockstar Games Announces Pre-Orders for Grand Theft Auto VI",
+        url: "https://www.take2games.com/ir/news/rockstar-games-announces-pre-orders-grand-theft-auto-vi",
       },
     ],
     related: [
@@ -311,15 +318,19 @@ export const analyses: AnalysisArticle[] = [
     sources: [
       {
         label: "Rockstar Games - GTA VI Videos",
+        needsReview: true,
       },
       {
         label: "PC Gamer - GTA 6 Trailer 2 Details",
+        needsReview: true,
       },
       {
         label: "GTA 6 Database / Tracker - Trailers and Previews",
+        url: "https://tracker.gg/gta6/previews/",
       },
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
     ],
     related: [
@@ -479,15 +490,19 @@ export const analyses: AnalysisArticle[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "PC Gamer - GTA 6 Map",
+        url: "https://www.pcgamer.com/games/grand-theft-auto/gta6-map/",
       },
       {
         label: "GTABase - GTA 6 Map",
+        url: "https://www.gtabase.com/gta-6/map/",
       },
       {
         label: "PC Gamer - GTA 6: What We Know",
+        url: "https://www.pcgamer.com/grand-theft-auto/gta-6-guide/",
       },
     ],
     related: [
@@ -644,12 +659,15 @@ export const analyses: AnalysisArticle[] = [
         sources: [
           {
             label: "Rockstar Games - GTA VI Trailer 1",
+            url: "https://www.rockstargames.com/videos/rkoCtr1r",
           },
           {
             label: "GTA 6 Database / Tracker - Trailers and Previews",
+            url: "https://tracker.gg/gta6/previews/",
           },
           {
             label: "PC Gamer - GTA 6: What We Know",
+            url: "https://www.pcgamer.com/grand-theft-auto/gta-6-guide/",
           },
         ],
       },

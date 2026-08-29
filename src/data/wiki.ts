@@ -20,8 +20,12 @@ export interface WikiEntry extends Publishable {
   metaDescription?: string;
   /** Per-entry evidence status table. */
   evidence?: EvidenceRow[];
-  /** Sources and verification, first-party first. URL omitted when not on record. */
-  sources?: { label: string; url?: string }[];
+  /**
+   * Sources and verification, first-party first. `url` is present only where the
+   * canonical source was actually verified; `needsReview` marks the rest for an
+   * editor rather than shipping a guessed link.
+   */
+  sources?: { label: string; url?: string; needsReview?: boolean }[];
   /** Set only to consolidate this URL onto another page. */
   canonicalOverride?: string;
   /** Direct-answer paragraphs, shown above the structured fields. */
@@ -157,9 +161,11 @@ export const wiki: WikiEntry[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "PC Gamer - GTA 6 Characters",
+        url: "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters/",
       },
     ],
     related: [
@@ -280,9 +286,11 @@ export const wiki: WikiEntry[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "PC Gamer - GTA 6 Characters",
+        url: "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters/",
       },
     ],
     related: [
@@ -404,9 +412,11 @@ export const wiki: WikiEntry[] = [
     sources: [
       {
         label: "Rockstar Games - Only in Leonida: People & Places",
+        url: "https://www.rockstargames.com/VI/only-in-leonida",
       },
       {
         label: "PC Gamer - GTA 6 Characters",
+        url: "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters/",
       },
     ],
     related: [
@@ -563,15 +573,19 @@ export const wiki: WikiEntry[] = [
         sources: [
           {
             label: "Rockstar Games - Only in Leonida: People & Places",
+            url: "https://www.rockstargames.com/VI/only-in-leonida",
           },
           {
             label: "Rockstar Games - GTA VI Screenshots",
+            needsReview: true,
           },
           {
             label: "PC Gamer - GTA 6 Characters",
+            url: "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters/",
           },
           {
             label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+            url: "https://www.rockstargames.com/VI/an-extended-look",
           },
         ],
       },
@@ -744,15 +758,19 @@ export const wiki: WikiEntry[] = [
         sources: [
           {
             label: "Rockstar Games - Only in Leonida: People & Places",
+            url: "https://www.rockstargames.com/VI/only-in-leonida",
           },
           {
             label: "Rockstar Games - GTA VI Screenshots",
+            needsReview: true,
           },
           {
             label: "PC Gamer - GTA 6 Characters",
+            url: "https://www.pcgamer.com/games/action/grand-theft-auto/gta6-characters/",
           },
           {
             label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+            url: "https://www.rockstargames.com/VI/an-extended-look",
           },
         ],
       },
@@ -973,12 +991,15 @@ export const wiki: WikiEntry[] = [
         sources: [
           {
             label: "Rockstar Games - Only in Leonida: People & Places",
+            url: "https://www.rockstargames.com/VI/only-in-leonida",
           },
           {
             label: "Rockstar Games - GTA VI Screenshots",
+            needsReview: true,
           },
           {
             label: "PC Gamer - GTA 6 Map",
+            url: "https://www.pcgamer.com/games/grand-theft-auto/gta6-map/",
           },
         ],
       },
@@ -1230,12 +1251,15 @@ export const wiki: WikiEntry[] = [
         sources: [
           {
             label: "Rockstar Games - Grand Theft Auto VI: An Extended Look",
+            url: "https://www.rockstargames.com/VI/an-extended-look",
           },
           {
             label: "PC Gamer - GTA 6 Gameplay Reveal Breakdown",
+            url: "https://www.pcgamer.com/games/grand-theft-auto/gta-6-gameplay-reveal-details-breakdown/",
           },
           {
             label: "TechRadar - GTA 6 Extended Look Live Breakdown",
+            url: "https://www.techradar.com/news/live/gta-6-extended-look",
           },
         ],
       },
