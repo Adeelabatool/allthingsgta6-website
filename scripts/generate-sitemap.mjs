@@ -18,9 +18,9 @@ const now = Date.now();
  * per-entry fields can be read without a full TypeScript parse. Each entry in
  * these files contains exactly one `slug:` key, which is what makes this safe.
  */
-function parseEntries(file) {
+function parseEntries(file, key = "slug") {
   const src = readFileSync(file, "utf8");
-  const matches = [...src.matchAll(/slug:\s*"([^"]+)"/g)];
+  const matches = [...src.matchAll(new RegExp(`${key}:\\s*"([^"]+)"`, "g"))];
   return matches.map((m, i) => {
     const start = m.index;
     const end = i + 1 < matches.length ? matches[i + 1].index : src.length;
@@ -28,6 +28,7 @@ function parseEntries(file) {
     const field = (name) => window.match(new RegExp(`${name}:\\s*"([^"]+)"`))?.[1];
     return {
       slug: m[1],
+      path: m[1],
       type: field("type"),
       status: field("status") ?? "published",
       publishAt: field("publishAt"),
@@ -55,16 +56,43 @@ const allNews = parseEntries("src/data/news.ts").filter((e) => !newsCategories.i
 const allAnalysis = parseEntries("src/data/analysis.ts");
 // wikiTypes entries carry no `type:` field, which is what separates them from real entries.
 const allWiki = parseEntries("src/data/wiki.ts").filter((e) => e.type);
+// Long-form hub, guide and entity pages are keyed by route path, not slug.
+const allSitePages = parseEntries("src/data/pages.ts", "path");
 
 const newsArticles = allNews.filter(isPublic);
 const analysisArticles = allAnalysis.filter(isPublic);
 const wikiEntries = allWiki.filter(isPublic);
+const sitePages = allSitePages.filter(isPublic);
+
+// Six of these paths are already live and listed in staticPages below; only the
+// pages whose route does not exist yet are added from here.
+const staticPaths = new Set([
+  "/",
+  "/gta-6-release-date",
+  "/gta-6-news",
+  "/gta-6-characters",
+  "/gta-6-map",
+  "/gta-6-vehicles",
+  "/gta-6-weapons",
+  "/system-requirements",
+  "/news",
+  "/analysis",
+  "/wiki",
+  "/tools",
+  "/tools/countdown",
+  "/tools/hype-calculator",
+  "/tools/map",
+  "/tools/vehicle-comparator",
+  "/about",
+]);
+const newSitePages = sitePages.filter((p) => !staticPaths.has(p.path));
 
 const withheld =
   allNews.length -
   newsArticles.length +
   (allAnalysis.length - analysisArticles.length) +
-  (allWiki.length - wikiEntries.length);
+  (allWiki.length - wikiEntries.length) +
+  (allSitePages.length - sitePages.length);
 
 const staticPages = [
   ["/", "daily", "1.0"],

@@ -11,11 +11,14 @@ import {
   isPubliclyVisible,
   publicOnly,
   pendingQueue,
+  pendingRevisions,
+  resolveRevision,
   statusOf,
   formatVerifiedDate,
   type Publishable,
 } from "@/lib/publishing";
 import { news, publicNews, newsBySlug, newsByCategory } from "@/data/news";
+import { pages, publicPages, pageByPath } from "@/data/pages";
 import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
 import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
@@ -97,6 +100,140 @@ ok("unknown slug resolves to undefined", newsBySlug("no-such-article") === undef
 ok("known slug resolves", newsBySlug("pre-order-rumors")?.slug === "pre-order-rumors");
 ok("wiki entry resolves", wikiBySlug("characters", "jason")?.slug === "jason");
 ok("analysis resolves", analysisBySlug("trailer-1-breakdown")?.slug === "trailer-1-breakdown");
+
+group("staged revisions to live pages");
+const live = {
+  status: "published" as const,
+  title: "current",
+  lastVerified: "2026-01-01",
+  pendingRevision: {
+    publishAt: "2026-09-10T13:00:00Z",
+    lastVerified: "2026-08-29",
+    changes: { title: "upgraded" },
+  },
+};
+ok("a page with a pending revision stays visible before its date", isPubliclyVisible(live));
+ok(
+  "content is unchanged before the revision lands",
+  resolveRevision(live, new Date("2026-09-09T00:00:00Z")).title === "current",
+);
+ok(
+  "content swaps once the revision is due",
+  resolveRevision(live, new Date("2026-09-11T00:00:00Z")).title === "upgraded",
+);
+ok(
+  "the revision carries its own lastVerified",
+  resolveRevision(live, new Date("2026-09-11T00:00:00Z")).lastVerified === "2026-08-29",
+);
+ok(
+  "the pendingRevision key is dropped once applied",
+  resolveRevision(live, new Date("2026-09-11T00:00:00Z")).pendingRevision === undefined,
+);
+ok(
+  "an unparseable revision date never lands",
+  resolveRevision(
+    {
+      status: "published" as const,
+      title: "current",
+      pendingRevision: { publishAt: "soon", changes: { title: "x" } },
+    },
+    new Date("2099-01-01T00:00:00Z"),
+  ).title === "current",
+);
+ok(
+  "pendingRevisions lists the waiting one",
+  pendingRevisions([live], new Date("2026-09-01T00:00:00Z")).length === 1,
+);
+ok(
+  "pendingRevisions excludes a landed one",
+  pendingRevisions([live], new Date("2026-09-11T00:00:00Z")).length === 0,
+);
+
+group("long-form pages layer");
+ok("pages index is gated", publicPages().length === publicOnly(pages).length);
+ok(
+  "every listed page is visible",
+  publicPages().every((p) => isPubliclyVisible(p)),
+);
+ok("an unknown path resolves to undefined", pageByPath("/no-such-page") === undefined);
+ok(
+  "a scheduled page 404s before its date",
+  pageByPath("/gta-6-price", new Date("2026-09-01T00:00:00Z")) === undefined,
+);
+ok(
+  "the same page resolves after its date",
+  pageByPath("/gta-6-price", new Date("2026-09-05T00:00:00Z"))?.path === "/gta-6-price",
+);
+ok(
+  "a draft page never resolves, even far in the future",
+  pageByPath("/gta-6-pc-release-date", new Date("2099-01-01T00:00:00Z")) === undefined,
+);
+
+group("the loaded 30-article plan");
+const scheduled = pages.filter((p) => p.status === "scheduled");
+ok(
+  "every scheduled page carries a publishAt",
+  scheduled.every((p) => p.publishAt),
+);
+ok(
+  "every scheduled entry across all collections carries a publishAt",
+  [...news, ...analyses, ...wiki, ...pages]
+    .filter((e) => e.status === "scheduled")
+    .every((e) => e.publishAt),
+);
+ok(
+  "no article is left with an unrecognised status",
+  [...news, ...analyses, ...wiki, ...pages].every((e) =>
+    ["draft", "scheduled", "published", undefined].includes(e.status),
+  ),
+);
+ok(
+  "the three Search-Console-blocked articles are drafts, not scheduled",
+  pageByPath("/gta-6-pc-release-date", new Date("2099-01-01T00:00:00Z")) === undefined &&
+    newsBySlug("gta-6-pre-order", new Date("2099-01-01T00:00:00Z")) === undefined &&
+    analysisBySlug("trailer-2-breakdown", new Date("2099-01-01T00:00:00Z")) === undefined,
+);
+ok(
+  "pillar articles kept their depth (Day 11 map >= 20 sections)",
+  (pages.find((p) => p.path === "/gta-6-map")?.sections.length ?? 0) >= 20,
+);
+ok(
+  "evidence classifications survived the load",
+  pages.every((p) => (p.evidence?.length ?? 0) === 4),
+);
+ok(
+  "no evidence row was promoted to confirmed without one in the source",
+  pages.every((p) => p.evidence?.filter((e) => e.kind === "confirmed").length === 1),
+);
+
+// Every contextual link must resolve to a real route, or it ships a 404.
+const knownPaths = new Set<string>([
+  ...pages.map((p) => p.path),
+  ...news.map((n) => `/news/${n.slug}`),
+  ...analyses.map((a) => `/analysis/${a.slug}`),
+  ...wiki.map((w) => `/wiki/${w.type}/${w.slug}`),
+  "/",
+  "/news",
+  "/analysis",
+  "/wiki",
+  "/tools",
+  "/about",
+  "/gta-6-news",
+  "/system-requirements",
+  "/gta-6-release-date",
+  "/gta-6-map",
+  "/gta-6-characters",
+  "/gta-6-vehicles",
+  "/gta-6-weapons",
+]);
+const badLinks = [
+  ...pages.flatMap((p) => (p.related ?? []).map((r) => r.href)),
+  ...news.flatMap((n) => (n.related ?? []).map((r) => r.href)),
+  ...analyses.flatMap((a) => (a.related ?? []).map((r) => r.href)),
+  ...wiki.flatMap((w) => (w.related ?? []).map((r) => r.href)),
+].filter((h) => h.startsWith("/") && !knownPaths.has(h));
+if (badLinks.length) console.log("      unresolved:", [...new Set(badLinks)].join(", "));
+ok("every contextual link resolves to a real route", badLinks.length === 0);
 
 group("freshness formatting");
 ok("ISO date renders long-form", formatVerifiedDate("2026-08-29") === "August 29, 2026");

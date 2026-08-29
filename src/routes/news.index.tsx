@@ -6,9 +6,16 @@ export const Route = createFileRoute("/news/")({
   head: () => ({
     meta: [
       { title: "GTA 6 News Archive — Every Story by Date" },
-      { name: "description", content: "The full chronological archive of our Grand Theft Auto VI reporting, newest first. For the curated topic hub, see the GTA 6 News Hub." },
+      {
+        name: "description",
+        content:
+          "The full chronological archive of our Grand Theft Auto VI reporting, newest first. For the curated topic hub, see the GTA 6 News Hub.",
+      },
       { property: "og:title", content: "GTA 6 News Archive — AllThingsGTA6" },
-      { property: "og:description", content: "The full chronological archive of our GTA 6 reporting, newest first." },
+      {
+        property: "og:description",
+        content: "The full chronological archive of our GTA 6 reporting, newest first.",
+      },
       { property: "og:url", content: "https://allthingsgta6.com/news" },
     ],
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/news" }],
@@ -32,7 +39,12 @@ function NewsIndex() {
         </p>
         <div className="mt-5 flex flex-wrap gap-2">
           {newsCategories.map((c) => (
-            <Link key={c.slug} to="/news/category/$category" params={{ category: c.slug }} className="chip hover:text-foreground">
+            <Link
+              key={c.slug}
+              to="/news/category/$category"
+              params={{ category: c.slug }}
+              className="chip hover:text-foreground"
+            >
               {c.label}
             </Link>
           ))}
@@ -134,7 +146,12 @@ function NewsIndex() {
       </section>
       <div className="container-page grid gap-4 md:grid-cols-2 lg:grid-cols-3 pb-16">
         {publicNews().map((n) => (
-          <Link key={n.slug} to="/news/$slug" params={{ slug: n.slug }} className="surface surface-hover p-5">
+          <Link
+            key={n.slug}
+            to="/news/$slug"
+            params={{ slug: n.slug }}
+            className="surface surface-hover p-5"
+          >
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span className="chip">{n.category.replace("-", " ")}</span>
               <span>{n.date}</span>

@@ -12,6 +12,27 @@
 
 export type PublishStatus = "draft" | "scheduled" | "published";
 
+/**
+ * A staged edit to an entry that is ALREADY live.
+ *
+ * Setting status:"scheduled" on a published page would unpublish it until its
+ * date — the wrong behaviour for an update-in-place. A pending revision instead
+ * leaves the live page exactly as it is and swaps in `changes` once publishAt
+ * passes, so the URL is never dark and never serves stale copy past its date.
+ *
+ * Revisions stay editable right up to their moment; editing one changes what
+ * goes live, with no republish step.
+ */
+export interface PendingRevision<T> {
+  /** ISO 8601 with offset. When this passes, `changes` take effect. */
+  publishAt: string;
+  /** Freshness stamp that replaces the entry's own once the revision lands. */
+  lastVerified?: string;
+  /** Editorial note on what changed and why. Never rendered to readers. */
+  note?: string;
+  changes: Partial<T>;
+}
+
 export interface Publishable {
   /** Defaults to "published" when omitted, so pre-existing entries keep rendering. */
   status?: PublishStatus;
@@ -19,6 +40,40 @@ export interface Publishable {
   publishAt?: string;
   /** ISO date (YYYY-MM-DD) of the last first-party source check. */
   lastVerified?: string;
+}
+
+/** Shape shared by anything carrying a staged revision. */
+type Revisable = { pendingRevision?: PendingRevision<unknown> };
+
+/**
+ * Applies a staged revision once it is due, otherwise returns the entry
+ * untouched. Callers get one object and never have to know a revision existed.
+ */
+export function resolveRevision<T extends Revisable>(item: T, now: Date = new Date()): T {
+  const rev = item.pendingRevision;
+  if (!rev) return item;
+
+  const at = Date.parse(rev.publishAt);
+  if (Number.isNaN(at) || at > now.getTime()) return item;
+
+  const { pendingRevision: _dropped, ...base } = item;
+  return {
+    ...(base as T),
+    ...(rev.changes as Partial<T>),
+    ...(rev.lastVerified ? { lastVerified: rev.lastVerified } : {}),
+  };
+}
+
+/** Revisions still waiting to land, soonest first. Editorial tooling only. */
+export function pendingRevisions<T extends Revisable>(items: T[], now: Date = new Date()): T[] {
+  return items
+    .filter((i) => {
+      const at = i.pendingRevision && Date.parse(i.pendingRevision.publishAt);
+      return typeof at === "number" && !Number.isNaN(at) && at > now.getTime();
+    })
+    .sort(
+      (a, b) => Date.parse(a.pendingRevision!.publishAt) - Date.parse(b.pendingRevision!.publishAt),
+    );
 }
 
 /** Entries with no explicit status are treated as already published. */
@@ -50,20 +105,28 @@ export function isPubliclyVisible(item: Publishable, now: Date = new Date()): bo
   }
 }
 
-/** The public subset of a collection. Use this everywhere a list is rendered. */
-export function publicOnly<T extends Publishable>(items: T[], now: Date = new Date()): T[] {
-  return items.filter((item) => isPubliclyVisible(item, now));
+/**
+ * The public subset of a collection, with any due revisions already applied.
+ * Use this everywhere a list is rendered.
+ */
+export function publicOnly<T extends Publishable & Revisable>(
+  items: T[],
+  now: Date = new Date(),
+): T[] {
+  return items
+    .filter((item) => isPubliclyVisible(item, now))
+    .map((item) => resolveRevision(item, now));
 }
 
 /**
  * Look up a single entry, returning undefined when it is not publicly visible.
  * Route loaders use this so a scheduled URL 404s until its moment arrives.
  */
-export function publicEntry<T extends Publishable>(
+export function publicEntry<T extends Publishable & Revisable>(
   item: T | undefined,
   now: Date = new Date(),
 ): T | undefined {
-  return item && isPubliclyVisible(item, now) ? item : undefined;
+  return item && isPubliclyVisible(item, now) ? resolveRevision(item, now) : undefined;
 }
 
 /** Entries still awaiting publication, soonest first. Editorial tooling only. */

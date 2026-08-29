@@ -7,7 +7,11 @@ export const Route = createFileRoute("/gta-6-news")({
   head: () => ({
     meta: [
       { title: "GTA 6 News Hub, All Updates, Leaks & Trailers" },
-      { name: "description", content: "The complete GTA 6 news hub: Rockstar updates, leaks, trailer news, release updates, and analysis, all in one place." },
+      {
+        name: "description",
+        content:
+          "The complete GTA 6 news hub: Rockstar updates, leaks, trailer news, release updates, and analysis, all in one place.",
+      },
       { property: "og:title", content: "GTA 6 News Hub, AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/gta-6-news" },
     ],
@@ -23,21 +27,49 @@ export const Route = createFileRoute("/gta-6-news")({
       sections={[
         {
           title: "Latest News",
-          items: publicNews().slice(0, 6).map((n) => ({ href: `/news/${n.slug}`, label: n.title, desc: n.summary })),
+          items: publicNews()
+            .slice(0, 6)
+            .map((n) => ({ href: `/news/${n.slug}`, label: n.title, desc: n.summary })),
         },
         {
           title: "Editorial Analysis",
-          items: publicAnalyses().slice(0, 3).map((a) => ({ href: `/analysis/${a.slug}`, label: a.title, desc: a.hook })),
+          items: publicAnalyses()
+            .slice(0, 3)
+            .map((a) => ({ href: `/analysis/${a.slug}`, label: a.title, desc: a.hook })),
         },
         {
           title: "Browse by Category",
           items: [
-            { href: "/news", label: "Full News Archive", desc: "Every story we have published, newest first." },
-            { href: "/news/category/rockstar-updates", label: "Rockstar Updates", desc: "Official Rockstar Newswire coverage." },
-            { href: "/news/category/leaks", label: "Leaks", desc: "Verified and unverified leak analysis." },
-            { href: "/news/category/trailer-news", label: "Trailer News", desc: "Frame-by-frame trailer breakdowns." },
-            { href: "/news/category/release-updates", label: "Release Updates", desc: "Date confirmations, delays, windows." },
-            { href: "/news/category/community-reactions", label: "Community Reactions", desc: "Reddit, X, YouTube response reports." },
+            {
+              href: "/news",
+              label: "Full News Archive",
+              desc: "Every story we have published, newest first.",
+            },
+            {
+              href: "/news/category/rockstar-updates",
+              label: "Rockstar Updates",
+              desc: "Official Rockstar Newswire coverage.",
+            },
+            {
+              href: "/news/category/leaks",
+              label: "Leaks",
+              desc: "Verified and unverified leak analysis.",
+            },
+            {
+              href: "/news/category/trailer-news",
+              label: "Trailer News",
+              desc: "Frame-by-frame trailer breakdowns.",
+            },
+            {
+              href: "/news/category/release-updates",
+              label: "Release Updates",
+              desc: "Date confirmations, delays, windows.",
+            },
+            {
+              href: "/news/category/community-reactions",
+              label: "Community Reactions",
+              desc: "Reddit, X, YouTube response reports.",
+            },
           ],
         },
       ]}

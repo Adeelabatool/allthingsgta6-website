@@ -40,8 +40,11 @@ export function ArticleJsonLd(props: {
   path: string;
   datePublished: string;
   dateModified?: string;
-  /** First-party and third-party sources the article cites. */
-  sources?: { label: string; url: string }[];
+  /**
+   * Sources the article cites. Many are cited by publisher and title without a
+   * URL; only those carrying one become schema citations.
+   */
+  sources?: { label: string; url?: string }[];
 }) {
   const url = absoluteUrl(props.path);
   const data: Record<string, unknown> = {
@@ -59,8 +62,9 @@ export function ArticleJsonLd(props: {
     isAccessibleForFree: true,
   };
 
-  if (props.sources?.length) {
-    data.citation = props.sources.map((s) => ({
+  const linked = props.sources?.filter((s) => s.url);
+  if (linked?.length) {
+    data.citation = linked.map((s) => ({
       "@type": "CreativeWork",
       name: s.label,
       url: s.url,

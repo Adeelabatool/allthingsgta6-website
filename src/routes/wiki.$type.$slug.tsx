@@ -4,7 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
-import { wikiBySlug, publicWiki, wikiTypes } from "@/data/wiki";
+import { wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
 import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/wiki/$type/$slug")({
@@ -24,13 +24,19 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
       : { meta: [], links: [] },
   component: WikiEntryPage,
   notFoundComponent: () => (
-    <SiteShell><div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold">Wiki entry not found</h1></div></SiteShell>
+    <SiteShell>
+      <div className="container-page py-24 text-center">
+        <h1 className="text-3xl font-extrabold">Wiki entry not found</h1>
+      </div>
+    </SiteShell>
   ),
 });
 
 function WikiEntryPage() {
   const w = Route.useLoaderData();
-  const sameType = publicWiki().filter((x) => x.type === w.type && x.slug !== w.slug).slice(0, 4);
+  const sameType = publicWiki()
+    .filter((x) => x.type === w.type && x.slug !== w.slug)
+    .slice(0, 4);
   const typeLabel = wikiTypes.find((t) => t.slug === w.type)?.label ?? w.type;
 
   return (
@@ -48,49 +54,82 @@ function WikiEntryPage() {
       <article className="container-page py-10 grid gap-8 lg:grid-cols-[1fr_280px] max-w-6xl">
         <div>
           <Breadcrumbs
-            trail={[
-              { label: "Wiki", href: "/wiki" },
-              { label: typeLabel },
-              { label: w.name },
-            ]}
+            trail={[{ label: "Wiki", href: "/wiki" }, { label: typeLabel }, { label: w.name }]}
           />
           <div className="mt-4 chip chip-neon">{w.type}</div>
           <h1 className="heading-display text-4xl md:text-6xl mt-3">{w.name}</h1>
           {w.lastVerified && <LastVerified date={w.lastVerified} />}
 
-          <Section title="Overview">{w.overview}</Section>
-          <Section title="Background">{w.background}</Section>
-          <Section title="Role in GTA 6">{w.roleInGta6}</Section>
+          {w.intro?.map((p, i) => (
+            <p key={i} className="mt-4 text-foreground/90 leading-relaxed">
+              {p}
+            </p>
+          ))}
 
-          <Section title="Details">
-            <dl className="grid sm:grid-cols-2 gap-3">
-              {w.details.map((d: typeof w.details[number]) => (
-                <div key={d.label} className="surface p-3">
-                  <dt className="text-xs uppercase tracking-widest text-muted-foreground">{d.label}</dt>
-                  <dd className="mt-1 font-semibold">{d.value}</dd>
-                </div>
-              ))}
-            </dl>
-          </Section>
+          {w.sections?.length ? (
+            w.sections.map((sec) => (
+              <section key={sec.heading} className="mt-8">
+                <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">{sec.heading}</h2>
+                {sec.body?.map((para, i) => (
+                  <p key={i} className="mt-3 text-foreground/90 leading-relaxed">
+                    {para}
+                  </p>
+                ))}
+                {sec.table ? <EntryTable table={sec.table} /> : null}
+              </section>
+            ))
+          ) : (
+            <>
+              <Section title="Overview">{w.overview}</Section>
+              <Section title="Background">{w.background}</Section>
+              <Section title="Role in GTA 6">{w.roleInGta6}</Section>
+            </>
+          )}
 
-          {w.trivia.length > 0 && (
+          {w.details?.length ? (
+            <Section title="Details">
+              <dl className="grid sm:grid-cols-2 gap-3">
+                {w.details.map((d) => (
+                  <div key={d.label} className="surface p-3">
+                    <dt className="text-xs uppercase tracking-widest text-muted-foreground">
+                      {d.label}
+                    </dt>
+                    <dd className="mt-1 font-semibold">{d.value}</dd>
+                  </div>
+                ))}
+              </dl>
+            </Section>
+          ) : null}
+
+          {w.trivia?.length ? (
             <Section title="Trivia / Notes">
               <ul className="list-disc pl-5 space-y-1.5">
-                {w.trivia.map((t: string, i: number) => <li key={i}>{t}</li>)}
+                {w.trivia.map((t, i) => (
+                  <li key={i}>{t}</li>
+                ))}
               </ul>
             </Section>
-          )}
+          ) : null}
 
           {w.updates && <Section title="Updates">{w.updates}</Section>}
 
           {w.sources?.length ? (
             <Section title="Sources and verification">
               <ul className="space-y-1.5">
-                {w.sources.map((s: { label: string; url: string }) => (
-                  <li key={s.url}>
-                    <a href={s.url} target="_blank" rel="noreferrer" className="text-accent underline">
-                      {s.label} →
-                    </a>
+                {w.sources.map((src) => (
+                  <li key={src.label}>
+                    {src.url ? (
+                      <a
+                        href={src.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="text-accent underline"
+                      >
+                        {src.label} →
+                      </a>
+                    ) : (
+                      src.label
+                    )}
                   </li>
                 ))}
               </ul>
@@ -105,25 +144,35 @@ function WikiEntryPage() {
         </div>
 
         <aside className="space-y-6">
-          {w.related.length > 0 && (
+          {w.related?.length ? (
             <div className="surface p-5">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Related Entries</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                Related Entries
+              </div>
               <ul className="space-y-2">
-                {w.related.map((r: typeof w.related[number]) => (
+                {w.related.map((r) => (
                   <li key={r.href}>
-                    <a href={r.href} className="text-accent hover:underline">{r.label} →</a>
+                    <a href={r.href} className="text-accent hover:underline">
+                      {r.label} →
+                    </a>
                   </li>
                 ))}
               </ul>
             </div>
-          )}
+          ) : null}
           {sameType.length > 0 && (
             <div className="surface p-5">
-              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">More {w.type}</div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">
+                More {w.type}
+              </div>
               <ul className="space-y-2">
                 {sameType.map((x) => (
                   <li key={x.slug}>
-                    <Link to="/wiki/$type/$slug" params={{ type: x.type, slug: x.slug }} className="text-foreground/90 hover:text-accent">
+                    <Link
+                      to="/wiki/$type/$slug"
+                      params={{ type: x.type, slug: x.slug }}
+                      className="text-foreground/90 hover:text-accent"
+                    >
                       {x.name}
                     </Link>
                   </li>
@@ -134,6 +183,45 @@ function WikiEntryPage() {
         </aside>
       </article>
     </SiteShell>
+  );
+}
+
+function EntryTable({
+  table,
+}: {
+  table: NonNullable<NonNullable<WikiEntry["sections"]>[number]["table"]>;
+}) {
+  return (
+    <div className="mt-4 overflow-x-auto surface">
+      <table className="w-full text-sm">
+        <thead>
+          <tr>
+            {table.head.map((h) => (
+              <th
+                key={h}
+                className="text-left px-4 py-2.5 text-xs uppercase tracking-widest text-muted-foreground border-b border-border"
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {table.rows.map((row, i) => (
+            <tr key={i}>
+              {row.map((cell, j) => (
+                <td
+                  key={j}
+                  className={`px-4 py-2.5 border-b border-border/50 ${j === 0 ? "font-semibold text-foreground" : "text-foreground/90"}`}
+                >
+                  {cell}
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
 

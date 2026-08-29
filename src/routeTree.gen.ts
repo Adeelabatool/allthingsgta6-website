@@ -12,10 +12,20 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as AnalysisRouteImport } from './routes/analysis'
+import { Route as Gta6ActivitiesRouteImport } from './routes/gta-6-activities'
 import { Route as Gta6CharactersRouteImport } from './routes/gta-6-characters'
+import { Route as Gta6GameplayRouteImport } from './routes/gta-6-gameplay'
+import { Route as Gta6LeonidaRouteImport } from './routes/gta-6-leonida'
+import { Route as Gta6LocationsRouteImport } from './routes/gta-6-locations'
 import { Route as Gta6MapRouteImport } from './routes/gta-6-map'
 import { Route as Gta6NewsRouteImport } from './routes/gta-6-news'
+import { Route as Gta6OnlineRouteImport } from './routes/gta-6-online'
+import { Route as Gta6PcReleaseDateRouteImport } from './routes/gta-6-pc-release-date'
+import { Route as Gta6PlatformsRouteImport } from './routes/gta-6-platforms'
+import { Route as Gta6PriceRouteImport } from './routes/gta-6-price'
 import { Route as Gta6ReleaseDateRouteImport } from './routes/gta-6-release-date'
+import { Route as Gta6TrailersRouteImport } from './routes/gta-6-trailers'
+import { Route as Gta6UltimateEditionRouteImport } from './routes/gta-6-ultimate-edition'
 import { Route as Gta6VehiclesRouteImport } from './routes/gta-6-vehicles'
 import { Route as Gta6WeaponsRouteImport } from './routes/gta-6-weapons'
 import { Route as NewsRouteImport } from './routes/news'
@@ -50,9 +60,29 @@ const AnalysisRoute = AnalysisRouteImport.update({
   path: '/analysis',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Gta6ActivitiesRoute = Gta6ActivitiesRouteImport.update({
+  id: '/gta-6-activities',
+  path: '/gta-6-activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Gta6CharactersRoute = Gta6CharactersRouteImport.update({
   id: '/gta-6-characters',
   path: '/gta-6-characters',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6GameplayRoute = Gta6GameplayRouteImport.update({
+  id: '/gta-6-gameplay',
+  path: '/gta-6-gameplay',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6LeonidaRoute = Gta6LeonidaRouteImport.update({
+  id: '/gta-6-leonida',
+  path: '/gta-6-leonida',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6LocationsRoute = Gta6LocationsRouteImport.update({
+  id: '/gta-6-locations',
+  path: '/gta-6-locations',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Gta6MapRoute = Gta6MapRouteImport.update({
@@ -65,9 +95,39 @@ const Gta6NewsRoute = Gta6NewsRouteImport.update({
   path: '/gta-6-news',
   getParentRoute: () => rootRouteImport,
 } as any)
+const Gta6OnlineRoute = Gta6OnlineRouteImport.update({
+  id: '/gta-6-online',
+  path: '/gta-6-online',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6PcReleaseDateRoute = Gta6PcReleaseDateRouteImport.update({
+  id: '/gta-6-pc-release-date',
+  path: '/gta-6-pc-release-date',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6PlatformsRoute = Gta6PlatformsRouteImport.update({
+  id: '/gta-6-platforms',
+  path: '/gta-6-platforms',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6PriceRoute = Gta6PriceRouteImport.update({
+  id: '/gta-6-price',
+  path: '/gta-6-price',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const Gta6ReleaseDateRoute = Gta6ReleaseDateRouteImport.update({
   id: '/gta-6-release-date',
   path: '/gta-6-release-date',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6TrailersRoute = Gta6TrailersRouteImport.update({
+  id: '/gta-6-trailers',
+  path: '/gta-6-trailers',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const Gta6UltimateEditionRoute = Gta6UltimateEditionRouteImport.update({
+  id: '/gta-6-ultimate-edition',
+  path: '/gta-6-ultimate-edition',
   getParentRoute: () => rootRouteImport,
 } as any)
 const Gta6VehiclesRoute = Gta6VehiclesRouteImport.update({
@@ -165,10 +225,20 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/analysis': typeof AnalysisRouteWithChildren
+  '/gta-6-activities': typeof Gta6ActivitiesRoute
   '/gta-6-characters': typeof Gta6CharactersRoute
+  '/gta-6-gameplay': typeof Gta6GameplayRoute
+  '/gta-6-leonida': typeof Gta6LeonidaRoute
+  '/gta-6-locations': typeof Gta6LocationsRoute
   '/gta-6-map': typeof Gta6MapRoute
   '/gta-6-news': typeof Gta6NewsRoute
+  '/gta-6-online': typeof Gta6OnlineRoute
+  '/gta-6-pc-release-date': typeof Gta6PcReleaseDateRoute
+  '/gta-6-platforms': typeof Gta6PlatformsRoute
+  '/gta-6-price': typeof Gta6PriceRoute
   '/gta-6-release-date': typeof Gta6ReleaseDateRoute
+  '/gta-6-trailers': typeof Gta6TrailersRoute
+  '/gta-6-ultimate-edition': typeof Gta6UltimateEditionRoute
   '/gta-6-vehicles': typeof Gta6VehiclesRoute
   '/gta-6-weapons': typeof Gta6WeaponsRoute
   '/news': typeof NewsRouteWithChildren
@@ -191,10 +261,20 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gta-6-activities': typeof Gta6ActivitiesRoute
   '/gta-6-characters': typeof Gta6CharactersRoute
+  '/gta-6-gameplay': typeof Gta6GameplayRoute
+  '/gta-6-leonida': typeof Gta6LeonidaRoute
+  '/gta-6-locations': typeof Gta6LocationsRoute
   '/gta-6-map': typeof Gta6MapRoute
   '/gta-6-news': typeof Gta6NewsRoute
+  '/gta-6-online': typeof Gta6OnlineRoute
+  '/gta-6-pc-release-date': typeof Gta6PcReleaseDateRoute
+  '/gta-6-platforms': typeof Gta6PlatformsRoute
+  '/gta-6-price': typeof Gta6PriceRoute
   '/gta-6-release-date': typeof Gta6ReleaseDateRoute
+  '/gta-6-trailers': typeof Gta6TrailersRoute
+  '/gta-6-ultimate-edition': typeof Gta6UltimateEditionRoute
   '/gta-6-vehicles': typeof Gta6VehiclesRoute
   '/gta-6-weapons': typeof Gta6WeaponsRoute
   '/system-requirements': typeof SystemRequirementsRoute
@@ -216,10 +296,20 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/analysis': typeof AnalysisRouteWithChildren
+  '/gta-6-activities': typeof Gta6ActivitiesRoute
   '/gta-6-characters': typeof Gta6CharactersRoute
+  '/gta-6-gameplay': typeof Gta6GameplayRoute
+  '/gta-6-leonida': typeof Gta6LeonidaRoute
+  '/gta-6-locations': typeof Gta6LocationsRoute
   '/gta-6-map': typeof Gta6MapRoute
   '/gta-6-news': typeof Gta6NewsRoute
+  '/gta-6-online': typeof Gta6OnlineRoute
+  '/gta-6-pc-release-date': typeof Gta6PcReleaseDateRoute
+  '/gta-6-platforms': typeof Gta6PlatformsRoute
+  '/gta-6-price': typeof Gta6PriceRoute
   '/gta-6-release-date': typeof Gta6ReleaseDateRoute
+  '/gta-6-trailers': typeof Gta6TrailersRoute
+  '/gta-6-ultimate-edition': typeof Gta6UltimateEditionRoute
   '/gta-6-vehicles': typeof Gta6VehiclesRoute
   '/gta-6-weapons': typeof Gta6WeaponsRoute
   '/news': typeof NewsRouteWithChildren
@@ -245,10 +335,20 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/analysis'
+    | '/gta-6-activities'
     | '/gta-6-characters'
+    | '/gta-6-gameplay'
+    | '/gta-6-leonida'
+    | '/gta-6-locations'
     | '/gta-6-map'
     | '/gta-6-news'
+    | '/gta-6-online'
+    | '/gta-6-pc-release-date'
+    | '/gta-6-platforms'
+    | '/gta-6-price'
     | '/gta-6-release-date'
+    | '/gta-6-trailers'
+    | '/gta-6-ultimate-edition'
     | '/gta-6-vehicles'
     | '/gta-6-weapons'
     | '/news'
@@ -271,10 +371,20 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/gta-6-activities'
     | '/gta-6-characters'
+    | '/gta-6-gameplay'
+    | '/gta-6-leonida'
+    | '/gta-6-locations'
     | '/gta-6-map'
     | '/gta-6-news'
+    | '/gta-6-online'
+    | '/gta-6-pc-release-date'
+    | '/gta-6-platforms'
+    | '/gta-6-price'
     | '/gta-6-release-date'
+    | '/gta-6-trailers'
+    | '/gta-6-ultimate-edition'
     | '/gta-6-vehicles'
     | '/gta-6-weapons'
     | '/system-requirements'
@@ -295,10 +405,20 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/analysis'
+    | '/gta-6-activities'
     | '/gta-6-characters'
+    | '/gta-6-gameplay'
+    | '/gta-6-leonida'
+    | '/gta-6-locations'
     | '/gta-6-map'
     | '/gta-6-news'
+    | '/gta-6-online'
+    | '/gta-6-pc-release-date'
+    | '/gta-6-platforms'
+    | '/gta-6-price'
     | '/gta-6-release-date'
+    | '/gta-6-trailers'
+    | '/gta-6-ultimate-edition'
     | '/gta-6-vehicles'
     | '/gta-6-weapons'
     | '/news'
@@ -323,10 +443,20 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   AnalysisRoute: typeof AnalysisRouteWithChildren
+  Gta6ActivitiesRoute: typeof Gta6ActivitiesRoute
   Gta6CharactersRoute: typeof Gta6CharactersRoute
+  Gta6GameplayRoute: typeof Gta6GameplayRoute
+  Gta6LeonidaRoute: typeof Gta6LeonidaRoute
+  Gta6LocationsRoute: typeof Gta6LocationsRoute
   Gta6MapRoute: typeof Gta6MapRoute
   Gta6NewsRoute: typeof Gta6NewsRoute
+  Gta6OnlineRoute: typeof Gta6OnlineRoute
+  Gta6PcReleaseDateRoute: typeof Gta6PcReleaseDateRoute
+  Gta6PlatformsRoute: typeof Gta6PlatformsRoute
+  Gta6PriceRoute: typeof Gta6PriceRoute
   Gta6ReleaseDateRoute: typeof Gta6ReleaseDateRoute
+  Gta6TrailersRoute: typeof Gta6TrailersRoute
+  Gta6UltimateEditionRoute: typeof Gta6UltimateEditionRoute
   Gta6VehiclesRoute: typeof Gta6VehiclesRoute
   Gta6WeaponsRoute: typeof Gta6WeaponsRoute
   NewsRoute: typeof NewsRouteWithChildren
@@ -358,11 +488,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AnalysisRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gta-6-activities': {
+      id: '/gta-6-activities'
+      path: '/gta-6-activities'
+      fullPath: '/gta-6-activities'
+      preLoaderRoute: typeof Gta6ActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gta-6-characters': {
       id: '/gta-6-characters'
       path: '/gta-6-characters'
       fullPath: '/gta-6-characters'
       preLoaderRoute: typeof Gta6CharactersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-gameplay': {
+      id: '/gta-6-gameplay'
+      path: '/gta-6-gameplay'
+      fullPath: '/gta-6-gameplay'
+      preLoaderRoute: typeof Gta6GameplayRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-leonida': {
+      id: '/gta-6-leonida'
+      path: '/gta-6-leonida'
+      fullPath: '/gta-6-leonida'
+      preLoaderRoute: typeof Gta6LeonidaRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-locations': {
+      id: '/gta-6-locations'
+      path: '/gta-6-locations'
+      fullPath: '/gta-6-locations'
+      preLoaderRoute: typeof Gta6LocationsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gta-6-map': {
@@ -379,11 +537,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof Gta6NewsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gta-6-online': {
+      id: '/gta-6-online'
+      path: '/gta-6-online'
+      fullPath: '/gta-6-online'
+      preLoaderRoute: typeof Gta6OnlineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-pc-release-date': {
+      id: '/gta-6-pc-release-date'
+      path: '/gta-6-pc-release-date'
+      fullPath: '/gta-6-pc-release-date'
+      preLoaderRoute: typeof Gta6PcReleaseDateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-platforms': {
+      id: '/gta-6-platforms'
+      path: '/gta-6-platforms'
+      fullPath: '/gta-6-platforms'
+      preLoaderRoute: typeof Gta6PlatformsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-price': {
+      id: '/gta-6-price'
+      path: '/gta-6-price'
+      fullPath: '/gta-6-price'
+      preLoaderRoute: typeof Gta6PriceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gta-6-release-date': {
       id: '/gta-6-release-date'
       path: '/gta-6-release-date'
       fullPath: '/gta-6-release-date'
       preLoaderRoute: typeof Gta6ReleaseDateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-trailers': {
+      id: '/gta-6-trailers'
+      path: '/gta-6-trailers'
+      fullPath: '/gta-6-trailers'
+      preLoaderRoute: typeof Gta6TrailersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gta-6-ultimate-edition': {
+      id: '/gta-6-ultimate-edition'
+      path: '/gta-6-ultimate-edition'
+      fullPath: '/gta-6-ultimate-edition'
+      preLoaderRoute: typeof Gta6UltimateEditionRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gta-6-vehicles': {
@@ -577,10 +777,20 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   AnalysisRoute: AnalysisRouteWithChildren,
+  Gta6ActivitiesRoute: Gta6ActivitiesRoute,
   Gta6CharactersRoute: Gta6CharactersRoute,
+  Gta6GameplayRoute: Gta6GameplayRoute,
+  Gta6LeonidaRoute: Gta6LeonidaRoute,
+  Gta6LocationsRoute: Gta6LocationsRoute,
   Gta6MapRoute: Gta6MapRoute,
   Gta6NewsRoute: Gta6NewsRoute,
+  Gta6OnlineRoute: Gta6OnlineRoute,
+  Gta6PcReleaseDateRoute: Gta6PcReleaseDateRoute,
+  Gta6PlatformsRoute: Gta6PlatformsRoute,
+  Gta6PriceRoute: Gta6PriceRoute,
   Gta6ReleaseDateRoute: Gta6ReleaseDateRoute,
+  Gta6TrailersRoute: Gta6TrailersRoute,
+  Gta6UltimateEditionRoute: Gta6UltimateEditionRoute,
   Gta6VehiclesRoute: Gta6VehiclesRoute,
   Gta6WeaponsRoute: Gta6WeaponsRoute,
   NewsRoute: NewsRouteWithChildren,

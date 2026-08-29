@@ -6,7 +6,11 @@ export const Route = createFileRoute("/analysis/")({
   head: () => ({
     meta: [
       { title: "GTA 6 Analysis — Deep Editorial Breakdowns" },
-      { name: "description", content: "In-depth GTA 6 analysis: trailer breakdowns, engine deep-dives, release theories, and predictions backed by evidence." },
+      {
+        name: "description",
+        content:
+          "In-depth GTA 6 analysis: trailer breakdowns, engine deep-dives, release theories, and predictions backed by evidence.",
+      },
       { property: "og:title", content: "GTA 6 Analysis — AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/analysis" },
     ],
@@ -21,7 +25,9 @@ function AnalysisIndex() {
       <header className="container-page pt-10 pb-6">
         <span className="chip">Editorial</span>
         <h1 className="heading-display text-4xl md:text-6xl mt-3">GTA 6 Analysis</h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">Research-grade breakdowns of every signal worth tracking.</p>
+        <p className="mt-2 text-muted-foreground max-w-2xl">
+          Research-grade breakdowns of every signal worth tracking.
+        </p>
       </header>
       <section className="container-page pb-10">
         <div className="max-w-3xl space-y-8">
@@ -97,7 +103,12 @@ function AnalysisIndex() {
       </section>
       <div className="container-page grid gap-4 md:grid-cols-2 pb-16">
         {publicAnalyses().map((a) => (
-          <Link key={a.slug} to="/analysis/$slug" params={{ slug: a.slug }} className="surface surface-hover p-6">
+          <Link
+            key={a.slug}
+            to="/analysis/$slug"
+            params={{ slug: a.slug }}
+            className="surface surface-hover p-6"
+          >
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span className="chip chip-neon">Analysis</span>
               <span>{a.date}</span>
