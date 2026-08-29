@@ -1,4 +1,7 @@
-export interface AnalysisArticle {
+import type { EvidenceRow } from "@/lib/evidence";
+import { publicEntry, publicOnly, type Publishable } from "@/lib/publishing";
+
+export interface AnalysisArticle extends Publishable {
   slug: string;
   title: string;
   hook: string;
@@ -9,6 +12,12 @@ export interface AnalysisArticle {
   finalInsight: string;
   date: string;
   related?: { type: "wiki" | "news" | "pillar"; href: string; label: string }[];
+  seoTitle?: string;
+  metaDescription?: string;
+  /** Per-article evidence status table. */
+  evidenceStatus?: EvidenceRow[];
+  /** Set only to consolidate this URL onto another page. */
+  canonicalOverride?: string;
 }
 
 export const analyses: AnalysisArticle[] = [
@@ -244,4 +253,11 @@ export const analyses: AnalysisArticle[] = [
   },
 ];
 
-export const analysisBySlug = (slug: string) => analyses.find((a) => a.slug === slug);
+/** Gated accessors — drafts and future-scheduled analysis never render. */
+export const publicAnalyses = (now?: Date) => publicOnly(analyses, now);
+
+export const analysisBySlug = (slug: string, now?: Date) =>
+  publicEntry(analyses.find((a) => a.slug === slug), now);
+
+/** Unfiltered. Editorial tooling only. */
+export const allAnalyses = analyses;

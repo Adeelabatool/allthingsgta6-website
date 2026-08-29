@@ -1,3 +1,6 @@
+import type { EvidenceRow } from "@/lib/evidence";
+import { publicEntry, publicOnly, type Publishable } from "@/lib/publishing";
+
 export type NewsCategory =
   | "rockstar-updates"
   | "leaks"
@@ -5,7 +8,7 @@ export type NewsCategory =
   | "release-updates"
   | "community-reactions";
 
-export interface NewsItem {
+export interface NewsItem extends Publishable {
   slug: string;
   title: string;
   summary: string;
@@ -16,6 +19,26 @@ export interface NewsItem {
   analysis: string;
   meansForGta6: string;
   related?: { type: "wiki" | "analysis" | "pillar"; href: string; label: string }[];
+  /** Overrides the <title> tag when the SEO title differs from the H1. */
+  seoTitle?: string;
+  /** Overrides the meta description when it differs from the summary. */
+  metaDescription?: string;
+  /** Long-form body for articles that outgrow the three-part news structure. */
+  sections?: { heading: string; body: string }[];
+  /** Per-article evidence status table. */
+  evidence?: EvidenceRow[];
+  /** Sources and verification list, first-party first. */
+  sources?: { label: string; url: string }[];
+  /**
+   * Set only to consolidate this URL onto another page. Absent means the
+   * article canonicalises to itself, which is the default for everything.
+   */
+  canonicalOverride?: string;
+  /**
+   * Schema type. News reporting is NewsArticle; anything evergreen that happens
+   * to live in the news namespace is Article.
+   */
+  schemaType?: "NewsArticle" | "Article";
 }
 
 export const newsCategories: { slug: NewsCategory; label: string }[] = [
@@ -189,5 +212,20 @@ export const news: NewsItem[] = [
   },
 ];
 
-export const newsBySlug = (slug: string) => news.find((n) => n.slug === slug);
-export const newsByCategory = (category: string) => news.filter((n) => n.category === category);
+/**
+ * Public accessors. Every one of these is gated: drafts and not-yet-due
+ * scheduled posts are invisible to readers, category pages, related widgets,
+ * homepage modules and feeds alike.
+ *
+ * Use `allNews` only for editorial tooling that must see unpublished work.
+ */
+export const publicNews = (now?: Date) => publicOnly(news, now);
+
+export const newsBySlug = (slug: string, now?: Date) =>
+  publicEntry(news.find((n) => n.slug === slug), now);
+
+export const newsByCategory = (category: string, now?: Date) =>
+  publicNews(now).filter((n) => n.category === category);
+
+/** Unfiltered, including drafts and scheduled posts. Not for public surfaces. */
+export const allNews = news;

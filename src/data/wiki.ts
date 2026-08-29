@@ -1,6 +1,9 @@
+import type { EvidenceRow } from "@/lib/evidence";
+import { publicEntry, publicOnly, type Publishable } from "@/lib/publishing";
+
 export type WikiType = "characters" | "map" | "vehicles" | "weapons" | "gangs" | "companies";
 
-export interface WikiEntry {
+export interface WikiEntry extends Publishable {
   slug: string;
   type: WikiType;
   name: string;
@@ -11,6 +14,14 @@ export interface WikiEntry {
   related: { type: WikiType | "pillar"; href: string; label: string }[];
   trivia: string[];
   updates?: string;
+  seoTitle?: string;
+  metaDescription?: string;
+  /** Per-entry evidence status table. */
+  evidence?: EvidenceRow[];
+  /** Sources and verification list, first-party first. */
+  sources?: { label: string; url: string }[];
+  /** Set only to consolidate this URL onto another page. */
+  canonicalOverride?: string;
 }
 
 export const wikiTypes: { slug: WikiType; label: string }[] = [
@@ -290,6 +301,14 @@ export const wiki: WikiEntry[] = [
   },
 ];
 
-export const wikiBySlug = (type: string, slug: string) =>
-  wiki.find((w) => w.type === type && w.slug === slug);
-export const wikiByType = (type: string) => wiki.filter((w) => w.type === type);
+/** Gated accessors — drafts and future-scheduled entries never render. */
+export const publicWiki = (now?: Date) => publicOnly(wiki, now);
+
+export const wikiBySlug = (type: string, slug: string, now?: Date) =>
+  publicEntry(wiki.find((w) => w.type === type && w.slug === slug), now);
+
+export const wikiByType = (type: string, now?: Date) =>
+  publicWiki(now).filter((w) => w.type === type);
+
+/** Unfiltered. Editorial tooling only. */
+export const allWiki = wiki;

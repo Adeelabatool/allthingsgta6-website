@@ -91,7 +91,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="border-t border-border/40 py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} AllThingsGTA6. Not affiliated with Rockstar Games or Take-Two Interactive.
+          © {new Date().getFullYear()} AllThingsGTA6 — an independent fan project. Not affiliated
+          with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft
+          Auto and related marks are trademarks of their respective owners.
         </div>
       </footer>
     </div>

@@ -1,6 +1,12 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { analysisBySlug, analyses } from "@/data/analysis";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ArticleJsonLd } from "@/components/StructuredData";
+import { EvidenceStatusTable } from "@/components/Evidence";
+import { LastVerified } from "@/components/LastVerified";
+import { analysisBySlug, publicAnalyses } from "@/data/analysis";
+import { articleHead } from "@/lib/seo";
+import { publishedTimestamp } from "@/lib/publishing";
 
 export const Route = createFileRoute("/analysis/$slug")({
   loader: ({ params }) => {
@@ -8,19 +14,15 @@ export const Route = createFileRoute("/analysis/$slug")({
     if (!item) throw notFound();
     return item;
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.title} — GTA 6 Analysis` },
-          { name: "description", content: loaderData.hook },
-          { property: "og:title", content: loaderData.title },
-          { property: "og:description", content: loaderData.hook },
-          { property: "og:type", content: "article" },
-          { property: "og:url", content: `https://allthingsgta6.com/analysis/${loaderData.slug}` },
-        ]
-      : [],
-    links: loaderData ? [{ rel: "canonical", href: `https://allthingsgta6.com/analysis/${loaderData.slug}` }] : [],
-  }),
+  head: ({ loaderData }) =>
+    loaderData
+      ? articleHead({
+          path: `/analysis/${loaderData.slug}`,
+          title: loaderData.seoTitle ?? `${loaderData.title} — GTA 6 Analysis`,
+          description: loaderData.metaDescription ?? loaderData.hook,
+          canonicalOverride: loaderData.canonicalOverride,
+        })
+      : { meta: [], links: [] },
   component: AnalysisPage,
   notFoundComponent: () => (
     <SiteShell><div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold">Analysis not found</h1></div></SiteShell>
@@ -29,15 +31,26 @@ export const Route = createFileRoute("/analysis/$slug")({
 
 function AnalysisPage() {
   const a = Route.useLoaderData();
-  const more = analyses.filter((x) => x.slug !== a.slug).slice(0, 3);
+  const more = publicAnalyses().filter((x) => x.slug !== a.slug).slice(0, 3);
 
   return (
     <SiteShell>
+      {/* Analysis is evergreen editorial, so Article rather than NewsArticle. */}
+      <ArticleJsonLd
+        type="Article"
+        headline={a.title}
+        description={a.metaDescription ?? a.hook}
+        path={`/analysis/${a.slug}`}
+        datePublished={publishedTimestamp(a)}
+        dateModified={a.lastVerified}
+        sources={a.evidence}
+      />
       <article className="container-page py-10 max-w-3xl">
-        <Link to="/analysis" className="text-sm text-accent hover:underline">← All Analysis</Link>
-        <div className="mt-3 chip chip-neon">Analysis · {a.date}</div>
+        <Breadcrumbs trail={[{ label: "Analysis", href: "/analysis" }, { label: a.title }]} />
+        <div className="mt-4 chip chip-neon">Analysis · {a.date}</div>
         <h1 className="heading-display text-3xl md:text-5xl mt-3">{a.title}</h1>
         <p className="mt-4 text-xl text-foreground/90 italic border-l-2 border-primary pl-4">{a.hook}</p>
+        {a.lastVerified && <LastVerified date={a.lastVerified} />}
 
         <Section title="Context">{a.context}</Section>
 
@@ -77,6 +90,12 @@ function AnalysisPage() {
           <p className="text-lg font-semibold text-foreground">{a.finalInsight}</p>
         </Section>
 
+        {a.evidenceStatus?.length ? (
+          <div className="mt-8">
+            <EvidenceStatusTable rows={a.evidenceStatus} />
+          </div>
+        ) : null}
+
         {a.related && a.related.length > 0 && (
           <div className="mt-10 surface p-5">
             <div className="text-xs uppercase tracking-widest text-muted-foreground mb-3">Related</div>
@@ -88,17 +107,19 @@ function AnalysisPage() {
           </div>
         )}
 
-        <div className="mt-10">
-          <h3 className="text-xl font-bold mb-3">More analysis</h3>
-          <div className="grid gap-3 md:grid-cols-3">
-            {more.map((r) => (
-              <Link key={r.slug} to="/analysis/$slug" params={{ slug: r.slug }} className="surface surface-hover p-4">
-                <div className="text-xs text-muted-foreground">{r.date}</div>
-                <div className="font-semibold mt-1 line-clamp-3">{r.title}</div>
-              </Link>
-            ))}
+        {more.length > 0 && (
+          <div className="mt-10">
+            <h2 className="text-xl font-bold mb-3">More analysis</h2>
+            <div className="grid gap-3 md:grid-cols-3">
+              {more.map((r) => (
+                <Link key={r.slug} to="/analysis/$slug" params={{ slug: r.slug }} className="surface surface-hover p-4">
+                  <div className="text-xs text-muted-foreground">{r.date}</div>
+                  <div className="font-semibold mt-1 line-clamp-3">{r.title}</div>
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </article>
     </SiteShell>
   );

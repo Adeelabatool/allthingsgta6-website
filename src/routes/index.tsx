@@ -1,9 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { SiteShell } from "@/components/SiteShell";
-import { news } from "@/data/news";
-import { wiki } from "@/data/wiki";
-import { analyses } from "@/data/analysis";
+import { publicNews } from "@/data/news";
+import { publicWiki } from "@/data/wiki";
+import { publicAnalyses } from "@/data/analysis";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
 
 export const Route = createFileRoute("/")({
@@ -21,16 +21,23 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const breaking = news.slice(0, 5);
-  const latest = news.slice(0, 9);
-  const featured = analyses.slice(0, 3);
+  // Every homepage module reads from the gated accessors, so a draft or a
+  // not-yet-due scheduled post can never appear in the ticker, the latest
+  // grid, the featured rail or the wiki highlights.
+  const visibleNews = publicNews();
+  const visibleWiki = publicWiki();
+  const breaking = visibleNews.slice(0, 5);
+  const latest = visibleNews.slice(0, 9);
+  const featured = publicAnalyses().slice(0, 3);
   const wikiHighlights = [
-    wiki.find((w) => w.slug === "jason"),
-    wiki.find((w) => w.slug === "lucia"),
-    wiki.find((w) => w.slug === "vice-city"),
-    wiki.find((w) => w.slug === "sports-cars-overview"),
-    wiki.find((w) => w.slug === "guns-overview"),
-  ].filter(Boolean) as typeof wiki;
+    "jason",
+    "lucia",
+    "vice-city",
+    "sports-cars-overview",
+    "guns-overview",
+  ]
+    .map((slug) => visibleWiki.find((w) => w.slug === slug))
+    .filter(Boolean) as typeof visibleWiki;
 
   return (
     <SiteShell>

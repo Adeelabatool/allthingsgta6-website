@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "prebuild": "node scripts/generate-sitemap.mjs"
+    "prebuild": "node scripts/generate-sitemap.mjs",
+    "test:publishing": "esbuild tests/publishing.test.tsx --bundle --platform=node --format=cjs --alias:@=./src --jsx=automatic --log-level=error --outfile=node_modules/.cache/publishing.test.cjs && node node_modules/.cache/publishing.test.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",

@@ -1,6 +1,11 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { wikiBySlug, wiki } from "@/data/wiki";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ArticleJsonLd } from "@/components/StructuredData";
+import { EvidenceStatusTable } from "@/components/Evidence";
+import { LastVerified } from "@/components/LastVerified";
+import { wikiBySlug, publicWiki, wikiTypes } from "@/data/wiki";
+import { articleHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/wiki/$type/$slug")({
   loader: ({ params }) => {
@@ -8,19 +13,15 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
     if (!entry) throw notFound();
     return entry;
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.name} — GTA 6 Wiki` },
-          { name: "description", content: loaderData.overview.slice(0, 155) },
-          { property: "og:title", content: `${loaderData.name} — GTA 6 Wiki` },
-          { property: "og:description", content: loaderData.overview.slice(0, 155) },
-          { property: "og:type", content: "article" },
-          { property: "og:url", content: `https://allthingsgta6.com/wiki/${loaderData.type}/${loaderData.slug}` },
-        ]
-      : [],
-    links: loaderData ? [{ rel: "canonical", href: `https://allthingsgta6.com/wiki/${loaderData.type}/${loaderData.slug}` }] : [],
-  }),
+  head: ({ loaderData }) =>
+    loaderData
+      ? articleHead({
+          path: `/wiki/${loaderData.type}/${loaderData.slug}`,
+          title: loaderData.seoTitle ?? `${loaderData.name} — GTA 6 Wiki`,
+          description: loaderData.metaDescription ?? loaderData.overview.slice(0, 155),
+          canonicalOverride: loaderData.canonicalOverride,
+        })
+      : { meta: [], links: [] },
   component: WikiEntryPage,
   notFoundComponent: () => (
     <SiteShell><div className="container-page py-24 text-center"><h1 className="text-3xl font-extrabold">Wiki entry not found</h1></div></SiteShell>
@@ -29,15 +30,33 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
 
 function WikiEntryPage() {
   const w = Route.useLoaderData();
-  const sameType = wiki.filter((x) => x.type === w.type && x.slug !== w.slug).slice(0, 4);
+  const sameType = publicWiki().filter((x) => x.type === w.type && x.slug !== w.slug).slice(0, 4);
+  const typeLabel = wikiTypes.find((t) => t.slug === w.type)?.label ?? w.type;
 
   return (
     <SiteShell>
+      {/* Entity pages are evergreen reference, so Article rather than NewsArticle. */}
+      <ArticleJsonLd
+        type="Article"
+        headline={w.name}
+        description={w.metaDescription ?? w.overview.slice(0, 155)}
+        path={`/wiki/${w.type}/${w.slug}`}
+        datePublished={w.publishAt ?? w.lastVerified ?? ""}
+        dateModified={w.lastVerified}
+        sources={w.sources}
+      />
       <article className="container-page py-10 grid gap-8 lg:grid-cols-[1fr_280px] max-w-6xl">
         <div>
-          <Link to="/wiki" className="text-sm text-accent hover:underline">← Wiki Index</Link>
-          <div className="mt-3 chip chip-neon">{w.type}</div>
+          <Breadcrumbs
+            trail={[
+              { label: "Wiki", href: "/wiki" },
+              { label: typeLabel },
+              { label: w.name },
+            ]}
+          />
+          <div className="mt-4 chip chip-neon">{w.type}</div>
           <h1 className="heading-display text-4xl md:text-6xl mt-3">{w.name}</h1>
+          {w.lastVerified && <LastVerified date={w.lastVerified} />}
 
           <Section title="Overview">{w.overview}</Section>
           <Section title="Background">{w.background}</Section>
@@ -63,6 +82,26 @@ function WikiEntryPage() {
           )}
 
           {w.updates && <Section title="Updates">{w.updates}</Section>}
+
+          {w.sources?.length ? (
+            <Section title="Sources and verification">
+              <ul className="space-y-1.5">
+                {w.sources.map((s: { label: string; url: string }) => (
+                  <li key={s.url}>
+                    <a href={s.url} target="_blank" rel="noreferrer" className="text-accent underline">
+                      {s.label} →
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Section>
+          ) : null}
+
+          {w.evidence?.length ? (
+            <div className="mt-8">
+              <EvidenceStatusTable rows={w.evidence} />
+            </div>
+          ) : null}
         </div>
 
         <aside className="space-y-6">

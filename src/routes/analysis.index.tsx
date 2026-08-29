@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { analyses } from "@/data/analysis";
+import { publicAnalyses } from "@/data/analysis";
 
 export const Route = createFileRoute("/analysis/")({
   head: () => ({
@@ -96,7 +96,7 @@ function AnalysisIndex() {
         </div>
       </section>
       <div className="container-page grid gap-4 md:grid-cols-2 pb-16">
-        {analyses.map((a) => (
+        {publicAnalyses().map((a) => (
           <Link key={a.slug} to="/analysis/$slug" params={{ slug: a.slug }} className="surface surface-hover p-6">
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span className="chip chip-neon">Analysis</span>

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { wiki, wikiTypes } from "@/data/wiki";
+import { publicWiki, wikiTypes } from "@/data/wiki";
 
 export const Route = createFileRoute("/wiki/")({
   head: () => ({
@@ -25,7 +25,7 @@ function WikiIndex() {
       </header>
       <div className="container-page pb-16 space-y-10">
         {wikiTypes.map((t) => {
-          const entries = wiki.filter((w) => w.type === t.slug);
+          const entries = publicWiki().filter((w) => w.type === t.slug);
           if (entries.length === 0) return null;
           return (
             <section key={t.slug}>
