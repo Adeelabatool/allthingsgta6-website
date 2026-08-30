@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { SiteShell } from "@/components/SiteShell";
+import { NewsTicker } from "@/components/NewsTicker";
 import { publicNews } from "@/data/news";
 import { publicWiki } from "@/data/wiki";
 import { publicAnalyses } from "@/data/analysis";
@@ -33,7 +34,6 @@ function Index() {
   // grid, the featured rail or the wiki highlights.
   const visibleNews = publicNews();
   const visibleWiki = publicWiki();
-  const breaking = visibleNews.slice(0, 5);
   const latest = visibleNews.slice(0, 9);
   const featured = publicAnalyses().slice(0, 3);
   const wikiHighlights = ["jason", "lucia", "vice-city", "sports-cars-overview", "guns-overview"]
@@ -42,25 +42,7 @@ function Index() {
 
   return (
     <SiteShell>
-      {/* Breaking strip */}
-      <div className="border-b border-border/60 bg-secondary/40">
-        <div className="container-page flex items-center gap-4 py-2 text-sm overflow-x-auto">
-          <span className="chip chip-hot shrink-0">🔥 Breaking</span>
-          <div className="flex gap-6 whitespace-nowrap">
-            {breaking.map((n) => (
-              <Link
-                key={n.slug}
-                to="/news/$slug"
-                params={{ slug: n.slug }}
-                className="text-muted-foreground hover:text-foreground"
-              >
-                <span className="text-foreground/40 mr-2">{n.date}</span>
-                {n.title}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      <NewsTicker />
 
       {/* Hero */}
       <section className="relative overflow-hidden py-14 px-6 pb-12">

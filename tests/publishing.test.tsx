@@ -21,6 +21,7 @@ import { news, publicNews, newsBySlug, newsByCategory } from "@/data/news";
 import { pages, publicPages, pageByPath } from "@/data/pages";
 import { readFileSync } from "node:fs";
 import { isLinkTargetLive, liveLinks } from "@/lib/related";
+import { TICKER_MAX_ITEMS, tickerDate, tickerStories } from "@/lib/ticker";
 import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
 import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
 import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
@@ -294,6 +295,44 @@ const extractLd = (html: string) => {
   const m = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s);
   return m ? JSON.parse(m[1].replace(/\\u003c/g, "<")) : null;
 };
+
+group("breaking-news ticker");
+const ticker = tickerStories();
+ok("ticker has stories", ticker.length > 0);
+ok(`ticker is capped at ${TICKER_MAX_ITEMS}`, ticker.length <= TICKER_MAX_ITEMS);
+ok(
+  "every ticker story is publicly visible",
+  ticker.every((n) => isPubliclyVisible(n)),
+);
+ok(
+  "ticker is sorted newest first",
+  ticker.every((n, i) => i === 0 || Date.parse(ticker[i - 1].date) >= Date.parse(n.date)),
+);
+ok(
+  "no draft reaches the ticker, even far in the future",
+  !tickerStories(new Date("2099-01-01T00:00:00Z")).some((n) => n.status === "draft"),
+);
+ok(
+  "a future-scheduled story is absent before its time",
+  !tickerStories(new Date("2026-08-29T18:00:00Z")).some((n) => n.slug === "gta-6-news-august-2026"),
+);
+ok(
+  "and appears on its own once publishAt passes",
+  tickerStories(new Date("2026-08-31T00:00:00Z")).some((n) => n.slug === "gta-6-news-august-2026"),
+);
+ok(
+  "every ticker story resolves to a live article route",
+  ticker.every((n) => isLinkTargetLive(`/news/${n.slug}`)),
+);
+ok("ticker dates render as e.g. AUG 29", /^[A-Z]{3} \d{1,2}$/.test(tickerDate("2026-08-29")));
+ok("ticker date is formatted in UTC", tickerDate("2026-08-29") === "AUG 29");
+ok("an unparseable date passes through untouched", tickerDate("soon") === "soon");
+// The ticker must never become a second, manually maintained headline list.
+const tickerSrc = readFileSync("src/lib/ticker.ts", "utf8");
+ok(
+  "ticker reads from the publishing accessor, not a hardcoded list",
+  tickerSrc.includes("publicNews("),
+);
 
 group("editorial fields stay private");
 const mixedSchema = extractLd(

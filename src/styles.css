@@ -63,7 +63,9 @@
 }
 
 @layer base {
-  * { border-color: var(--color-border); }
+  * {
+    border-color: var(--color-border);
+  }
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
@@ -73,7 +75,13 @@
       radial-gradient(ellipse 60% 40% at 100% 10%, oklch(0.25 0.15 200 / 0.25), transparent 60%);
     background-attachment: fixed;
   }
-  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
 }
 
 @utility container-page {
@@ -117,7 +125,9 @@
 }
 
 @utility surface-hover {
-  transition: border-color 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    transform 0.2s;
   &:hover {
     border-color: oklch(0.72 0.25 330 / 0.5);
     transform: translateY(-2px);
@@ -144,8 +154,12 @@
 }
 
 @keyframes pulse-live {
-  0% { box-shadow: 0 0 0 0 oklch(0.72 0.25 330 / 0.7); }
-  100% { box-shadow: 0 0 0 12px oklch(0.72 0.25 330 / 0); }
+  0% {
+    box-shadow: 0 0 0 0 oklch(0.72 0.25 330 / 0.7);
+  }
+  100% {
+    box-shadow: 0 0 0 12px oklch(0.72 0.25 330 / 0);
+  }
 }
 
 /* Evidence classification chips.
@@ -188,4 +202,141 @@
   background: oklch(0.7 0.02 260 / 0.15);
   color: var(--muted-foreground);
   border-color: oklch(0.7 0.02 260 / 0.35);
+}
+
+/* ---------------------------------------------------------------------------
+   Breaking-news ticker.
+
+   The track holds two identical sequences and slides exactly half its own
+   width, so the loop wraps with no gap. Movement is a transform only, which
+   keeps it off the layout/paint path. The viewport clips internally, so the
+   page itself never gains a horizontal scrollbar.
+   --------------------------------------------------------------------------- */
+.news-ticker {
+  /* min-width:0 is what stops this flex child from forcing the row wider than
+     the viewport — the cause of the old page-level horizontal scrollbar. */
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  position: relative;
+  /* Replaced at runtime with a width-derived value; this is the pre-hydration
+     and no-JS fallback. */
+  --ticker-duration: 48s;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 16px,
+    #000 calc(100% - 32px),
+    transparent 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 16px,
+    #000 calc(100% - 32px),
+    transparent 100%
+  );
+}
+
+.news-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: news-ticker-scroll var(--ticker-duration) linear infinite;
+  will-change: transform;
+}
+
+@keyframes news-ticker-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Pause on hover, and whenever a headline inside takes keyboard focus. */
+.news-ticker:hover .news-ticker-track,
+.news-ticker:focus-within .news-ticker-track {
+  animation-play-state: paused;
+}
+
+.news-ticker-seq {
+  display: flex;
+  align-items: center;
+  flex: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.news-ticker-item {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.news-ticker-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-muted-foreground);
+  transition: color 0.15s;
+}
+
+.news-ticker-link:hover {
+  color: var(--color-foreground);
+}
+
+.news-ticker-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 3px;
+  color: var(--color-foreground);
+}
+
+.news-ticker-date {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--neon);
+  flex: none;
+}
+
+.news-ticker-sep {
+  color: var(--color-muted-foreground);
+  opacity: 0.4;
+  padding-inline: 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .news-ticker-badge {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.62rem;
+  }
+  .news-ticker-link {
+    font-size: 0.8rem;
+  }
+  .news-ticker-date {
+    font-size: 0.66rem;
+  }
+  .news-ticker-sep {
+    padding-inline: 0.85rem;
+  }
+}
+
+/* Reduced motion: stop the animation and show the latest headlines statically
+   rather than removing the news from the page. */
+@media (prefers-reduced-motion: reduce) {
+  .news-ticker-track {
+    animation: none;
+    transform: none;
+  }
+  .news-ticker-track > [aria-hidden="true"] {
+    display: none;
+  }
+  .news-ticker {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
+    mask-image: linear-gradient(to right, #000 calc(100% - 40px), transparent 100%);
+  }
 }
