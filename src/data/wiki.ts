@@ -1259,7 +1259,7 @@ export const wiki: WikiEntry[] = [
           },
           {
             label: "TechRadar - GTA 6 Extended Look Live Breakdown",
-            url: "https://www.techradar.com/news/live/gta-6-extended-look",
+            url: "https://www.techradar.com/news/live/grand-theft-auto-6-extended-look-on-netflix-live",
           },
         ],
       },

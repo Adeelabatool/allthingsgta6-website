@@ -621,7 +621,7 @@ export const pages: SitePage[] = [
       },
       {
         label: "TechRadar - GTA 6 Extended Look Live Breakdown",
-        url: "https://www.techradar.com/news/live/gta-6-extended-look",
+        url: "https://www.techradar.com/news/live/grand-theft-auto-6-extended-look-on-netflix-live",
       },
       {
         label: "WIRED - Takeaways From the GTA VI Extended Look",
