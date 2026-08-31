@@ -3,6 +3,7 @@ import { PillarHub } from "@/components/PillarHub";
 import { Countdown } from "@/components/Countdown";
 import { SiteShell } from "@/components/SiteShell";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/gta-6-release-date")({
   head: () => ({
@@ -12,6 +13,7 @@ export const Route = createFileRoute("/gta-6-release-date")({
       { property: "og:title", content: "GTA 6 Release Date — November 19, 2026" },
       { property: "og:url", content: "https://allthingsgta6.com/gta-6-release-date" },
     ],
+    scripts: breadcrumbJsonLd([{ name: "GTA 6 Release Date", path: "/gta-6-release-date" }]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-release-date" }],
   }),
   component: ReleaseDateHub,

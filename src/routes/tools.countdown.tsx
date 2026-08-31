@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteShell } from "@/components/SiteShell";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 const RELEASE_DATE_ISO = "2026-11-19T00:00:00Z";
 
@@ -13,6 +14,10 @@ export const Route = createFileRoute("/tools/countdown")({
       { property: "og:description", content: "Live countdown timer to GTA 6." },
       { property: "og:url", content: "https://allthingsgta6.com/tools/countdown" },
     ],
+    scripts: breadcrumbJsonLd([
+      SECTION_CRUMBS.tools,
+      { name: "Countdown", path: "/tools/countdown" },
+    ]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/countdown" }],
   }),
   component: CountdownPage,

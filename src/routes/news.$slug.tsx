@@ -1,6 +1,15 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { newsBySlug, news } from "@/data/news";
+import { newsBySlug, news, newsCategories, type NewsCategory } from "@/data/news";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+
+// Breadcrumb crumb for an article's category. Falls back to the News section
+// crumb (which buildBreadcrumbList then dedupes away) for an unknown category,
+// so a ListItem is never emitted with an empty name or a dead URL.
+function newsCategoryCrumb(category: NewsCategory) {
+  const meta = newsCategories.find((c) => c.slug === category);
+  return meta ? { name: meta.label, path: `/news/category/${meta.slug}` } : SECTION_CRUMBS.news;
+}
 
 export const Route = createFileRoute("/news/$slug")({
   loader: ({ params }) => {
@@ -18,6 +27,13 @@ export const Route = createFileRoute("/news/$slug")({
           { property: "og:type", content: "article" },
           { property: "og:url", content: `https://allthingsgta6.com/news/${loaderData.slug}` },
         ]
+      : [],
+    scripts: loaderData
+      ? breadcrumbJsonLd([
+          SECTION_CRUMBS.news,
+          newsCategoryCrumb(loaderData.category),
+          { name: loaderData.title, path: `/news/${loaderData.slug}` },
+        ])
       : [],
     links: loaderData ? [{ rel: "canonical", href: `https://allthingsgta6.com/news/${loaderData.slug}` }] : [],
   }),

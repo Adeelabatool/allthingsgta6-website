@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { wikiBySlug, wiki } from "@/data/wiki";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/wiki/$type/$slug")({
   loader: ({ params }) => {
@@ -18,6 +19,12 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
           { property: "og:type", content: "article" },
           { property: "og:url", content: `https://allthingsgta6.com/wiki/${loaderData.type}/${loaderData.slug}` },
         ]
+      : [],
+    scripts: loaderData
+      ? breadcrumbJsonLd([
+          SECTION_CRUMBS.wiki,
+          { name: loaderData.name, path: `/wiki/${loaderData.type}/${loaderData.slug}` },
+        ])
       : [],
     links: loaderData ? [{ rel: "canonical", href: `https://allthingsgta6.com/wiki/${loaderData.type}/${loaderData.slug}` }] : [],
   }),

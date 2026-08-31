@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/system-requirements")({
   head: () => ({
@@ -11,6 +12,7 @@ export const Route = createFileRoute("/system-requirements")({
       { property: "og:description", content: "Confirmed GTA 6 console platforms and honest PC context — no invented specs." },
       { property: "og:url", content: "https://allthingsgta6.com/system-requirements" },
     ],
+    scripts: breadcrumbJsonLd([{ name: "System Requirements", path: "/system-requirements" }]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/system-requirements" }],
   }),
   component: SystemReqsPage,

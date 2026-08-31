@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { wiki, wikiTypes } from "@/data/wiki";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/wiki/")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/wiki/")({
       { property: "og:title", content: "GTA 6 Wiki — AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/wiki" },
     ],
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.wiki]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/wiki" }],
   }),
   component: WikiIndex,

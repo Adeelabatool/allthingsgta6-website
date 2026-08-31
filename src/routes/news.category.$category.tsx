@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { newsByCategory, newsCategories } from "@/data/news";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/news/category/$category")({
   loader: ({ params }) => {
@@ -17,6 +18,12 @@ export const Route = createFileRoute("/news/category/$category")({
           { property: "og:title", content: `${loaderData.meta.label} — GTA 6 News` },
           { property: "og:url", content: `https://allthingsgta6.com/news/category/${loaderData.meta.slug}` },
         ]
+      : [],
+    scripts: loaderData
+      ? breadcrumbJsonLd([
+          SECTION_CRUMBS.news,
+          { name: loaderData.meta.label, path: `/news/category/${loaderData.meta.slug}` },
+        ])
       : [],
     links: loaderData ? [{ rel: "canonical", href: `https://allthingsgta6.com/news/category/${loaderData.meta.slug}` }] : [],
   }),
