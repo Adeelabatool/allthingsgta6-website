@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { analysisBySlug, analyses } from "@/data/analysis";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/analysis/$slug")({
   loader: ({ params }) => {
@@ -18,6 +19,12 @@ export const Route = createFileRoute("/analysis/$slug")({
           { property: "og:type", content: "article" },
           { property: "og:url", content: `https://allthingsgta6.com/analysis/${loaderData.slug}` },
         ]
+      : [],
+    scripts: loaderData
+      ? breadcrumbJsonLd([
+          SECTION_CRUMBS.analysis,
+          { name: loaderData.title, path: `/analysis/${loaderData.slug}` },
+        ])
       : [],
     links: loaderData ? [{ rel: "canonical", href: `https://allthingsgta6.com/analysis/${loaderData.slug}` }] : [],
   }),

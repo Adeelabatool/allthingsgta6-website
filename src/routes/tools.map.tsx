@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { useState } from "react";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/map")({
   head: () => ({
@@ -9,6 +10,10 @@ export const Route = createFileRoute("/tools/map")({
       { name: "description", content: "Interactive GTA 6 map preview — explore Vice City districts, rural Leonida, and key landmarks." },
       { property: "og:url", content: "https://allthingsgta6.com/tools/map" },
     ],
+    scripts: breadcrumbJsonLd([
+      SECTION_CRUMBS.tools,
+      { name: "Interactive Map", path: "/tools/map" },
+    ]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/map" }],
   }),
   component: MapTool,

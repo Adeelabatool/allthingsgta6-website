@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: "How AllThingsGTA6 sources, labels, and verifies GTA 6 information." },
       { property: "og:url", content: "https://allthingsgta6.com/about" },
     ],
+    scripts: breadcrumbJsonLd([{ name: "About", path: "/about" }]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/about" }],
   }),
   component: AboutPage,

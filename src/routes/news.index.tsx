@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { news, newsCategories } from "@/data/news";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
@@ -11,6 +12,7 @@ export const Route = createFileRoute("/news/")({
       { property: "og:description", content: "Latest GTA 6 news, leaks and updates." },
       { property: "og:url", content: "https://allthingsgta6.com/news" },
     ],
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.news]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/news" }],
   }),
   component: NewsIndex,

@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/")({
   head: () => ({
@@ -9,6 +10,7 @@ export const Route = createFileRoute("/tools/")({
       { property: "og:title", content: "GTA 6 Tools — AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/tools" },
     ],
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.tools]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools" }],
   }),
   component: ToolsIndex,

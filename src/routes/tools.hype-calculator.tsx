@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { useState } from "react";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/hype-calculator")({
   head: () => ({
@@ -9,6 +10,10 @@ export const Route = createFileRoute("/tools/hype-calculator")({
       { name: "description", content: "Quantify your GTA 6 hype level with our interactive calculator." },
       { property: "og:url", content: "https://allthingsgta6.com/tools/hype-calculator" },
     ],
+    scripts: breadcrumbJsonLd([
+      SECTION_CRUMBS.tools,
+      { name: "Hype Calculator", path: "/tools/hype-calculator" },
+    ]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/hype-calculator" }],
   }),
   component: HypeCalculator,

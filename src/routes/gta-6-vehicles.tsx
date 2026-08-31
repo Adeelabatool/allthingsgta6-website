@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PillarHub } from "@/components/PillarHub";
 import { wiki } from "@/data/wiki";
+import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/gta-6-vehicles")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/gta-6-vehicles")({
       { property: "og:title", content: "GTA 6 Vehicles — AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/gta-6-vehicles" },
     ],
+    scripts: breadcrumbJsonLd([{ name: "GTA 6 Vehicles", path: "/gta-6-vehicles" }]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-vehicles" }],
   }),
   component: () => (

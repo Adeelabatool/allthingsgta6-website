@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { analyses } from "@/data/analysis";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/analysis/")({
   head: () => ({
@@ -10,6 +11,7 @@ export const Route = createFileRoute("/analysis/")({
       { property: "og:title", content: "GTA 6 Analysis — AllThingsGTA6" },
       { property: "og:url", content: "https://allthingsgta6.com/analysis" },
     ],
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.analysis]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/analysis" }],
   }),
   component: AnalysisIndex,

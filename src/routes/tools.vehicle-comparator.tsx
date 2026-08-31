@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { useState } from "react";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/vehicle-comparator")({
   head: () => ({
@@ -9,6 +10,10 @@ export const Route = createFileRoute("/tools/vehicle-comparator")({
       { name: "description", content: "Compare GTA 6 vehicle specs side-by-side: speed, handling, acceleration, type." },
       { property: "og:url", content: "https://allthingsgta6.com/tools/vehicle-comparator" },
     ],
+    scripts: breadcrumbJsonLd([
+      SECTION_CRUMBS.tools,
+      { name: "Vehicle Comparator", path: "/tools/vehicle-comparator" },
+    ]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/vehicle-comparator" }],
   }),
   component: VehicleComparator,
