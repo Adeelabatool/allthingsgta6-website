@@ -1,23 +1,50 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { LongFormArticle } from "@/components/LongFormArticle";
+import { pageByPath } from "@/data/pages";
+import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
 import { Countdown } from "@/components/Countdown";
 import { SiteShell } from "@/components/SiteShell";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
-import { breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/gta-6-release-date")({
-  head: () => ({
-    meta: [
-      { title: "GTA 6 Release Date — November 19, 2026 (PS5 & Xbox)" },
-      { name: "description", content: "GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S. Pre-orders live now. PC TBA. Live countdown, release analysis, and pre-order intel." },
-      { property: "og:title", content: "GTA 6 Release Date — November 19, 2026" },
-      { property: "og:url", content: "https://allthingsgta6.com/gta-6-release-date" },
-    ],
-    scripts: breadcrumbJsonLd([{ name: "GTA 6 Release Date", path: "/gta-6-release-date" }]),
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-release-date" }],
-  }),
-  component: ReleaseDateHub,
+  // The upgraded article for this URL is scheduled. Until its publishAt passes
+  // pageByPath returns undefined and the existing live hub keeps serving, so the
+  // page is never dark and never 404s partway through the schedule.
+  head: () => {
+    const upgraded = pageByPath("/gta-6-release-date");
+    if (upgraded) {
+      return articleHead({
+        path: upgraded.path,
+        title: upgraded.seoTitle,
+        description: upgraded.metaDescription,
+        canonicalOverride: upgraded.canonicalOverride,
+        crumbs: [{ name: upgraded.title, path: upgraded.path }],
+      });
+    }
+    return {
+      scripts: breadcrumbJsonLd([{ name: "GTA 6 Release Date", path: "/gta-6-release-date" }]),
+      meta: [
+        { title: "GTA 6 Release Date — November 19, 2026 (PS5 & Xbox)" },
+        {
+          name: "description",
+          content:
+            "GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S. Pre-orders live now. PC TBA. Live countdown, release analysis, and pre-order intel.",
+        },
+        { property: "og:title", content: "GTA 6 Release Date — November 19, 2026" },
+        { property: "og:url", content: "https://allthingsgta6.com/gta-6-release-date" },
+      ],
+      links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-release-date" }],
+    };
+  },
+  component: HubRoute,
 });
+
+function HubRoute() {
+  const upgraded = pageByPath("/gta-6-release-date");
+  if (upgraded) return <LongFormArticle page={upgraded} />;
+  return <ReleaseDateHub />;
+}
 
 function ReleaseDateHub() {
   return (
@@ -27,16 +54,33 @@ function ReleaseDateHub() {
           <span className="chip chip-hot">Guide · Release</span>
           <h1 className="heading-display text-4xl md:text-7xl mt-4">GTA 6 Release Date</h1>
           <p className="mt-4 text-lg text-muted-foreground">
-            Grand Theft Auto VI launches <strong className="text-primary">November 19, 2026</strong> on PlayStation 5 and Xbox Series X|S. Pre-orders are live now. PC release TBA, expected 6–18 months later based on Rockstar's RDR2 precedent.
+            Grand Theft Auto VI launches <strong className="text-primary">November 19, 2026</strong>{" "}
+            on PlayStation 5 and Xbox Series X|S. Pre-orders are live now. PC release TBA, expected
+            6–18 months later based on Rockstar's RDR2 precedent.
           </p>
         </div>
         <Countdown variant="large" />
       </header>
       <div className="container-page pb-16 grid gap-4 md:grid-cols-3">
         {[
-          { label: "PlayStation 5", value: "Nov 19, 2026", sub: "Confirmed · Pre-orders live", color: "text-primary" },
-          { label: "Xbox Series X|S", value: "Nov 19, 2026", sub: "Confirmed · Pre-orders live", color: "text-primary" },
-          { label: "PC", value: "TBA", sub: "Speculative: Q4 2027 – Q1 2028", color: "text-accent" },
+          {
+            label: "PlayStation 5",
+            value: "Nov 19, 2026",
+            sub: "Confirmed · Pre-orders live",
+            color: "text-primary",
+          },
+          {
+            label: "Xbox Series X|S",
+            value: "Nov 19, 2026",
+            sub: "Confirmed · Pre-orders live",
+            color: "text-primary",
+          },
+          {
+            label: "PC",
+            value: "TBA",
+            sub: "Speculative: Q4 2027 – Q1 2028",
+            color: "text-accent",
+          },
         ].map((c) => (
           <div key={c.label} className="surface p-6">
             <div className="text-xs uppercase tracking-widest text-muted-foreground">{c.label}</div>
@@ -54,7 +98,10 @@ function ReleaseDateHub() {
         <div className="grid gap-3 md:grid-cols-3">
           {[
             { href: "/analysis/release-timeline-theory", label: "Release Timeline Theory" },
-            { href: "/news/rockstar-confirms-gta-6-release-window", label: "Rockstar Confirms Release Window" },
+            {
+              href: "/news/rockstar-confirms-gta-6-release-window",
+              label: "Rockstar Confirms Release Window",
+            },
             { href: "/news/release-delay-rumor-explained", label: "Delay Rumor Explained" },
             { href: "/news/pc-release-discussion", label: "Why PC Comes Later" },
             { href: "/news/pre-order-rumors", label: "Pre-Order Rumors" },

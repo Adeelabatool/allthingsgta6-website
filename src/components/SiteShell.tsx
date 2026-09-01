@@ -42,16 +42,15 @@ export function SiteShell({ children }: { children: ReactNode }) {
               </Link>
             ))}
           </nav>
-          <Link
-            to="/tools/countdown"
-            className="hidden sm:inline-flex chip chip-hot"
-          >
+          <Link to="/tools/countdown" className="hidden sm:inline-flex chip chip-hot">
             ⏳ Countdown
           </Link>
         </div>
         <div className="border-t border-border/40 bg-background/60">
           <div className="container-page flex items-center gap-2 overflow-x-auto py-2 text-xs">
-            <span className="text-muted-foreground font-semibold tracking-wider uppercase mr-2">Hubs</span>
+            <span className="text-muted-foreground font-semibold tracking-wider uppercase mr-2">
+              Hubs
+            </span>
             {pillarNav.map((p) => (
               <Link
                 key={p.to}
@@ -74,7 +73,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
               ALL<span className="text-primary">THINGS</span>GTA6
             </div>
             <p className="mt-2 text-muted-foreground">
-              A gaming intelligence newsroom, encyclopedia, and data platform for Grand Theft Auto VI.
+              A gaming intelligence newsroom, encyclopedia, and data platform for Grand Theft Auto
+              VI.
             </p>
           </div>
           <FooterCol title="Sections" links={primaryNav} />
@@ -82,8 +82,8 @@ export function SiteShell({ children }: { children: ReactNode }) {
           <div>
             <div className="font-semibold mb-2">About</div>
             <p className="text-muted-foreground">
-              Unofficial fan-run site. We label information as confirmed, reported, or speculation — and never invent
-              specs or stats.
+              Unofficial fan-run site. We label information as confirmed, reported, or speculation —
+              and never invent specs or stats.
             </p>
             <Link to="/about" className="mt-2 inline-block text-accent hover:underline">
               Editorial standards →
@@ -91,7 +91,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
           </div>
         </div>
         <div className="border-t border-border/40 py-4 text-center text-xs text-muted-foreground">
-          © {new Date().getFullYear()} AllThingsGTA6. Not affiliated with Rockstar Games or Take-Two Interactive.
+          © {new Date().getFullYear()} AllThingsGTA6 — an independent fan project. Not affiliated
+          with, endorsed by, or sponsored by Rockstar Games or Take-Two Interactive. Grand Theft
+          Auto and related marks are trademarks of their respective owners.
         </div>
       </footer>
     </div>

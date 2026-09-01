@@ -1,18 +1,26 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState, useEffect } from "react";
 import { SiteShell } from "@/components/SiteShell";
-import { news } from "@/data/news";
-import { wiki } from "@/data/wiki";
-import { analyses } from "@/data/analysis";
+import { NewsTicker } from "@/components/NewsTicker";
+import { publicNews } from "@/data/news";
+import { publicWiki } from "@/data/wiki";
+import { publicAnalyses } from "@/data/analysis";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "AllThingsGTA6 — GTA 6 Live Dashboard" },
-      { name: "description", content: "Live GTA 6 dashboard: breaking news, countdown to November 19 2026, featured analysis, wiki highlights, and interactive tools." },
+      {
+        name: "description",
+        content:
+          "Live GTA 6 dashboard: breaking news, countdown to November 19 2026, featured analysis, wiki highlights, and interactive tools.",
+      },
       { property: "og:title", content: "AllThingsGTA6 — GTA 6 Live Dashboard" },
-      { property: "og:description", content: "GTA 6 news, wiki, analysis and tools — all in one live intelligence dashboard." },
+      {
+        property: "og:description",
+        content: "GTA 6 news, wiki, analysis and tools — all in one live intelligence dashboard.",
+      },
       { property: "og:url", content: "https://allthingsgta6.com/" },
     ],
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/" }],
@@ -21,33 +29,20 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
-  const breaking = news.slice(0, 5);
-  const latest = news.slice(0, 9);
-  const featured = analyses.slice(0, 3);
-  const wikiHighlights = [
-    wiki.find((w) => w.slug === "jason"),
-    wiki.find((w) => w.slug === "lucia"),
-    wiki.find((w) => w.slug === "vice-city"),
-    wiki.find((w) => w.slug === "sports-cars-overview"),
-    wiki.find((w) => w.slug === "guns-overview"),
-  ].filter(Boolean) as typeof wiki;
+  // Every homepage module reads from the gated accessors, so a draft or a
+  // not-yet-due scheduled post can never appear in the ticker, the latest
+  // grid, the featured rail or the wiki highlights.
+  const visibleNews = publicNews();
+  const visibleWiki = publicWiki();
+  const latest = visibleNews.slice(0, 9);
+  const featured = publicAnalyses().slice(0, 3);
+  const wikiHighlights = ["jason", "lucia", "vice-city", "sports-cars-overview", "guns-overview"]
+    .map((slug) => visibleWiki.find((w) => w.slug === slug))
+    .filter(Boolean) as typeof visibleWiki;
 
   return (
     <SiteShell>
-      {/* Breaking strip */}
-      <div className="border-b border-border/60 bg-secondary/40">
-        <div className="container-page flex items-center gap-4 py-2 text-sm overflow-x-auto">
-          <span className="chip chip-hot shrink-0">🔥 Breaking</span>
-          <div className="flex gap-6 whitespace-nowrap">
-            {breaking.map((n) => (
-              <Link key={n.slug} to="/news/$slug" params={{ slug: n.slug }} className="text-muted-foreground hover:text-foreground">
-                <span className="text-foreground/40 mr-2">{n.date}</span>
-                {n.title}
-              </Link>
-            ))}
-          </div>
-        </div>
-      </div>
+      <NewsTicker />
 
       {/* Hero */}
       <section className="relative overflow-hidden py-14 px-6 pb-12">
@@ -124,7 +119,12 @@ function Index() {
       <Section title="Featured Analysis" subtitle="Editorial deep-dives" href="/analysis">
         <div className="grid gap-4 md:grid-cols-3">
           {featured.map((a) => (
-            <Link key={a.slug} to="/analysis/$slug" params={{ slug: a.slug }} className="surface surface-hover p-5 block">
+            <Link
+              key={a.slug}
+              to="/analysis/$slug"
+              params={{ slug: a.slug }}
+              className="surface surface-hover p-5 block"
+            >
               <div className="chip chip-neon mb-3">Analysis</div>
               <h3 className="font-bold text-xl leading-tight">{a.title}</h3>
               <p className="mt-2 text-sm text-muted-foreground line-clamp-3">{a.hook}</p>
@@ -137,7 +137,12 @@ function Index() {
       <Section title="Latest News" subtitle="Real-time signals" href="/news">
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {latest.map((n) => (
-            <Link key={n.slug} to="/news/$slug" params={{ slug: n.slug }} className="surface surface-hover p-5 block">
+            <Link
+              key={n.slug}
+              to="/news/$slug"
+              params={{ slug: n.slug }}
+              className="surface surface-hover p-5 block"
+            >
               <div className="flex items-center justify-between text-xs text-muted-foreground">
                 <span className="chip">{n.category.replace("-", " ")}</span>
                 <span>{n.date}</span>
@@ -170,21 +175,49 @@ function Index() {
       {/* Tools Preview */}
       <Section title="Interactive Tools" subtitle="Engage with the data" href="/tools">
         <div className="grid gap-4 md:grid-cols-3">
-          <ToolCard href="/tools/countdown" title="Release Countdown" desc="Time remaining until GTA 6 launches." icon="🟢" />
-          <ToolCard href="/tools/hype-calculator" title="Hype Calculator" desc="Quantify your anticipation." icon="📈" />
-          <ToolCard href="/tools/vehicle-comparator" title="Vehicle Comparator" desc="Side-by-side spec tables." icon="🏎️" />
+          <ToolCard
+            href="/tools/countdown"
+            title="Release Countdown"
+            desc="Time remaining until GTA 6 launches."
+            icon="🟢"
+          />
+          <ToolCard
+            href="/tools/hype-calculator"
+            title="Hype Calculator"
+            desc="Quantify your anticipation."
+            icon="📈"
+          />
+          <ToolCard
+            href="/tools/vehicle-comparator"
+            title="Vehicle Comparator"
+            desc="Side-by-side spec tables."
+            icon="🏎️"
+          />
         </div>
       </Section>
 
       {/* System Requirements */}
-      <Section title="System Requirements" subtitle="Confirmed console platforms · PC not yet announced by Rockstar">
+      <Section
+        title="System Requirements"
+        subtitle="Confirmed console platforms · PC not yet announced by Rockstar"
+      >
         <SystemReqsTable />
       </Section>
     </SiteShell>
   );
 }
 
-function Section({ title, subtitle, href, children }: { title: string; subtitle?: string; href?: string; children: React.ReactNode }) {
+function Section({
+  title,
+  subtitle,
+  href,
+  children,
+}: {
+  title: string;
+  subtitle?: string;
+  href?: string;
+  children: React.ReactNode;
+}) {
   return (
     <section className="container-page py-10">
       <div className="flex items-end justify-between mb-5 flex-wrap gap-2">
@@ -192,14 +225,28 @@ function Section({ title, subtitle, href, children }: { title: string; subtitle?
           <h2 className="text-2xl md:text-3xl font-extrabold tracking-tight">{title}</h2>
           {subtitle && <p className="text-sm text-muted-foreground mt-1">{subtitle}</p>}
         </div>
-        {href && <Link to={href} className="text-sm text-accent hover:underline">View all →</Link>}
+        {href && (
+          <Link to={href} className="text-sm text-accent hover:underline">
+            View all →
+          </Link>
+        )}
       </div>
       {children}
     </section>
   );
 }
 
-function ToolCard({ href, title, desc, icon }: { href: string; title: string; desc: string; icon: string }) {
+function ToolCard({
+  href,
+  title,
+  desc,
+  icon,
+}: {
+  href: string;
+  title: string;
+  desc: string;
+  icon: string;
+}) {
   return (
     <Link to={href} className="surface surface-hover p-6 block">
       <div className="text-3xl">{icon}</div>
@@ -269,4 +316,3 @@ function HeroCountdown() {
     </div>
   );
 }
-

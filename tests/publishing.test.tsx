@@ -1,0 +1,559 @@
+/**
+ * Guards the invariant the publishing lifecycle exists to protect:
+ * nothing in draft, and nothing scheduled for the future, may reach a public
+ * surface — article routes, indexes, category pages, homepage modules,
+ * related-content widgets, feeds, or the sitemap.
+ *
+ * Run with: npm run test:publishing
+ */
+import { renderToStaticMarkup } from "react-dom/server";
+import {
+  isPubliclyVisible,
+  publicOnly,
+  pendingQueue,
+  pendingRevisions,
+  resolveRevision,
+  statusOf,
+  formatVerifiedDate,
+  type Publishable,
+} from "@/lib/publishing";
+import { news, publicNews, newsBySlug, newsByCategory } from "@/data/news";
+import { pages, publicPages, pageByPath } from "@/data/pages";
+import { readFileSync } from "node:fs";
+import { isLinkTargetLive, liveLinks } from "@/lib/related";
+import { TICKER_MAX_ITEMS, tickerDate, tickerStories } from "@/lib/ticker";
+import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
+import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
+import { ArticleJsonLd } from "@/components/StructuredData";
+import { articleHead, breadcrumbJsonLd, buildBreadcrumbList } from "@/lib/seo";
+
+let failures = 0;
+const ok = (name: string, cond: boolean) => {
+  if (!cond) failures++;
+  console.log(`${cond ? "  ok  " : " FAIL "} ${name}`);
+};
+const group = (name: string) => console.log(`\n${name}`);
+
+const draft: Publishable = { status: "draft" };
+const future: Publishable = { status: "scheduled", publishAt: "2099-01-01T00:00:00Z" };
+const due: Publishable = { status: "scheduled", publishAt: "2020-01-01T00:00:00Z" };
+
+group("visibility predicate");
+ok("draft is never visible", !isPubliclyVisible(draft));
+ok("published is visible", isPubliclyVisible({ status: "published" }));
+ok("missing status defaults to published", isPubliclyVisible({}));
+ok("statusOf defaults to published", statusOf({}) === "published");
+ok("scheduled in the past is visible", isPubliclyVisible(due));
+ok("scheduled in the future is hidden", !isPubliclyVisible(future));
+ok("scheduled without publishAt fails closed", !isPubliclyVisible({ status: "scheduled" }));
+ok(
+  "scheduled with unparseable publishAt fails closed",
+  !isPubliclyVisible({ status: "scheduled", publishAt: "soon" }),
+);
+ok(
+  "publishAt boundary is inclusive",
+  isPubliclyVisible(
+    { status: "scheduled", publishAt: "2026-06-01T00:00:00Z" },
+    new Date("2026-06-01T00:00:00Z"),
+  ),
+);
+ok(
+  "one second early is still hidden",
+  !isPubliclyVisible(
+    { status: "scheduled", publishAt: "2026-06-01T00:00:00Z" },
+    new Date("2026-05-31T23:59:59Z"),
+  ),
+);
+
+group("collection filters");
+const mixed = [draft, future, due, { status: "published" as const }];
+ok("publicOnly keeps only the two visible", publicOnly(mixed).length === 2);
+ok("publicOnly does not mutate its input", mixed.length === 4);
+ok("pendingQueue returns the two withheld", pendingQueue(mixed).length === 2);
+ok(
+  "a future post becomes visible once its time passes",
+  isPubliclyVisible(future, new Date("2099-01-02T00:00:00Z")),
+);
+
+group("live data accessors are gated");
+ok("news index is gated", publicNews().length === publicOnly(news).length);
+ok("wiki index is gated", publicWiki().length === publicOnly(wiki).length);
+ok("analysis index is gated", publicAnalyses().length === publicOnly(analyses).length);
+ok(
+  "every listed news item is visible",
+  publicNews().every((n) => isPubliclyVisible(n)),
+);
+ok(
+  "every listed wiki entry is visible",
+  publicWiki().every((w) => isPubliclyVisible(w)),
+);
+ok(
+  "every listed analysis is visible",
+  publicAnalyses().every((a) => isPubliclyVisible(a)),
+);
+ok(
+  "category pages are gated",
+  newsByCategory("rockstar-updates").every((n) => isPubliclyVisible(n)),
+);
+ok(
+  "wikiByType is gated",
+  wikiByType("characters").every((w) => isPubliclyVisible(w)),
+);
+ok("unknown slug resolves to undefined", newsBySlug("no-such-article") === undefined);
+ok("known slug resolves", newsBySlug("pre-order-rumors")?.slug === "pre-order-rumors");
+ok("wiki entry resolves", wikiBySlug("characters", "jason")?.slug === "jason");
+ok("analysis resolves", analysisBySlug("trailer-1-breakdown")?.slug === "trailer-1-breakdown");
+
+group("staged revisions to live pages");
+const live = {
+  status: "published" as const,
+  title: "current",
+  lastVerified: "2026-01-01",
+  pendingRevision: {
+    publishAt: "2026-09-10T13:00:00Z",
+    lastVerified: "2026-08-29",
+    changes: { title: "upgraded" },
+  },
+};
+ok("a page with a pending revision stays visible before its date", isPubliclyVisible(live));
+ok(
+  "content is unchanged before the revision lands",
+  resolveRevision(live, new Date("2026-09-09T00:00:00Z")).title === "current",
+);
+ok(
+  "content swaps once the revision is due",
+  resolveRevision(live, new Date("2026-09-11T00:00:00Z")).title === "upgraded",
+);
+ok(
+  "the revision carries its own lastVerified",
+  resolveRevision(live, new Date("2026-09-11T00:00:00Z")).lastVerified === "2026-08-29",
+);
+ok(
+  "the pendingRevision key is dropped once applied",
+  resolveRevision(live, new Date("2026-09-11T00:00:00Z")).pendingRevision === undefined,
+);
+ok(
+  "an unparseable revision date never lands",
+  resolveRevision(
+    {
+      status: "published" as const,
+      title: "current",
+      pendingRevision: { publishAt: "soon", changes: { title: "x" } },
+    },
+    new Date("2099-01-01T00:00:00Z"),
+  ).title === "current",
+);
+ok(
+  "pendingRevisions lists the waiting one",
+  pendingRevisions([live], new Date("2026-09-01T00:00:00Z")).length === 1,
+);
+ok(
+  "pendingRevisions excludes a landed one",
+  pendingRevisions([live], new Date("2026-09-11T00:00:00Z")).length === 0,
+);
+
+group("long-form pages layer");
+ok("pages index is gated", publicPages().length === publicOnly(pages).length);
+ok(
+  "every listed page is visible",
+  publicPages().every((p) => isPubliclyVisible(p)),
+);
+ok("an unknown path resolves to undefined", pageByPath("/no-such-page") === undefined);
+ok(
+  "a scheduled page 404s before its date",
+  pageByPath("/gta-6-price", new Date("2026-09-01T00:00:00Z")) === undefined,
+);
+ok(
+  "the same page resolves after its date",
+  pageByPath("/gta-6-price", new Date("2026-09-05T00:00:00Z"))?.path === "/gta-6-price",
+);
+ok(
+  "a draft page never resolves, even far in the future",
+  pageByPath("/gta-6-pc-release-date", new Date("2099-01-01T00:00:00Z")) === undefined,
+);
+
+group("the loaded 30-article plan");
+const scheduled = pages.filter((p) => p.status === "scheduled");
+ok(
+  "every scheduled page carries a publishAt",
+  scheduled.every((p) => p.publishAt),
+);
+ok(
+  "every scheduled entry across all collections carries a publishAt",
+  [...news, ...analyses, ...wiki, ...pages]
+    .filter((e) => e.status === "scheduled")
+    .every((e) => e.publishAt),
+);
+ok(
+  "no article is left with an unrecognised status",
+  [...news, ...analyses, ...wiki, ...pages].every((e) =>
+    ["draft", "scheduled", "published", undefined].includes(e.status),
+  ),
+);
+ok(
+  "the three Search-Console-blocked articles are drafts, not scheduled",
+  pageByPath("/gta-6-pc-release-date", new Date("2099-01-01T00:00:00Z")) === undefined &&
+    newsBySlug("gta-6-pre-order", new Date("2099-01-01T00:00:00Z")) === undefined &&
+    analysisBySlug("trailer-2-breakdown", new Date("2099-01-01T00:00:00Z")) === undefined,
+);
+ok(
+  "pillar articles kept their depth (Day 11 map >= 20 sections)",
+  (pages.find((p) => p.path === "/gta-6-map")?.sections.length ?? 0) >= 20,
+);
+ok(
+  "evidence classifications survived the load",
+  pages.every((p) => (p.evidence?.length ?? 0) === 4),
+);
+ok(
+  "no evidence row was promoted to confirmed without one in the source",
+  pages.every((p) => p.evidence?.filter((e) => e.kind === "confirmed").length === 1),
+);
+
+// Every contextual link must resolve to a real route, or it ships a 404.
+const knownPaths = new Set<string>([
+  ...pages.map((p) => p.path),
+  ...news.map((n) => `/news/${n.slug}`),
+  ...analyses.map((a) => `/analysis/${a.slug}`),
+  ...wiki.map((w) => `/wiki/${w.type}/${w.slug}`),
+  "/",
+  "/news",
+  "/analysis",
+  "/wiki",
+  "/tools",
+  "/about",
+  "/gta-6-news",
+  "/system-requirements",
+  "/gta-6-release-date",
+  "/gta-6-map",
+  "/gta-6-characters",
+  "/gta-6-vehicles",
+  "/gta-6-weapons",
+]);
+const badLinks = [
+  ...pages.flatMap((p) => (p.related ?? []).map((r) => r.href)),
+  ...news.flatMap((n) => (n.related ?? []).map((r) => r.href)),
+  ...analyses.flatMap((a) => (a.related ?? []).map((r) => r.href)),
+  ...wiki.flatMap((w) => (w.related ?? []).map((r) => r.href)),
+].filter((h) => h.startsWith("/") && !knownPaths.has(h));
+if (badLinks.length) console.log("      unresolved:", [...new Set(badLinks)].join(", "));
+ok("every contextual link resolves to a real route", badLinks.length === 0);
+
+group("contextual links never outrun their target");
+type Rel = { href: string };
+const articleLinks: { from: string; at: Date | null; rel: Rel[] }[] = [
+  ...pages.map((p) => ({
+    from: p.path,
+    at: p.status === "draft" ? null : new Date(p.publishAt!),
+    rel: (p.related ?? []) as Rel[],
+  })),
+  ...news.map((n) => ({
+    from: `/news/${n.slug}`,
+    at: n.status === "draft" ? null : new Date(n.publishAt ?? n.date),
+    rel: (n.related ?? []) as Rel[],
+  })),
+  ...analyses.map((a) => ({
+    from: `/analysis/${a.slug}`,
+    at: a.status === "draft" ? null : new Date(a.publishAt ?? a.date),
+    rel: (a.related ?? []) as Rel[],
+  })),
+  ...wiki.map((w) => ({
+    from: `/wiki/${w.type}/${w.slug}`,
+    at: w.status === "draft" ? null : new Date(w.publishAt ?? "2020-01-01"),
+    rel: (w.related ?? []) as Rel[],
+  })),
+];
+
+let deadRendered = 0;
+let deferred = 0;
+for (const a of articleLinks) {
+  if (!a.at) continue;
+  const shown = liveLinks(a.rel, a.at);
+  deferred += a.rel.length - shown.length;
+  for (const l of shown) if (!isLinkTargetLive(l.href, a.at)) deadRendered++;
+}
+ok("no article ever renders a link to a page that is not live yet", deadRendered === 0);
+ok("the gate actually defers premature links", deferred > 0);
+ok(
+  "a link to a page published later is withheld at first",
+  !liveLinks([{ href: "/gta-6-gameplay" }], new Date("2026-08-29T18:00:00Z")).length,
+);
+ok(
+  "and appears once that page is live",
+  liveLinks([{ href: "/gta-6-gameplay" }], new Date("2026-09-21T00:00:00Z")).length === 1,
+);
+ok(
+  "a draft target is never linkable, even far in the future",
+  !isLinkTargetLive("/gta-6-pc-release-date", new Date("2099-01-01T00:00:00Z")),
+);
+ok(
+  "an existing hub route is always linkable",
+  isLinkTargetLive("/gta-6-map", new Date("2026-08-29T00:00:00Z")),
+);
+ok("an unknown route is never linkable", !isLinkTargetLive("/no-such-page"));
+
+const extractLd = (html: string) => {
+  const m = html.match(/<script type="application\/ld\+json">(.*?)<\/script>/s);
+  return m ? JSON.parse(m[1].replace(/\\u003c/g, "<")) : null;
+};
+
+group("breaking-news ticker");
+const ticker = tickerStories();
+ok("ticker has stories", ticker.length > 0);
+ok(`ticker is capped at ${TICKER_MAX_ITEMS}`, ticker.length <= TICKER_MAX_ITEMS);
+ok(
+  "every ticker story is publicly visible",
+  ticker.every((n) => isPubliclyVisible(n)),
+);
+ok(
+  "ticker is sorted newest first",
+  ticker.every((n, i) => i === 0 || Date.parse(ticker[i - 1].date) >= Date.parse(n.date)),
+);
+ok(
+  "no draft reaches the ticker, even far in the future",
+  !tickerStories(new Date("2099-01-01T00:00:00Z")).some((n) => n.status === "draft"),
+);
+ok(
+  "a future-scheduled story is absent before its time",
+  !tickerStories(new Date("2026-08-29T18:00:00Z")).some((n) => n.slug === "gta-6-news-august-2026"),
+);
+ok(
+  "and appears on its own once publishAt passes",
+  tickerStories(new Date("2026-08-31T00:00:00Z")).some((n) => n.slug === "gta-6-news-august-2026"),
+);
+ok(
+  "every ticker story resolves to a live article route",
+  ticker.every((n) => isLinkTargetLive(`/news/${n.slug}`)),
+);
+ok("ticker dates render as e.g. AUG 29", /^[A-Z]{3} \d{1,2}$/.test(tickerDate("2026-08-29")));
+ok("ticker date is formatted in UTC", tickerDate("2026-08-29") === "AUG 29");
+ok("an unparseable date passes through untouched", tickerDate("soon") === "soon");
+// The ticker must never become a second, manually maintained headline list.
+const tickerSrc = readFileSync("src/lib/ticker.ts", "utf8");
+ok(
+  "ticker reads from the publishing accessor, not a hardcoded list",
+  tickerSrc.includes("publicNews("),
+);
+
+group("editorial fields stay private");
+const mixedSchema = extractLd(
+  renderToStaticMarkup(
+    <ArticleJsonLd
+      type="Article"
+      headline="H"
+      description="D"
+      path="/x"
+      datePublished="2026-08-29"
+      sources={[
+        { label: "Linked source", url: "https://www.rockstargames.com/VI" },
+        { label: "Unresolved source", needsReview: true },
+      ]}
+    />,
+  ),
+);
+ok(
+  "structured data never carries the needsReview flag",
+  !JSON.stringify(mixedSchema).includes("needsReview"),
+);
+ok("only the linked source becomes a citation", mixedSchema.citation.length === 1);
+ok(
+  "the flagged source is absent from citations",
+  !JSON.stringify(mixedSchema.citation).includes("Unresolved source"),
+);
+// The flag must be unreachable from markup, not merely unused today.
+const renderers = [
+  "src/components/LongFormArticle.tsx",
+  "src/routes/news.$slug.tsx",
+  "src/routes/analysis.$slug.tsx",
+  "src/routes/wiki.$type.$slug.tsx",
+].map((f) => readFileSync(f, "utf8"));
+ok(
+  "no renderer references needsReview at all",
+  renderers.every((src) => !src.includes("needsReview")),
+);
+ok(
+  "every renderer links a source only when it has a url",
+  renderers.every((src) => src.includes("src.url ?") || src.includes("s.url ?")),
+);
+
+group("source references");
+type Src = { label: string; url?: string; needsReview?: boolean };
+const allSources: { where: string; src: Src }[] = [];
+const collect = (where: string, list?: Src[]) =>
+  (list ?? []).forEach((src) => allSources.push({ where, src }));
+for (const p of pages) collect(`page ${p.path}`, p.sources);
+for (const n of news) collect(`news/${n.slug}`, n.sources);
+for (const a of analyses) {
+  collect(`analysis/${a.slug}`, a.sources);
+  collect(`analysis/${a.slug}`, (a.pendingRevision?.changes as { sources?: Src[] })?.sources);
+}
+for (const w of wiki) {
+  collect(`wiki/${w.slug}`, w.sources);
+  collect(`wiki/${w.slug}`, (w.pendingRevision?.changes as { sources?: Src[] })?.sources);
+}
+
+const linked = allSources.filter(({ src }) => src.url);
+const review = allSources.filter(({ src }) => src.needsReview);
+
+ok("every source is either linked or flagged", linked.length + review.length === allSources.length);
+ok(
+  "no source is both linked and flagged",
+  allSources.every(({ src }) => !(src.url && src.needsReview)),
+);
+ok(
+  "every source URL is https",
+  linked.every(({ src }) => src.url!.startsWith("https://")),
+);
+ok(
+  "every source URL parses as a URL",
+  linked.every(({ src }) => {
+    try {
+      new URL(src.url!);
+      return true;
+    } catch {
+      return false;
+    }
+  }),
+);
+ok(
+  "no source URL carries a tracking query",
+  linked.every(({ src }) => !src.url!.includes("utm_")),
+);
+ok(
+  "a flagged source ships no link rather than a guessed one",
+  review.every(({ src }) => src.url === undefined),
+);
+ok(
+  "first-party labels are all resolved or explicitly flagged",
+  allSources
+    .filter(({ src }) => /^(Rockstar|Take-Two|PlayStation)/.test(src.label))
+    .every(({ src }) => src.url || src.needsReview),
+);
+
+// Only sources carrying a URL become schema citations; flagged ones must not.
+const citationCount = new Set(linked.map(({ src }) => src.url)).size;
+ok("linked sources resolve to distinct canonical URLs", citationCount > 0);
+
+const queue = [...new Set(review.map(({ src }) => src.label))].sort();
+console.log(`\n      linked ${linked.length}/${allSources.length} source entries`);
+console.log(`      editorial review queue — ${review.length} entries, ${queue.length} distinct:`);
+for (const label of queue) {
+  const n = review.filter(({ src }) => src.label === label).length;
+  console.log(`        · ${label} (${n})`);
+}
+console.log("");
+
+group("freshness formatting");
+ok("ISO date renders long-form", formatVerifiedDate("2026-08-29") === "August 29, 2026");
+ok("unparseable date passes through", formatVerifiedDate("whenever") === "whenever");
+
+group("structured data");
+const article = extractLd(
+  renderToStaticMarkup(
+    <ArticleJsonLd
+      type="NewsArticle"
+      headline="H"
+      description="D"
+      path="/news/x"
+      datePublished="2026-08-29T09:00:00Z"
+      dateModified="2026-08-29"
+      sources={[{ label: "Rockstar Newswire", url: "https://www.rockstargames.com/newswire" }]}
+    />,
+  ),
+);
+ok("@context is schema.org", article["@context"] === "https://schema.org");
+ok("NewsArticle type honoured", article["@type"] === "NewsArticle");
+ok("url is absolute", article.url === "https://allthingsgta6.com/news/x");
+ok("mainEntityOfPage matches url", article.mainEntityOfPage["@id"] === article.url);
+ok("dateModified reflects lastVerified", article.dateModified === "2026-08-29");
+ok("first-party source cited", article.citation[0].url.includes("rockstargames.com"));
+ok("no FAQ schema is ever emitted", !JSON.stringify(article).includes("FAQ"));
+
+const evergreen = extractLd(
+  renderToStaticMarkup(
+    <ArticleJsonLd
+      type="Article"
+      headline="H"
+      description="D"
+      path="/gta-6-map"
+      datePublished="2026-08-29"
+    />,
+  ),
+);
+ok("Article type for evergreen pages", evergreen["@type"] === "Article");
+ok("dateModified falls back to datePublished", evergreen.dateModified === "2026-08-29");
+
+const crumbList = buildBreadcrumbList([
+  { name: "Home", path: "/" },
+  { name: "News", path: "/news" },
+  { name: "Story", path: "/news/story" },
+])!;
+ok("BreadcrumbList emitted", crumbList["@type"] === "BreadcrumbList");
+ok(
+  "positions are 1-indexed and ordered",
+  crumbList.itemListElement.map((i) => i.position).join() === "1,2,3",
+);
+ok(
+  "EVERY ListItem carries an item url, current page included",
+  crumbList.itemListElement.every((i) => typeof i.item === "string" && i.item.length > 0),
+);
+ok(
+  "every item url is absolute on the canonical origin",
+  crumbList.itemListElement.every((i) => i.item.startsWith("https://allthingsgta6.com/")),
+);
+ok(
+  "the final crumb is the current page and has its own item",
+  crumbList.itemListElement[2].item === "https://allthingsgta6.com/news/story",
+);
+ok(
+  "crumbs with an empty name are dropped",
+  buildBreadcrumbList([{ name: "", path: "/x" }]) === null,
+);
+ok(
+  "crumbs with an empty path are dropped",
+  buildBreadcrumbList([{ name: "X", path: "" }]) === null,
+);
+ok(
+  "duplicate urls in one trail are deduped",
+  buildBreadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Home again", path: "/" },
+  ])!.itemListElement.length === 1,
+);
+ok(
+  "breadcrumb json escapes < so a title cannot break out of the script",
+  breadcrumbJsonLd([{ name: "</script>", path: "/x" }])[0].children.includes("\\u003c"),
+);
+ok(
+  "a headline cannot break out of the script tag",
+  !renderToStaticMarkup(
+    <ArticleJsonLd
+      type="Article"
+      headline={"</script>"}
+      description="D"
+      path="/x"
+      datePublished="2026-01-01"
+    />,
+  ).includes("</script><"),
+);
+
+group("canonicals");
+const head = articleHead({ path: "/news/foo", title: "T", description: "D" });
+ok("self-referencing by default", head.links[0].href === "https://allthingsgta6.com/news/foo");
+ok(
+  "og:url agrees with canonical",
+  head.meta.find((m) => "property" in m && m.property === "og:url")?.content === head.links[0].href,
+);
+ok(
+  "override applies only when passed",
+  articleHead({
+    path: "/news/foo",
+    title: "T",
+    description: "D",
+    canonicalOverride: "https://allthingsgta6.com/gta-6-map",
+  }).links[0].href === "https://allthingsgta6.com/gta-6-map",
+);
+
+console.log(
+  failures === 0 ? "\nAll publishing checks passed.\n" : `\n${failures} check(s) FAILED.\n`,
+);
+process.exit(failures === 0 ? 0 : 1);

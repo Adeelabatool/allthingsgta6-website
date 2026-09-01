@@ -1,18 +1,25 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { news, newsCategories } from "@/data/news";
 import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { publicNews, newsCategories } from "@/data/news";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.news]),
     meta: [
-      { title: "GTA 6 News — AllThingsGTA6" },
-      { name: "description", content: "All the latest Grand Theft Auto VI news: Rockstar updates, leaks, trailer news, release updates, community reactions." },
-      { property: "og:title", content: "GTA 6 News — AllThingsGTA6" },
-      { property: "og:description", content: "Latest GTA 6 news, leaks and updates." },
+      { title: "GTA 6 News Archive — Every Story by Date" },
+      {
+        name: "description",
+        content:
+          "The full chronological archive of our Grand Theft Auto VI reporting, newest first. For the curated topic hub, see the GTA 6 News Hub.",
+      },
+      { property: "og:title", content: "GTA 6 News Archive — AllThingsGTA6" },
+      {
+        property: "og:description",
+        content: "The full chronological archive of our GTA 6 reporting, newest first.",
+      },
       { property: "og:url", content: "https://allthingsgta6.com/news" },
     ],
-    scripts: breadcrumbJsonLd([SECTION_CRUMBS.news]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/news" }],
   }),
   component: NewsIndex,
@@ -22,12 +29,24 @@ function NewsIndex() {
   return (
     <SiteShell>
       <header className="container-page pt-10 pb-6">
-        <span className="chip chip-hot">News Wire</span>
-        <h1 className="heading-display text-4xl md:text-6xl mt-3">GTA 6 News</h1>
-        <p className="mt-2 text-muted-foreground max-w-2xl">Real-time signals from Rockstar, insiders, and the community — verified and contextualized.</p>
+        <span className="chip chip-hot">Archive</span>
+        <h1 className="heading-display text-4xl md:text-6xl mt-3">GTA 6 News Archive</h1>
+        <p className="mt-2 text-muted-foreground max-w-2xl">
+          Every story we have published, newest first. Looking for the curated overview instead?
+          Start at the{" "}
+          <Link to="/gta-6-news" className="text-accent hover:underline">
+            GTA 6 News Hub
+          </Link>
+          .
+        </p>
         <div className="mt-5 flex flex-wrap gap-2">
           {newsCategories.map((c) => (
-            <Link key={c.slug} to="/news/category/$category" params={{ category: c.slug }} className="chip hover:text-foreground">
+            <Link
+              key={c.slug}
+              to="/news/category/$category"
+              params={{ category: c.slug }}
+              className="chip hover:text-foreground"
+            >
               {c.label}
             </Link>
           ))}
@@ -128,8 +147,13 @@ function NewsIndex() {
         </div>
       </section>
       <div className="container-page grid gap-4 md:grid-cols-2 lg:grid-cols-3 pb-16">
-        {news.map((n) => (
-          <Link key={n.slug} to="/news/$slug" params={{ slug: n.slug }} className="surface surface-hover p-5">
+        {publicNews().map((n) => (
+          <Link
+            key={n.slug}
+            to="/news/$slug"
+            params={{ slug: n.slug }}
+            className="surface surface-hover p-5"
+          >
             <div className="flex items-center justify-between text-xs text-muted-foreground">
               <span className="chip">{n.category.replace("-", " ")}</span>
               <span>{n.date}</span>

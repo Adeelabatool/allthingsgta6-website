@@ -1,28 +1,98 @@
 // Generates public/sitemap.xml from the route tree + data files.
 // Runs automatically before every build via the "prebuild" npm script.
+//
+// Drafts and scheduled entries whose publishAt has not passed are excluded.
+// This mirrors src/lib/publishing.ts — if the visibility rule changes there,
+// change it here too, or the sitemap will start advertising unpublished URLs.
+//
 // CHANGE THIS if your domain is different:
 const SITE_URL = "https://allthingsgta6.com";
 
 import { readFileSync, writeFileSync, mkdirSync } from "node:fs";
 
 const today = new Date().toISOString().slice(0, 10);
+const now = Date.now();
 
-function slugs(file) {
+/**
+ * Splits a data file into one window of source per entry, keyed by slug, so
+ * per-entry fields can be read without a full TypeScript parse. Each entry in
+ * these files contains exactly one `slug:` key, which is what makes this safe.
+ */
+function parseEntries(file, key = "slug") {
   const src = readFileSync(file, "utf8");
-  return [...src.matchAll(/slug:\s*"([^"]+)"/g)].map((m) => m[1]);
+  const matches = [...src.matchAll(new RegExp(`${key}:\\s*"([^"]+)"`, "g"))];
+  return matches.map((m, i) => {
+    const start = m.index;
+    const end = i + 1 < matches.length ? matches[i + 1].index : src.length;
+    const window = src.slice(start, end);
+    const field = (name) => window.match(new RegExp(`${name}:\\s*"([^"]+)"`))?.[1];
+    return {
+      slug: m[1],
+      path: m[1],
+      type: field("type"),
+      status: field("status") ?? "published",
+      publishAt: field("publishAt"),
+      lastVerified: field("lastVerified"),
+    };
+  });
 }
-function wikiPairs(file) {
-  const src = readFileSync(file, "utf8");
-  return [...src.matchAll(/slug:\s*"([^"]+)",\s*\n\s*type:\s*"([^"]+)"/g)].map(
-    (m) => ({ slug: m[1], type: m[2] }),
-  );
+
+/** Mirrors isPubliclyVisible() in src/lib/publishing.ts. Fails closed. */
+function isPublic(entry) {
+  if (entry.status === "draft") return false;
+  if (entry.status === "published") return true;
+  if (entry.status === "scheduled") {
+    if (!entry.publishAt) return false;
+    const at = Date.parse(entry.publishAt);
+    return !Number.isNaN(at) && at <= now;
+  }
+  return false;
 }
 
 const newsSrc = readFileSync("src/data/news.ts", "utf8");
 const newsCategories = [...newsSrc.matchAll(/\{ slug: "([^"]+)", label:/g)].map((m) => m[1]);
-const newsArticles = slugs("src/data/news.ts").filter((s) => !newsCategories.includes(s));
-const analysisArticles = slugs("src/data/analysis.ts");
-const wikiEntries = wikiPairs("src/data/wiki.ts");
+
+const allNews = parseEntries("src/data/news.ts").filter((e) => !newsCategories.includes(e.slug));
+const allAnalysis = parseEntries("src/data/analysis.ts");
+// wikiTypes entries carry no `type:` field, which is what separates them from real entries.
+const allWiki = parseEntries("src/data/wiki.ts").filter((e) => e.type);
+// Long-form hub, guide and entity pages are keyed by route path, not slug.
+const allSitePages = parseEntries("src/data/pages.ts", "path");
+
+const newsArticles = allNews.filter(isPublic);
+const analysisArticles = allAnalysis.filter(isPublic);
+const wikiEntries = allWiki.filter(isPublic);
+const sitePages = allSitePages.filter(isPublic);
+
+// Six of these paths are already live and listed in staticPages below; only the
+// pages whose route does not exist yet are added from here.
+const staticPaths = new Set([
+  "/",
+  "/gta-6-release-date",
+  "/gta-6-news",
+  "/gta-6-characters",
+  "/gta-6-map",
+  "/gta-6-vehicles",
+  "/gta-6-weapons",
+  "/system-requirements",
+  "/news",
+  "/analysis",
+  "/wiki",
+  "/tools",
+  "/tools/countdown",
+  "/tools/hype-calculator",
+  "/tools/map",
+  "/tools/vehicle-comparator",
+  "/about",
+]);
+const newSitePages = sitePages.filter((p) => !staticPaths.has(p.path));
+
+const withheld =
+  allNews.length -
+  newsArticles.length +
+  (allAnalysis.length - analysisArticles.length) +
+  (allWiki.length - wikiEntries.length) +
+  (allSitePages.length - sitePages.length);
 
 const staticPages = [
   ["/", "daily", "1.0"],
@@ -47,9 +117,24 @@ const staticPages = [
 const urls = [
   ...staticPages.map(([p, freq, pri]) => ({ loc: p, freq, pri })),
   ...newsCategories.map((c) => ({ loc: `/news/category/${c}`, freq: "daily", pri: "0.6" })),
-  ...newsArticles.map((s) => ({ loc: `/news/${s}`, freq: "monthly", pri: "0.7" })),
-  ...analysisArticles.map((s) => ({ loc: `/analysis/${s}`, freq: "monthly", pri: "0.7" })),
-  ...wikiEntries.map((w) => ({ loc: `/wiki/${w.type}/${w.slug}`, freq: "monthly", pri: "0.6" })),
+  ...newsArticles.map((e) => ({
+    loc: `/news/${e.slug}`,
+    freq: "monthly",
+    pri: "0.7",
+    mod: e.lastVerified,
+  })),
+  ...analysisArticles.map((e) => ({
+    loc: `/analysis/${e.slug}`,
+    freq: "monthly",
+    pri: "0.7",
+    mod: e.lastVerified,
+  })),
+  ...wikiEntries.map((e) => ({
+    loc: `/wiki/${e.type}/${e.slug}`,
+    freq: "monthly",
+    pri: "0.6",
+    mod: e.lastVerified,
+  })),
 ];
 
 const xml = `<?xml version="1.0" encoding="UTF-8"?>
@@ -58,7 +143,7 @@ ${urls
   .map(
     (u) => `  <url>
     <loc>${SITE_URL}${u.loc}</loc>
-    <lastmod>${today}</lastmod>
+    <lastmod>${u.mod ?? today}</lastmod>
     <changefreq>${u.freq}</changefreq>
     <priority>${u.pri}</priority>
   </url>`,
@@ -69,4 +154,7 @@ ${urls
 
 mkdirSync("public", { recursive: true });
 writeFileSync("public/sitemap.xml", xml);
-console.log(`sitemap.xml written: ${urls.length} URLs for ${SITE_URL}`);
+console.log(
+  `sitemap.xml written: ${urls.length} URLs for ${SITE_URL}` +
+    (withheld > 0 ? ` (${withheld} draft/scheduled URL${withheld === 1 ? "" : "s"} withheld)` : ""),
+);

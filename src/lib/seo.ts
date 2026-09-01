@@ -115,3 +115,61 @@ export function breadcrumbJsonLd(crumbs: Crumb[]) {
     },
   ];
 }
+
+/**
+ * Breadcrumb crumb for a news article's category. Falls back to the News
+ * section crumb (which buildBreadcrumbList then dedupes away) for an unknown
+ * category, so a ListItem is never emitted with an empty name or a dead URL.
+ */
+export function newsCategoryCrumb(category: string): Crumb {
+  const meta = NEWS_CATEGORY_LABELS[category];
+  return meta ? { name: meta, path: `/news/category/${category}` } : SECTION_CRUMBS.news;
+}
+
+const NEWS_CATEGORY_LABELS: Record<string, string> = {
+  "rockstar-updates": "Rockstar Updates",
+  leaks: "Leaks",
+  "trailer-news": "Trailer News",
+  "release-updates": "Release Updates",
+  "community-reactions": "Community Reactions",
+};
+
+export const SITE_NAME = "AllThingsGTA6";
+
+/** Default sharing image, also used as the structured-data image of record. */
+export const SITE_IMAGE = `${SITE_URL}/og-cover.svg`;
+
+/**
+ * The head fragment every article-like page shares: title, description, Open
+ * Graph, a self-referencing canonical, and the page's breadcrumb JSON-LD.
+ *
+ * Breadcrumbs are built by breadcrumbJsonLd() above, so every ListItem — the
+ * current page included — carries an absolute `item` URL. Pass the crumbs
+ * *below* Home; Home is prepended for you.
+ *
+ * Rule: a published article always canonicalises to itself. Consolidation onto
+ * another URL is a deliberate, page-by-page decision, so `canonicalOverride`
+ * has to be passed explicitly — it is never inferred.
+ */
+export function articleHead(opts: {
+  path: string;
+  title: string;
+  description: string;
+  canonicalOverride?: string;
+  crumbs?: Crumb[];
+}) {
+  const canonical = opts.canonicalOverride ?? absoluteUrl(opts.path);
+  return {
+    meta: [
+      { title: opts.title },
+      { name: "description", content: opts.description },
+      { property: "og:title", content: opts.title },
+      { property: "og:description", content: opts.description },
+      { property: "og:type", content: "article" },
+      { property: "og:url", content: canonical },
+      { property: "og:image", content: SITE_IMAGE },
+    ],
+    links: [{ rel: "canonical", href: canonical }],
+    scripts: breadcrumbJsonLd(opts.crumbs ?? []),
+  };
+}
