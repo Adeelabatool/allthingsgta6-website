@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead } from "@/lib/seo";
+import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
 import { SiteShell } from "@/components/SiteShell";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
 
@@ -17,9 +17,13 @@ export const Route = createFileRoute("/system-requirements")({
         title: upgraded.seoTitle,
         description: upgraded.metaDescription,
         canonicalOverride: upgraded.canonicalOverride,
+        crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
     return {
+      scripts: breadcrumbJsonLd([
+        { name: "GTA 6 System Requirements", path: "/system-requirements" },
+      ]),
       meta: [
         { title: "GTA 6 System Requirements — PS5, Xbox & PC (What's Confirmed)" },
         {

@@ -24,8 +24,8 @@ import { isLinkTargetLive, liveLinks } from "@/lib/related";
 import { TICKER_MAX_ITEMS, tickerDate, tickerStories } from "@/lib/ticker";
 import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
 import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
-import { ArticleJsonLd, BreadcrumbJsonLd } from "@/components/StructuredData";
-import { articleHead } from "@/lib/seo";
+import { ArticleJsonLd } from "@/components/StructuredData";
+import { articleHead, breadcrumbJsonLd, buildBreadcrumbList } from "@/lib/seo";
 
 let failures = 0;
 const ok = (name: string, cond: boolean) => {
@@ -482,19 +482,47 @@ const evergreen = extractLd(
 ok("Article type for evergreen pages", evergreen["@type"] === "Article");
 ok("dateModified falls back to datePublished", evergreen.dateModified === "2026-08-29");
 
-const crumbs = extractLd(
-  renderToStaticMarkup(
-    <BreadcrumbJsonLd
-      crumbs={[{ label: "Home", href: "/" }, { label: "News", href: "/news" }, { label: "Story" }]}
-    />,
-  ),
-);
-ok("BreadcrumbList emitted", crumbs["@type"] === "BreadcrumbList");
+const crumbList = buildBreadcrumbList([
+  { name: "Home", path: "/" },
+  { name: "News", path: "/news" },
+  { name: "Story", path: "/news/story" },
+])!;
+ok("BreadcrumbList emitted", crumbList["@type"] === "BreadcrumbList");
 ok(
   "positions are 1-indexed and ordered",
-  crumbs.itemListElement.map((i: { position: number }) => i.position).join() === "1,2,3",
+  crumbList.itemListElement.map((i) => i.position).join() === "1,2,3",
 );
-ok("current page carries no item url", crumbs.itemListElement[2].item === undefined);
+ok(
+  "EVERY ListItem carries an item url, current page included",
+  crumbList.itemListElement.every((i) => typeof i.item === "string" && i.item.length > 0),
+);
+ok(
+  "every item url is absolute on the canonical origin",
+  crumbList.itemListElement.every((i) => i.item.startsWith("https://allthingsgta6.com/")),
+);
+ok(
+  "the final crumb is the current page and has its own item",
+  crumbList.itemListElement[2].item === "https://allthingsgta6.com/news/story",
+);
+ok(
+  "crumbs with an empty name are dropped",
+  buildBreadcrumbList([{ name: "", path: "/x" }]) === null,
+);
+ok(
+  "crumbs with an empty path are dropped",
+  buildBreadcrumbList([{ name: "X", path: "" }]) === null,
+);
+ok(
+  "duplicate urls in one trail are deduped",
+  buildBreadcrumbList([
+    { name: "Home", path: "/" },
+    { name: "Home again", path: "/" },
+  ])!.itemListElement.length === 1,
+);
+ok(
+  "breadcrumb json escapes < so a title cannot break out of the script",
+  breadcrumbJsonLd([{ name: "</script>", path: "/x" }])[0].children.includes("\\u003c"),
+);
 ok(
   "a headline cannot break out of the script tag",
   !renderToStaticMarkup(

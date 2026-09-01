@@ -1,14 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { useState } from "react";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/vehicle-comparator")({
   head: () => ({
     meta: [
       { title: "GTA 6 Vehicle Comparator — Side-by-Side Specs" },
-      { name: "description", content: "Compare GTA 6 vehicle specs side-by-side: speed, handling, acceleration, type." },
+      {
+        name: "description",
+        content: "Compare GTA 6 vehicle specs side-by-side: speed, handling, acceleration, type.",
+      },
       { property: "og:url", content: "https://allthingsgta6.com/tools/vehicle-comparator" },
     ],
+    scripts: breadcrumbJsonLd([
+      SECTION_CRUMBS.tools,
+      { name: "Vehicle Comparator", path: "/tools/vehicle-comparator" },
+    ]),
     links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/vehicle-comparator" }],
   }),
   component: VehicleComparator,
@@ -23,12 +31,12 @@ interface Vehicle {
 }
 
 const VEHICLES: Vehicle[] = [
-  { name: "Vice Hypersport (est.)",     type: "Super",      speed: 96, handling: 88, acceleration: 94 },
-  { name: "Leonida GT (est.)",          type: "Sports",     speed: 88, handling: 90, acceleration: 86 },
-  { name: "Coastal SUV (est.)",         type: "SUV",        speed: 70, handling: 65, acceleration: 60 },
-  { name: "Glades Pickup (est.)",       type: "Off-road",   speed: 65, handling: 70, acceleration: 58 },
-  { name: "Strip Cruiser (est.)",       type: "Motorcycle", speed: 92, handling: 80, acceleration: 95 },
-  { name: "Patrol Interceptor (est.)",  type: "Police",     speed: 84, handling: 78, acceleration: 80 },
+  { name: "Vice Hypersport (est.)", type: "Super", speed: 96, handling: 88, acceleration: 94 },
+  { name: "Leonida GT (est.)", type: "Sports", speed: 88, handling: 90, acceleration: 86 },
+  { name: "Coastal SUV (est.)", type: "SUV", speed: 70, handling: 65, acceleration: 60 },
+  { name: "Glades Pickup (est.)", type: "Off-road", speed: 65, handling: 70, acceleration: 58 },
+  { name: "Strip Cruiser (est.)", type: "Motorcycle", speed: 92, handling: 80, acceleration: 95 },
+  { name: "Patrol Interceptor (est.)", type: "Police", speed: 84, handling: 78, acceleration: 80 },
 ];
 
 function VehicleComparator() {
@@ -51,7 +59,11 @@ function VehicleComparator() {
         <div className="mt-6 surface overflow-hidden">
           <table className="w-full text-sm">
             <thead className="bg-secondary/50 text-xs uppercase tracking-widest text-muted-foreground">
-              <tr><th className="px-4 py-3 text-left">Spec</th><th className="px-4 py-3 text-left">{va.name}</th><th className="px-4 py-3 text-left">{vb.name}</th></tr>
+              <tr>
+                <th className="px-4 py-3 text-left">Spec</th>
+                <th className="px-4 py-3 text-left">{va.name}</th>
+                <th className="px-4 py-3 text-left">{vb.name}</th>
+              </tr>
             </thead>
             <tbody>
               <Row label="Type" a={va.type} b={vb.type} />
@@ -61,18 +73,36 @@ function VehicleComparator() {
             </tbody>
           </table>
         </div>
-        <p className="text-xs text-muted-foreground mt-3">All stats are speculative pre-release estimates.</p>
+        <p className="text-xs text-muted-foreground mt-3">
+          All stats are speculative pre-release estimates.
+        </p>
       </div>
     </SiteShell>
   );
 }
 
-function Picker({ label, value, onChange }: { label: string; value: string; onChange: (s: string) => void }) {
+function Picker({
+  label,
+  value,
+  onChange,
+}: {
+  label: string;
+  value: string;
+  onChange: (s: string) => void;
+}) {
   return (
     <label className="block">
       <span className="text-xs uppercase tracking-widest text-muted-foreground">{label}</span>
-      <select value={value} onChange={(e) => onChange(e.target.value)} className="mt-2 w-full bg-secondary border border-border rounded-md px-3 py-2">
-        {VEHICLES.map((v) => <option key={v.name} value={v.name}>{v.name}</option>)}
+      <select
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        className="mt-2 w-full bg-secondary border border-border rounded-md px-3 py-2"
+      >
+        {VEHICLES.map((v) => (
+          <option key={v.name} value={v.name}>
+            {v.name}
+          </option>
+        ))}
       </select>
     </label>
   );
@@ -92,8 +122,12 @@ function BarRow({ label, a, b }: { label: string; a: number; b: number }) {
   return (
     <tr className="border-t border-border/60">
       <td className="px-4 py-3 font-semibold">{label}</td>
-      <td className="px-4 py-3"><Bar value={a} /></td>
-      <td className="px-4 py-3"><Bar value={b} /></td>
+      <td className="px-4 py-3">
+        <Bar value={a} />
+      </td>
+      <td className="px-4 py-3">
+        <Bar value={b} />
+      </td>
     </tr>
   );
 }

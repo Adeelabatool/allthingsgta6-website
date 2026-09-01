@@ -5,7 +5,7 @@ import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import { analysisBySlug, publicAnalyses } from "@/data/analysis";
-import { articleHead } from "@/lib/seo";
+import { SECTION_CRUMBS, articleHead } from "@/lib/seo";
 import { publishedTimestamp } from "@/lib/publishing";
 import { liveLinks } from "@/lib/related";
 
@@ -22,6 +22,10 @@ export const Route = createFileRoute("/analysis/$slug")({
           title: loaderData.seoTitle ?? `${loaderData.title} — GTA 6 Analysis`,
           description: loaderData.metaDescription ?? loaderData.hook,
           canonicalOverride: loaderData.canonicalOverride,
+          crumbs: [
+            SECTION_CRUMBS.analysis,
+            { name: loaderData.title, path: `/analysis/${loaderData.slug}` },
+          ],
         })
       : { meta: [], links: [] },
   component: AnalysisPage,
@@ -53,7 +57,9 @@ function AnalysisPage() {
         sources={a.evidence}
       />
       <article className="container-page py-10 max-w-3xl">
-        <Breadcrumbs trail={[{ label: "Analysis", href: "/analysis" }, { label: a.title }]} />
+        <Breadcrumbs
+          trail={[SECTION_CRUMBS.analysis, { name: a.title, path: `/analysis/${a.slug}` }]}
+        />
         <div className="mt-4 chip chip-neon">Analysis · {a.date}</div>
         <h1 className="heading-display text-3xl md:text-5xl mt-3">{a.title}</h1>
         <p className="mt-4 text-xl text-foreground/90 italic border-l-2 border-primary pl-4">

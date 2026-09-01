@@ -73,26 +73,3 @@ export function ArticleJsonLd(props: {
 
   return <JsonLd data={data} />;
 }
-
-export interface Crumb {
-  label: string;
-  /** Site-relative path. Omitted on the final crumb (the current page). */
-  href?: string;
-}
-
-export function BreadcrumbJsonLd({ crumbs }: { crumbs: Crumb[] }) {
-  return (
-    <JsonLd
-      data={{
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement: crumbs.map((c, i) => ({
-          "@type": "ListItem",
-          position: i + 1,
-          name: c.label,
-          ...(c.href ? { item: absoluteUrl(c.href) } : {}),
-        })),
-      }}
-    />
-  );
-}

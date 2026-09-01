@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead } from "@/lib/seo";
+import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
 import { Countdown } from "@/components/Countdown";
 import { SiteShell } from "@/components/SiteShell";
@@ -19,9 +19,11 @@ export const Route = createFileRoute("/gta-6-release-date")({
         title: upgraded.seoTitle,
         description: upgraded.metaDescription,
         canonicalOverride: upgraded.canonicalOverride,
+        crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
     return {
+      scripts: breadcrumbJsonLd([{ name: "GTA 6 Release Date", path: "/gta-6-release-date" }]),
       meta: [
         { title: "GTA 6 Release Date — November 19, 2026 (PS5 & Xbox)" },
         {

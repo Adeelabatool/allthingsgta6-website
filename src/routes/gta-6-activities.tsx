@@ -18,6 +18,7 @@ export const Route = createFileRoute("/gta-6-activities")({
           title: loaderData.seoTitle,
           description: loaderData.metaDescription,
           canonicalOverride: loaderData.canonicalOverride,
+          crumbs: [{ name: loaderData.title, path: loaderData.path }],
         })
       : { meta: [], links: [] },
   component: PageRoute,

@@ -25,7 +25,7 @@ export function LongFormArticle({ page }: { page: SitePage }) {
         sources={page.sources}
       />
       <article className="container-page py-10 max-w-3xl">
-        <Breadcrumbs trail={page.breadcrumb ?? [{ label: page.title }]} />
+        <Breadcrumbs trail={[{ name: page.title, path: page.path }]} />
         <h1 className="heading-display text-3xl md:text-5xl mt-4">{page.title}</h1>
 
         {page.intro.map((p, i) => (

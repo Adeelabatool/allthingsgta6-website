@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead } from "@/lib/seo";
+import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
 import { wiki } from "@/data/wiki";
 
@@ -17,9 +17,11 @@ export const Route = createFileRoute("/gta-6-characters")({
         title: upgraded.seoTitle,
         description: upgraded.metaDescription,
         canonicalOverride: upgraded.canonicalOverride,
+        crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
     return {
+      scripts: breadcrumbJsonLd([{ name: "GTA 6 Characters", path: "/gta-6-characters" }]),
       meta: [
         { title: "GTA 6 Characters — Jason, Lucia & The Cast" },
         {

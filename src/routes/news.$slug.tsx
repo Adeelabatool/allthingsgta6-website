@@ -5,7 +5,7 @@ import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import { newsBySlug, publicNews, type NewsItem } from "@/data/news";
-import { articleHead } from "@/lib/seo";
+import { SECTION_CRUMBS, articleHead, newsCategoryCrumb } from "@/lib/seo";
 import { publishedTimestamp } from "@/lib/publishing";
 import { liveLinks } from "@/lib/related";
 
@@ -24,6 +24,11 @@ export const Route = createFileRoute("/news/$slug")({
           title: loaderData.seoTitle ?? `${loaderData.title} — AllThingsGTA6`,
           description: loaderData.metaDescription ?? loaderData.summary,
           canonicalOverride: loaderData.canonicalOverride,
+          crumbs: [
+            SECTION_CRUMBS.news,
+            newsCategoryCrumb(loaderData.category),
+            { name: loaderData.title, path: `/news/${loaderData.slug}` },
+          ],
         })
       : { meta: [], links: [] },
   component: NewsArticle,
@@ -57,9 +62,9 @@ function NewsArticle() {
       <article className="container-page py-10 max-w-3xl">
         <Breadcrumbs
           trail={[
-            { label: "News", href: "/news" },
-            { label: categoryLabel, href: `/news/category/${n.category}` },
-            { label: n.title },
+            SECTION_CRUMBS.news,
+            newsCategoryCrumb(n.category),
+            { name: n.title, path: `/news/${n.slug}` },
           ]}
         />
         <div className="mt-4 flex items-center gap-2 flex-wrap text-xs">

@@ -5,7 +5,7 @@ import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import { wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
-import { articleHead } from "@/lib/seo";
+import { SECTION_CRUMBS, articleHead } from "@/lib/seo";
 import { liveLinks } from "@/lib/related";
 
 export const Route = createFileRoute("/wiki/$type/$slug")({
@@ -21,6 +21,10 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
           title: loaderData.seoTitle ?? `${loaderData.name} — GTA 6 Wiki`,
           description: loaderData.metaDescription ?? loaderData.overview.slice(0, 155),
           canonicalOverride: loaderData.canonicalOverride,
+          crumbs: [
+            SECTION_CRUMBS.wiki,
+            { name: loaderData.name, path: `/wiki/${loaderData.type}/${loaderData.slug}` },
+          ],
         })
       : { meta: [], links: [] },
   component: WikiEntryPage,
@@ -55,7 +59,11 @@ function WikiEntryPage() {
       <article className="container-page py-10 grid gap-8 lg:grid-cols-[1fr_280px] max-w-6xl">
         <div>
           <Breadcrumbs
-            trail={[{ label: "Wiki", href: "/wiki" }, { label: typeLabel }, { label: w.name }]}
+            trail={[
+              SECTION_CRUMBS.wiki,
+              { name: typeLabel, path: `/wiki#${w.type}` },
+              { name: w.name, path: `/wiki/${w.type}/${w.slug}` },
+            ]}
           />
           <div className="mt-4 chip chip-neon">{w.type}</div>
           <h1 className="heading-display text-4xl md:text-6xl mt-3">{w.name}</h1>

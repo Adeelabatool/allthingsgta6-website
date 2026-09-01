@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 import { publicAnalyses } from "@/data/analysis";
 
 export const Route = createFileRoute("/analysis/")({
   head: () => ({
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.analysis]),
     meta: [
       { title: "GTA 6 Analysis — Deep Editorial Breakdowns" },
       {

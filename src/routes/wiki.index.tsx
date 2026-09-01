@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 import { publicWiki, wikiTypes } from "@/data/wiki";
 
 export const Route = createFileRoute("/wiki/")({
   head: () => ({
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.wiki]),
     meta: [
       { title: "GTA 6 Wiki — Characters, Map, Vehicles, Weapons" },
       {

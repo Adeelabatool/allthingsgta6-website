@@ -1,9 +1,11 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
 import { publicNews, newsCategories } from "@/data/news";
 
 export const Route = createFileRoute("/news/")({
   head: () => ({
+    scripts: breadcrumbJsonLd([SECTION_CRUMBS.news]),
     meta: [
       { title: "GTA 6 News Archive — Every Story by Date" },
       {

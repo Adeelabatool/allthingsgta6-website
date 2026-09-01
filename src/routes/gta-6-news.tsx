@@ -1,10 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PillarHub } from "@/components/PillarHub";
+import { breadcrumbJsonLd } from "@/lib/seo";
 import { publicNews } from "@/data/news";
 import { publicAnalyses } from "@/data/analysis";
 
 export const Route = createFileRoute("/gta-6-news")({
   head: () => ({
+    scripts: breadcrumbJsonLd([{ name: "GTA 6 News", path: "/gta-6-news" }]),
     meta: [
       { title: "GTA 6 News Hub, All Updates, Leaks & Trailers" },
       {
