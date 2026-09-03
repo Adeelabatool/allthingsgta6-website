@@ -20,7 +20,7 @@ import { isPubliclyVisible } from "@/lib/publishing";
  * current page until a scheduled upgrade swaps in, so linking to them is always
  * safe; the rest are permanent site furniture.
  */
-const ALWAYS_LIVE = new Set([
+export const ALWAYS_LIVE = new Set([
   "/",
   "/about",
   "/analysis",
@@ -47,6 +47,11 @@ export function isLinkTargetLive(href: string, now: Date = new Date()): boolean 
   const page = pages.find((p) => p.path === href);
   if (page) return isPubliclyVisible(page, now);
 
+  // Must precede the /news/ slug branch: "/news/category/leaks" also starts
+  // with "/news/", and slicing it as a slug matches no article, so category
+  // links were being dropped as dead.
+  if (href.startsWith("/news/category/")) return true;
+
   const newsSlug = href.startsWith("/news/") ? href.slice("/news/".length) : null;
   if (newsSlug) {
     const item = news.find((n) => n.slug === newsSlug);
@@ -65,8 +70,7 @@ export function isLinkTargetLive(href: string, now: Date = new Date()): boolean 
     return entry ? isPubliclyVisible(entry, now) : false;
   }
 
-  // Category pages and anything else already routed stay linkable.
-  return href.startsWith("/news/category/");
+  return false;
 }
 
 /** Drops contextual links whose target is not published yet. */

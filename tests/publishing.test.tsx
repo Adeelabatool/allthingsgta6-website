@@ -9,6 +9,7 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import {
   isPubliclyVisible,
+  parsePublishAt,
   publicOnly,
   pendingQueue,
   pendingRevisions,
@@ -24,6 +25,8 @@ import { isLinkTargetLive, liveLinks } from "@/lib/related";
 import { TICKER_MAX_ITEMS, tickerDate, tickerStories } from "@/lib/ticker";
 import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
 import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
+import { ALWAYS_LIVE } from "@/lib/related";
+import { renderSitemap, sitemapUrls, staticSitemapPaths } from "@/lib/sitemap";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { articleHead, breadcrumbJsonLd, buildBreadcrumbList } from "@/lib/seo";
 
@@ -551,6 +554,197 @@ ok(
     description: "D",
     canonicalOverride: "https://allthingsgta6.com/gta-6-map",
   }).links[0].href === "https://allthingsgta6.com/gta-6-map",
+);
+
+/* ------------------------------------------------------------------------ *
+ * Incident 2026-09-03: the Aug 31 and Sep 2 scheduled pages served correctly
+ * on their own URLs but never entered the sitemap, and the sitemap could only
+ * change on a deploy. These fix the schedule in place as fixtures so the same
+ * failure cannot recur silently.
+ * ------------------------------------------------------------------------ */
+
+group("scheduled publication over time");
+const AUG31 = "2026-08-31T13:00:00Z"; // /gta-6-release-date
+const SEP02 = "2026-09-02T13:00:00Z"; // /gta-6-ultimate-edition
+const at = (iso: string, ms = 0) => new Date(Date.parse(iso) + ms);
+
+ok(
+  "before publishAt the scheduled page is unavailable",
+  pageByPath("/gta-6-ultimate-edition", at(SEP02, -1)) === undefined,
+);
+ok(
+  "exactly at publishAt the scheduled page is public",
+  pageByPath("/gta-6-ultimate-edition", at(SEP02))?.status === "scheduled",
+);
+ok(
+  "after publishAt the scheduled page stays public",
+  pageByPath("/gta-6-ultimate-edition", at(SEP02, 86_400_000)) !== undefined,
+);
+ok(
+  "a draft is unavailable at every point on the calendar",
+  [at(AUG31), at(SEP02), new Date("2099-01-01T00:00:00Z")].every(
+    (t) => pageByPath("/gta-6-pc-release-date", t) === undefined,
+  ),
+);
+ok(
+  "a malformed schedule fails closed rather than leaking",
+  [
+    { status: "scheduled" as const },
+    { status: "scheduled" as const, publishAt: "2026-09-31T13:00:00Z" }, // no such date
+    { status: "scheduled" as const, publishAt: "2026-02-30T13:00:00Z" }, // no such date
+    { status: "scheduled" as const, publishAt: "2026-09-01T13:00:00" }, // no offset
+    { status: "scheduled" as const, publishAt: "2026-09-01 13:00:00Z" }, // not ISO
+    { status: "scheduled" as const, publishAt: "31/08/2026" },
+    { status: "scheduled" as const, publishAt: "" },
+  ].every((entry) => !isPubliclyVisible(entry, new Date("2099-01-01T00:00:00Z"))),
+);
+
+// The Aug 31 fixture is an in-place upgrade of a hub that was already live, so
+// the assertion is a swap, not an appearance.
+ok(
+  "the Aug 31 fixture is live from its publishAt",
+  pageByPath("/gta-6-release-date", at(AUG31)) !== undefined,
+);
+ok(
+  "and its route serves the hub, not a 404, beforehand",
+  ALWAYS_LIVE.has("/gta-6-release-date") &&
+    pageByPath("/gta-6-release-date", at(AUG31, -1)) === undefined,
+);
+ok(
+  "the Sep 2 fixture is live at the incident's current time",
+  pageByPath("/gta-6-ultimate-edition", new Date("2026-09-03T14:00:00Z")) !== undefined,
+);
+
+// Sep 1 carried no scheduled entry at all. That is a calendar gap, not a bug in
+// the lifecycle, and this asserts the distinction rather than papering over it.
+const scheduledOn = (day: string) =>
+  [...pages, ...news, ...analyses, ...wiki].filter((e) => e.publishAt?.startsWith(day));
+ok(
+  "Aug 31 and Sep 2 each have exactly one scheduled entry",
+  scheduledOn("2026-08-31").length === 1 && scheduledOn("2026-09-02").length === 1,
+);
+ok(
+  "Sep 1 has no scheduled entry — the gap is in the calendar, not the code",
+  scheduledOn("2026-09-01").length === 0,
+);
+
+group("publishAt timestamps are unambiguous");
+const everyPublishAt = [
+  ...[...pages, ...news, ...analyses, ...wiki].map((e) => e.publishAt),
+  ...[...pages, ...news, ...analyses, ...wiki].map((e) => e.pendingRevision?.publishAt),
+].filter((v): v is string => typeof v === "string");
+ok("there are schedules to check", everyPublishAt.length > 0);
+ok(
+  "every publishAt carries an explicit UTC offset",
+  everyPublishAt.every((v) => /(?:Z|[+-]\d{2}:\d{2})$/.test(v)),
+);
+ok(
+  "every publishAt parses to a real instant",
+  everyPublishAt.every((v) => !Number.isNaN(Date.parse(v))),
+);
+ok(
+  "visibility is unaffected by the host timezone",
+  // Date.parse on an offset-bearing string yields an absolute epoch, so the
+  // comparison cannot shift with the Worker's local zone. Same instant, three
+  // wall clocks, one answer.
+  ["2026-09-02T13:00:00Z", "2026-09-02T09:00:00-04:00", "2026-09-02T18:00:00+05:00"].every(
+    (iso) =>
+      isPubliclyVisible({ status: "scheduled", publishAt: iso }, at(SEP02)) &&
+      !isPubliclyVisible({ status: "scheduled", publishAt: iso }, at(SEP02, -1)),
+  ),
+);
+
+ok(
+  "a date that does not exist is never silently rolled forward",
+  // Date.parse turns "2026-09-31" into October 1. Publishing on a day the
+  // editor did not choose is worse than not publishing at all.
+  Number.isNaN(parsePublishAt("2026-09-31T13:00:00Z")) &&
+    !Number.isNaN(Date.parse("2026-09-31T13:00:00Z")),
+);
+ok(
+  "a timestamp with no offset is rejected, not read in the local zone",
+  Number.isNaN(parsePublishAt("2026-09-01T13:00:00")),
+);
+ok(
+  "a well-formed schedule still parses, with or without seconds",
+  parsePublishAt("2026-09-02T13:00:00Z") === Date.parse("2026-09-02T13:00:00Z") &&
+    parsePublishAt("2026-09-02T13:00+00:00") === Date.parse("2026-09-02T13:00:00Z"),
+);
+
+group("staged revisions swap on time");
+const staged = wiki.find((w) => w.pendingRevision);
+ok("a staged revision exists to test", staged !== undefined);
+if (staged) {
+  const when = Date.parse(staged.pendingRevision!.publishAt);
+  ok(
+    "before its date the live entry is unchanged",
+    resolveRevision(staged, new Date(when - 1)) === staged,
+  );
+  ok("at its date the revision has landed", resolveRevision(staged, new Date(when)) !== staged);
+  ok(
+    "the entry stays public throughout the swap",
+    isPubliclyVisible(staged, new Date(when - 1)) && isPubliclyVisible(staged, new Date(when)),
+  );
+}
+
+group("sitemap follows the same lifecycle as the routes");
+const locsAt = (t: Date) => sitemapUrls(t).map((u) => u.loc);
+
+ok(
+  "a scheduled long-form page is absent before its publishAt",
+  !locsAt(at(SEP02, -1)).includes("/gta-6-ultimate-edition"),
+);
+ok(
+  "and present from its publishAt — the defect that hid it is gone",
+  locsAt(at(SEP02)).includes("/gta-6-ultimate-edition"),
+);
+ok(
+  "no draft page ever reaches the sitemap",
+  !locsAt(new Date("2099-01-01T00:00:00Z")).includes("/gta-6-pc-release-date"),
+);
+ok(
+  "the sitemap grows as the schedule advances, with no rebuild",
+  locsAt(new Date("2026-09-27T14:00:00Z")).length > locsAt(at(AUG31)).length,
+);
+ok(
+  "every sitemap URL is a live target at that same moment",
+  locsAt(new Date("2026-09-03T14:00:00Z")).every((loc) =>
+    isLinkTargetLive(loc, new Date("2026-09-03T14:00:00Z")),
+  ),
+);
+ok(
+  "a path listed unconditionally is one whose route is always live",
+  staticSitemapPaths
+    .filter((p) => pages.some((page) => page.path === p))
+    .every((p) => ALWAYS_LIVE.has(p)),
+);
+ok(
+  "every public news, analysis and wiki entry is listed",
+  [
+    ...publicNews().map((n) => `/news/${n.slug}`),
+    ...publicAnalyses().map((a) => `/analysis/${a.slug}`),
+    ...publicWiki().map((w) => `/wiki/${w.type}/${w.slug}`),
+  ].every((loc) => locsAt(new Date()).includes(loc)),
+);
+ok("no URL is listed twice", new Set(locsAt(new Date())).size === locsAt(new Date()).length);
+
+const xml = renderSitemap(new Date("2026-09-03T14:00:00Z"));
+ok("renders a well-formed urlset", xml.startsWith("<?xml") && xml.trimEnd().endsWith("</urlset>"));
+ok(
+  "every loc is absolute on the canonical origin",
+  [...xml.matchAll(/<loc>([^<]+)<\/loc>/g)].every((m) =>
+    m[1].startsWith("https://allthingsgta6.com/"),
+  ),
+);
+ok(
+  "the Sep 2 article is in the rendered XML",
+  xml.includes("https://allthingsgta6.com/gta-6-ultimate-edition"),
+);
+// The old build-time script re-implemented the visibility rule with regexes and
+// drifted from it. There must not be a second copy to drift again.
+ok(
+  "sitemap generation has exactly one visibility rule",
+  readFileSync("src/lib/sitemap.ts", "utf8").includes("publicPages("),
 );
 
 console.log(
