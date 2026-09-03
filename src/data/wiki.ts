@@ -436,7 +436,7 @@ export const wiki: WikiEntry[] = [
   {
     slug: "jason",
     pendingRevision: {
-      publishAt: "2026-09-12T13:00:00Z",
+      publishAt: "2026-09-11T13:00:00Z",
       lastVerified: "2026-08-29",
       note: "Day 15 of the 30-day plan: upgraded entity page.",
       changes: {
@@ -617,7 +617,7 @@ export const wiki: WikiEntry[] = [
   {
     slug: "lucia",
     pendingRevision: {
-      publishAt: "2026-09-13T13:00:00Z",
+      publishAt: "2026-09-12T13:00:00Z",
       lastVerified: "2026-08-29",
       note: "Day 16 of the 30-day plan: upgraded entity page.",
       changes: {
@@ -868,7 +868,7 @@ export const wiki: WikiEntry[] = [
   {
     slug: "vice-city",
     pendingRevision: {
-      publishAt: "2026-09-10T13:00:00Z",
+      publishAt: "2026-09-09T13:00:00Z",
       lastVerified: "2026-08-29",
       note: "Day 13 of the 30-day plan: upgraded entity page.",
       changes: {
@@ -1129,7 +1129,7 @@ export const wiki: WikiEntry[] = [
   {
     slug: "police-system",
     pendingRevision: {
-      publishAt: "2026-09-22T13:00:00Z",
+      publishAt: "2026-09-23T13:00:00Z",
       lastVerified: "2026-08-29",
       note: "Day 25 of the 30-day plan: upgraded entity page.",
       changes: {

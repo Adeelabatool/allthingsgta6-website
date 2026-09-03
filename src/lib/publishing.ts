@@ -36,10 +36,49 @@ export interface PendingRevision<T> {
 export interface Publishable {
   /** Defaults to "published" when omitted, so pre-existing entries keep rendering. */
   status?: PublishStatus;
-  /** ISO 8601 with offset, e.g. "2026-09-04T14:00:00Z". Required when status is "scheduled". */
+  /**
+   * ISO 8601 with an explicit offset, e.g. "2026-09-04T14:00:00Z". Required when
+   * status is "scheduled". Anything else — no offset, or a date that does not
+   * exist — keeps the entry hidden. See parsePublishAt.
+   */
   publishAt?: string;
   /** ISO date (YYYY-MM-DD) of the last first-party source check. */
   lastVerified?: string;
+}
+
+/**
+ * ISO 8601 with an explicit UTC offset. A schedule without one is ambiguous —
+ * it would mean a different instant depending on where the runtime thinks it
+ * is — so it is rejected rather than guessed at.
+ */
+const ISO_WITH_OFFSET =
+  /^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2})(?::(\d{2}))?(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/;
+
+/**
+ * Epoch milliseconds for a schedule, or NaN if it is not one we will act on.
+ *
+ * Date.parse alone is not enough. It accepts "2026-09-31T13:00:00Z" and rolls
+ * it forward to October 1 — so a typo in a date would not fail, it would
+ * publish on the wrong day, which is the failure mode hardest to notice. It
+ * also accepts strings with no offset and reads them in the runtime's local
+ * zone. Both are rejected here so every caller fails closed on the same rule.
+ */
+export function parsePublishAt(value: string | undefined): number {
+  if (!value) return NaN;
+
+  const match = ISO_WITH_OFFSET.exec(value);
+  if (!match) return NaN;
+
+  const [, year, month, day, hour, minute, second = "00"] = match;
+  const monthIndex = Number(month);
+  if (monthIndex < 1 || monthIndex > 12) return NaN;
+
+  // Day 0 of the next month is the last day of this one.
+  const daysInMonth = new Date(Date.UTC(Number(year), monthIndex, 0)).getUTCDate();
+  if (Number(day) < 1 || Number(day) > daysInMonth) return NaN;
+  if (Number(hour) > 23 || Number(minute) > 59 || Number(second) > 59) return NaN;
+
+  return Date.parse(value);
 }
 
 /** Shape shared by anything carrying a staged revision. */
@@ -53,7 +92,8 @@ export function resolveRevision<T extends Revisable>(item: T, now: Date = new Da
   const rev = item.pendingRevision;
   if (!rev) return item;
 
-  const at = Date.parse(rev.publishAt);
+  // A revision we cannot read stays unapplied: the live page keeps serving.
+  const at = parsePublishAt(rev.publishAt);
   if (Number.isNaN(at) || at > now.getTime()) return item;
 
   const { pendingRevision: _dropped, ...base } = item;
@@ -68,7 +108,7 @@ export function resolveRevision<T extends Revisable>(item: T, now: Date = new Da
 export function pendingRevisions<T extends Revisable>(items: T[], now: Date = new Date()): T[] {
   return items
     .filter((i) => {
-      const at = i.pendingRevision && Date.parse(i.pendingRevision.publishAt);
+      const at = i.pendingRevision && parsePublishAt(i.pendingRevision.publishAt);
       return typeof at === "number" && !Number.isNaN(at) && at > now.getTime();
     })
     .sort(
@@ -96,8 +136,7 @@ export function isPubliclyVisible(item: Publishable, now: Date = new Date()): bo
     case "published":
       return true;
     case "scheduled": {
-      if (!item.publishAt) return false;
-      const at = Date.parse(item.publishAt);
+      const at = parsePublishAt(item.publishAt);
       return !Number.isNaN(at) && at <= now.getTime();
     }
     default:
