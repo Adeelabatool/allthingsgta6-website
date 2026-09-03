@@ -361,7 +361,7 @@ export const analyses: AnalysisArticle[] = [
     title: "GTA 6 Map vs GTA 5: How Leonida Compares With Los Santos and Blaine County",
     hook: "GTA 6's map is not simply “GTA V but bigger.”",
     status: "scheduled",
-    publishAt: "2026-09-26T13:00:00Z",
+    publishAt: "2026-09-28T13:00:00Z",
     date: "2026-09-26",
     lastVerified: "2026-08-29",
     seoTitle: "GTA 6 Map vs GTA 5: How Leonida Compares With Los Santos and Blaine County",
@@ -526,7 +526,7 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "trailer-1-breakdown",
     pendingRevision: {
-      publishAt: "2026-09-24T13:00:00Z",
+      publishAt: "2026-09-25T13:00:00Z",
       lastVerified: "2026-08-29",
       note: "Day 27 of the 30-day plan: upgraded Trailer 1 breakdown.",
       changes: {
@@ -715,7 +715,7 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "gta-6-vs-gta-5-comparison",
     pendingRevision: {
-      publishAt: "2026-09-26T13:00:00Z",
+      publishAt: "2026-09-29T13:00:00Z",
       lastVerified: "2026-08-29",
       note: "Repositioned away from map scope when the dedicated map comparison publishes on Day 29.",
       changes: {

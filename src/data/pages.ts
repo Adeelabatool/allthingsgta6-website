@@ -51,7 +51,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-activities",
     status: "scheduled",
-    publishAt: "2026-09-21T13:00:00Z",
+    publishAt: "2026-09-22T13:00:00Z",
     title: "GTA 6 Activities and Minigames: What You Can Actually Do in Leonida",
     seoTitle: "GTA 6 Activities and Minigames: What You Can Actually Do in Leonida",
     metaDescription:
@@ -424,7 +424,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-gameplay",
     status: "scheduled",
-    publishAt: "2026-09-20T13:00:00Z",
+    publishAt: "2026-09-21T13:00:00Z",
     title: "GTA 6 Gameplay: Everything Rockstar Has Officially Shown",
     seoTitle: "GTA 6 Gameplay: Everything Rockstar Has Officially Shown",
     metaDescription:
@@ -656,7 +656,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-leonida",
     status: "scheduled",
-    publishAt: "2026-09-11T13:00:00Z",
+    publishAt: "2026-09-10T13:00:00Z",
     title: "GTA 6 Leonida Explained: Every Confirmed Region in Rockstar’s Florida-Inspired State",
     seoTitle:
       "GTA 6 Leonida Explained: Every Confirmed Region in Rockstar’s Florida-Inspired State",
@@ -811,7 +811,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-locations",
     status: "scheduled",
-    publishAt: "2026-09-09T13:00:00Z",
+    publishAt: "2026-09-08T13:00:00Z",
     title: "GTA 6 Locations: Every Confirmed City, Region and Landmark",
     seoTitle: "GTA 6 Locations: Every Confirmed City, Region and Landmark",
     metaDescription:
@@ -995,7 +995,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-map",
     status: "scheduled",
-    publishAt: "2026-09-08T13:00:00Z",
+    publishAt: "2026-09-07T13:00:00Z",
     title: "GTA 6 Map: Vice City, Leonida and Every Confirmed Region",
     seoTitle: "GTA 6 Map: Vice City, Leonida and Every Confirmed Region",
     metaDescription:
@@ -1232,7 +1232,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-online",
     status: "scheduled",
-    publishAt: "2026-09-27T13:00:00Z",
+    publishAt: "2026-09-30T13:00:00Z",
     title: "GTA 6 Online: What Rockstar Has Actually Confirmed - and What It Hasn’t",
     seoTitle: "GTA 6 Online: What Rockstar Has Actually Confirmed - and What It Hasn’t",
     metaDescription:
@@ -1558,7 +1558,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-platforms",
     status: "scheduled",
-    publishAt: "2026-09-05T13:00:00Z",
+    publishAt: "2026-09-04T13:00:00Z",
     title: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
     seoTitle: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
     metaDescription: "",
@@ -1708,7 +1708,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-price",
     status: "scheduled",
-    publishAt: "2026-09-04T13:00:00Z",
+    publishAt: "2026-09-01T13:00:00Z",
     title: "GTA 6 Price Confirmed: Standard and Ultimate Edition Cost Explained",
     seoTitle: "GTA 6 Price Confirmed: Standard and Ultimate Edition Cost Explained",
     metaDescription:
@@ -2092,7 +2092,7 @@ export const pages: SitePage[] = [
   {
     path: "/gta-6-trailers",
     status: "scheduled",
-    publishAt: "2026-09-23T13:00:00Z",
+    publishAt: "2026-09-24T13:00:00Z",
     title: "GTA 6 Trailers Guide: Trailer 1, Trailer 2 and the Extended Look",
     seoTitle: "GTA 6 Trailers Guide: Trailer 1, Trailer 2 and the Extended Look",
     metaDescription:
@@ -2946,7 +2946,7 @@ export const pages: SitePage[] = [
   {
     path: "/system-requirements",
     status: "scheduled",
-    publishAt: "2026-09-07T13:00:00Z",
+    publishAt: "2026-09-05T13:00:00Z",
     title: "GTA 6 PC System Requirements: No Official Specs Yet - Here’s What We Know",
     seoTitle: "GTA 6 PC System Requirements: No Official Specs Yet - Here’s What We Know",
     metaDescription:

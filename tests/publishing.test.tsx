@@ -282,7 +282,12 @@ ok(
 );
 ok(
   "and appears once that page is live",
-  liveLinks([{ href: "/gta-6-gameplay" }], new Date("2026-09-21T00:00:00Z")).length === 1,
+  // Read the date off the entry so a reshuffle of the calendar cannot quietly
+  // turn this into a test of nothing.
+  liveLinks(
+    [{ href: "/gta-6-gameplay" }],
+    new Date(Date.parse(pages.find((p) => p.path === "/gta-6-gameplay")!.publishAt!)),
+  ).length === 1,
 );
 ok(
   "a draft target is never linkable, even far in the future",
@@ -567,6 +572,7 @@ group("scheduled publication over time");
 const AUG31 = "2026-08-31T13:00:00Z"; // /gta-6-release-date
 const SEP02 = "2026-09-02T13:00:00Z"; // /gta-6-ultimate-edition
 const at = (iso: string, ms = 0) => new Date(Date.parse(iso) + ms);
+const NOW_INCIDENT = new Date("2026-09-03T14:00:00Z");
 
 ok(
   "before publishAt the scheduled page is unavailable",
@@ -615,17 +621,57 @@ ok(
   pageByPath("/gta-6-ultimate-edition", new Date("2026-09-03T14:00:00Z")) !== undefined,
 );
 
-// Sep 1 carried no scheduled entry at all. That is a calendar gap, not a bug in
-// the lifecycle, and this asserts the distinction rather than papering over it.
+group("publication calendar");
+// Sep 1, 6 and 25 were empty and Sep 26 was double-booked. Nothing in the
+// lifecycle notices that, so it is asserted here: a gap means a day with no
+// article, and a duplicate means two landing on one day unannounced.
+const everyEntry = [...pages, ...news, ...analyses, ...wiki];
 const scheduledOn = (day: string) =>
-  [...pages, ...news, ...analyses, ...wiki].filter((e) => e.publishAt?.startsWith(day));
+  everyEntry.filter(
+    (e) => e.publishAt?.startsWith(day) || e.pendingRevision?.publishAt?.startsWith(day),
+  );
+const dayOf = (iso: string) => iso.slice(0, 10);
+const everyScheduledDay = everyEntry
+  .flatMap((e) => [e.publishAt, e.pendingRevision?.publishAt])
+  .filter((v): v is string => typeof v === "string")
+  .map(dayOf)
+  .sort();
+
+// Sundays are the deliberate rest days, plus Sat Sep 26 before the closing run.
+const REST_DAYS = new Set(["2026-09-06", "2026-09-13", "2026-09-20", "2026-09-26", "2026-09-27"]);
+const runDays: string[] = [];
+for (let d = new Date("2026-08-29T00:00:00Z"); d <= new Date("2026-09-30T00:00:00Z");) {
+  runDays.push(d.toISOString().slice(0, 10));
+  d = new Date(d.getTime() + 86_400_000);
+}
+
 ok(
-  "Aug 31 and Sep 2 each have exactly one scheduled entry",
-  scheduledOn("2026-08-31").length === 1 && scheduledOn("2026-09-02").length === 1,
+  "every publishing day in the run has exactly one entry",
+  runDays.filter((d) => !REST_DAYS.has(d)).every((d) => scheduledOn(d).length === 1),
 );
 ok(
-  "Sep 1 has no scheduled entry — the gap is in the calendar, not the code",
-  scheduledOn("2026-09-01").length === 0,
+  "no two entries share a publication day",
+  new Set(everyScheduledDay).size === everyScheduledDay.length,
+);
+ok(
+  "the calendar runs to Sep 30 with nothing scheduled past it",
+  everyScheduledDay.includes("2026-09-30") && everyScheduledDay.every((d) => d <= "2026-09-30"),
+);
+ok(
+  "rest days are empty by intent, not by accident",
+  [...REST_DAYS].every((d) => scheduledOn(d).length === 0),
+);
+ok(
+  "every day on or before Sep 3 that carries an entry is live now",
+  runDays
+    .filter((d) => d <= "2026-09-03" && !REST_DAYS.has(d))
+    .every((d) => scheduledOn(d).every((e) => isPubliclyVisible(e, NOW_INCIDENT))),
+);
+ok(
+  "the three held drafts are still drafts and still private",
+  ["/gta-6-pc-release-date"].every((p) => pageByPath(p, NOW_INCIDENT) === undefined) &&
+    newsBySlug("gta-6-pre-order", NOW_INCIDENT) === undefined &&
+    analysisBySlug("trailer-2-breakdown", NOW_INCIDENT) === undefined,
 );
 
 group("publishAt timestamps are unambiguous");
