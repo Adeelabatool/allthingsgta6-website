@@ -5,6 +5,7 @@ import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import { newsBySlug, publicNews, type NewsItem } from "@/data/news";
+import type { ArticleImage } from "@/data/pages";
 import { SECTION_CRUMBS, articleHead, newsCategoryCrumb } from "@/lib/seo";
 import { publishedTimestamp } from "@/lib/publishing";
 import { liveLinks } from "@/lib/related";
@@ -24,6 +25,7 @@ export const Route = createFileRoute("/news/$slug")({
           title: loaderData.seoTitle ?? `${loaderData.title} — AllThingsGTA6`,
           description: loaderData.metaDescription ?? loaderData.summary,
           canonicalOverride: loaderData.canonicalOverride,
+          image: loaderData.heroImage?.url,
           crumbs: [
             SECTION_CRUMBS.news,
             newsCategoryCrumb(loaderData.category),
@@ -40,6 +42,28 @@ export const Route = createFileRoute("/news/$slug")({
     </SiteShell>
   ),
 });
+
+/**
+ * Article imagery. Alt text is required by the type, so an image cannot ship
+ * without it, and the intrinsic ratio is reserved with aspect-[3/2] so the
+ * text below does not jump once the file arrives.
+ */
+function ArticleFigure({ image, priority }: { image: ArticleImage; priority?: boolean }) {
+  return (
+    <figure className="mt-6">
+      <img
+        src={image.url}
+        alt={image.alt}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
+        className="w-full rounded-xl border border-border/60 bg-muted/30 aspect-[3/2] object-cover"
+      />
+      {image.credit && (
+        <figcaption className="mt-2 text-xs text-muted-foreground">{image.credit}</figcaption>
+      )}
+    </figure>
+  );
+}
 
 function NewsArticle() {
   const n = Route.useLoaderData();
@@ -58,6 +82,7 @@ function NewsArticle() {
         datePublished={publishedTimestamp(n)}
         dateModified={n.lastVerified}
         sources={n.sources ?? (n.source ? [n.source] : undefined)}
+        image={n.heroImage?.url}
       />
       <article className="container-page py-10 max-w-3xl">
         <Breadcrumbs
@@ -79,6 +104,7 @@ function NewsArticle() {
         </div>
         <h1 className="heading-display text-3xl md:text-5xl mt-3">{n.title}</h1>
         <p className="mt-4 text-lg text-muted-foreground">{n.summary}</p>
+        {n.heroImage && <ArticleFigure image={n.heroImage} priority />}
         {n.lastVerified && <LastVerified date={n.lastVerified} />}
 
         {n.intro?.map((p, i) => (
@@ -97,6 +123,7 @@ function NewsArticle() {
                 </p>
               ))}
               {sec.table ? <BodyTable table={sec.table} /> : null}
+              {sec.image && <ArticleFigure image={sec.image} />}
             </section>
           ))
         ) : (

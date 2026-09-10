@@ -157,8 +157,11 @@ export function articleHead(opts: {
   description: string;
   canonicalOverride?: string;
   crumbs?: Crumb[];
+  /** Share image for this page. Falls back to the site card when absent. */
+  image?: string;
 }) {
   const canonical = opts.canonicalOverride ?? absoluteUrl(opts.path);
+  const image = opts.image ?? SITE_IMAGE;
   return {
     meta: [
       { title: opts.title },
@@ -167,7 +170,9 @@ export function articleHead(opts: {
       { property: "og:description", content: opts.description },
       { property: "og:type", content: "article" },
       { property: "og:url", content: canonical },
-      { property: "og:image", content: SITE_IMAGE },
+      { property: "og:image", content: image },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: image },
     ],
     links: [{ rel: "canonical", href: canonical }],
     scripts: breadcrumbJsonLd(opts.crumbs ?? []),

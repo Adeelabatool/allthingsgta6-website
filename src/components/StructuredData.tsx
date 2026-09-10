@@ -45,6 +45,8 @@ export function ArticleJsonLd(props: {
    * URL; only those carrying one become schema citations.
    */
   sources?: { label: string; url?: string; needsReview?: boolean }[];
+  /** The article's own lead image, when it has one. */
+  image?: string;
 }) {
   const url = absoluteUrl(props.path);
   const data: Record<string, unknown> = {
@@ -56,7 +58,7 @@ export function ArticleJsonLd(props: {
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
     datePublished: props.datePublished,
     dateModified: props.dateModified ?? props.datePublished,
-    image: [SITE_IMAGE],
+    image: [props.image ?? SITE_IMAGE],
     author: publisher,
     publisher,
     isAccessibleForFree: true,
