@@ -1690,6 +1690,10 @@ export const pages: SitePage[] = [
     ],
     related: [
       {
+        href: "/news/gta-6-limited-edition-dualsense-controller",
+        label: "GTA 6 Limited Edition DualSense Controllers",
+      },
+      {
         href: "/system-requirements",
         label: "GTA 6 PC System Requirements",
       },
@@ -1846,6 +1850,10 @@ export const pages: SitePage[] = [
       },
     ],
     related: [
+      {
+        href: "/news/gta-6-limited-edition-dualsense-controller",
+        label: "GTA 6 Limited Edition DualSense Controllers",
+      },
       {
         href: "/gta-6-ultimate-edition",
         label: "GTA 6 Ultimate Edition",
