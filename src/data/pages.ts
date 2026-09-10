@@ -10,12 +10,29 @@ import { publicEntry, publicOnly, type PendingRevision, type Publishable } from 
  * and analysis entries.
  */
 
+/**
+ * An image with the alt text it must always carry.
+ *
+ * `url` may be absolute, for official press imagery served from the
+ * publisher's own CDN, or a site-relative path once a file has been taken
+ * into /public. Swapping one for the other is a data change only.
+ */
+export interface ArticleImage {
+  url: string;
+  /** Describes what is actually shown. Never decorative filler. */
+  alt: string;
+  /** Shown under the image, e.g. to credit the publisher. */
+  credit?: string;
+}
+
 export interface PageSection {
   heading: string;
   /** Body paragraphs, in order. */
   body?: string[];
   /** Optional data table. `head` is the header row. */
   table?: { head: string[]; rows: string[][] };
+  /** Illustrates this section specifically. */
+  image?: ArticleImage;
 }
 
 export interface SitePage extends Publishable {

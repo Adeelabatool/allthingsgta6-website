@@ -1,5 +1,5 @@
 import type { EvidenceRow } from "@/lib/evidence";
-import type { PageSection } from "@/data/pages";
+import type { ArticleImage, PageSection } from "@/data/pages";
 import { publicEntry, publicOnly, type PendingRevision, type Publishable } from "@/lib/publishing";
 
 export type NewsCategory =
@@ -26,6 +26,11 @@ export interface NewsItem extends Publishable {
   metaDescription?: string;
   /** Long-form body for articles that outgrow the three-part news structure. */
   sections?: PageSection[];
+  /**
+   * Lead image. Also becomes the og:image and the structured-data image, so a
+   * story with real photography shares as itself rather than the site card.
+   */
+  heroImage?: ArticleImage;
   /** Per-article evidence status table. */
   evidence?: EvidenceRow[];
   /**
@@ -70,6 +75,11 @@ export const news: NewsItem[] = [
     metaDescription:
       "Sony's GTA 6 Limited Edition DualSense controllers cost $84.99 / EUR 84.99 / GBP 74.99. Preorders open September 10 and both launch November 19, 2026 alongside GTA 6.",
     schemaType: "NewsArticle",
+    heroImage: {
+      url: "https://blog.playstation.com/uploads/2026/09/d839f6d8bdb082ff7b1abe44ca635ee2648003fd.jpg",
+      alt: "GTA VI Black Limited Edition DualSense wireless controller",
+      credit: "Image: Sony Interactive Entertainment / PlayStation Blog",
+    },
     intro: [
       "Sony has officially revealed two Grand Theft Auto VI Limited Edition DualSense wireless controllers for PS5, with both designs launching alongside GTA 6 on November 19, 2026. The GTA VI Black Limited Edition and GTA VI White Limited Edition cost $84.99 in the US, EUR 84.99 in Europe, GBP 74.99 in the UK and 12,480 yen in Japan, with preorders beginning September 10.",
       "This is not simply GTA VI artwork printed over a standard colorway. Sony says both controllers use a shimmering, colour-shifting finish inspired by Vice City's sunsets and neon nightlife, molded palm-tree details and official Grand Theft Auto VI branding.",
@@ -122,6 +132,11 @@ export const news: NewsItem[] = [
           "The White Edition also has the broader officially confirmed retail distribution of the two. Sony says it will be available in limited quantities globally through PlayStation Direct and participating retailers.",
           "That does not mean every retailer in every country will stock it. Sony has not published one universal retailer list in its announcement, and availability can differ by region. Buyers should rely on PlayStation's regional storefront or confirmed participating retailers rather than assuming a particular store will carry it.",
         ],
+        image: {
+          url: "https://blog.playstation.com/uploads/2026/09/8a2e0b5c957338fb0f63660e15390af3d52fadd0.jpg",
+          alt: "GTA VI White Limited Edition DualSense wireless controller",
+          credit: "Image: Sony Interactive Entertainment / PlayStation Blog",
+        },
       },
       {
         heading: "GTA 6 Black Limited Edition DualSense",
