@@ -44,7 +44,7 @@ export const analyses: AnalysisArticle[] = [
     status: "scheduled",
     publishAt: "2026-09-03T13:00:00Z",
     date: "2026-09-03",
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-03",
     seoTitle: "GTA 6 Standard vs Ultimate Edition: Which One Should You Buy?",
     metaDescription:
       "Compare GTA 6 Standard vs Ultimate Edition, including the $79.99 vs $99.99 price, bonuses, exclusive content and who each version is best for.",
@@ -363,7 +363,7 @@ export const analyses: AnalysisArticle[] = [
     status: "scheduled",
     publishAt: "2026-09-28T13:00:00Z",
     date: "2026-09-26",
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-28",
     seoTitle: "GTA 6 Map vs GTA 5: How Leonida Compares With Los Santos and Blaine County",
     metaDescription:
       "Compare GTA 6’s Leonida map with GTA 5’s Los Santos and Blaine County using official regions, world design and clearly labeled size evidence.",
@@ -527,7 +527,7 @@ export const analyses: AnalysisArticle[] = [
     slug: "trailer-1-breakdown",
     pendingRevision: {
       publishAt: "2026-09-25T13:00:00Z",
-      lastVerified: "2026-08-29",
+      lastVerified: "2026-09-25",
       note: "Day 27 of the 30-day plan: upgraded Trailer 1 breakdown.",
       changes: {
         title: "GTA 6 Trailer 1 Breakdown: Every Major Detail That Still Matters",
@@ -716,7 +716,7 @@ export const analyses: AnalysisArticle[] = [
     slug: "gta-6-vs-gta-5-comparison",
     pendingRevision: {
       publishAt: "2026-09-29T13:00:00Z",
-      lastVerified: "2026-08-29",
+      lastVerified: "2026-09-29",
       note: "Repositioned away from map scope when the dedicated map comparison publishes on Day 29.",
       changes: {
         title: "GTA 6 vs GTA 5: Simulation, Systems and the Generational Gap",

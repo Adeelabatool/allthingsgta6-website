@@ -592,7 +592,7 @@ export const news: NewsItem[] = [
     date: "2026-08-30",
     status: "scheduled",
     publishAt: "2026-08-30T13:00:00Z",
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-08-30",
     seoTitle: "GTA 6 News: Everything That Changed in August 2026",
     metaDescription:
       "Catch up on every major GTA 6 development from August 2026, including the Extended Look, PS5 footage, pre-order updates and new gameplay details.",

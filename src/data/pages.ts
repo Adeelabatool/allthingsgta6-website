@@ -214,7 +214,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Locations",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-22",
     breadcrumb: [
       {
         label: "GTA 6 Activities and Minigames: What You Can Actually Do in Leonida",
@@ -431,7 +431,7 @@ export const pages: SitePage[] = [
         label: "Raul Bautista",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-14",
     breadcrumb: [
       {
         label: "GTA 6 Characters: Every Confirmed Character So Far",
@@ -663,7 +663,7 @@ export const pages: SitePage[] = [
         label: "Police and Wanted System",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-21",
     breadcrumb: [
       {
         label: "GTA 6 Gameplay: Everything Rockstar Has Officially Shown",
@@ -817,7 +817,7 @@ export const pages: SitePage[] = [
         label: "Vice City",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-10",
     breadcrumb: [
       {
         label:
@@ -1002,7 +1002,7 @@ export const pages: SitePage[] = [
         label: "Leonida",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-08",
     breadcrumb: [
       {
         label: "GTA 6 Locations: Every Confirmed City, Region and Landmark",
@@ -1239,7 +1239,7 @@ export const pages: SitePage[] = [
         label: "Leonida",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-07",
     breadcrumb: [
       {
         label: "GTA 6 Map: Vice City, Leonida and Every Confirmed Region",
@@ -1406,7 +1406,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-30",
     breadcrumb: [
       {
         label: "GTA 6 Online: What Rockstar Has Actually Confirmed - and What It Hasn’t",
@@ -1719,7 +1719,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-04",
     breadcrumb: [
       {
         label: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
@@ -1884,7 +1884,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-01",
     breadcrumb: [
       {
         label: "GTA 6 Price Confirmed: Standard and Ultimate Edition Cost Explained",
@@ -2107,7 +2107,7 @@ export const pages: SitePage[] = [
         label: "Standard vs Ultimate",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-08-31",
     breadcrumb: [
       {
         label: "GTA 6 Release Date: November 19, 2026 - Platforms, Preload and Countdown",
@@ -2312,7 +2312,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Gameplay",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-24",
     breadcrumb: [
       {
         label: "GTA 6 Trailers Guide: Trailer 1, Trailer 2 and the Extended Look",
@@ -2480,7 +2480,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-02",
     breadcrumb: [
       {
         label: "GTA 6 Ultimate Edition: Everything Included for $99.99",
@@ -2729,7 +2729,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Map",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-18",
     breadcrumb: [
       {
         label: "GTA 6 Vehicles: Confirmed Cars, Bikes, Boats and Aircraft",
@@ -2961,7 +2961,7 @@ export const pages: SitePage[] = [
         label: "Police and Wanted System",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-19",
     breadcrumb: [
       {
         label: "GTA 6 Weapons: Confirmed Guns, Melee Weapons and Equipment",
@@ -3115,7 +3115,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-05",
     breadcrumb: [
       {
         label: "GTA 6 PC System Requirements: No Official Specs Yet - Here’s What We Know",
