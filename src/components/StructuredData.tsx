@@ -15,6 +15,12 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
   );
 }
 
+/** Trims a date field and treats an empty or whitespace-only value as absent. */
+function normaliseDate(value: string | undefined): string | undefined {
+  const trimmed = typeof value === "string" ? value.trim() : "";
+  return trimmed === "" ? undefined : trimmed;
+}
+
 const publisher = {
   "@type": "Organization",
   name: SITE_NAME,
@@ -56,13 +62,21 @@ export function ArticleJsonLd(props: {
     description: props.description,
     url,
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
-    datePublished: props.datePublished,
-    dateModified: props.dateModified ?? props.datePublished,
     image: [props.image ?? SITE_IMAGE],
     author: publisher,
     publisher,
     isAccessibleForFree: true,
   };
+
+  // An entry with no publication date on record — several wiki entities predate
+  // the lifecycle fields — used to emit datePublished:"" and dateModified:"",
+  // which is an invalid date and worse than the field being absent. Omit both
+  // rather than inventing a date, and never let dateModified claim a freshness
+  // the page has not earned: it is the real lastVerified or nothing.
+  const datePublished = normaliseDate(props.datePublished);
+  const dateModified = normaliseDate(props.dateModified) ?? datePublished;
+  if (datePublished) data.datePublished = datePublished;
+  if (dateModified) data.dateModified = dateModified;
 
   const linked = props.sources?.filter((s) => s.url);
   if (linked?.length) {

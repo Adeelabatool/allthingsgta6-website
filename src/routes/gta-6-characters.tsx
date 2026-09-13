@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
+import { articleHead, pageHead } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
-import { wiki } from "@/data/wiki";
+import { publicWiki } from "@/data/wiki";
 
 export const Route = createFileRoute("/gta-6-characters")({
   // The upgraded article for this URL is scheduled. Until its publishAt passes
@@ -20,20 +20,13 @@ export const Route = createFileRoute("/gta-6-characters")({
         crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
-    return {
-      scripts: breadcrumbJsonLd([{ name: "GTA 6 Characters", path: "/gta-6-characters" }]),
-      meta: [
-        { title: "GTA 6 Characters — Jason, Lucia & The Cast" },
-        {
-          name: "description",
-          content:
-            "Every confirmed GTA 6 character: Jason, Lucia, the gangs of Vice City, and supporting cast — full wiki coverage.",
-        },
-        { property: "og:title", content: "GTA 6 Characters — AllThingsGTA6" },
-        { property: "og:url", content: "https://allthingsgta6.com/gta-6-characters" },
-      ],
-      links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-characters" }],
-    };
+    return pageHead({
+      path: "/gta-6-characters",
+      title: "GTA 6 Characters — Jason, Lucia & The Cast",
+      description:
+        "Every confirmed GTA 6 character: Jason, Lucia, the gangs of Vice City, and supporting cast — full wiki coverage.",
+      crumbs: [{ name: "GTA 6 Characters", path: "/gta-6-characters" }],
+    });
   },
   component: HubRoute,
 });
@@ -49,7 +42,7 @@ function HubRoute() {
       sections={[
         {
           title: "Protagonists",
-          items: wiki
+          items: publicWiki()
             .filter((w) => w.type === "characters")
             .map((w) => ({
               href: `/wiki/characters/${w.slug}`,
@@ -59,7 +52,7 @@ function HubRoute() {
         },
         {
           title: "Factions",
-          items: wiki
+          items: publicWiki()
             .filter((w) => w.type === "gangs")
             .map((w) => ({
               href: `/wiki/gangs/${w.slug}`,

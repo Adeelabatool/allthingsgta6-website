@@ -6,25 +6,16 @@ import { publicNews } from "@/data/news";
 import { publicWiki } from "@/data/wiki";
 import { publicAnalyses } from "@/data/analysis";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "AllThingsGTA6 — GTA 6 Live Dashboard" },
-      {
-        name: "description",
-        content:
-          "Live GTA 6 dashboard: breaking news, countdown to November 19 2026, featured analysis, wiki highlights, and interactive tools.",
-      },
-      { property: "og:title", content: "AllThingsGTA6 — GTA 6 Live Dashboard" },
-      {
-        property: "og:description",
-        content: "GTA 6 news, wiki, analysis and tools — all in one live intelligence dashboard.",
-      },
-      { property: "og:url", content: "https://allthingsgta6.com/" },
-    ],
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/",
+      title: "AllThingsGTA6 — GTA 6 Live Dashboard",
+      description:
+        "Live GTA 6 dashboard: breaking news, countdown to November 19 2026, featured analysis, wiki highlights, and interactive tools.",
+    }),
   component: Index,
 });
 

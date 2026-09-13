@@ -1,23 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 import { publicAnalyses } from "@/data/analysis";
 
 export const Route = createFileRoute("/analysis/")({
-  head: () => ({
-    scripts: breadcrumbJsonLd([SECTION_CRUMBS.analysis]),
-    meta: [
-      { title: "GTA 6 Analysis — Deep Editorial Breakdowns" },
-      {
-        name: "description",
-        content:
-          "In-depth GTA 6 analysis: trailer breakdowns, engine deep-dives, release theories, and predictions backed by evidence.",
-      },
-      { property: "og:title", content: "GTA 6 Analysis — AllThingsGTA6" },
-      { property: "og:url", content: "https://allthingsgta6.com/analysis" },
-    ],
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/analysis" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/analysis",
+      title: "GTA 6 Analysis — Deep Editorial Breakdowns",
+      description:
+        "In-depth GTA 6 analysis: trailer breakdowns, engine deep-dives, release theories, and predictions backed by evidence.",
+      crumbs: [SECTION_CRUMBS.analysis],
+    }),
   component: AnalysisIndex,
 });
 

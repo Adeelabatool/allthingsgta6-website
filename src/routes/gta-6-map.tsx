@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
+import { articleHead, pageHead } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
-import { wiki } from "@/data/wiki";
+import { publicWiki } from "@/data/wiki";
 
 export const Route = createFileRoute("/gta-6-map")({
   // The upgraded article for this URL is scheduled. Until its publishAt passes
@@ -20,20 +20,13 @@ export const Route = createFileRoute("/gta-6-map")({
         crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
-    return {
-      scripts: breadcrumbJsonLd([{ name: "GTA 6 Map", path: "/gta-6-map" }]),
-      meta: [
-        { title: "GTA 6 Map — Vice City, Leonida & Beyond" },
-        {
-          name: "description",
-          content:
-            "Explore the GTA 6 map: Vice City districts, rural Leonida, the Keys, the Everglades, and every confirmed landmark.",
-        },
-        { property: "og:title", content: "GTA 6 Map — AllThingsGTA6" },
-        { property: "og:url", content: "https://allthingsgta6.com/gta-6-map" },
-      ],
-      links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-map" }],
-    };
+    return pageHead({
+      path: "/gta-6-map",
+      title: "GTA 6 Map — Vice City, Leonida & Beyond",
+      description:
+        "Explore the GTA 6 map: Vice City districts, rural Leonida, the Keys, the Everglades, and every confirmed landmark.",
+      crumbs: [{ name: "GTA 6 Map", path: "/gta-6-map" }],
+    });
   },
   component: HubRoute,
 });
@@ -49,7 +42,7 @@ function HubRoute() {
       sections={[
         {
           title: "Map Wiki Entries",
-          items: wiki
+          items: publicWiki()
             .filter((w) => w.type === "map")
             .map((w) => ({
               href: `/wiki/map/${w.slug}`,

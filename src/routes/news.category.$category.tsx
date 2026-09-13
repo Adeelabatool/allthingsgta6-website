@@ -1,7 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { newsByCategory, newsCategories } from "@/data/news";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/news/category/$category")({
   loader: ({ params }) => {
@@ -10,36 +10,18 @@ export const Route = createFileRoute("/news/category/$category")({
     if (!meta) throw notFound();
     return { items, meta };
   },
-  head: ({ loaderData }) => ({
-    meta: loaderData
-      ? [
-          { title: `${loaderData.meta.label} — GTA 6 News` },
-          {
-            name: "description",
-            content: `Latest GTA 6 ${loaderData.meta.label.toLowerCase()} news, analysis, and updates.`,
-          },
-          { property: "og:title", content: `${loaderData.meta.label} — GTA 6 News` },
-          {
-            property: "og:url",
-            content: `https://allthingsgta6.com/news/category/${loaderData.meta.slug}`,
-          },
-        ]
-      : [],
-    scripts: loaderData
-      ? breadcrumbJsonLd([
-          SECTION_CRUMBS.news,
-          { name: loaderData.meta.label, path: `/news/category/${loaderData.meta.slug}` },
-        ])
-      : [],
-    links: loaderData
-      ? [
-          {
-            rel: "canonical",
-            href: `https://allthingsgta6.com/news/category/${loaderData.meta.slug}`,
-          },
-        ]
-      : [],
-  }),
+  head: ({ loaderData }) =>
+    loaderData
+      ? pageHead({
+          path: `/news/category/${loaderData.meta.slug}`,
+          title: `${loaderData.meta.label} — GTA 6 News`,
+          description: `Latest GTA 6 ${loaderData.meta.label.toLowerCase()} news, analysis, and updates.`,
+          crumbs: [
+            SECTION_CRUMBS.news,
+            { name: loaderData.meta.label, path: `/news/category/${loaderData.meta.slug}` },
+          ],
+        })
+      : { meta: [], links: [] },
   component: NewsCategoryPage,
 });
 

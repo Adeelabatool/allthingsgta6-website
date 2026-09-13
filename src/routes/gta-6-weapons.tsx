@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
+import { articleHead, pageHead } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
-import { wiki } from "@/data/wiki";
+import { publicWiki } from "@/data/wiki";
 
 export const Route = createFileRoute("/gta-6-weapons")({
   // The upgraded article for this URL is scheduled. Until its publishAt passes
@@ -20,20 +20,13 @@ export const Route = createFileRoute("/gta-6-weapons")({
         crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
-    return {
-      scripts: breadcrumbJsonLd([{ name: "GTA 6 Weapons", path: "/gta-6-weapons" }]),
-      meta: [
-        { title: "GTA 6 Weapons — Guns, Melee & Customization" },
-        {
-          name: "description",
-          content:
-            "GTA 6 weapons coverage: firearms, melee, expected modding system, and combat mechanics analysis.",
-        },
-        { property: "og:title", content: "GTA 6 Weapons — AllThingsGTA6" },
-        { property: "og:url", content: "https://allthingsgta6.com/gta-6-weapons" },
-      ],
-      links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-weapons" }],
-    };
+    return pageHead({
+      path: "/gta-6-weapons",
+      title: "GTA 6 Weapons — Guns, Melee & Customization",
+      description:
+        "GTA 6 weapons coverage: firearms, melee, expected modding system, and combat mechanics analysis.",
+      crumbs: [{ name: "GTA 6 Weapons", path: "/gta-6-weapons" }],
+    });
   },
   component: HubRoute,
 });
@@ -49,7 +42,7 @@ function HubRoute() {
       sections={[
         {
           title: "Weapon Wiki",
-          items: wiki
+          items: publicWiki()
             .filter((w) => w.type === "weapons")
             .map((w) => ({
               href: `/wiki/weapons/${w.slug}`,

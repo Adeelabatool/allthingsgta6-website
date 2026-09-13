@@ -1,26 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About & Editorial Standards — AllThingsGTA6" },
-      {
-        name: "description",
-        content:
-          "Who runs AllThingsGTA6, how we source and label information, and how we separate confirmed Rockstar facts from leaks and speculation.",
-      },
-      { property: "og:title", content: "About & Editorial Standards — AllThingsGTA6" },
-      {
-        property: "og:description",
-        content: "How AllThingsGTA6 sources, labels, and verifies GTA 6 information.",
-      },
-      { property: "og:url", content: "https://allthingsgta6.com/about" },
-    ],
-    scripts: breadcrumbJsonLd([{ name: "About", path: "/about" }]),
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/about" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/about",
+      title: "About & Editorial Standards — AllThingsGTA6",
+      description:
+        "Who runs AllThingsGTA6, how we source and label information, and how we separate confirmed Rockstar facts from leaks and speculation.",
+      crumbs: [{ name: "About", path: "/about" }],
+    }),
   component: AboutPage,
 });
 

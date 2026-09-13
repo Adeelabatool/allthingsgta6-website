@@ -1,29 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { SiteShell } from "@/components/SiteShell";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 
 const RELEASE_DATE_ISO = "2026-11-19T00:00:00Z";
 
 export const Route = createFileRoute("/tools/countdown")({
-  head: () => ({
-    meta: [
-      { title: "GTA 6 Release Countdown — Live Timer to November 19, 2026" },
-      {
-        name: "description",
-        content:
-          "Live countdown to the Grand Theft Auto VI release date. Days, hours, minutes and seconds to November 19, 2026.",
-      },
-      { property: "og:title", content: "GTA 6 Release Countdown" },
-      { property: "og:description", content: "Live countdown timer to GTA 6." },
-      { property: "og:url", content: "https://allthingsgta6.com/tools/countdown" },
-    ],
-    scripts: breadcrumbJsonLd([
-      SECTION_CRUMBS.tools,
-      { name: "Countdown", path: "/tools/countdown" },
-    ]),
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/countdown" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/tools/countdown",
+      title: "GTA 6 Release Countdown — Live Timer to November 19, 2026",
+      description:
+        "Live countdown to the Grand Theft Auto VI release date. Days, hours, minutes and seconds to November 19, 2026.",
+      crumbs: [SECTION_CRUMBS.tools, { name: "Countdown", path: "/tools/countdown" }],
+    }),
   component: CountdownPage,
 });
 

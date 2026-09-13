@@ -79,10 +79,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         content:
           "The GTA 6 intelligence platform: real-time news, structured wiki, deep editorial analysis, and interactive tools for Grand Theft Auto VI.",
       },
-      { property: "og:image", content: "https://allthingsgta6.com/og-cover.svg" },
-      { name: "twitter:image", content: "https://allthingsgta6.com/og-cover.svg" },
+      { property: "og:image", content: "https://allthingsgta6.com/og-cover.png" },
+      { name: "twitter:image", content: "https://allthingsgta6.com/og-cover.png" },
     ],
-    links: [{ rel: "stylesheet", href: appCss }],
+    // The favicon was undetectable because nothing declared one and no icon
+    // asset existed to fall back on — a bare /favicon.ico request 404s on this
+    // origin. Both files live in /public and are served from the site root.
+    links: [
+      { rel: "icon", href: "/favicon.ico", sizes: "32x32" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+      { rel: "stylesheet", href: appCss },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
