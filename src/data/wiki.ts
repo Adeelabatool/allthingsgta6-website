@@ -57,7 +57,7 @@ export const wiki: WikiEntry[] = [
       "Cal Hampton is one of GTA 6's officially revealed supporting characters and a friend of protagonist Jason Duval.",
     status: "scheduled",
     publishAt: "2026-09-15T13:00:00Z",
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-15",
     seoTitle: "Cal Hampton in GTA 6: Jason’s Paranoid Friend Explained",
     metaDescription:
       "Cal Hampton is Jason’s conspiracy-minded friend in GTA 6. Here’s what Rockstar has confirmed about his personality, Brian connection and role.",
@@ -189,7 +189,7 @@ export const wiki: WikiEntry[] = [
       "Boobie Ike is one of the supporting characters Rockstar has officially introduced for GTA 6 and appears closely tied to Vice City's nightlife and business scene.",
     status: "scheduled",
     publishAt: "2026-09-16T13:00:00Z",
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-16",
     seoTitle: "Boobie Ike in GTA 6: Vice City Businessman and Nightlife Figure",
     metaDescription:
       "Who is Boobie Ike in GTA 6? Here’s what Rockstar has confirmed about his Vice City businesses, nightlife influence and connection to Dre’Quan Priest.",
@@ -314,7 +314,7 @@ export const wiki: WikiEntry[] = [
       "Raul Bautista is one of GTA 6's most clearly defined criminal supporting characters.",
     status: "scheduled",
     publishAt: "2026-09-17T13:00:00Z",
-    lastVerified: "2026-08-29",
+    lastVerified: "2026-09-17",
     seoTitle: "Raul Bautista in GTA 6: The Experienced Bank Robber Raising the Stakes",
     metaDescription:
       "Raul Bautista is GTA 6’s seasoned bank robber. Learn what Rockstar confirms about his personality, crew-building style and appetite for risky scores.",
@@ -437,7 +437,7 @@ export const wiki: WikiEntry[] = [
     slug: "jason",
     pendingRevision: {
       publishAt: "2026-09-11T13:00:00Z",
-      lastVerified: "2026-08-29",
+      lastVerified: "2026-09-11",
       note: "Day 15 of the 30-day plan: upgraded entity page.",
       changes: {
         seoTitle: "Jason Duval in GTA 6: Backstory, Role and Everything Rockstar Has Confirmed",
@@ -618,7 +618,7 @@ export const wiki: WikiEntry[] = [
     slug: "lucia",
     pendingRevision: {
       publishAt: "2026-09-12T13:00:00Z",
-      lastVerified: "2026-08-29",
+      lastVerified: "2026-09-12",
       note: "Day 16 of the 30-day plan: upgraded entity page.",
       changes: {
         seoTitle: "Lucia Caminos in GTA 6: Backstory, Prison History and Role Explained",
@@ -869,7 +869,7 @@ export const wiki: WikiEntry[] = [
     slug: "vice-city",
     pendingRevision: {
       publishAt: "2026-09-09T13:00:00Z",
-      lastVerified: "2026-08-29",
+      lastVerified: "2026-09-09",
       note: "Day 13 of the 30-day plan: upgraded entity page.",
       changes: {
         seoTitle: "GTA 6 Vice City: What Rockstar’s Modern Miami Looks Like",
@@ -1130,7 +1130,7 @@ export const wiki: WikiEntry[] = [
     slug: "police-system",
     pendingRevision: {
       publishAt: "2026-09-23T13:00:00Z",
-      lastVerified: "2026-08-29",
+      lastVerified: "2026-09-23",
       note: "Day 25 of the 30-day plan: upgraded entity page.",
       changes: {
         seoTitle: "GTA 6 Police and Wanted System: What the Extended Look Reveals",

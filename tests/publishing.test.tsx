@@ -674,6 +674,39 @@ ok(
     analysisBySlug("trailer-2-breakdown", NOW_INCIDENT) === undefined,
 );
 
+group("freshness stamps match publication");
+// A page that goes public on Sep 11 must not tell readers it was last verified
+// on Aug 29, the day it was drafted. The stamp tracks the moment the content
+// actually reached the public, so it moves with publishAt.
+const stampMismatches = everyEntry.flatMap((e) => {
+  const out: string[] = [];
+  if (e.publishAt && e.lastVerified !== e.publishAt.slice(0, 10)) {
+    out.push(`${e.publishAt.slice(0, 10)} entry`);
+  }
+  const rev = e.pendingRevision;
+  if (
+    rev &&
+    resolveRevision(e, new Date(Date.parse(rev.publishAt))).lastVerified !==
+      rev.publishAt.slice(0, 10)
+  ) {
+    out.push(`${rev.publishAt.slice(0, 10)} revision`);
+  }
+  return out;
+});
+ok("every scheduled entry is stamped with its own publication date", stampMismatches.length === 0);
+ok(
+  "a staged revision refreshes the stamp as it lands, not before",
+  wiki.every((w) => {
+    const rev = w.pendingRevision;
+    if (!rev) return true;
+    const at = Date.parse(rev.publishAt);
+    return (
+      resolveRevision(w, new Date(at - 1)).lastVerified !== rev.publishAt.slice(0, 10) &&
+      resolveRevision(w, new Date(at)).lastVerified === rev.publishAt.slice(0, 10)
+    );
+  }),
+);
+
 group("publishAt timestamps are unambiguous");
 const everyPublishAt = [
   ...[...pages, ...news, ...analyses, ...wiki].map((e) => e.publishAt),
