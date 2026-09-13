@@ -1,24 +1,19 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { useState } from "react";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/vehicle-comparator")({
-  head: () => ({
-    meta: [
-      { title: "GTA 6 Vehicle Comparator — Side-by-Side Specs" },
-      {
-        name: "description",
-        content: "Compare GTA 6 vehicle specs side-by-side: speed, handling, acceleration, type.",
-      },
-      { property: "og:url", content: "https://allthingsgta6.com/tools/vehicle-comparator" },
-    ],
-    scripts: breadcrumbJsonLd([
-      SECTION_CRUMBS.tools,
-      { name: "Vehicle Comparator", path: "/tools/vehicle-comparator" },
-    ]),
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/vehicle-comparator" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/tools/vehicle-comparator",
+      title: "GTA 6 Vehicle Comparator — Side-by-Side Specs",
+      description: "Compare GTA 6 vehicle specs side-by-side: speed, handling, acceleration, type.",
+      crumbs: [
+        SECTION_CRUMBS.tools,
+        { name: "Vehicle Comparator", path: "/tools/vehicle-comparator" },
+      ],
+    }),
   component: VehicleComparator,
 });
 

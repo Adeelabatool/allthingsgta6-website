@@ -1,27 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 import { publicNews, newsCategories } from "@/data/news";
 
 export const Route = createFileRoute("/news/")({
-  head: () => ({
-    scripts: breadcrumbJsonLd([SECTION_CRUMBS.news]),
-    meta: [
-      { title: "GTA 6 News Archive — Every Story by Date" },
-      {
-        name: "description",
-        content:
-          "The full chronological archive of our Grand Theft Auto VI reporting, newest first. For the curated topic hub, see the GTA 6 News Hub.",
-      },
-      { property: "og:title", content: "GTA 6 News Archive — AllThingsGTA6" },
-      {
-        property: "og:description",
-        content: "The full chronological archive of our GTA 6 reporting, newest first.",
-      },
-      { property: "og:url", content: "https://allthingsgta6.com/news" },
-    ],
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/news" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/news",
+      title: "GTA 6 News Archive — Every Story by Date",
+      description:
+        "The full chronological archive of our Grand Theft Auto VI reporting, newest first. For the curated topic hub, see the GTA 6 News Hub.",
+      crumbs: [SECTION_CRUMBS.news],
+    }),
   component: NewsIndex,
 });
 

@@ -373,15 +373,15 @@ export const news: NewsItem[] = [
       {
         heading: "The most important confirmed details",
         table: {
-          head: ["Detail", "What we know", ""],
+          head: ["Detail", "What we know"],
           rows: [
-            ["Release date", "November 19, 2026", ""],
-            ["Launch platforms", "PlayStation 5 and Xbox Series X\\", "S"],
-            ["Showcase runtime", "About 27 minutes", ""],
-            ["Footage source", "Captured from the PS5 version", ""],
-            ["Main protagonists", "Jason Duval and Lucia Caminos", ""],
-            ["Setting", "Vice City and the wider state of Leonida", ""],
-            ["Pre-load", "November 12 for digital pre-orders", ""],
+            ["Release date", "November 19, 2026"],
+            ["Launch platforms", "PlayStation 5 and Xbox Series X|S"],
+            ["Showcase runtime", "About 27 minutes"],
+            ["Footage source", "Captured from the PS5 version"],
+            ["Main protagonists", "Jason Duval and Lucia Caminos"],
+            ["Setting", "Vice City and the wider state of Leonida"],
+            ["Pre-load", "November 12 for digital pre-orders"],
           ],
         },
       },

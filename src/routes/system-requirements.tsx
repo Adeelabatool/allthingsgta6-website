@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
+import { articleHead, pageHead } from "@/lib/seo";
 import { SiteShell } from "@/components/SiteShell";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
 
@@ -20,26 +20,13 @@ export const Route = createFileRoute("/system-requirements")({
         crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
-    return {
-      scripts: breadcrumbJsonLd([
-        { name: "GTA 6 System Requirements", path: "/system-requirements" },
-      ]),
-      meta: [
-        { title: "GTA 6 System Requirements — PS5, Xbox & PC (What's Confirmed)" },
-        {
-          name: "description",
-          content:
-            "GTA 6 confirmed console hardware for PS5 and Xbox Series X|S. Rockstar has not announced PC system requirements — we show Rockstar's past PC ports as reference instead of inventing specs.",
-        },
-        { property: "og:title", content: "GTA 6 System Requirements" },
-        {
-          property: "og:description",
-          content: "Confirmed GTA 6 console platforms and honest PC context — no invented specs.",
-        },
-        { property: "og:url", content: "https://allthingsgta6.com/system-requirements" },
-      ],
-      links: [{ rel: "canonical", href: "https://allthingsgta6.com/system-requirements" }],
-    };
+    return pageHead({
+      path: "/system-requirements",
+      title: "GTA 6 System Requirements — PS5, Xbox & PC (What's Confirmed)",
+      description:
+        "GTA 6 confirmed console hardware for PS5 and Xbox Series X|S. Rockstar has not announced PC system requirements — we show Rockstar's past PC ports as reference instead of inventing specs.",
+      crumbs: [{ name: "GTA 6 System Requirements", path: "/system-requirements" }],
+    });
   },
   component: HubRoute,
 });

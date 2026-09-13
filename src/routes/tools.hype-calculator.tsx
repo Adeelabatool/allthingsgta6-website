@@ -1,24 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
 import { useState } from "react";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/hype-calculator")({
-  head: () => ({
-    meta: [
-      { title: "GTA 6 Hype Calculator — Score Your Anticipation" },
-      {
-        name: "description",
-        content: "Quantify your GTA 6 hype level with our interactive calculator.",
-      },
-      { property: "og:url", content: "https://allthingsgta6.com/tools/hype-calculator" },
-    ],
-    scripts: breadcrumbJsonLd([
-      SECTION_CRUMBS.tools,
-      { name: "Hype Calculator", path: "/tools/hype-calculator" },
-    ]),
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools/hype-calculator" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/tools/hype-calculator",
+      title: "GTA 6 Hype Calculator — Score Your Anticipation",
+      description: "Quantify your GTA 6 hype level with our interactive calculator.",
+      crumbs: [SECTION_CRUMBS.tools, { name: "Hype Calculator", path: "/tools/hype-calculator" }],
+    }),
   component: HypeCalculator,
 });
 

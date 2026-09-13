@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LongFormArticle } from "@/components/LongFormArticle";
 import { pageByPath } from "@/data/pages";
-import { articleHead, breadcrumbJsonLd } from "@/lib/seo";
+import { articleHead, pageHead } from "@/lib/seo";
 import { PillarHub } from "@/components/PillarHub";
-import { wiki } from "@/data/wiki";
+import { publicWiki } from "@/data/wiki";
 
 export const Route = createFileRoute("/gta-6-vehicles")({
   // The upgraded article for this URL is scheduled. Until its publishAt passes
@@ -20,20 +20,13 @@ export const Route = createFileRoute("/gta-6-vehicles")({
         crumbs: [{ name: upgraded.title, path: upgraded.path }],
       });
     }
-    return {
-      scripts: breadcrumbJsonLd([{ name: "GTA 6 Vehicles", path: "/gta-6-vehicles" }]),
-      meta: [
-        { title: "GTA 6 Vehicles — Cars, Bikes, SUVs & More" },
-        {
-          name: "description",
-          content:
-            "Every GTA 6 vehicle class: sports cars, SUVs, motorcycles, police vehicles — wiki coverage and comparator tool.",
-        },
-        { property: "og:title", content: "GTA 6 Vehicles — AllThingsGTA6" },
-        { property: "og:url", content: "https://allthingsgta6.com/gta-6-vehicles" },
-      ],
-      links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-vehicles" }],
-    };
+    return pageHead({
+      path: "/gta-6-vehicles",
+      title: "GTA 6 Vehicles — Cars, Bikes, SUVs & More",
+      description:
+        "Every GTA 6 vehicle class: sports cars, SUVs, motorcycles, police vehicles — wiki coverage and comparator tool.",
+      crumbs: [{ name: "GTA 6 Vehicles", path: "/gta-6-vehicles" }],
+    });
   },
   component: HubRoute,
 });
@@ -49,7 +42,7 @@ function HubRoute() {
       sections={[
         {
           title: "Vehicle Wiki",
-          items: wiki
+          items: publicWiki()
             .filter((w) => w.type === "vehicles")
             .map((w) => ({
               href: `/wiki/vehicles/${w.slug}`,

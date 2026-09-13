@@ -5,8 +5,25 @@ import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
 import { wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
-import { SECTION_CRUMBS, articleHead } from "@/lib/seo";
+import { SECTION_CRUMBS, articleHead, type Crumb } from "@/lib/seo";
 import { liveLinks } from "@/lib/related";
+
+/**
+ * The one breadcrumb trail for a wiki entry.
+ *
+ * The rendered trail and the BreadcrumbList used to be written out separately,
+ * and the JSON-LD was missing the entry-type crumb the reader can see — Google
+ * expects the structured trail to match the visible one, so both now come from
+ * here.
+ */
+function wikiTrail(entry: WikiEntry): Crumb[] {
+  const typeLabel = wikiTypes.find((t) => t.slug === entry.type)?.label ?? entry.type;
+  return [
+    SECTION_CRUMBS.wiki,
+    { name: typeLabel, path: `/wiki#${entry.type}` },
+    { name: entry.name, path: `/wiki/${entry.type}/${entry.slug}` },
+  ];
+}
 
 export const Route = createFileRoute("/wiki/$type/$slug")({
   loader: ({ params }) => {
@@ -21,10 +38,7 @@ export const Route = createFileRoute("/wiki/$type/$slug")({
           title: loaderData.seoTitle ?? `${loaderData.name} — GTA 6 Wiki`,
           description: loaderData.metaDescription ?? loaderData.overview.slice(0, 155),
           canonicalOverride: loaderData.canonicalOverride,
-          crumbs: [
-            SECTION_CRUMBS.wiki,
-            { name: loaderData.name, path: `/wiki/${loaderData.type}/${loaderData.slug}` },
-          ],
+          crumbs: wikiTrail(loaderData),
         })
       : { meta: [], links: [] },
   component: WikiEntryPage,
@@ -42,7 +56,6 @@ function WikiEntryPage() {
   const sameType = publicWiki()
     .filter((x) => x.type === w.type && x.slug !== w.slug)
     .slice(0, 4);
-  const typeLabel = wikiTypes.find((t) => t.slug === w.type)?.label ?? w.type;
 
   return (
     <SiteShell>
@@ -52,19 +65,15 @@ function WikiEntryPage() {
         headline={w.name}
         description={w.metaDescription ?? w.overview.slice(0, 155)}
         path={`/wiki/${w.type}/${w.slug}`}
+        // Entities predating the lifecycle fields carry no publication date.
+        // ArticleJsonLd omits the field rather than emitting an empty one.
         datePublished={w.publishAt ?? w.lastVerified ?? ""}
         dateModified={w.lastVerified}
         sources={w.sources}
       />
       <article className="container-page py-10 grid gap-8 lg:grid-cols-[1fr_280px] max-w-6xl">
         <div>
-          <Breadcrumbs
-            trail={[
-              SECTION_CRUMBS.wiki,
-              { name: typeLabel, path: `/wiki#${w.type}` },
-              { name: w.name, path: `/wiki/${w.type}/${w.slug}` },
-            ]}
-          />
+          <Breadcrumbs trail={wikiTrail(w)} />
           <div className="mt-4 chip chip-neon">{w.type}</div>
           <h1 className="heading-display text-4xl md:text-6xl mt-3">{w.name}</h1>
           {w.lastVerified && <LastVerified date={w.lastVerified} />}

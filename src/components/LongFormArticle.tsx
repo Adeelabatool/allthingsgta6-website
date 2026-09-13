@@ -144,6 +144,22 @@ function Section({ section }: { section: PageSection }) {
           </table>
         </div>
       ) : null}
+      {section.image ? (
+        <figure className="mt-4">
+          <img
+            src={section.image.url}
+            alt={section.image.alt}
+            loading="lazy"
+            decoding="async"
+            className="w-full rounded-xl border border-border/60 bg-muted/30 aspect-[3/2] object-cover"
+          />
+          {section.image.credit ? (
+            <figcaption className="mt-2 text-xs text-muted-foreground">
+              {section.image.credit}
+            </figcaption>
+          ) : null}
+        </figure>
+      ) : null}
     </section>
   );
 }

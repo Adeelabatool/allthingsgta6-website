@@ -20,7 +20,7 @@ import {
 } from "@/lib/publishing";
 import { news, publicNews, newsBySlug, newsByCategory } from "@/data/news";
 import { pages, publicPages, pageByPath } from "@/data/pages";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { isLinkTargetLive, liveLinks } from "@/lib/related";
 import { TICKER_MAX_ITEMS, tickerDate, tickerStories } from "@/lib/ticker";
 import { wiki, publicWiki, wikiBySlug, wikiByType } from "@/data/wiki";
@@ -28,7 +28,13 @@ import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
 import { ALWAYS_LIVE } from "@/lib/related";
 import { renderSitemap, sitemapUrls, staticSitemapPaths } from "@/lib/sitemap";
 import { ArticleJsonLd } from "@/components/StructuredData";
-import { articleHead, breadcrumbJsonLd, buildBreadcrumbList } from "@/lib/seo";
+import {
+  articleHead,
+  breadcrumbJsonLd,
+  buildBreadcrumbList,
+  pageHead,
+  SITE_IMAGE,
+} from "@/lib/seo";
 
 let failures = 0;
 const ok = (name: string, cond: boolean) => {
@@ -844,6 +850,181 @@ ok(
   "sitemap generation has exactly one visibility rule",
   readFileSync("src/lib/sitemap.ts", "utf8").includes("publicPages("),
 );
+
+/* ------------------------------------------------------------------------ *
+ * SEO audit 2026-09-13. Every failure below was live on the site: the root's
+ * home-page Twitter card on every article, hubs with no og:description, an
+ * SVG share image no social crawler renders, wiki Articles carrying
+ * datePublished:"", a sitemap stamping today on pages untouched since March,
+ * and hub listings linking to entries that had not published yet.
+ * ------------------------------------------------------------------------ */
+group("page identity in social metadata");
+const metaOf = (head: { meta: readonly Record<string, string>[] }) => {
+  const byKey: Record<string, string> = {};
+  for (const m of head.meta) {
+    if (m.title !== undefined) byKey.title = m.title;
+    else if (m.name) byKey[m.name] = m.content;
+    else if (m.property) byKey[m.property] = m.content;
+  }
+  return byKey;
+};
+
+const articleMeta = metaOf(
+  articleHead({ path: "/news/foo", title: "Story title", description: "Story description" }),
+);
+const hubMeta = metaOf(
+  pageHead({ path: "/tools/map", title: "Tool title", description: "Tool description" }),
+);
+
+for (const [label, m, ogType] of [
+  ["article", articleMeta, "article"],
+  ["hub", hubMeta, "website"],
+] as const) {
+  ok(`${label} pages set their own twitter:title`, m["twitter:title"] === m.title);
+  ok(
+    `${label} pages set their own twitter:description`,
+    m["twitter:description"] === m.description,
+  );
+  ok(`${label} pages set their own og:title`, m["og:title"] === m.title);
+  ok(`${label} pages set their own og:description`, m["og:description"] === m.description);
+  ok(`${label} pages declare og:type ${ogType}`, m["og:type"] === ogType);
+  ok(`${label} pages use a large image card`, m["twitter:card"] === "summary_large_image");
+  ok(
+    `${label} pages carry an og:image`,
+    typeof m["og:image"] === "string" && m["og:image"].length > 0,
+  );
+}
+ok(
+  "no page inherits the site-wide description as its own",
+  articleMeta.description === "Story description" && hubMeta.description === "Tool description",
+);
+ok(
+  "pageHead self-canonicalises and og:url agrees",
+  pageHead({ path: "/tools/map", title: "T", description: "D" }).links[0].href ===
+    "https://allthingsgta6.com/tools/map" &&
+    hubMeta["og:url"] === "https://allthingsgta6.com/tools/map",
+);
+// X, Facebook, LinkedIn, Slack and Discord all decline to render an SVG card,
+// and Google's Article `image` field does not accept one either.
+ok("the share image is a raster, not an SVG", !SITE_IMAGE.endsWith(".svg"));
+ok(
+  "the share image asset exists",
+  existsSync("public" + SITE_IMAGE.replace("https://allthingsgta6.com", "")),
+);
+ok(
+  "a favicon is declared in the document head and the asset exists",
+  readFileSync("src/routes/__root.tsx", "utf8").includes('rel: "icon"') &&
+    existsSync("public/favicon.ico") &&
+    existsSync("public/favicon.svg"),
+);
+
+group("dates are real or absent, never empty");
+const undated = extractLd(
+  renderToStaticMarkup(
+    <ArticleJsonLd
+      type="Article"
+      headline="H"
+      description="D"
+      path="/wiki/map/x"
+      datePublished=""
+    />,
+  ),
+);
+ok("an unknown datePublished is omitted, not emitted empty", !("datePublished" in undated));
+ok("an unknown dateModified is omitted too", !("dateModified" in undated));
+ok(
+  "the rest of the Article is still valid",
+  undated["@type"] === "Article" && undated.url.length > 0,
+);
+ok(
+  "a known date still survives",
+  extractLd(
+    renderToStaticMarkup(
+      <ArticleJsonLd
+        type="Article"
+        headline="H"
+        description="D"
+        path="/x"
+        datePublished="2026-08-29"
+        dateModified="2026-09-01"
+      />,
+    ),
+  ).dateModified === "2026-09-01",
+);
+ok(
+  "no live page emits an empty date through the wiki route's fallback",
+  publicWiki().every((w) => {
+    const ld = extractLd(
+      renderToStaticMarkup(
+        <ArticleJsonLd
+          type="Article"
+          headline={w.name}
+          description={w.metaDescription ?? w.overview.slice(0, 155)}
+          path={`/wiki/${w.type}/${w.slug}`}
+          datePublished={w.publishAt ?? w.lastVerified ?? ""}
+          dateModified={w.lastVerified}
+        />,
+      ),
+    );
+    return ld.datePublished !== "" && ld.dateModified !== "";
+  }),
+);
+
+group("sitemap lastmod is never invented");
+const SEP13 = new Date("2026-09-13T12:00:00Z");
+const lastmodByLoc = new Map(sitemapUrls(SEP13).map((u) => [u.loc, u.lastmod]));
+ok(
+  "every lastmod is a W3C date",
+  [...lastmodByLoc.values()].every((d) => d === undefined || /^\d{4}-\d{2}-\d{2}$/.test(d)),
+);
+ok(
+  "a content URL's lastmod is its own real date, never today",
+  publicNews(SEP13).every(
+    (n) =>
+      lastmodByLoc.get(`/news/${n.slug}`) ===
+      (n.lastVerified ?? n.publishAt ?? n.date).slice(0, 10),
+  ) &&
+    publicAnalyses(SEP13).every(
+      (a) =>
+        lastmodByLoc.get(`/analysis/${a.slug}`) ===
+        (a.lastVerified ?? a.publishAt ?? a.date).slice(0, 10),
+    ),
+);
+ok(
+  "a page last checked in April still says April",
+  lastmodByLoc.get("/analysis/engine-analysis") === "2026-04-10",
+);
+ok(
+  "a URL with no date on record carries no lastmod at all",
+  lastmodByLoc.get("/about") === undefined && lastmodByLoc.get("/news") === undefined,
+);
+ok(
+  "and the rendered XML leaves that element out rather than stamping now",
+  (() => {
+    const blocks = renderSitemap(SEP13).split("<url>").slice(1);
+    const aboutBlock = blocks.find((b) =>
+      b.includes("<loc>https://allthingsgta6.com/about</loc>"),
+    )!;
+    const datedBlock = blocks.find((b) =>
+      b.includes("<loc>https://allthingsgta6.com/analysis/engine-analysis</loc>"),
+    )!;
+    return (
+      !aboutBlock.includes("<lastmod>") && datedBlock.includes("<lastmod>2026-04-10</lastmod>")
+    );
+  })(),
+);
+
+group("hubs never link to unpublished entries");
+// The character/vehicle/weapon/map hubs list wiki entries directly. Reading the
+// ungated collection put three scheduled character pages into the live hub as
+// links that 404ed until their publishAt.
+for (const hub of ["gta-6-characters", "gta-6-map", "gta-6-vehicles", "gta-6-weapons"]) {
+  const src = readFileSync(`src/routes/${hub}.tsx`, "utf8");
+  ok(
+    `/${hub} reads the gated wiki accessor`,
+    src.includes("publicWiki()") && !/\bitems: wiki\b/.test(src),
+  );
+}
 
 console.log(
   failures === 0 ? "\nAll publishing checks passed.\n" : `\n${failures} check(s) FAILED.\n`,

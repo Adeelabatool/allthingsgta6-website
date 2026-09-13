@@ -54,7 +54,10 @@ function AnalysisPage() {
         path={`/analysis/${a.slug}`}
         datePublished={publishedTimestamp(a)}
         dateModified={a.lastVerified}
-        sources={a.evidence}
+        // `sources` is the current field and `evidence` the legacy one; both
+        // are rendered on the page, so both must be able to become citations.
+        // Citing only `evidence` left newer pieces with none at all.
+        sources={a.sources ?? a.evidence}
       />
       <article className="container-page py-10 max-w-3xl">
         <Breadcrumbs

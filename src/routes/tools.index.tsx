@@ -1,22 +1,16 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 
 export const Route = createFileRoute("/tools/")({
-  head: () => ({
-    meta: [
-      { title: "GTA 6 Tools — Countdown, Hype Calculator, Comparator" },
-      {
-        name: "description",
-        content:
-          "Interactive GTA 6 tools: countdown to release, hype calculator, vehicle comparator, and interactive map.",
-      },
-      { property: "og:title", content: "GTA 6 Tools — AllThingsGTA6" },
-      { property: "og:url", content: "https://allthingsgta6.com/tools" },
-    ],
-    scripts: breadcrumbJsonLd([SECTION_CRUMBS.tools]),
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/tools" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/tools",
+      title: "GTA 6 Tools — Countdown, Hype Calculator, Comparator",
+      description:
+        "Interactive GTA 6 tools: countdown to release, hype calculator, vehicle comparator, and interactive map.",
+      crumbs: [SECTION_CRUMBS.tools],
+    }),
   component: ToolsIndex,
 });
 

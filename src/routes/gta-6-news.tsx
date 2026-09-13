@@ -1,24 +1,18 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PillarHub } from "@/components/PillarHub";
-import { breadcrumbJsonLd } from "@/lib/seo";
+import { pageHead } from "@/lib/seo";
 import { publicNews } from "@/data/news";
 import { publicAnalyses } from "@/data/analysis";
 
 export const Route = createFileRoute("/gta-6-news")({
-  head: () => ({
-    scripts: breadcrumbJsonLd([{ name: "GTA 6 News", path: "/gta-6-news" }]),
-    meta: [
-      { title: "GTA 6 News Hub, All Updates, Leaks & Trailers" },
-      {
-        name: "description",
-        content:
-          "The complete GTA 6 news hub: Rockstar updates, leaks, trailer news, release updates, and analysis, all in one place.",
-      },
-      { property: "og:title", content: "GTA 6 News Hub, AllThingsGTA6" },
-      { property: "og:url", content: "https://allthingsgta6.com/gta-6-news" },
-    ],
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/gta-6-news" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/gta-6-news",
+      title: "GTA 6 News Hub, All Updates, Leaks & Trailers",
+      description:
+        "The complete GTA 6 news hub: Rockstar updates, leaks, trailer news, release updates, and analysis, all in one place.",
+      crumbs: [{ name: "GTA 6 News", path: "/gta-6-news" }],
+    }),
   component: () => (
     <PillarHub
       eyebrow="GTA 6 Hub"

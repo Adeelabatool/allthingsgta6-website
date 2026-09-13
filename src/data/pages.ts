@@ -1578,7 +1578,8 @@ export const pages: SitePage[] = [
     publishAt: "2026-09-04T13:00:00Z",
     title: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
     seoTitle: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
-    metaDescription: "",
+    metaDescription:
+      "GTA 6 launches on PS5 and Xbox Series X|S on November 19, 2026. Rockstar has not announced a PC version, and PS4 and Xbox One are not launch platforms.",
     primaryKeyword: "GTA 6 platforms",
     intro: [
       "GTA 6 launches on PlayStation 5 and Xbox Series X|S on November 19, 2026.",
@@ -1897,7 +1898,8 @@ export const pages: SitePage[] = [
     publishAt: "2026-08-31T13:00:00Z",
     title: "GTA 6 Release Date: November 19, 2026 - Platforms, Preload and Countdown",
     seoTitle: "GTA 6 Release Date: November 19, 2026 - Platforms, Preload and Countdown",
-    metaDescription: "",
+    metaDescription:
+      "GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S. No PC date announced. Digital pre-load opens November 12 for eligible pre-orders.",
     primaryKeyword: "GTA 6 release date",
     intro: [
       "Answer first: Grand Theft Auto VI launches on Thursday, November 19, 2026 for PlayStation 5 and Xbox Series X|S. Rockstar has not announced a PC release date.",
@@ -1907,16 +1909,16 @@ export const pages: SitePage[] = [
       {
         heading: "GTA 6 release details",
         table: {
-          head: ["Question", "Confirmed answer", ""],
+          head: ["Question", "Confirmed answer"],
           rows: [
-            ["GTA 6 release date", "November 19, 2026", ""],
-            ["PS5", "Yes", ""],
-            ["PS5 Pro Enhanced", "Listed by PlayStation", ""],
-            ["Xbox Series X", "S", "Yes"],
-            ["PC", "Not announced", ""],
-            ["PS4", "Not announced; not a launch platform", ""],
-            ["Xbox One", "Not announced; not a launch platform", ""],
-            ["Digital pre-load", "November 12, 2026 for eligible digital pre-orders", ""],
+            ["GTA 6 release date", "November 19, 2026"],
+            ["PS5", "Yes"],
+            ["PS5 Pro Enhanced", "Listed by PlayStation"],
+            ["Xbox Series X|S", "Yes"],
+            ["PC", "Not announced"],
+            ["PS4", "Not announced; not a launch platform"],
+            ["Xbox One", "Not announced; not a launch platform"],
+            ["Digital pre-load", "November 12, 2026 for eligible digital pre-orders"],
           ],
         },
       },

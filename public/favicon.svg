@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="AllThingsGTA6">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#12081f"/>
+      <stop offset="0.55" stop-color="#2a103f"/>
+      <stop offset="1" stop-color="#5a1a4d"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff4fd8"/>
+      <stop offset="0.5" stop-color="#b34bff"/>
+      <stop offset="1" stop-color="#3fd0ff"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="12" fill="url(#bg)"/>
+  <text x="32" y="45" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="800" fill="url(#accent)">6</text>
+  <rect x="12" y="52" width="40" height="4" rx="2" fill="url(#accent)"/>
+</svg>

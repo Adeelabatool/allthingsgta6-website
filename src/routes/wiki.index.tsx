@@ -1,23 +1,17 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
-import { SECTION_CRUMBS, breadcrumbJsonLd } from "@/lib/seo";
+import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
 import { publicWiki, wikiTypes } from "@/data/wiki";
 
 export const Route = createFileRoute("/wiki/")({
-  head: () => ({
-    scripts: breadcrumbJsonLd([SECTION_CRUMBS.wiki]),
-    meta: [
-      { title: "GTA 6 Wiki — Characters, Map, Vehicles, Weapons" },
-      {
-        name: "description",
-        content:
-          "The structured GTA 6 wiki: characters, map locations, vehicles, weapons, gangs and companies — encyclopedia-style, sourced and updated.",
-      },
-      { property: "og:title", content: "GTA 6 Wiki — AllThingsGTA6" },
-      { property: "og:url", content: "https://allthingsgta6.com/wiki" },
-    ],
-    links: [{ rel: "canonical", href: "https://allthingsgta6.com/wiki" }],
-  }),
+  head: () =>
+    pageHead({
+      path: "/wiki",
+      title: "GTA 6 Wiki — Characters, Map, Vehicles, Weapons",
+      description:
+        "The structured GTA 6 wiki: characters, map locations, vehicles, weapons, gangs and companies — encyclopedia-style, sourced and updated.",
+      crumbs: [SECTION_CRUMBS.wiki],
+    }),
   component: WikiIndex,
 });
 

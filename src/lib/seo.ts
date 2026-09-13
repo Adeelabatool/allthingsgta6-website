@@ -106,7 +106,9 @@ export function buildBreadcrumbList(crumbs: Crumb[]): BreadcrumbListSchema | nul
  */
 export function breadcrumbJsonLd(crumbs: Crumb[]) {
   const schema = buildBreadcrumbList([HOME_CRUMB, ...crumbs]);
-  if (!schema) return [];
+  // A trail of Home alone describes nothing — the home page is not below
+  // itself — so emit no BreadcrumbList rather than a one-item one.
+  if (!schema || schema.itemListElement.length < 2) return [];
   return [
     {
       type: "application/ld+json",
@@ -136,12 +138,51 @@ const NEWS_CATEGORY_LABELS: Record<string, string> = {
 
 export const SITE_NAME = "AllThingsGTA6";
 
-/** Default sharing image, also used as the structured-data image of record. */
-export const SITE_IMAGE = `${SITE_URL}/og-cover.svg`;
+/**
+ * Default sharing image, also used as the structured-data image of record.
+ *
+ * PNG rather than SVG on purpose: no major social crawler (X, Facebook,
+ * LinkedIn, Slack, Discord) renders an SVG og:image, and Google's Article
+ * `image` field only accepts .jpg/.png/.gif. The SVG remains in /public as the
+ * source artwork; this is the same card rasterised at 1200x630.
+ */
+export const SITE_IMAGE = `${SITE_URL}/og-cover.png`;
+
+/**
+ * The Open Graph / Twitter block every page shares.
+ *
+ * twitter:title and twitter:description are emitted here — not left to the
+ * root — because the root's values describe the home page. Route meta is
+ * deduped by name/property with the deepest match winning, so a page that
+ * omits them silently shares itself as the home page on X, which is what was
+ * happening on every article, wiki and analysis URL.
+ */
+function socialMeta(opts: {
+  title: string;
+  description: string;
+  url: string;
+  image: string;
+  ogType: "article" | "website";
+}) {
+  return [
+    { title: opts.title },
+    { name: "description", content: opts.description },
+    { property: "og:title", content: opts.title },
+    { property: "og:description", content: opts.description },
+    { property: "og:type", content: opts.ogType },
+    { property: "og:url", content: opts.url },
+    { property: "og:image", content: opts.image },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: opts.title },
+    { name: "twitter:description", content: opts.description },
+    { name: "twitter:image", content: opts.image },
+  ];
+}
 
 /**
  * The head fragment every article-like page shares: title, description, Open
- * Graph, a self-referencing canonical, and the page's breadcrumb JSON-LD.
+ * Graph, Twitter card, a self-referencing canonical, and the page's breadcrumb
+ * JSON-LD.
  *
  * Breadcrumbs are built by breadcrumbJsonLd() above, so every ListItem — the
  * current page included — carries an absolute `item` URL. Pass the crumbs
@@ -161,19 +202,46 @@ export function articleHead(opts: {
   image?: string;
 }) {
   const canonical = opts.canonicalOverride ?? absoluteUrl(opts.path);
-  const image = opts.image ?? SITE_IMAGE;
   return {
-    meta: [
-      { title: opts.title },
-      { name: "description", content: opts.description },
-      { property: "og:title", content: opts.title },
-      { property: "og:description", content: opts.description },
-      { property: "og:type", content: "article" },
-      { property: "og:url", content: canonical },
-      { property: "og:image", content: image },
-      { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:image", content: image },
-    ],
+    meta: socialMeta({
+      title: opts.title,
+      description: opts.description,
+      url: canonical,
+      image: opts.image ?? SITE_IMAGE,
+      ogType: "article",
+    }),
+    links: [{ rel: "canonical", href: canonical }],
+    scripts: breadcrumbJsonLd(opts.crumbs ?? []),
+  };
+}
+
+/**
+ * The same head fragment for pages that are not articles: hubs, section
+ * indexes, category listings and tools.
+ *
+ * Identical guarantees to articleHead — page-specific title, description,
+ * OG and Twitter metadata, a self-referencing canonical and breadcrumb
+ * JSON-LD — with og:type "website" instead of "article". Having one helper
+ * for these is what stops a hub from shipping with, say, an og:title but no
+ * og:description and inheriting the home page's.
+ */
+export function pageHead(opts: {
+  path: string;
+  title: string;
+  description: string;
+  canonicalOverride?: string;
+  crumbs?: Crumb[];
+  image?: string;
+}) {
+  const canonical = opts.canonicalOverride ?? absoluteUrl(opts.path);
+  return {
+    meta: socialMeta({
+      title: opts.title,
+      description: opts.description,
+      url: canonical,
+      image: opts.image ?? SITE_IMAGE,
+      ogType: "website",
+    }),
     links: [{ rel: "canonical", href: canonical }],
     scripts: breadcrumbJsonLd(opts.crumbs ?? []),
   };
