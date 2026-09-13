@@ -674,37 +674,56 @@ ok(
     analysisBySlug("trailer-2-breakdown", NOW_INCIDENT) === undefined,
 );
 
-group("freshness stamps match publication");
-// A page that goes public on Sep 11 must not tell readers it was last verified
-// on Aug 29, the day it was drafted. The stamp tracks the moment the content
-// actually reached the public, so it moves with publishAt.
-const stampMismatches = everyEntry.flatMap((e) => {
+group("freshness stamps never predate publication");
+// publishAt is when a version becomes public; lastVerified is when its claims
+// were last checked. They coincide when a piece ships freshly checked, and
+// lastVerified moves forward on its own whenever the article is re-verified.
+// What must never happen is the reverse: a page telling readers it was last
+// checked before the version they are reading even existed. So this is a
+// floor, not an equality.
+const stampsBelowFloor = everyEntry.flatMap((e) => {
   const out: string[] = [];
-  if (e.publishAt && e.lastVerified !== e.publishAt.slice(0, 10)) {
-    out.push(`${e.publishAt.slice(0, 10)} entry`);
+  if (e.publishAt && (e.lastVerified ?? "") < e.publishAt.slice(0, 10)) {
+    out.push(`${e.publishAt.slice(0, 10)} entry stamped ${e.lastVerified}`);
   }
   const rev = e.pendingRevision;
-  if (
-    rev &&
-    resolveRevision(e, new Date(Date.parse(rev.publishAt))).lastVerified !==
-      rev.publishAt.slice(0, 10)
-  ) {
-    out.push(`${rev.publishAt.slice(0, 10)} revision`);
+  if (rev) {
+    // A revision replaces what the page shows, so its activation date is the
+    // floor for the stamp the reader sees afterwards.
+    const landed = resolveRevision(e, new Date(Date.parse(rev.publishAt)));
+    if ((landed.lastVerified ?? "") < rev.publishAt.slice(0, 10)) {
+      out.push(`${rev.publishAt.slice(0, 10)} revision stamped ${landed.lastVerified}`);
+    }
   }
   return out;
 });
-ok("every scheduled entry is stamped with its own publication date", stampMismatches.length === 0);
+ok("no entry is stamped earlier than its own publication date", stampsBelowFloor.length === 0);
 ok(
-  "a staged revision refreshes the stamp as it lands, not before",
+  "a landed revision is never stamped earlier than its activation date",
   wiki.every((w) => {
     const rev = w.pendingRevision;
     if (!rev) return true;
-    const at = Date.parse(rev.publishAt);
-    return (
-      resolveRevision(w, new Date(at - 1)).lastVerified !== rev.publishAt.slice(0, 10) &&
-      resolveRevision(w, new Date(at)).lastVerified === rev.publishAt.slice(0, 10)
-    );
+    const landed = resolveRevision(w, new Date(Date.parse(rev.publishAt)));
+    return (landed.lastVerified ?? "") >= rev.publishAt.slice(0, 10);
   }),
+);
+// The floor must still reject the case that prompted it.
+ok(
+  "a stamp predating publication is caught",
+  ((): boolean => {
+    const stale = {
+      status: "scheduled" as const,
+      publishAt: "2026-09-11T13:00:00Z",
+      lastVerified: "2026-08-29",
+    };
+    const fresh = {
+      status: "scheduled" as const,
+      publishAt: "2026-09-11T13:00:00Z",
+      lastVerified: "2026-10-02",
+    };
+    const below = (e: typeof stale) => (e.lastVerified ?? "") < e.publishAt.slice(0, 10);
+    return below(stale) && !below(fresh);
+  })(),
 );
 
 group("publishAt timestamps are unambiguous");
