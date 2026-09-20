@@ -824,10 +824,10 @@ export const analyses: AnalysisArticle[] = [
   },
   {
     slug: "physics-system-predictions",
-    title: "Physics System Predictions: What Euphoria 2.0 Could Bring",
+    title: "Physics System Predictions: What GTA 6's Physics Layer Could Bring",
     hook: "RDR2's physics still impress in 2026. What will GTA VI build on top?",
     context:
-      "Rockstar's RAGE engine pairs with NaturalMotion's Euphoria for procedural character physics. GTA VI's physics layer is expected to be a substantial upgrade.",
+      "Rockstar's RAGE engine has paired with NaturalMotion's Euphoria for procedural character physics in earlier titles. \u201cEuphoria 2.0\u201d is not an announced product name, and Rockstar has not said what GTA VI uses. Everything below is prediction from prior Rockstar games, not a described feature set.",
     breakdown: [
       {
         heading: "Character physics",
@@ -847,7 +847,8 @@ export const analyses: AnalysisArticle[] = [
       { stance: "Simulation-forward", body: "Rockstar will lean further into systemic physics." },
       { stance: "Gameplay-first", body: "Physics serves spectacle; arcade feel will dominate." },
     ],
-    finalInsight: "Euphoria 2.0 will be the most-noticed-least-talked-about feature at launch.",
+    finalInsight:
+      "Whatever drives it, the physics layer is likely to be the most-noticed-least-talked-about feature at launch.",
     date: "2026-04-28",
   },
   {
@@ -958,10 +959,10 @@ export const analyses: AnalysisArticle[] = [
   },
   {
     slug: "engine-analysis",
-    title: "Engine Analysis: What's New in RAGE 9",
+    title: "Engine Analysis: What's New in Rockstar's Engine for GTA 6",
     hook: "Rockstar's RAGE engine powers every modern title. What changed for GTA VI?",
     context:
-      "RAGE has evolved across GTA IV, RDR, GTA V, and RDR2. GTA VI represents the largest single-version jump since GTA V.",
+      "RAGE has evolved across GTA IV, RDR, GTA V, and RDR2. GTA VI represents the largest single-version jump since GTA V. One caveat before anything below: \u201cRAGE 9\u201d is community shorthand, not a version Rockstar has published. Treat the name as unconfirmed and the analysis as being about observable changes, not a numbered release.",
     breakdown: [
       {
         heading: "Renderer",
@@ -978,10 +979,14 @@ export const analyses: AnalysisArticle[] = [
     ],
     evidence: [{ label: "Rockstar tech presentations", url: "https://www.rockstargames.com" }],
     interpretations: [
-      { stance: "Generational", body: "RAGE 9 enables a decade of forward content." },
+      {
+        stance: "Generational",
+        body: "A new engine generation would enable a decade of forward content.",
+      },
       { stance: "Iterative", body: "Major upgrades, but core architecture unchanged." },
     ],
-    finalInsight: "RAGE 9 is the foundation for Rockstar's next decade of releases.",
+    finalInsight:
+      "Whatever Rockstar ends up calling this version, the engine work is the foundation for its next decade of releases.",
     date: "2026-04-10",
   },
   {
