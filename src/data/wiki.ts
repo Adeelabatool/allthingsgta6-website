@@ -811,8 +811,8 @@ export const wiki: WikiEntry[] = [
       "High-performance street class for top-speed runs, mission getaways, and street racing activities.",
     details: [
       { label: "Class", value: "Sports / Super" },
-      { label: "Top Speed (est.)", value: "200+ mph" },
-      { label: "Drivetrain", value: "RWD / AWD / EV" },
+      { label: "Top speed", value: "Not announced" },
+      { label: "Drivetrain options", value: "Not announced" },
     ],
     related: [
       { type: "vehicles", href: "/wiki/vehicles/suvs-overview", label: "SUVs Overview" },
@@ -833,8 +833,8 @@ export const wiki: WikiEntry[] = [
       "Utility class — passenger capacity, off-road capability, and durability for crew-based missions.",
     details: [
       { label: "Class", value: "SUV" },
-      { label: "Typical Seats", value: "4-6" },
-      { label: "Terrain", value: "All-surface" },
+      { label: "Seating", value: "Not announced" },
+      { label: "Terrain handling", value: "Not announced" },
     ],
     related: [
       { type: "vehicles", href: "/wiki/vehicles/sports-cars-overview", label: "Sports Cars" },
@@ -847,14 +847,14 @@ export const wiki: WikiEntry[] = [
     type: "vehicles",
     name: "Bikes Overview",
     overview:
-      "Motorcycles return with expanded sport, cruiser, and dirt categories, plus dedicated lean physics improvements.",
+      "Motorcycles appear in official GTA VI footage. The specific sub-classes offered, and any changes to lean physics, have not been announced - the expanded-category framing below is expectation drawn from earlier games.",
     background:
       "Bikes in GTA V were favored for traffic navigation. GTA VI's denser urban traffic increases their tactical value.",
     roleInGta6:
       "Traversal, escape, and biker-gang storylines. Likely featured in dedicated MC content post-launch.",
     details: [
       { label: "Class", value: "Motorcycle" },
-      { label: "Sub-types", value: "Sport, Cruiser, Dirt, Scooter" },
+      { label: "Sub-types offered", value: "Not announced" },
     ],
     related: [
       { type: "gangs", href: "/wiki/gangs/main-gangs-overview", label: "Gangs Overview" },
@@ -1035,8 +1035,8 @@ export const wiki: WikiEntry[] = [
     roleInGta6:
       "Provides contrast to urban Vice City. Expect wildlife, smuggling missions, and side activities here.",
     details: [
-      { label: "Biomes", value: "Swamp, farmland, beach, island" },
-      { label: "Estimated Size", value: "~60% of total map" },
+      { label: "Biomes (seen in official footage)", value: "Swamp, farmland, beach, island" },
+      { label: "Share of the map", value: "No official figure published" },
     ],
     related: [
       { type: "map", href: "/wiki/map/vice-city", label: "Vice City" },
@@ -1049,30 +1049,29 @@ export const wiki: WikiEntry[] = [
     type: "map",
     name: "Urban Districts",
     overview:
-      "Vice City's districts include Ocean Beach, Little Haiti, downtown high-rises, and the port industrial zone.",
+      "District names such as Ocean Beach and Little Haiti are drawn from Vice City's earlier incarnation and community mapping. Rockstar has not published a GTA VI district list, so treat any such list as unconfirmed.",
     background:
       "District design borrows from Miami's neighborhood identities, scaled and remixed for gameplay variety.",
     roleInGta6: "Districts gate mission types, gang territory, and property ownership systems.",
-    details: [
-      { label: "Districts (est.)", value: "8-12 named neighborhoods" },
-      { label: "Vertical Density", value: "High — significant high-rise interiors" },
-    ],
+    details: [{ label: "Number of districts", value: "Not announced" }],
     related: [
       { type: "map", href: "/wiki/map/vice-city", label: "Vice City" },
       { type: "pillar", href: "/gta-6-map", label: "GTA 6 Map Hub" },
     ],
-    trivia: ["Interior density appears significantly higher than GTA V's Los Santos."],
+    trivia: [
+      "Rockstar has published no interior-density figures; comparisons with GTA V's Los Santos are community observation, not a measured claim.",
+    ],
   },
   {
     slug: "key-landmarks",
     type: "map",
     name: "Key Landmarks",
     overview:
-      "Recognizable Vice City landmarks include the Malibu Club analog, Ocean Drive strip, and the rebuilt Vercetti Estate area.",
+      "Landmark names in circulation - a Malibu Club analog, an Ocean Drive strip, a rebuilt Vercetti Estate - come from Vice City (2002) and community mapping rather than a published GTA VI landmark list. Treat all of them as unconfirmed.",
     background:
-      "Landmark callbacks reward returning players from Vice City (2002) while serving as navigation anchors.",
+      "Landmark callbacks would reward returning players from Vice City (2002) while serving as navigation anchors. That is the expectation the 2002 game sets, not something Rockstar has committed to for GTA VI.",
     roleInGta6: "Mission hubs, fast-travel anchors, and online meetup points.",
-    details: [{ label: "Landmark Count (est.)", value: "20-30 named locations" }],
+    details: [{ label: "Named landmarks", value: "No official list or count published" }],
     related: [{ type: "pillar", href: "/gta-6-map", label: "GTA 6 Map Hub" }],
     trivia: ["Easter eggs referencing Tommy Vercetti are speculated but unconfirmed."],
   },
@@ -1087,8 +1086,8 @@ export const wiki: WikiEntry[] = [
       "GTA V introduced the weapon wheel and per-weapon mods. GTA VI is expected to expand modding with optics, grips, and ammo types.",
     roleInGta6: "Combat backbone — used in missions, free roam, and online activities.",
     details: [
-      { label: "Categories", value: "Pistol, SMG, Shotgun, Rifle, Sniper, Heavy, Throwable" },
-      { label: "Modding", value: "Expanded — optics, ammo, grips" },
+      { label: "Categories", value: "Not announced" },
+      { label: "Weapon modding", value: "Not announced" },
     ],
     related: [
       { type: "weapons", href: "/wiki/weapons/melee-weapons", label: "Melee Weapons" },
@@ -1105,7 +1104,7 @@ export const wiki: WikiEntry[] = [
     background:
       "Melee combat in GTA V was simplistic. RDR2 added grappling and finisher mechanics likely to carry forward.",
     roleInGta6: "Stealth, low-noise takedowns, and bar-fight encounters.",
-    details: [{ label: "Types", value: "Fists, Knife, Bat, Improvised" }],
+    details: [{ label: "Types", value: "Not announced" }],
     related: [
       { type: "weapons", href: "/wiki/weapons/guns-overview", label: "Guns Overview" },
       { type: "pillar", href: "/gta-6-weapons", label: "GTA 6 Weapons Hub" },
@@ -1122,7 +1121,7 @@ export const wiki: WikiEntry[] = [
     background:
       "Gangs historically gate territory, missions, and reputation systems. GTA VI is expected to use dynamic gang-territory shifts.",
     roleInGta6: "Enemies, allies, and territory-control opponents.",
-    details: [{ label: "Faction Count (est.)", value: "6-10 named groups" }],
+    details: [{ label: "Number of factions", value: "Not announced" }],
     related: [{ type: "gangs", href: "/wiki/gangs/police-system", label: "Police System" }],
     trivia: ["Cartel storylines tie into the swamp/Keys smuggling regions."],
   },
@@ -1272,8 +1271,8 @@ export const wiki: WikiEntry[] = [
       "GTA V's wanted system was line-of-sight based. GTA VI is expected to introduce identification, witnesses, and persistent records.",
     roleInGta6: "Adversarial system. Manages crime escalation, chases, and player accountability.",
     details: [
-      { label: "Wanted Levels", value: "Likely 1-6 with overhaul" },
-      { label: "Forces", value: "VCPD, State Police, FIB analog, IAA analog" },
+      { label: "Wanted levels", value: "Not announced" },
+      { label: "Law-enforcement agencies", value: "Not announced" },
     ],
     related: [{ type: "gangs", href: "/wiki/gangs/main-gangs-overview", label: "Main Gangs" }],
     trivia: ["Leaks suggest body-cam and witness mechanics."],

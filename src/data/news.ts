@@ -1302,16 +1302,16 @@ export const news: NewsItem[] = [
     slug: "pre-order-rumors",
     title: "Pre-Order Rumors: Collector's Edition Details Leak",
     summary:
-      "Retailer listings briefly appeared showing a Vice City Collector's Edition at $149.99.",
+      "Retailer listings briefly appeared in March 2026 showing a three-tier edition lineup topped by a $149.99 Collector's Edition. Rockstar's later official pricing did not match them. Superseded — see our GTA 6 price page for the confirmed figures.",
     category: "leaks",
     date: "2026-03-05",
     source: { label: "GameStop Listing Cache", url: "https://www.gamestop.com" },
     whatHappened:
-      "GameStop and Best Buy listings appeared and were pulled within hours, showing Standard ($69.99), Deluxe ($99.99), and Collector's ($149.99) editions.",
+      "In March 2026, unconfirmed GameStop and Best Buy listings appeared and were pulled within hours. They showed a Standard ($69.99), Deluxe ($99.99) and Collector's ($149.99) lineup. Those figures were never confirmed by Rockstar or Take-Two, and this article records them as a leak, not as pricing.",
     analysis:
-      "Retailer slip-ups before official announcements are common and typically accurate. Pricing aligns with current AAA standards.",
+      "The listings turned out not to describe the product. Take-Two's June 24, 2026 announcement set two editions, not three - Standard at $79.99 and Ultimate at $99.99 in the United States. There is no announced Deluxe or Collector's Edition, and the leaked $69.99 Standard price was $10 below the real one. The common assumption that early retailer listings are reliable did not hold here.",
     meansForGta6:
-      "Expect formal pre-order announcement within 4-6 weeks based on retailer prep timelines.",
+      "Nothing on this page should be used as pricing. It is kept as a dated record of what circulated before the official announcement. For confirmed prices, editions and what each includes, see the GTA 6 price and GTA 6 Ultimate Edition pages.",
   },
   {
     slug: "trailer-2-expectations",
