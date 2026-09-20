@@ -63,6 +63,236 @@ export const newsCategories: { slug: NewsCategory; label: string }[] = [
 
 export const news: NewsItem[] = [
   {
+    slug: "gta-6-album-soundtrack-34-tracks",
+    title: "GTA 6 Soundtrack Album Announced: 34 Tracks, Artists & Release Date",
+    summary:
+      "Rockstar Games has officially announced Grand Theft Auto VI: The Album, a 34-track music collection created in partnership with Atlantic Records and launching alongside GTA 6 on November 19, 2026. Six songs are already available to stream.",
+    category: "rockstar-updates",
+    date: "2026-09-20",
+    lastVerified: "2026-09-19",
+    seoTitle: "GTA 6 Album Announced: 34 Tracks, Artists and Release Date",
+    metaDescription:
+      "Rockstar has announced Grand Theft Auto VI: The Album — 34 tracks with Atlantic Records, out November 19, 2026. Here are the six songs revealed so far.",
+    schemaType: "NewsArticle",
+    intro: [
+      "Rockstar Games has officially announced Grand Theft Auto VI: The Album, a 34-track music collection created in partnership with Atlantic Records and launching alongside GTA 6 on November 19, 2026.",
+      "Six songs are already available to stream, featuring artists including Travis Scott, Yung Lean, Future, Metro Boomin, PinkPantheress, Fred again.., Morgan Wallen, Rauw Alejandro and Keith Richards. The other 28 tracks have not yet been revealed.",
+      "Rockstar is also preparing physical vinyl and CD editions of the album and says more information about GTA 6's dynamic score and the next evolution of its in-game radio is still to come.",
+      "Here is everything officially confirmed so far.",
+    ],
+    sections: [
+      {
+        heading: "GTA 6 Album: Key Details",
+        table: {
+          head: ["Detail", "Confirmed information"],
+          rows: [
+            ["Official title", "Grand Theft Auto VI: The Album"],
+            ["Announced", "September 17, 2026"],
+            ["Release date", "November 19, 2026"],
+            ["Number of tracks", "34"],
+            ["Songs currently revealed", "6"],
+            ["Partner", "Atlantic Records"],
+            ["Digital availability", "Major music streaming services"],
+            ["Physical editions", "Vinyl and CD"],
+            ["GTA 6 release date", "November 19, 2026"],
+            ["Full tracklist", "Not yet revealed"],
+            ["In-game radio details", "More information still to come"],
+          ],
+        },
+        body: ["Evidence status: Confirmed by Rockstar Games."],
+      },
+      {
+        heading: "When Does Grand Theft Auto VI: The Album Release?",
+        body: [
+          "Grand Theft Auto VI: The Album releases on November 19, 2026, alongside Grand Theft Auto VI.",
+          "Rockstar announced the album on September 17 and immediately made the first six singles available across major streaming services. The full 34-track album can also be pre-saved ahead of launch.",
+          "The matching release dates make the album part of Rockstar's broader GTA VI launch rollout, but players should be careful about treating the album as a complete list of the music that will appear on GTA 6's radio stations.",
+          "Rockstar has not revealed the full in-game radio lineup yet.",
+        ],
+      },
+      {
+        heading: "All GTA 6 Album Songs Confirmed So Far",
+        body: [
+          "Rockstar revealed six songs with the announcement.",
+          "1. That's It — Yung Lean feat. Future & Metro Boomin. Yung Lean's “That's It” features Future and Metro Boomin. It is one of the first six songs Rockstar released from the album ahead of GTA VI's November launch.",
+          "2. RHYNO — Travis Scott. Travis Scott contributes “RHYNO.” Rockstar specifically credits the track as being produced by Guy-Manuel de Homem-Christo, best known as one half of Daft Punk.",
+          "3. Sexy Magic — CA7RIEL & Paco Amoroso, PinkPantheress, Fred again.. & Étienne de Crécy. “Sexy Magic” brings together CA7RIEL & Paco Amoroso, PinkPantheress, Fred again.. and French electronic artist Étienne de Crécy. The collaboration is another indication of the broad range of artists Rockstar is bringing together for the project.",
+          "4. Last Thing You Need — Morgan Wallen. Morgan Wallen contributes “Last Thing You Need.” Its inclusion adds country music to an opening group of songs that already spans hip-hop, electronic music, pop and other styles.",
+          "5. Macacoa 2000 — Rauw Alejandro. Puerto Rican artist Rauw Alejandro appears with “Macacoa 2000.” His inclusion adds another major international artist to the album's initial lineup.",
+          "6. Bright Lights, Big City — Keith Richards. Rolling Stones guitarist Keith Richards performs “Bright Lights, Big City.” Richards' appearance is particularly notable because it puts a veteran rock and blues figure alongside contemporary artists such as Travis Scott, PinkPantheress and Rauw Alejandro.",
+        ],
+        table: {
+          head: ["#", "Song", "Artist and credits"],
+          rows: [
+            ["1", "That's It", "Yung Lean feat. Future & Metro Boomin"],
+            ["2", "RHYNO", "Travis Scott, prod. by Guy-Manuel de Homem-Christo"],
+            [
+              "3",
+              "Sexy Magic",
+              "CA7RIEL & Paco Amoroso, PinkPantheress, Fred again.. & Étienne de Crécy",
+            ],
+            ["4", "Last Thing You Need", "Morgan Wallen"],
+            ["5", "Macacoa 2000", "Rauw Alejandro"],
+            ["6", "Bright Lights, Big City", "Keith Richards"],
+          ],
+        },
+      },
+      {
+        heading: "What About the Other 28 Songs?",
+        body: [
+          "They remain a mystery.",
+          "Rockstar has confirmed that Grand Theft Auto VI: The Album contains 34 tracks, but only six were revealed with the September 17 announcement. That leaves 28 tracks still undisclosed.",
+          "Rockstar has not yet published the complete artist lineup or full tracklist. Until it does, supposed additional song lists circulating online should not be treated as confirmed simply because they claim to be GTA 6 leaks.",
+          "We'll update this page when Rockstar or Atlantic Records reveals the remaining tracks.",
+        ],
+      },
+      {
+        heading: "Is This the Complete GTA 6 Soundtrack?",
+        body: [
+          "No complete GTA 6 in-game soundtrack has been announced.",
+          "This distinction matters.",
+          "Rockstar describes Grand Theft Auto VI: The Album as an official album containing 34 tracks connected to the world of Vice City and Leonida. But Rockstar separately says fans should stay tuned for more information about GTA VI's dynamic score, in-game radio and more.",
+          "That means it would be premature to claim that these 34 songs represent every song players will hear while driving around Leonida.",
+          "Previous Grand Theft Auto games have featured extensive radio programming alongside original scores, station hosts, advertisements and other audio content. For GTA VI, the details of that wider system have not yet been fully revealed.",
+        ],
+        table: {
+          head: ["Confirmed", "Not yet confirmed"],
+          rows: [
+            [
+              "Grand Theft Auto VI: The Album contains 34 tracks.",
+              "The complete GTA VI radio station list.",
+            ],
+            ["Six songs have been revealed.", "The complete in-game licensed music library."],
+            [
+              "The album launches November 19.",
+              "Which album tracks will appear on which radio stations.",
+            ],
+            [
+              "Rockstar has referenced a dynamic score and a new evolution of in-game radio.",
+              "Radio hosts and DJs.",
+            ],
+            ["", "The full 34-song album tracklist."],
+            ["", "How radio stations will function or evolve during gameplay."],
+          ],
+        },
+      },
+      {
+        heading: "Rockstar Teases the “Next Evolution” of GTA Radio",
+        body: [
+          "Perhaps the most interesting detail for GTA 6 players isn't one of the six songs. It's what Rockstar said comes next.",
+          "Alongside the album announcement, Rockstar said more details are coming about the game's dynamic score and the next evolution of in-game radio.",
+          "Rockstar hasn't explained exactly what “next evolution” means yet. So claims about dynamically generated stations, personalized playlists, AI DJs or other specific systems remain speculation unless Rockstar confirms them.",
+          "Still, the statement establishes one important fact: Rockstar has more GTA VI music-system information to reveal before launch.",
+          "That makes in-game radio another area worth watching as November 19 approaches.",
+        ],
+      },
+      {
+        heading: "GTA 6 Album Vinyl and CD Editions",
+        body: [
+          "The album won't be limited to streaming.",
+          "Rockstar confirmed that vinyl and CD editions will be available, including several special physical releases. Official offerings include a limited-edition liquid-filled vinyl, a splatter-edition vinyl and a CD jewel case.",
+          "Rockstar says these three versions are exclusive to the album's official website.",
+          "Additional retailer-exclusive vinyl colorways featuring unique artwork are planned through retailers including Best Buy, Walmart, Amazon, Barnes & Noble, Target, Urban Outfitters, Blood Records and independent record stores. Availability can vary by retailer and region.",
+        ],
+      },
+      {
+        heading: "GTA 6 Music Is Becoming a Major Part of the Launch Campaign",
+        body: [
+          "Music has long been closely associated with Grand Theft Auto, particularly through the franchise's radio stations.",
+          "The GTA VI album announcement expands that relationship beyond background music or a traditional game soundtrack. Rockstar is promoting a standalone 34-track release with major artists, streaming availability and collectible physical editions at the same time it prepares GTA VI for launch.",
+          "The variety of the first six songs also fits the broader setting Rockstar has established for the game. GTA VI takes place across Vice City and the state of Leonida, giving Rockstar a setting capable of supporting a wide mixture of musical styles and cultures.",
+          "Exactly how that translates into the game's radio stations remains unconfirmed.",
+        ],
+      },
+      {
+        heading: "Does the Album Change GTA 6's Release Date?",
+        body: [
+          "No.",
+          "Rockstar continues to list November 19, 2026 as the release date for Grand Theft Auto VI. The game is currently announced for PlayStation 5 and Xbox Series X|S. Rockstar has not announced a PC version or PC release date.",
+          "The album is launching alongside the console release on November 19.",
+        ],
+      },
+      {
+        heading: "What Rockstar Has Not Revealed Yet",
+        body: [
+          "Despite the announcement, several major music questions remain unanswered.",
+          "The biggest is the complete tracklist. We also don't yet know the complete radio station lineup, station hosts, how much licensed music exists outside the album, or exactly how the dynamic score interacts with gameplay.",
+          "Those unanswered questions are important because Grand Theft Auto VI: The Album and GTA VI's entire audio system are not necessarily the same thing.",
+          "For now, the 34-track album should be treated as one officially confirmed part of GTA VI's much larger music experience.",
+        ],
+      },
+      {
+        heading: "Bottom Line",
+        body: [
+          "Grand Theft Auto VI: The Album launches November 19, 2026 with 34 tracks, and the first six songs are already available to stream.",
+          "The initial lineup includes Yung Lean with Future and Metro Boomin, Travis Scott, CA7RIEL & Paco Amoroso with PinkPantheress, Fred again.. and Étienne de Crécy, Morgan Wallen, Rauw Alejandro and Keith Richards. Twenty-eight tracks remain unrevealed.",
+          "More importantly for GTA 6 itself, Rockstar says additional details are coming about the game's dynamic score and the next evolution of in-game radio. That means the September 17 announcement is likely not the final word on GTA VI's music.",
+          "We'll update this article when Rockstar reveals the remaining tracks or provides new confirmed information about GTA VI's radio and music systems.",
+        ],
+      },
+    ],
+    sources: [
+      {
+        label:
+          "Rockstar Games — Announcing Grand Theft Auto VI: The Album, Coming November 19 (September 17, 2026)",
+        url: "https://www.rockstargames.com/newswire/article/7599a881942544/announcing-grand-theft-auto-vi-the-album-coming-november-19",
+      },
+      {
+        label: "Rockstar Games — Grand Theft Auto VI: The Album official music page",
+        url: "https://www.rockstargames.com/VI/music",
+      },
+      {
+        label: "Rockstar Games — Grand Theft Auto VI official website",
+        url: "https://www.rockstargames.com/VI",
+      },
+      {
+        label: "Atlantic Records / Warner Music announcement for Grand Theft Auto VI: The Album",
+        needsReview: true,
+      },
+    ],
+    evidence: [
+      {
+        kind: "confirmed",
+        usage:
+          "The album title, the Atlantic Records partnership, the 34-track count, the November 19, 2026 release date, the six revealed songs and their credits, the pre-save, the vinyl and CD editions, and Rockstar's statement that more details about the dynamic score and in-game radio are coming all come from Rockstar's own announcement.",
+      },
+      {
+        kind: "reported",
+        usage:
+          "Secondary coverage of the announcement repeats the album details but adds no first-party information beyond Rockstar's post. Where that coverage calls the 34 tracks GTA 6's full soundtrack, the framing is the outlet's and not Rockstar's.",
+      },
+      {
+        kind: "speculation",
+        usage:
+          "The remaining 28 songs, the complete in-game radio lineup, radio hosts and DJs, which album tracks appear on which stations, and what the next evolution of in-game radio means in practice are all unannounced. This article does not predict them.",
+      },
+    ],
+    related: [
+      {
+        type: "pillar",
+        href: "/gta-6-release-date",
+        label: "GTA 6 release date: November 19, 2026",
+      },
+      { type: "wiki", href: "/wiki/map/vice-city", label: "Vice City in GTA 6" },
+      {
+        type: "pillar",
+        href: "/gta-6-leonida",
+        label: "GTA 6 Leonida: every confirmed region",
+      },
+      {
+        type: "pillar",
+        href: "/gta-6-gameplay",
+        label: "GTA 6 gameplay: everything Rockstar has officially shown",
+      },
+      {
+        type: "pillar",
+        href: "/gta-6-platforms",
+        label: "GTA 6 platforms: PS5 and Xbox Series X|S",
+      },
+      { type: "pillar", href: "/gta-6-news", label: "GTA 6 news hub: every update in one place" },
+    ],
+  },
+  {
     slug: "gta-6-limited-edition-dualsense-controller",
     title:
       "GTA 6 Limited Edition DualSense Controllers: Price, Preorders, Release Date and Everything Confirmed",
