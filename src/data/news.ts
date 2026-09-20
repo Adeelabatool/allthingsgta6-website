@@ -69,7 +69,7 @@ export const news: NewsItem[] = [
       "Rockstar Games has officially announced Grand Theft Auto VI: The Album, a 34-track music collection created in partnership with Atlantic Records and launching alongside GTA 6 on November 19, 2026. Six songs are already available to stream.",
     category: "rockstar-updates",
     date: "2026-09-20",
-    lastVerified: "2026-09-19",
+    lastVerified: "2026-09-20",
     seoTitle: "GTA 6 Album Announced: 34 Tracks, Artists and Release Date",
     metaDescription:
       "Rockstar has announced Grand Theft Auto VI: The Album — 34 tracks with Atlantic Records, out November 19, 2026. Here are the six songs revealed so far.",
