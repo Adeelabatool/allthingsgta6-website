@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
+import { InlineText } from "@/components/InlineText";
 import { allWiki, wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
 import { parsePublishAt } from "@/lib/publishing";
 import { SECTION_CRUMBS, articleHead, type Crumb } from "@/lib/seo";
@@ -99,7 +100,7 @@ function WikiEntryPage() {
 
           {w.intro?.map((p, i) => (
             <p key={i} className="mt-4 text-foreground/90 leading-relaxed">
-              {p}
+              <InlineText text={p} />
             </p>
           ))}
 
@@ -109,7 +110,7 @@ function WikiEntryPage() {
                 <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">{sec.heading}</h2>
                 {sec.body?.map((para, i) => (
                   <p key={i} className="mt-3 text-foreground/90 leading-relaxed">
-                    {para}
+                    <InlineText text={para} />
                   </p>
                 ))}
                 {sec.table ? <EntryTable table={sec.table} /> : null}

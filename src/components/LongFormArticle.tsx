@@ -3,6 +3,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
+import { InlineText } from "@/components/InlineText";
 import type { PageSection, SitePage } from "@/data/pages";
 import { publishedTimestamp } from "@/lib/publishing";
 import { liveLinks } from "@/lib/related";
@@ -37,7 +38,7 @@ export function LongFormArticle({ page }: { page: SitePage }) {
                 : "mt-3 text-foreground/90 leading-relaxed"
             }
           >
-            {p}
+            <InlineText text={p} />
           </p>
         ))}
 
@@ -109,7 +110,7 @@ function Section({ section }: { section: PageSection }) {
       <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">{section.heading}</h2>
       {section.body?.map((p, i) => (
         <p key={i} className="mt-3 text-foreground/90 leading-relaxed">
-          {p}
+          <InlineText text={p} />
         </p>
       ))}
       {section.table ? (

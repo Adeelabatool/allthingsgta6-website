@@ -226,14 +226,14 @@ export const pages: SitePage[] = [
         body: [
           "Jason Duval: Jason grew up around criminals, served in the Army and later found himself working around drug runners in the Leonida Keys. He wants an easier life, but his relationship and criminal partnership with Lucia pull him toward something bigger.",
           "Lucia Caminos: Lucia learned to fight from her father and spent time in the Leonida Penitentiary after fighting for her family. She wants the better life her mother once dreamed about and is prepared to take risks to get it.",
-          "Both have full profiles, linked at the end of this page.",
+          "Read the full profiles of [Jason Duval](/wiki/characters/jason) and [Lucia Caminos](/wiki/characters/lucia).",
         ],
       },
       {
         heading: "Is there a third protagonist in GTA 6?",
         body: [
           "Rockstar's GTA VI website and character profiles present Jason and Lucia as the story's two leads, and none of them names a third playable protagonist.",
-          "Fans most often suggest Raul Bautista. Rockstar's own profile describes him as an experienced bank robber who recruits people for bigger, riskier jobs. It doesn't describe him as a playable character.",
+          "Fans most often suggest [Raul Bautista](/wiki/characters/raul-bautista). Rockstar's own profile describes him as an experienced bank robber who recruits people for bigger, riskier jobs. It doesn't describe him as a playable character.",
         ],
       },
       {
@@ -393,7 +393,7 @@ export const pages: SitePage[] = [
       "A fact-checked guide to GTA 6 gameplay shown by Rockstar, including driving, combat, character switching, police chases, activities and exploration.",
     primaryKeyword: "GTA 6 gameplay",
     intro: [
-      "For years, “GTA 6 gameplay” searches returned a mixture of leaks, recreations and speculation. That changed with Rockstar's August 27 Extended Look.",
+      "For years, “GTA 6 gameplay” searches returned a mixture of leaks, recreations and speculation. That changed with Rockstar's August 27 [Extended Look](/gta-6-trailers).",
       "We can now discuss GTA 6 using nearly 27 minutes of official in-game footage captured from the PS5 version.",
     ],
     sections: [
@@ -410,7 +410,7 @@ export const pages: SitePage[] = [
           "Robberies and criminal jobs: The story premise itself begins with an easy score going wrong. The Extended Look also contains robbery-style situations and criminal planning.",
           "Robberies are clearly central to the story, but Rockstar has not documented a complete “dynamic robbery system.”",
           "Activities: Rockstar shows basketball, exercise, racing, water activities and other downtime.",
-          "See GTA 6 activities and minigames for a status-by-status list.",
+          "See [GTA 6 activities and minigames](/gta-6-activities) for a status-by-status list.",
           "Exploration and interiors: The showcase moves through apartments, nightlife spaces, stores and other interiors.",
           "This supports a denser interactive world but does not validate the “70% of buildings are enterable” style of viral claim.",
         ],
@@ -425,7 +425,7 @@ export const pages: SitePage[] = [
       {
         heading: "What remains unknown",
         body: [
-          "Rockstar has not fully documented the mission list, economy, property ownership, skill trees, inventory limits, wanted-level mechanics, mission replay, difficulty options, fast travel, performance modes, online integration, PC support, progression or the exact map boundary.",
+          "Rockstar has not fully documented the mission list, economy, property ownership, skill trees, inventory limits, wanted-level mechanics, mission replay, difficulty options, fast travel, performance modes, [online integration](/gta-6-online), [PC support](/system-requirements), progression or the exact map boundary.",
         ],
       },
       {
@@ -458,21 +458,21 @@ export const pages: SitePage[] = [
         heading: "Combat and inventory",
         body: [
           "Official footage shows third-person shooting, in-car combat and a weapon wheel. PC Gamer reports more targeted aiming and a separate item-management feel. These observations can be tracked as individual mechanics with screenshots and timestamps.",
-          "Individual weapons are covered on our GTA 6 weapons page.",
+          "Individual weapons are covered on our [GTA 6 weapons page](/gta-6-weapons).",
         ],
       },
       {
         heading: "Police and wanted response",
         body: [
           "The footage and contemporary analysis point to a more descriptive police response: authorities may receive information about character appearance, vehicle and whether Jason and Lucia are together. A six-star wanted display is also observed in coverage of the Extended Look.",
-          "Our police and wanted-level guide covers this in more detail.",
+          "Our [police and wanted-level guide](/wiki/gangs/police-system) covers this in more detail.",
         ],
       },
       {
         heading: "Driving, vehicles and damage",
         body: [
           "The showcase contains extended driving and a major pursuit. Media coverage notes crashes, tire shooting and environmental damage. Treat these as observed examples, not a complete vehicle-physics specification.",
-          "Vehicle classes and customization rules are not covered here yet. Our GTA 6 vehicles page tracks what Rockstar has shown.",
+          "Vehicle classes and customization rules are not covered here yet. Our [GTA 6 vehicles page](/gta-6-vehicles) tracks what Rockstar has shown.",
         ],
       },
       {
@@ -592,7 +592,7 @@ export const pages: SitePage[] = [
       "Leonida is GTA 6’s fictional Florida-inspired state. Learn what Rockstar has confirmed about Vice City, the Keys, Grassrivers and other regions.",
     primaryKeyword: "GTA 6 Leonida",
     intro: [
-      "Leonida is the fictional US state where Grand Theft Auto VI takes place. Vice City sits inside it, but Rockstar's official world material makes clear that the game stretches across a much broader mix of urban, coastal, wetland, industrial and wilderness environments.",
+      "Leonida is the fictional US state where Grand Theft Auto VI takes place. [Vice City](/wiki/map/vice-city) sits inside it, but Rockstar's official world material makes clear that the game stretches across a much broader mix of urban, coastal, wetland, industrial and wilderness environments.",
     ],
     sections: [
       {
@@ -636,7 +636,7 @@ export const pages: SitePage[] = [
         body: [
           "Rockstar has used superlative language about the scale and immersion of GTA 6, and recent reporting has described an extremely large map.",
           "Rockstar has not published an official measurement, so exact square-mile comparisons are estimates or third-party reports.",
-          "Our GTA 6 map vs GTA 5 article separates official claims from community measurements.",
+          "Our [GTA 6 map vs GTA 5 article](/analysis/gta-6-map-vs-gta-5) separates official claims from community measurements.",
         ],
       },
       {
@@ -815,9 +815,9 @@ export const pages: SitePage[] = [
         heading: "Explore the world",
         body: [
           "Start here, then explore the individual guides:",
-          "GTA 6 Map",
-          "Vice City",
-          "Leonida",
+          "[GTA 6 Map](/gta-6-map)",
+          "[Vice City](/wiki/map/vice-city)",
+          "[Leonida](/gta-6-leonida)",
           "Leonida Keys",
           "Grassrivers",
         ],
@@ -921,7 +921,7 @@ export const pages: SitePage[] = [
       "How big is the GTA 6 map? Rockstar hasn't published an official square-mile figure. What's been reported about its size, plus every confirmed region and city.",
     primaryKeyword: "GTA 6 map",
     intro: [
-      "GTA 6 is set in the fictional state of Leonida, with Vice City as its central urban setting. Rockstar has named six headline regions: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park.",
+      "GTA 6 is set in the fictional state of [Leonida](/gta-6-leonida), with Vice City as its central urban setting. Rockstar has named six headline regions: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park.",
       "How big is it? Rockstar has not published an official square-mile or square-kilometre measurement. Press reports from a visit to Rockstar North describe Leonida as roughly twice the size of GTA V's map. That is third-party reporting, not an official Rockstar measurement.",
     ],
     sections: [
@@ -944,7 +944,7 @@ export const pages: SitePage[] = [
         body: [
           "Vice City is GTA 6's headline location, returning decades after its earlier versions in the franchise.",
           "This is not simply a remaster of the 2002 map. Rockstar is building a modern metropolitan region shaped by beaches, towers, nightlife, highways, ports, social-media culture and suburban sprawl.",
-          "Our Vice City guide, linked at the end of this page, covers the city in more detail.",
+          "Our [Vice City guide](/wiki/map/vice-city) covers the city in more detail.",
         ],
       },
       {
@@ -1072,7 +1072,7 @@ export const pages: SitePage[] = [
         heading: "Official sublocations and named entities",
         body: [
           "The official media and edition material already exposes smaller place and business names such as Leonida Penitentiary, Rideout Customs Mod Shop, Sara’s Unisex Salon, Stock 305 Clothing Store, Electric Fang Tattoo Parlor, One-Eyed Willie’s Mod Shop and the PTT Youngin$ location. Rockstar has not yet placed every one of these within a specific region.",
-          "Our GTA 6 locations guide, linked at the end of this page, lists these named places in one index.",
+          "Our [GTA 6 locations guide](/gta-6-locations) lists these named places in one index.",
         ],
       },
       {
@@ -1202,7 +1202,7 @@ export const pages: SitePage[] = [
       {
         heading: "What is confirmed",
         body: [
-          "Take-Two's June 2026 announcement describes GTA 6 as a single-player experience for PS5 and Xbox Series X|S. The game launched on November 19, 2026.",
+          "Take-Two's June 2026 announcement describes GTA 6 as a single-player experience for [PS5 and Xbox Series X|S](/gta-6-platforms). The game [launched on November 19, 2026](/gta-6-release-date).",
           "GTA+ continues to exist as Rockstar's subscription tied to the “ever-evolving world of GTA Online” and other benefits. Digital GTA 6 pre-orders currently include a free month of GTA+.",
         ],
       },
@@ -1535,7 +1535,7 @@ export const pages: SitePage[] = [
         body: [
           "Possibly later, but “possibly” is not the same as confirmed.",
           "Rockstar has not announced the PC edition or PC system requirements. Historical release patterns make a later port plausible, but that history is not a release date.",
-          "Read GTA 6 PC release date for a fact-only timeline.",
+          "Our [GTA 6 PC requirements page](/system-requirements) tracks the PC status.",
         ],
       },
       {
@@ -1679,7 +1679,7 @@ export const pages: SitePage[] = [
         body: [
           "Ultimate includes the base game plus premium vehicles, weapons, styles and other content associated with Jason and Lucia's story.",
           "The difference is content, not earlier release timing. Rockstar has not announced an Ultimate-only early-access window.",
-          "See GTA 6 Ultimate Edition for the itemized list.",
+          "See [GTA 6 Ultimate Edition](/gta-6-ultimate-edition) for the itemized list.",
         ],
       },
       {
@@ -1713,7 +1713,7 @@ export const pages: SitePage[] = [
         heading: "Bottom line",
         body: [
           "The official US starting price is $79.99, not $100. Ultimate is $99.99.",
-          "If you only want the game, Standard is the lower-cost choice. If you want the additional content bundle, compare Standard vs Ultimate.",
+          "If you only want the game, Standard is the lower-cost choice. If you want the additional content bundle, compare [Standard vs Ultimate](/analysis/gta-6-standard-vs-ultimate).",
         ],
       },
       {
@@ -1841,7 +1841,7 @@ export const pages: SitePage[] = [
       {
         heading: "What platforms is GTA 6 on?",
         body: [
-          "GTA 6 is available on PlayStation 5 and Xbox Series X|S.",
+          "GTA 6 is available on [PlayStation 5 and Xbox Series X|S](/gta-6-platforms).",
           "The PlayStation Store also lists the game as PS5 Pro Enhanced and notes support for DualSense vibration and trigger effects. Xbox Series S is included under Rockstar's Xbox Series X|S announcement.",
           "There is no official PS4 or Xbox One version.",
         ],
@@ -1851,7 +1851,7 @@ export const pages: SitePage[] = [
         body: [
           "No. Rockstar has not announced GTA 6 for PC, and its official GTA VI website lists only PlayStation 5 and Xbox Series X|S.",
           "Previous Rockstar releases are useful historical context but not a release schedule. GTA V arrived on PC well after its original console launch, while Red Dead Redemption 2 also reached PC after the console version. Those gaps show that a later PC release would not be unusual, but they do not prove a particular GTA 6 date.",
-          "Our GTA 6 PC requirements page, linked at the end of this page, tracks the PC status.",
+          "Our [GTA 6 PC requirements page](/system-requirements) tracks the PC status.",
         ],
       },
       {
@@ -1863,11 +1863,11 @@ export const pages: SitePage[] = [
       {
         heading: "How much does GTA 6 cost?",
         body: [
-          "US pricing is:",
+          "[US pricing](/gta-6-price) is:",
           "Standard Edition: $79.99",
           "Ultimate Edition: $99.99",
           "Rockstar's pre-order offer included the Vintage Vice City Pack for pre-orders and qualifying purchases made before November 20, 2026, and a free month of GTA+ with digital pre-orders.",
-          "Our GTA 6 editions guides, linked at the end of this page, compare Standard and Ultimate.",
+          "Our editions guides compare [Standard and Ultimate](/analysis/gta-6-standard-vs-ultimate) and list everything in the [Ultimate Edition](/gta-6-ultimate-edition).",
         ],
       },
       {
@@ -2016,7 +2016,7 @@ export const pages: SitePage[] = [
         body: [
           "Trailer 1's biggest achievement was establishing the setting.",
           "It showed beaches, traffic, nightlife, wildlife, social-media-style clips and Lucia's introduction from incarceration. It made clear that Rockstar's modern Vice City would satirize contemporary Florida rather than revisit the 1980s.",
-          "Read our Trailer 1 breakdown.",
+          "Read our [Trailer 1 breakdown](/analysis/trailer-1-breakdown).",
         ],
       },
       {
@@ -2032,7 +2032,7 @@ export const pages: SitePage[] = [
         body: [
           "At almost 27 minutes, the Extended Look is the most information-dense official GTA 6 video so far.",
           "It moves beyond teaser editing and shows longer stretches of missions, driving, combat, activities and character interaction. The footage was captured from the PS5 version.",
-          "See our full Extended Look breakdown.",
+          "See our full [Extended Look breakdown](/news/gta-6-extended-look-breakdown).",
         ],
       },
       {
@@ -2224,7 +2224,7 @@ export const pages: SitePage[] = [
         heading: "Bottom line",
         body: [
           "GTA 6 Ultimate is not a different game. It is the base game plus a package of premium in-game content for $99.99 in the US.",
-          "For a direct side-by-side, see GTA 6 Standard vs Ultimate.",
+          "For a direct side-by-side, see [GTA 6 Standard vs Ultimate](/analysis/gta-6-standard-vs-ultimate).",
         ],
       },
       {
@@ -2798,7 +2798,7 @@ export const pages: SitePage[] = [
       "GTA 6 is out on PS5 and Xbox Series X|S, but Rockstar hasn't announced a PC version or official PC specs. What's confirmed, and which spec lists to ignore.",
     primaryKeyword: "GTA 6 PC requirements",
     intro: [
-      "There are no official GTA 6 PC system requirements because Rockstar has not announced a PC version of GTA 6. The game launched on November 19, 2026 for PlayStation 5 and Xbox Series X|S only.",
+      "There are no official GTA 6 PC system requirements because Rockstar has not announced a PC version of GTA 6. The game [launched on November 19, 2026](/gta-6-release-date) for [PlayStation 5 and Xbox Series X|S](/gta-6-platforms) only.",
       "That means every current page claiming an “official minimum RTX 3060,” “recommended RTX 4070,” exact RAM requirement or fixed PC storage number is either estimating or fabricating information unless Rockstar has made a newer announcement.",
     ],
     sections: [
