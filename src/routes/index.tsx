@@ -6,15 +6,37 @@ import { publicNews } from "@/data/news";
 import { publicWiki } from "@/data/wiki";
 import { publicAnalyses } from "@/data/analysis";
 import { SystemReqsTable } from "@/components/SystemReqsTable";
-import { pageHead } from "@/lib/seo";
+import { SITE_NAME, SITE_URL, pageHead } from "@/lib/seo";
+import { JsonLd } from "@/components/StructuredData";
+
+/** Site-level identity. Homepage only; article pages keep their own Article markup. */
+const HOME_SCHEMA = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      inLanguage: "en-US",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
+};
 
 export const Route = createFileRoute("/")({
   head: () =>
     pageHead({
       path: "/",
-      title: "AllThingsGTA6 — GTA 6 Live Dashboard",
+      title: "AllThingsGTA6: GTA 6 Guides, Map, Characters and News",
       description:
-        "Live GTA 6 dashboard: breaking news, countdown to November 19 2026, featured analysis, wiki highlights, and interactive tools.",
+        "GTA 6 is out on PS5 and Xbox Series X|S. Explore the Leonida map, the full cast, editions and price, and the latest news, checked against official sources.",
     }),
   component: Index,
 });
@@ -33,6 +55,7 @@ function Index() {
 
   return (
     <SiteShell>
+      <JsonLd data={HOME_SCHEMA} />
       <NewsTicker />
 
       {/* Hero */}
@@ -169,7 +192,7 @@ function Index() {
           <ToolCard
             href="/tools/countdown"
             title="Release Countdown"
-            desc="Time remaining until GTA 6 launches."
+            desc="GTA 6 is out. See how long it has been since launch."
             icon="🟢"
           />
           <ToolCard
@@ -282,6 +305,23 @@ function HeroCountdown() {
     { label: "Minutes", value: t.minutes },
     { label: "Seconds", value: t.seconds },
   ];
+
+  if (Date.now() >= HERO_TARGET) {
+    return (
+      <div className="border border-border/60 bg-card/85 backdrop-blur-xl rounded-[14px] p-5">
+        <div className="font-mono text-[10px] uppercase tracking-[0.25em] text-accent mb-1">
+          Out Now
+        </div>
+        <div className="text-lg font-bold">Released November 19, 2026</div>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Available on PlayStation 5 and Xbox Series X|S.
+        </p>
+        <Link to="/gta-6-release-date" className="mt-4 inline-block text-sm text-accent hover:underline">
+          Release date, platforms and editions →
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="border border-border/60 bg-card/85 backdrop-blur-xl rounded-[14px] p-5">

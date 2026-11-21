@@ -83,7 +83,7 @@ export const analyses: AnalysisArticle[] = [
       {
         heading: "Do both get pre-order bonuses?",
         body: [
-          "Under Rockstar's current offer, qualifying pre-orders and purchases before November 20 receive the Vintage Vice City Pack. Digital pre-orders also include a free month of GTA+.",
+          "Rockstar's offer gave the Vintage Vice City Pack to all pre-orders and purchases made before November 20, 2026, and a free month of GTA+ to digital pre-orders. Rockstar's GTA VI site now lists the Vintage Vice City Pack as a digital add-on.",
           "Those incentives are not a reason by themselves to buy Ultimate, because they are not exclusive to the more expensive edition.",
         ],
       },
@@ -91,7 +91,7 @@ export const analyses: AnalysisArticle[] = [
         heading: "Is there early access?",
         body: [
           "No official early-access period is listed.",
-          "Digital pre-orders can pre-load on November 12, but GTA 6 launches November 19.",
+          "Digital pre-orders could pre-load before launch, but that is not early access. GTA 6 launched on November 19, 2026.",
         ],
       },
       {
@@ -107,41 +107,33 @@ export const analyses: AnalysisArticle[] = [
           "Best for most players: Standard Edition.",
           "Best for collectors/customizers: Ultimate Edition.",
           "The $20 gap is modest, but paying more only makes sense if you actually care about the included content.",
-          "See the full Ultimate Edition list and our pre-order guide before buying.",
+          "See the full Ultimate Edition list before buying.",
         ],
       },
       {
         heading: "Decision matrix",
         body: [
           "Standard is the clean choice for players who only want the core single-player game and preorder bonuses. Ultimate is aimed at players who value named vehicles, weapon variants, apparel, customization locations and other premium items from the start.",
-          "Because Rockstar offers a separate Ultimate Upgrade, buyers do not need to treat the decision as irreversible. That fact should be prominent in any “which should you buy?” answer.",
+          "Because Rockstar offers a separate Ultimate Upgrade, buyers do not need to treat the decision as irreversible.",
         ],
       },
       {
         heading: "Do the bonuses change the story?",
         body: [
-          "Rockstar describes the Ultimate items as threaded across Jason and Lucia’s story, but it has not announced a separate Ultimate-only campaign or alternate ending. Avoid language implying that Standard buyers receive an incomplete narrative.",
-          "The safest interpretation is that Ultimate adds premium items and activities/services around the same base game. If Rockstar later documents exclusive missions, the comparison table should be updated with the exact scope.",
+          "Rockstar describes the Ultimate items as threaded across Jason and Lucia’s story, but it has not announced a separate Ultimate-only campaign or alternate ending. There is no sign that Standard buyers get an incomplete story.",
+          "Based on what Rockstar has published, Ultimate adds premium items, activities and services around the same base game. If Rockstar documents exclusive missions, this page will be updated.",
         ],
       },
       {
         heading: "Value beyond raw item count",
         body: [
-          "Counting bonuses alone can be misleading. A player who cares about cars and customization may value the Cheetah, safehouse vehicles and mod shops heavily, while a story-only player may not. A neutral comparison should therefore match benefits to player types instead of declaring a universal winner.",
+          "Counting bonuses alone can be misleading. A player who cares about cars and customization may value the Cheetah, safehouse vehicles and mod shops heavily, while a story-only player may not. So the better choice depends on what kind of player you are.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Standard vs Ultimate,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -264,14 +256,14 @@ export const analyses: AnalysisArticle[] = [
       {
         heading: "Trailer 2 as the bridge to the character reveal",
         body: [
-          "Trailer 2 gave Jason and Lucia far more narrative context and was followed by Rockstar’s extensive People & Places material. A modern breakdown should therefore cross-reference the trailer with the official profiles rather than speculating about every face in isolation.",
+          "Trailer 2 gave Jason and Lucia far more narrative context and was followed by Rockstar’s extensive People & Places material. This breakdown cross-references the trailer with the official profiles rather than speculating about every face in isolation.",
           "Keeping those apart is what stops a trailer reading from drifting into invention.",
         ],
       },
       {
         heading: "What Trailer 2 added",
         body: [
-          "The second trailer expanded the relationship, criminal activity, neighborhoods and supporting cast visible around the protagonists. PC Gamer’s detail breakdown also highlighted small visual clues and possible systems, but those interpretations should remain separate from official character/location facts.",
+          "The second trailer expanded the relationship, criminal activity, neighborhoods and supporting cast visible around the protagonists. PC Gamer’s detail breakdown also highlighted small visual clues and possible systems, but those interpretations are kept separate from official character and location facts.",
           "Use “seen,” “later named,” and “still uncertain” labels for major moments.",
         ],
       },
@@ -285,14 +277,6 @@ export const analyses: AnalysisArticle[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Trailer 2,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -405,7 +389,7 @@ export const analyses: AnalysisArticle[] = [
       {
         heading: "Is GTA 6's map twice as big?",
         body: [
-          "Do not state “2x GTA V” as an official Rockstar fact.",
+          "“2x GTA V” is not an official Rockstar figure.",
           "Community mapping projects and leak-based reconstructions have produced estimates, and recent reporting has described a very large world. But Rockstar has not published a final square-mile comparison with GTA V.",
           "Our map hub labels numerical estimates separately from official geography.",
         ],
@@ -427,7 +411,7 @@ export const analyses: AnalysisArticle[] = [
       {
         heading: "Bottom line",
         body: [
-          "GTA 6 is clearly a generational expansion over GTA V, but “bigger” should not be reduced to an unofficial square-mile multiplier.",
+          "GTA 6 is clearly a generational expansion over GTA V, but an unofficial square-mile multiplier does not capture that difference.",
           "The best comparison is scale + density + regional variety + simulation.",
           "See the GTA 6 map hub for continuously updated geography.",
         ],
@@ -447,24 +431,22 @@ export const analyses: AnalysisArticle[] = [
         ],
       },
       {
-        heading: "How to handle reported size multipliers",
+        heading: "Reported size comparisons vs official measurements",
         body: [
-          "If an outlet reports that invited creators or Rockstar representatives described the world as a certain multiple of another Rockstar game, cite the outlet and label it “reported.” Do not move the number into the confirmed table until Rockstar publishes it directly.",
-          "Community map dimensions belong in a separate section with methodology and date because reconstructions change as new evidence appears.",
+          "When an outlet reports that Rockstar representatives or invited creators compared the world with another Rockstar game, we cite that outlet and label it “reported.” It moves to the confirmed table only if Rockstar publishes it directly.",
+          "Community map dimensions are kept separate, with their method and date, because reconstructions change as new evidence appears.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 map vs GTA 5,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not published an official measurement of the GTA 6 map.",
         ],
       },
     ],
@@ -579,7 +561,7 @@ export const analyses: AnalysisArticle[] = [
             heading: "Cars, boats and city density",
             body: [
               "The trailer is packed with traffic, supercars, motorcycles, boats and aircraft.",
-              "Years later, it remains a useful source for the GTA 6 vehicle database, but specific model identifications should still carry evidence labels.",
+              "Years later, it remains a useful source for the GTA 6 vehicle database, but specific model identifications still carry evidence labels here.",
             ],
           },
           {
@@ -612,7 +594,7 @@ export const analyses: AnalysisArticle[] = [
             heading: "What Trailer 1 definitely established",
             body: [
               "It established Leonida/Vice City as the setting, Lucia as a central protagonist, a modern social-media-heavy culture and a crime-partnership framing. It also showed beaches, nightlife, vehicles, wildlife and dense public spaces.",
-              "Later sources should be cited when naming characters or locations that were visually present but not named in Trailer 1 itself.",
+              "Characters and locations that appear in Trailer 1 but were named later are cited to those later sources.",
             ],
           },
           {
@@ -625,14 +607,6 @@ export const analyses: AnalysisArticle[] = [
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “GTA 6 Trailer 1,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-            ],
-          },
-          {
-            heading: "What is still not confirmed",
-            body: [
-              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],

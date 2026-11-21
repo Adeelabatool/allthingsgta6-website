@@ -90,7 +90,7 @@ export const wiki: WikiEntry[] = [
         heading: "Is Cal playable?",
         body: [
           "Rockstar has only confirmed Jason and Lucia as the main playable protagonists.",
-          "Cal should therefore be treated as a supporting character unless Rockstar says otherwise.",
+          "So Cal is a supporting character unless Rockstar says otherwise.",
         ],
       },
       {
@@ -109,33 +109,31 @@ export const wiki: WikiEntry[] = [
       },
       {
         heading: "Primary source",
-        body: ["Rockstar Games - Cal Hampton official character profile.", "---"],
+        body: ["Rockstar Games - Cal Hampton official character profile."],
       },
       {
         heading: "Who Cal Hampton is",
         body: [
           "Rockstar describes Cal as Jason’s friend and a fellow associate of Brian Heder. He prefers staying home, monitoring Coast Guard communications and feeding a conspiracy-minded worldview with beer and private browser tabs.",
-          "This makes Cal a useful information-node character even before Rockstar explains his mission role.",
+          "That suggests he may be a source of information in the story, though Rockstar has not explained his mission role.",
         ],
       },
       {
         heading: "Fact versus interpretation",
         body: [
-          "Confirmed: friendship with Jason, association with Brian, Coast Guard monitoring and a paranoid personality. Interpretation: Cal may provide information, surveillance or mission leads. Keep that second category clearly labeled until gameplay confirms it.",
+          "Confirmed: friendship with Jason, association with Brian, Coast Guard monitoring and a paranoid personality. Interpretation: Cal may provide information, surveillance or mission leads.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “Cal Hampton GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not published Cal's full backstory or his role in the story's missions.",
         ],
       },
     ],
@@ -234,7 +232,7 @@ export const wiki: WikiEntry[] = [
       },
       {
         heading: "Primary source",
-        body: ["Rockstar Games official GTA VI character and location material.", "---"],
+        body: ["Rockstar Games official GTA VI character and location material."],
       },
       {
         heading: "Boobie Ike’s business network",
@@ -244,23 +242,21 @@ export const wiki: WikiEntry[] = [
         ],
       },
       {
-        heading: "Why Boobie matters to the world model",
+        heading: "Boobie's connections",
         body: [
-          "Characters tied to businesses can help the site connect narrative entities with location entities. A Boobie page should therefore link to the Vice City hub, Dre’Quan, Real Dimez, Only Raw Records and any confirmed club or property pages as Rockstar names them.",
+          "Boobie is linked to Vice City's nightlife and business world, to Dre’Quan Priest and Real Dimez, and to Only Raw Records.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “Boobie Ike GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not revealed Boobie's role in the story's missions.",
         ],
       },
     ],
@@ -341,14 +337,14 @@ export const wiki: WikiEntry[] = [
         heading: "Is Raul connected to Jason and Lucia?",
         body: [
           "Official promotional material places all of these characters inside the same GTA 6 world, but Rockstar has not published a complete relationship chart.",
-          "Do not claim Raul is Jason's mentor, final antagonist or permanent heist leader unless the game or Rockstar confirms it.",
+          "Rockstar has not confirmed Raul as Jason's mentor, the final antagonist or a permanent heist leader.",
         ],
       },
       {
         heading: "Could Raul introduce heist missions?",
         body: [
           "His bank-robber identity makes that a reasonable possibility, but it remains an inference.",
-          "The safer pre-release wording is: Raul provides clear narrative justification for bank-robbery missions or crews, but the exact mission structure is not yet known.",
+          "Put simply, Raul gives the story a clear reason for bank-robbery missions or crews, but the exact mission structure is not known.",
         ],
       },
       {
@@ -360,7 +356,7 @@ export const wiki: WikiEntry[] = [
       },
       {
         heading: "Primary source",
-        body: ["Rockstar Games - Raul Bautista official profile.", "---"],
+        body: ["Rockstar Games - Raul Bautista official profile."],
       },
       {
         heading: "Raul Bautista’s confirmed role",
@@ -370,23 +366,15 @@ export const wiki: WikiEntry[] = [
         ],
       },
       {
-        heading: "What to track as new footage arrives",
+        heading: "What we still don't know about Raul",
         body: [
-          "Watch for crew membership, named heists, vehicles, weapons, safehouses and whether Raul is a recurring planner or a temporary partner. Those are useful future entity fields and should only be filled from direct evidence.",
+          "Rockstar has not detailed Raul's crew, named heists, vehicles, weapons or safehouses, or whether he is a recurring planner or a temporary partner.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “Raul Bautista GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -892,27 +880,24 @@ export const wiki: WikiEntry[] = [
             heading: "What is new compared with the 2002 Vice City",
             body: [
               "The modern version is not a simple remake of the 2002 game world. Rockstar is depicting a contemporary metropolis with smartphone-era culture, viral video behavior, modern vehicles and a wider state around it. The useful comparison is thematic continuity plus a new scale and era, not street-for-street equivalence.",
-              "Keep nostalgia references in a separate section so they do not crowd out current GTA VI facts.",
             ],
           },
           {
-            heading: "City entities worth tracking",
+            heading: "Named places in Vice City",
             body: [
-              "As Rockstar names districts, clubs, stores, ports and institutions, give each a canonical entry and link back to this hub. Boobie Ike’s businesses, Only Raw Records and the Ultimate Edition service locations are early examples of entities that can strengthen a Vice City knowledge graph.",
+              "Rockstar has named some Vice City businesses and places, such as Boobie Ike’s businesses, Only Raw Records and the Ultimate Edition service locations. More will be added here as Rockstar names them.",
             ],
           },
           {
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “GTA 6 Vice City,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+              "Rockstar has not published a full list of Vice City districts or a final activity directory.",
             ],
           },
         ],
@@ -1104,14 +1089,14 @@ export const wiki: WikiEntry[] = [
             heading: "Does GTA 6 have six wanted stars?",
             body: [
               "A six-star level has been reported from the Extended Look presentation and captured interface analysis.",
-              "Because pre-release UI can change, we list this as officially observed in current footage, not as a promise that every final build will use exactly the same progression.",
+              "We list this as observed in Rockstar's footage. It has not been verified in the released game here yet.",
             ],
           },
           {
             heading: "Is police AI smarter?",
             body: [
               "The footage appears more coordinated and grounded than GTA V's decade-old system, but “smarter” is difficult to measure from a showcase.",
-              "Claims that police permanently remember clothing, track license plates across the map or use a specific evidence database should remain unconfirmed unless Rockstar or final-game testing proves them.",
+              "Claims that police permanently remember clothing, track license plates across the map or use a specific evidence database are unconfirmed. Rockstar has not documented them, and they have not been tested here.",
             ],
           },
           {
@@ -1131,13 +1116,13 @@ export const wiki: WikiEntry[] = [
               "whether witnesses matter;",
               "how helicopters and roadblocks scale;",
               "whether rural law enforcement differs from Vice City police.",
-              "Those deserve real testing, not pre-release guesswork.",
+              "These have not been tested here yet.",
             ],
           },
           {
             heading: "Bottom line",
             body: [
-              "GTA 6 definitely keeps wanted-level police gameplay and appears to make chases a major part of its presentation. The rest should be treated as an open research question until the game is playable.",
+              "GTA 6 definitely keeps wanted-level police gameplay and appears to make chases a major part of its presentation. The rest has not been verified in the released game yet.",
             ],
           },
           {
@@ -1157,21 +1142,13 @@ export const wiki: WikiEntry[] = [
           {
             heading: "Six stars does not tell us the full escalation ladder",
             body: [
-              "The apparent return of six stars is notable because GTA V used five. It does not by itself confirm military deployment, specific helicopter counts or exact response thresholds. Those details should wait for direct evidence.",
+              "The apparent return of six stars is notable because GTA V used five. It does not by itself confirm military deployment, specific helicopter counts or exact response thresholds. Those details are not confirmed.",
             ],
           },
           {
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “GTA 6 wanted system,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-            ],
-          },
-          {
-            heading: "What is still not confirmed",
-            body: [
-              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
             ],
           },
         ],
