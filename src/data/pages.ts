@@ -130,8 +130,7 @@ export const pages: SitePage[] = [
       {
         heading: "Classify activities by evidence strength",
         body: [
-          "The Extended Look and current reporting show a mixture of clearly playable activities, short gameplay montages and cinematic background behavior. Put each activity in a table with “shown in gameplay,” “shown in world,” or “reported by preview” rather than calling the whole list confirmed minigames.",
-          "This simple taxonomy is the page’s information-gain advantage.",
+          "The Extended Look and current reporting show a mixture of clearly playable activities, short gameplay montages and cinematic background behavior. Not every activity on the list is a confirmed minigame: some are shown in gameplay, some appear only in the world, and some come from preview reports.",
         ],
       },
       {
@@ -439,7 +438,6 @@ export const pages: SitePage[] = [
         heading: "The gameplay feature matrix",
         body: [
           "The August Extended Look finally gives GTA VI enough official in-game footage to describe gameplay as a set of systems rather than a run of trailer moments. Those systems are protagonists, movement, driving, combat, crime planning, wanted response, world interaction, activities, customization, economy and exploration.",
-          "For each system, include an evidence status and source. This makes the page durable as new trailers add details.",
         ],
       },
       {
@@ -657,7 +655,7 @@ export const pages: SitePage[] = [
         heading: "A region matrix by environment and economy",
         body: [
           "Vice City: dense urban economy, nightlife and tourism. Leonida Keys: islands, boats and smuggling networks. Grassrivers: wetlands and wildlife. Port Gellhorn: rougher coastal economy. Ambrosia: industrial production. Mount Kalaga: wilderness and outdoor recreation. Reading the regions by environment and economy tells you something useful about each one without inventing mission content Rockstar has not shown.",
-          "As additional official entities appear, add them under these environmental/economic categories.",
+          "New official places will be added under these categories.",
         ],
       },
       {
@@ -1268,14 +1266,13 @@ export const pages: SitePage[] = [
         heading: "GTA+ does not equal a GTA VI Online announcement",
         body: [
           "Digital GTA VI preorders include a free month of GTA+, and Take-Two describes GTA+ as a way to get more from the evolving world of GTA Online and access classic Rockstar titles. This is a current subscription benefit, not by itself proof of a specific GTA VI multiplayer launch schedule.",
-          "Keep GTA+, current GTA Online and hypothetical GTA VI-era multiplayer in separate sections.",
+          "GTA+, current GTA Online and any future GTA VI-era multiplayer are separate things.",
         ],
       },
       {
         heading: "What remains unknown",
         body: [
           "Unknowns include launch timing, whether the online product uses a new name, cross-platform rules, player counts, progression carryover, monetization structure and whether it ships alongside or after the single-player release. All of these remain unknown until Rockstar publishes details.",
-          "This restraint is the page’s competitive advantage in a query space filled with prediction.",
         ],
       },
       {
@@ -1564,7 +1561,7 @@ export const pages: SitePage[] = [
       {
         heading: "What PS5-specific information is official",
         body: [
-          "PlayStation’s product page lists DualSense vibration and trigger-effect support, Remote Play, offline play for one player and PS5 Pro Enhanced status. These are store-level platform facts and can be cited directly.",
+          "PlayStation’s product page lists DualSense vibration and trigger-effect support, Remote Play, offline play for one player and PS5 Pro Enhanced status. These details come directly from PlayStation's store listing.",
           "This page doesn’t assume equivalent Xbox controller features unless Microsoft or Rockstar documents them.",
         ],
       },
@@ -2049,7 +2046,7 @@ export const pages: SitePage[] = [
         heading: "The official GTA VI video timeline",
         body: [
           "Rockstar’s media library centers on its main GTA VI videos: Trailer 1, Trailer 2, the August 27, 2026 Extended Look, the Launch Trailer and Grand Theft Auto VI: Out Now. The company also provides nine short character/media clips.",
-          "Each video changed what could be stated confidently about the game. That change history is the page’s information-gain angle.",
+          "Each video changed what could be stated confidently about the game.",
         ],
       },
       {
@@ -2083,7 +2080,6 @@ export const pages: SitePage[] = [
         heading: "Video-by-video evidence table",
         body: [
           "Trailer 1 was released in December 2023 and runs about 1 minute 31 seconds on Rockstar’s current media pages. Trailer 2 arrived May 6, 2025 at roughly 2 minutes 47 seconds. The Extended Look arrived August 27, 2026 and runs roughly 26 minutes 48 seconds.",
-          "Add columns for primary themes, newly named characters, newly established locations, gameplay systems shown and pages updated. This turns a media list into an editorial index.",
         ],
       },
       {
@@ -2718,14 +2714,13 @@ export const pages: SitePage[] = [
         heading: "Combat evidence from official footage",
         body: [
           "The Extended Look gives the weapons page valuable system context: aiming reticles, tactical-looking target selection, a weapon wheel and in-car shooting are visible or highlighted in contemporary breakdowns. These observations can be linked to exact video moments instead of being described as generic “improved combat.”",
-          "If a feature is reported by press preview rather than obvious in the public video, preserve that distinction in the evidence column.",
+          "Features reported only by press previews, rather than shown in the public video, are labelled as reported.",
         ],
       },
       {
         heading: "Premium weapons versus base-game arsenal",
         body: [
           "Hawk and Little Morgan Revolvers are tied to the Ultimate Edition benefit set. They are not a Standard Edition starting item. Likewise, personalized weapon variants and the preorder weapon pattern are edition/bonus facts, not proof of the entire customization system.",
-          "This separation helps commercial pages and gameplay pages stay accurate while still cross-linking around the same named weapon entities.",
         ],
       },
       {
