@@ -2043,7 +2043,7 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "The official GTA VI video timeline",
+        heading: "Rockstar’s official GTA VI videos",
         body: [
           "Rockstar’s media library centers on its main GTA VI videos: Trailer 1, Trailer 2, the August 27, 2026 Extended Look, the Launch Trailer and Grand Theft Auto VI: Out Now. The company also provides nine short character/media clips.",
           "Each video changed what could be stated confidently about the game.",
@@ -2077,7 +2077,7 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Video-by-video evidence table",
+        heading: "Video-by-video evidence",
         body: [
           "Trailer 1 was released in December 2023 and runs about 1 minute 31 seconds on Rockstar’s current media pages. Trailer 2 arrived May 6, 2025 at roughly 2 minutes 47 seconds. The Extended Look arrived August 27, 2026 and runs roughly 26 minutes 48 seconds.",
         ],
