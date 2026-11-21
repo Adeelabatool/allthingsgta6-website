@@ -592,7 +592,7 @@ export const pages: SitePage[] = [
     primaryKeyword: "GTA 6 Leonida",
     intro: [
       "Leonida is the fictional US state where Grand Theft Auto VI takes place. [Vice City](/wiki/map/vice-city) sits inside it, but Rockstar's official world material makes clear that the game stretches across a much broader mix of urban, coastal, wetland, industrial and wilderness environments.",
-      "This page explains where GTA 6 takes place. For the map's size, see our [GTA 6 map guide](/gta-6-map). For named cities and landmarks, see our [GTA 6 locations guide](/gta-6-locations).",
+      "For how big the map is, see our [GTA 6 map guide](/gta-6-map). For named cities and landmarks, see our [GTA 6 locations guide](/gta-6-locations).",
     ],
     sections: [
       {
@@ -1500,7 +1500,7 @@ export const pages: SitePage[] = [
     intro: [
       "GTA 6 is out now. It launched on PlayStation 5 and Xbox Series X|S on November 19, 2026.",
       "Rockstar has not announced a PC version, and PS4 and Xbox One are not supported.",
-      "This page covers which consoles run GTA 6. For PC news and specs, see our [GTA 6 PC requirements page](/system-requirements).",
+      "This page covers which consoles run GTA 6. For the latest on a PC version, see our [GTA 6 PC requirements page](/system-requirements).",
     ],
     sections: [
       {
@@ -2171,7 +2171,7 @@ export const pages: SitePage[] = [
     intro: [
       "The Grand Theft Auto VI Ultimate Edition costs $99.99 in the United States, $20 more than the $79.99 Standard Edition. It includes the full game plus an Ultimate Edition Upgrade containing exclusive vehicles, weapons, styles and locations tied to Jason and Lucia's single-player story.",
       "Unlike years of speculative “collector's edition” lists, Rockstar has now published the actual package.",
-      "This page covers what the Ultimate Edition includes. For both prices and regional pricing, see our [GTA 6 price guide](/gta-6-price).",
+      "This page covers what the Ultimate Edition includes. For how pricing works outside the US, see our [GTA 6 price guide](/gta-6-price).",
     ],
     sections: [
       {

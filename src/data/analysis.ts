@@ -50,7 +50,7 @@ export const analyses: AnalysisArticle[] = [
       "Compare GTA 6 Standard vs Ultimate Edition, including the $79.99 vs $99.99 price, bonuses, exclusive content and who each version is best for.",
     intro: [
       "The Standard Edition costs $79.99 in the US. The Ultimate Edition costs $99.99.",
-      "This guide helps you decide which one to buy. For the full list of Ultimate Edition contents, see our [GTA 6 Ultimate Edition guide](/gta-6-ultimate-edition). For regional prices, see our [GTA 6 price guide](/gta-6-price).",
+      "This guide helps you decide which one to buy. For the full list of Ultimate Edition contents, see our [GTA 6 Ultimate Edition guide](/gta-6-ultimate-edition). For how pricing works outside the US, see our [GTA 6 price guide](/gta-6-price).",
     ],
     sections: [
       {
@@ -741,7 +741,7 @@ export const analyses: AnalysisArticle[] = [
     title: "Map Realism Analysis: How Close Is Leonida to Florida?",
     seoTitle: "How Close Is GTA 6's Leonida to Real Florida?",
     metaDescription:
-      "How much real Florida is in GTA 6's Leonida? We compare Vice City, the Keys and the swamps with Miami, the Everglades and Florida culture and satire.",
+      "How much real Florida is in GTA 6's Leonida? We compare Vice City, the Keys and the swamps with Miami and the Everglades, and look at the satire.",
     intro: [
       "For where GTA 6 takes place and every confirmed region, see our [GTA 6 Leonida guide](/gta-6-leonida).",
     ],
@@ -1003,7 +1003,7 @@ export const analyses: AnalysisArticle[] = [
     title: "Marketing Strategy Breakdown: The Anti-Marketing Playbook",
     seoTitle: "GTA 6 Marketing Strategy: Rockstar's Anti-Marketing Playbook",
     metaDescription:
-      "Rockstar barely markets GTA 6, yet it dominates the conversation. How scarcity, controlled reveals and earned media power Rockstar's marketing strategy.",
+      "Rockstar barely markets GTA 6, yet it dominates the conversation. How scarcity, controlled reveals and free press coverage do the work instead.",
     hook: "Rockstar barely markets. How does that work?",
     context:
       "Most AAA games rely on aggressive marketing. Rockstar uses scarcity, controlled reveals, and earned media to dominate cultural conversation.",

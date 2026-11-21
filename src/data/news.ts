@@ -1156,7 +1156,7 @@ export const news: NewsItem[] = [
     title: "Rockstar Confirms GTA 6 Release Date: November 19, 2026",
     seoTitle: "Rockstar Confirms GTA 6 Release Date: November 19, 2026",
     metaDescription:
-      "A May 2026 report: Take-Two reaffirmed GTA 6's November 19, 2026 launch on PS5 and Xbox Series X|S. The game went on to launch on that date as planned.",
+      "Take-Two reaffirmed GTA 6's November 19, 2026 launch on PS5 and Xbox Series X|S ahead of release. The game launched on that date as planned.",
     intro: [
       "Update: GTA 6 launched as planned on November 19, 2026. For the current release details, see our [GTA 6 release date page](/gta-6-release-date).",
     ],
@@ -1359,7 +1359,7 @@ export const news: NewsItem[] = [
     title: "Trailer 2 Expectations: Gameplay Reveal Imminent",
     seoTitle: "GTA 6 Trailer 2 Expectations: What We Predicted",
     metaDescription:
-      "Before Trailer 2 arrived, Rockstar's past marketing pointed to a gameplay-focused reveal. Our predictions, kept as a dated record of the pre-release view.",
+      "Before Trailer 2, Rockstar's past marketing pointed to a gameplay-focused reveal. What we expected: character switching, robberies and Vice City's verticality.",
     intro: [
       "Update: Trailer 2 is out. For every official GTA 6 video and what each one revealed, see our [GTA 6 trailers guide](/gta-6-trailers).",
     ],
