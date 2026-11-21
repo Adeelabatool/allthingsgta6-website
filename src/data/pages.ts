@@ -153,12 +153,6 @@ export const pages: SitePage[] = [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
         ],
       },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "This page covers only activities shown in Rockstar's official material. Locations, rewards and unlock requirements in the released game have not been verified here yet.",
-        ],
-      },
     ],
     evidence: [
       {
@@ -432,7 +426,7 @@ export const pages: SitePage[] = [
       {
         heading: "What remains unknown",
         body: [
-          "Rockstar has not fully documented the full mission list, economy, property ownership, skill trees, complete inventory limits, wanted-level mechanics, mission replay, difficulty options, fast travel, performance modes, online integration, PC support or full progression system.",
+          "Rockstar has not fully documented the mission list, economy, property ownership, skill trees, inventory limits, wanted-level mechanics, mission replay, difficulty options, fast travel, performance modes, online integration, PC support, progression or the exact map boundary.",
         ],
       },
       {
@@ -459,7 +453,7 @@ export const pages: SitePage[] = [
         heading: "Crime planning and robbery flow",
         body: [
           "The Extended Look spends meaningful time on robberies, escape driving and police pursuit. That suggests the crime loop involves more than arriving at a marker and shooting. PC Gamer highlights descriptions, tactical choices and crime-related UI observations.",
-          "Rockstar has not shown GTA Online-style heist setup boards for these robberies, so not every robbery is a “heist system.”",
+          "Not every robbery shown should be read as a GTA Online-style “heist system” with setup boards unless Rockstar shows that structure.",
         ],
       },
       {
@@ -493,7 +487,7 @@ export const pages: SitePage[] = [
         heading: "World simulation and NPC behavior",
         body: [
           "One reason the reveal feels different from older GTA footage is density: crowds, traffic, wildlife and social behavior are repeatedly foregrounded. WIRED and other outlets discuss more dynamic NPC behavior, while official footage provides the visual evidence.",
-          "Rockstar has not named or documented its NPC systems, so this page describes only what the footage shows.",
+          "This page doesn’t use AI-system names unless Rockstar documents them, and describes only what the footage shows.",
         ],
       },
       {
@@ -1571,7 +1565,7 @@ export const pages: SitePage[] = [
         heading: "What PS5-specific information is official",
         body: [
           "PlayStation’s product page lists DualSense vibration and trigger-effect support, Remote Play, offline play for one player and PS5 Pro Enhanced status. These are store-level platform facts and can be cited directly.",
-          "Equivalent Xbox controller features have not been documented by Microsoft or Rockstar.",
+          "This page doesn’t assume equivalent Xbox controller features unless Microsoft or Rockstar documents them.",
         ],
       },
       {
@@ -2005,7 +1999,7 @@ export const pages: SitePage[] = [
       "Watch and understand every major official GTA 6 video: Trailer 1, Trailer 2 and Rockstar’s 2026 Extended Look, with key reveals from each.",
     primaryKeyword: "GTA 6 trailers",
     intro: [
-      "Rockstar has released three major long-form GTA 6 videos: Trailer 1, Trailer 2 and Grand Theft Auto VI: An Extended Look.",
+      "Rockstar’s official GTA VI video page lists five main videos: Trailer 1, Trailer 2, Grand Theft Auto VI: An Extended Look, the Grand Theft Auto VI Launch Trailer and Grand Theft Auto VI: Out Now.",
       "Each serves a different purpose. Trailer 1 introduced Leonida's culture. Trailer 2 expanded Jason and Lucia's story. The Extended Look finally gave players a much longer view of the game in motion.",
     ],
     sections: [
@@ -2045,16 +2039,16 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Will there be more trailers?",
+        heading: "The launch trailer and later videos",
         body: [
-          "GTA 6 is out now. Any further official Rockstar videos will be added here when they are published.",
+          "Rockstar’s official video page also lists a Grand Theft Auto VI Launch Trailer and a video titled Grand Theft Auto VI: Out Now. Their release dates and details will be added here once they are verified. Any further official Rockstar videos will be added here too.",
           "We do not use unofficial “Trailer 3 date” countdowns unless Rockstar announces one.",
         ],
       },
       {
         heading: "The official GTA VI video timeline",
         body: [
-          "Rockstar’s media library currently centers three major GTA VI videos: Trailer 1, Trailer 2 and the August 27, 2026 Extended Look. The company also provides nine short character/media clips.",
+          "Rockstar’s media library centers on its main GTA VI videos: Trailer 1, Trailer 2, the August 27, 2026 Extended Look, the Launch Trailer and Grand Theft Auto VI: Out Now. The company also provides nine short character/media clips.",
           "Each video changed what could be stated confidently about the game. That change history is the page’s information-gain angle.",
         ],
       },
@@ -2738,12 +2732,6 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "The full in-game weapon list, stats and prices have not been verified here yet.",
         ],
       },
     ],
