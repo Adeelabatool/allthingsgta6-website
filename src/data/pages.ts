@@ -225,42 +225,40 @@ export const pages: SitePage[] = [
     path: "/gta-6-characters",
     status: "scheduled",
     publishAt: "2026-09-14T13:00:00Z",
-    title: "GTA 6 Characters: Every Confirmed Character So Far",
-    seoTitle: "GTA 6 Characters: Every Confirmed Character So Far",
+    title: "GTA 6 Characters: Every Confirmed Character",
+    seoTitle: "GTA 6 Characters: Full Cast and Is There a Third Protagonist?",
     metaDescription:
-      "Meet every confirmed GTA 6 character, including Jason, Lucia, Cal Hampton, Boobie Ike, Dre’Quan Priest, Real Dimez, Raul Bautista and Brian Heder.",
+      "Jason Duval and Lucia Caminos lead GTA 6. Meet Cal Hampton, Boobie Ike, Dre’Quan Priest, Real Dimez, Raul Bautista and Brian Heder. Is there a third protagonist?",
     primaryKeyword: "GTA 6 characters",
     intro: [
-      "GTA 6 centers on Jason Duval and Lucia Caminos, but Rockstar has now introduced a much broader cast connected to crime, music, nightlife and life across Leonida.",
+      "GTA 6 centers on Jason Duval and Lucia Caminos, and Rockstar has introduced a broader cast connected to crime, music, nightlife and life across Leonida.",
       "This page includes characters Rockstar has officially revealed through its site, trailers, clips and screenshots. Rumored names from leaks are not mixed into the confirmed list.",
     ],
     sections: [
       {
         heading: "Main protagonists",
         body: [
-          "### Jason Duval",
-          "Jason grew up around criminals, served in the Army and later found himself working around drug runners in the Leonida Keys. He wants an easier life, but his relationship and criminal partnership with Lucia pull him toward something bigger.",
-          "Read Jason's full profile →",
-          "### Lucia Caminos",
-          "Lucia learned to fight from her father and spent time in the Leonida Penitentiary after fighting for her family. She wants the better life her mother once dreamed about and is prepared to take risks to get it.",
-          "Read Lucia's full profile →",
+          "Jason Duval: Jason grew up around criminals, served in the Army and later found himself working around drug runners in the Leonida Keys. He wants an easier life, but his relationship and criminal partnership with Lucia pull him toward something bigger.",
+          "Lucia Caminos: Lucia learned to fight from her father and spent time in the Leonida Penitentiary after fighting for her family. She wants the better life her mother once dreamed about and is prepared to take risks to get it.",
+          "Both have full profiles, linked at the end of this page.",
+        ],
+      },
+      {
+        heading: "Is there a third protagonist in GTA 6?",
+        body: [
+          "Rockstar's GTA VI website and character profiles present Jason and Lucia as the story's two leads, and none of them names a third playable protagonist.",
+          "Fans most often suggest Raul Bautista. Rockstar's own profile describes him as an experienced bank robber who recruits people for bigger, riskier jobs. It doesn't describe him as a playable character.",
         ],
       },
       {
         heading: "Supporting characters",
         body: [
-          "### Cal Hampton",
-          "Cal is Jason's friend and another associate of Brian. Rockstar describes him as happiest at home, drinking beer and listening to Coast Guard communications while diving into online conspiracy thinking.",
-          "### Boobie Ike",
-          "Boobie is tied to Vice City's nightlife and business world. His profile links him with clubs, local influence and Dre'Quan Priest's music ambitions.",
-          "### Dre'Quan Priest",
-          "Dre'Quan has long wanted a career in music and now works toward building his Only Raw Records ambitions around Vice City's scene.",
-          "### Real Dimez",
-          "Real Dimez are a music duo connected with Dre'Quan and the city's entertainment culture.",
-          "### Raul Bautista",
-          "Raul is an experienced bank robber who looks for people willing to accept bigger risks for bigger rewards. Rockstar describes him as confident, charming and increasingly reckless.",
-          "### Brian Heder",
-          "Brian is connected with Jason and the Keys, helping anchor the story's early criminal network outside central Vice City.",
+          "Cal Hampton: Cal is Jason's friend and another associate of Brian. Rockstar describes him as happiest at home, drinking beer and listening to Coast Guard communications while diving into online conspiracy thinking.",
+          "Boobie Ike: Boobie is tied to Vice City's nightlife and business world. His profile links him with clubs, local influence and Dre'Quan Priest's music ambitions.",
+          "Dre'Quan Priest: Dre'Quan has long wanted a career in music and now works toward building his Only Raw Records ambitions around Vice City's scene.",
+          "Real Dimez: Real Dimez are a music duo connected with Dre'Quan and the city's entertainment culture.",
+          "Raul Bautista: Raul is an experienced bank robber who looks for people willing to accept bigger risks for bigger rewards. Rockstar describes him as confident, charming and increasingly reckless.",
+          "Brian Heder: Brian is connected with Jason and the Keys, helping anchor the story's early criminal network outside central Vice City.",
         ],
       },
       {
@@ -271,62 +269,40 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "What about voice actors?",
+        heading: "Who voices the GTA 6 characters?",
         body: [
-          "Only add performer names when they are publicly verified. GTA fandom is extremely good at voice matching, but repeated speculation is still speculation.",
+          "Rockstar's official GTA VI character profiles do not list voice actors. Fans are very good at matching voices, but repeated speculation is still speculation, so performer names are left off this page until an official source or the game's credits can be checked.",
         ],
       },
       {
-        heading: "Are more characters coming?",
+        heading: "Are there more characters?",
         body: [
-          "Rockstar has not said how large the final cast is. It has already expanded the official roster beyond the two protagonists and continues to publish character-focused clips and screenshots, so more names are likely — but that is an expectation, not an announcement.",
-          "This page will be updated when Rockstar confirms additional names.",
-        ],
-      },
-      {
-        heading: "Character database",
-        body: [
-          "Planned individual pages:",
-          "Jason Duval",
-          "Lucia Caminos",
-          "Cal Hampton",
-          "Boobie Ike",
-          "Raul Bautista",
+          "This page covers the characters Rockstar introduced in its official GTA VI material. Rockstar has not published a full cast list, so these eight profiles are not the entire cast. Further characters will be added here once they can be verified from official sources.",
         ],
       },
       {
         heading: "The confirmed cast",
         body: [
-          "Rockstar’s current official character set includes Jason Duval, Lucia Caminos, Cal Hampton, Boobie Ike, Dre’Quan Priest, Real Dimez, Raul Bautista and Brian Heder. The media library provides dedicated clips and screenshots for these characters, giving the site enough first-party material to build entity pages rather than one shallow list.",
-          "The main character hub should be the relationship map. Individual pages carry detailed biographies.",
+          "Rockstar’s official character set includes Jason Duval, Lucia Caminos, Cal Hampton, Boobie Ike, Dre’Quan Priest, Real Dimez, Raul Bautista and Brian Heder. Rockstar's media library has dedicated clips and screenshots for these characters.",
         ],
       },
       {
         heading: "Relationship graph",
         body: [
           "Jason and Lucia form the central protagonist pair. Jason is connected to Brian Heder through work and housing, and Cal Hampton is described as Jason’s friend and a fellow Brian associate. Boobie Ike partners with Dre’Quan Priest around Only Raw Records; Dre’Quan has signed Real Dimez. Raul Bautista operates as a seasoned bank robber looking for talent and higher-risk scores.",
-          "This graph is more distinctive than a simple roster because it shows the criminal and business networks that can drive missions.",
+          "Together, these links show the separate criminal and business networks the story moves between.",
         ],
       },
       {
         heading: "Character network table: story function",
         body: [
           "Jason and Lucia: core narrative and playable partnership. Brian: Keys drug-running network and Jason’s early employer/landlord connection. Cal: friend/associate and conspiracy-minded information node. Boobie: established Vice City entrepreneur. Dre’Quan: music-business hustler. Real Dimez: social-media-savvy rap duo. Raul: professional robbery specialist.",
-          "The hub should link every named entity to its own page as soon as that page is substantial enough to stand alone.",
         ],
       },
       {
         heading: "What is not yet confirmed about the cast",
         body: [
-          "Rockstar has not published the full cast list, complete voice-actor roster, every gang/faction or the full mission relationships among these characters. Do not treat the current eight named profiles as the entire game cast.",
-          "This “not confirmed” block is an update target. It also keeps AI systems from turning an incomplete official reveal into an exhaustive claim.",
-        ],
-      },
-      {
-        heading: "Entity-page strategy after launch",
-        body: [
-          "After release, expand each character page with mission appearances, affiliations, residences, vehicles, businesses and chronological story events. Keep spoiler-sensitive material below a warning and preserve a spoiler-light summary at the top.",
-          "That lets the pre-launch entity cluster evolve into a durable wiki instead of becoming obsolete on launch day.",
+          "Rockstar has not published the full cast list, a voice-actor roster, every gang/faction or the full mission relationships among these characters. The eight named profiles are not the entire game cast.",
         ],
       },
       {
@@ -340,35 +316,18 @@ export const pages: SitePage[] = [
         heading: "Organizations and affiliations",
         body: [
           "Only Raw Records is the clearest named organization connecting multiple supporting characters: Boobie is invested in the partnership, Dre’Quan is building the label, and Real Dimez are signed artists. Brian’s Keys operation forms another network around Jason and Cal. Raul’s robbery crew is a third criminal node whose exact membership is not yet fully disclosed.",
-          "Mapping organizations is useful because future missions, businesses and locations can attach to the same entities. Create dedicated organization pages only when enough official material exists to avoid thin content.",
         ],
       },
       {
-        heading: "Spoiler-safe page architecture",
+        heading: "Spoilers on this page",
         body: [
-          "Before launch, keep the hub spoiler-light and source only promotional material. After launch, preserve the same top section for users who only want the cast, then add a clearly labeled spoiler section with mission chronology, deaths, betrayals or endings. Do not allow post-launch plot details to destroy the pre-launch answer experience.",
-          "This structure makes the page evergreen across launch while protecting both casual searchers and completion-focused readers.",
-        ],
-      },
-      {
-        heading: "Voice actors: do not guess",
-        body: [
-          "Until Rockstar or verified credits establish performer names, do not use resemblance, social-media rumors or fan casting as confirmation. A voice-actor field can remain “not officially announced” and be updated from credits or first-party announcements after launch.",
-          "Character pages are especially vulnerable to AI citation errors because one speculative attribution can be copied across many sites. The site should be conservative here.",
+          "This page sticks to Rockstar's promotional material, so it is spoiler-light. If story details from the released game are added later, they will go in a clearly labelled spoiler section below the cast summary.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 characters,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -431,10 +390,10 @@ export const pages: SitePage[] = [
         label: "Raul Bautista",
       },
     ],
-    lastVerified: "2026-09-14",
+    lastVerified: "2026-11-20",
     breadcrumb: [
       {
-        label: "GTA 6 Characters: Every Confirmed Character So Far",
+        label: "GTA 6 Characters: Every Confirmed Character",
       },
     ],
   },
@@ -1013,13 +972,14 @@ export const pages: SitePage[] = [
     path: "/gta-6-map",
     status: "scheduled",
     publishAt: "2026-09-07T13:00:00Z",
-    title: "GTA 6 Map: Vice City, Leonida and Every Confirmed Region",
-    seoTitle: "GTA 6 Map: Vice City, Leonida and Every Confirmed Region",
+    title: "GTA 6 Map: Size, Regions and Cities of Leonida",
+    seoTitle: "GTA 6 Map: Size, Regions and Cities of Leonida Explained",
     metaDescription:
-      "Explore the GTA 6 map using confirmed Rockstar information: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga.",
+      "How big is the GTA 6 map? Rockstar hasn't published an official square-mile figure. What's been reported about its size, plus every confirmed region and city.",
     primaryKeyword: "GTA 6 map",
     intro: [
-      "GTA 6 is set in the fictional state of Leonida, with Vice City as its central urban setting. Rockstar has not released a complete official world map yet, but it has named multiple regions and published dozens of screenshots that establish a much broader setting than the city alone.",
+      "GTA 6 is set in the fictional state of Leonida, with Vice City as its central urban setting. Rockstar has named six headline regions: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park.",
+      "How big is it? Rockstar has not published an official square-mile or square-kilometre measurement. Press reports from a visit to Rockstar North describe Leonida as roughly twice the size of GTA V's map. That is third-party reporting, not an official Rockstar measurement.",
     ],
     sections: [
       {
@@ -1041,7 +1001,7 @@ export const pages: SitePage[] = [
         body: [
           "Vice City is GTA 6's headline location, returning decades after its earlier versions in the franchise.",
           "This is not simply a remaster of the 2002 map. Rockstar is building a modern metropolitan region shaped by beaches, towers, nightlife, highways, ports, social-media culture and suburban sprawl.",
-          "See our full Vice City guide.",
+          "Our Vice City guide, linked at the end of this page, covers the city in more detail.",
         ],
       },
       {
@@ -1080,30 +1040,82 @@ export const pages: SitePage[] = [
       {
         heading: "How big is the GTA 6 map?",
         body: [
-          "Rockstar has described GTA 6 as the biggest and most immersive evolution of Grand Theft Auto, but a complete official map with square mileage has not been released.",
-          "Recent reporting has discussed a significantly larger world than Rockstar's previous games, while community mapping teams have produced detailed reconstructions from footage and leaks.",
-          "We keep official geography and community reconstruction separate. Until Rockstar publishes the final map, precise square-mile claims should be labeled as estimates or reported information.",
+          "Short answer: Rockstar has not published an official measurement of the GTA 6 map. The most widely repeated comparison, that Leonida is roughly twice the size of GTA V's map, comes from press reporting, not from a Rockstar size figure.",
+          "Rockstar calls GTA VI the biggest and most immersive evolution of the series. The table below separates what Rockstar has stated from what has been reported and what fans have estimated.",
+        ],
+        table: {
+          head: ["Claim", "Status", "Where it comes from"],
+          rows: [
+            [
+              "Official square-mile or square-kilometre size",
+              "Not published",
+              "Rockstar has not released a map measurement",
+            ],
+            [
+              "Leonida is roughly twice the size of GTA V's map",
+              "Reported (third party)",
+              "TweakTown, October 2026, citing Edge magazine's visit to Rockstar North",
+            ],
+            [
+              "Total landmass nearly as large as the playable maps of GTA IV, GTA V and Red Dead Redemption 2 combined",
+              "Reported (third party)",
+              "TweakTown, October 2026, paraphrasing the same Edge report",
+            ],
+            [
+              "Exact area figures from fan maps",
+              "Community estimate",
+              "Reconstructions from footage; figures vary and none is official",
+            ],
+          ],
+        },
+      },
+      {
+        heading: "Comparing the GTA 6 map with GTA V",
+        body: [
+          "GTA V's Los Santos and Blaine County map is a useful reference point, but a simple multiplier such as “twice as large” depends on what is being measured: total land area, drivable area, water or built-up space. Until Rockstar publishes a measurement, treat any multiplier as reported rather than official.",
+          "The firmer comparison is the world's composition: GTA VI spans several named regions across a whole state, rather than one city and its surrounding county.",
         ],
       },
       {
-        heading: "Is the leaked GTA 6 map official?",
+        heading: "Cities and towns in GTA 6",
         body: [
-          "A leak can originate from genuine development material without becoming an official final map. Development builds change.",
-          "For readers who want reliable planning information, official named regions and footage are the stable layer; community maps belong in a clearly labeled separate section.",
+          "Of Rockstar's six headline regions, only Vice City is presented as a major city. The other five are different kinds of places: coastal and industrial communities, an island chain, wetlands and a national park.",
+        ],
+        table: {
+          head: ["Place", "What kind of place it is", "Status"],
+          rows: [
+            ["Vice City", "Main city; modern, Miami-inspired metropolis", "Confirmed"],
+            [
+              "Port Gellhorn",
+              "Rougher coastal community outside Vice City's glamour",
+              "Region confirmed; character observed from official art",
+            ],
+            [
+              "Ambrosia",
+              "Industrial, smaller-town, working-class setting",
+              "Region confirmed; character observed from official art",
+            ],
+            [
+              "Leonida Keys",
+              "Island chain with bridges, marinas and low-rise communities",
+              "Region confirmed; details observed in screenshots",
+            ],
+            ["Grassrivers", "Wetlands, not a town", "Confirmed"],
+            ["Mount Kalaga National Park", "Wilderness, not a town", "Confirmed"],
+          ],
+        },
+      },
+      {
+        heading: "Is Vice City the whole GTA 6 map?",
+        body: [
+          "No. Vice City is the headline location, but it is one of six named regions. The rest of Leonida adds the Keys, the Grassrivers wetlands, Port Gellhorn, Ambrosia and Mount Kalaga National Park around it.",
         ],
       },
       {
-        heading: "Bottom line",
+        heading: "Is the GTA 6 map based on Florida?",
         body: [
-          "The GTA 6 map is best understood as a state-scale world centered on Vice City. The confirmed regions already cover dense city streets, islands, wetlands, industrial areas, coastal communities and national-park wilderness.",
-          "Explore all GTA 6 locations or compare GTA 6 vs GTA 5's map.",
-        ],
-      },
-      {
-        heading: "The official map layer",
-        body: [
-          "Rockstar has confirmed a state-scale setting called Leonida and six headline regions: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park. The company has also published dozens of screenshots grouped by characters and locations, giving the official layer far more depth than a single map image would.",
-          "Those six regions are the top-level geography until Rockstar publishes a complete map. Community reconstructions can be useful, but they sit in a separate layer here with their own confidence labelling.",
+          "Loosely. Leonida is Rockstar's fictional, Florida-inspired state: Vice City is a modern, Miami-inspired city, and Grassrivers reads as Rockstar's take on the Everglades.",
+          "It is not a one-to-one recreation of real Florida geography. Mount Kalaga's wilderness and elevation, for example, have no direct South Florida equivalent.",
         ],
       },
       {
@@ -1116,71 +1128,46 @@ export const pages: SitePage[] = [
       {
         heading: "Official sublocations and named entities",
         body: [
-          "The official media and edition material already exposes smaller place and business names such as Leonida Penitentiary, Rideout Customs Mod Shop, Sara’s Unisex Salon, Stock 305 Clothing Store, Electric Fang Tattoo Parlor, One-Eyed Willie’s Mod Shop and the PTT Youngin$ location. These names can gradually populate a confirmed gazetteer as their region placement becomes clear.",
-          "A map hub should link to a location index rather than trying to turn every business into a paragraph. The map page explains geography; the location page catalogs entities.",
+          "The official media and edition material already exposes smaller place and business names such as Leonida Penitentiary, Rideout Customs Mod Shop, Sara’s Unisex Salon, Stock 305 Clothing Store, Electric Fang Tattoo Parlor, One-Eyed Willie’s Mod Shop and the PTT Youngin$ location. Rockstar has not yet placed every one of these within a specific region.",
+          "Our GTA 6 locations guide, linked at the end of this page, lists these named places in one index.",
         ],
       },
       {
-        heading: "Map-size claims: official, reported and reconstructed",
+        heading: "Rockstar's official screenshots",
         body: [
-          "Rockstar calls GTA VI the biggest and most immersive evolution of the series, but it has not published an official square-mile map measurement. Recent coverage has repeated reported size comparisons from previews and leaked/reconstructed maps. Those numbers should never appear in the top “confirmed facts” table without an official measurement.",
-          "A clean evidence table can use three rows: official scope statements, reported preview comparisons and community reconstruction estimates. Readers can then decide how much weight to give each category.",
-        ],
-      },
-      {
-        heading: "How to compare GTA VI with GTA V without misleading readers",
-        body: [
-          "GTA V’s Los Santos and Blaine County map is a useful reference for terrain variety, but “twice as large” claims need a source and method. Are they comparing total land area, drivable area, water, mission space or community-estimated boundaries? Without a shared method, simple multipliers are weak.",
-          "The more defensible comparison focuses on confirmed world composition: GTA VI spans multiple named regions across Leonida rather than marketing only one city/county combination.",
-        ],
-      },
-      {
-        heading: "A map page built for future updates",
-        body: [
-          "Use a stable table with columns for location, type, status, first official appearance, evidence source and dedicated page. When Rockstar publishes the final map, add coordinates or official boundaries without rewriting the page from zero.",
-          "Treating every location as a named entity with its own attributes, rather than burying names inside long prose, is also what makes the page quick to update as Rockstar adds detail.",
-        ],
-      },
-      {
-        heading: "The official visual evidence base is unusually large",
-        body: [
-          "Rockstar’s media library lists 70 GTA VI screenshots, with dedicated image sets for major characters and regions, plus location postcards and artwork. That gives the map hub a first-party visual corpus that can be indexed more systematically than competitors that rely primarily on community map reconstruction.",
-          "For every screenshot used, record the official filename/title, region assignment, visible landmarks and date first published. A screenshot evidence table can become original editorial data while remaining grounded in Rockstar material.",
+          "Rockstar’s official media library includes dozens of GTA VI screenshots, with dedicated image sets for major characters and regions, plus location postcards and artwork. Rockstar added a launch gallery on November 5, 2026. Those first-party images are the most reliable way to see what each region looks like, ahead of community map reconstructions.",
         ],
       },
       {
         heading: "Character geography adds another map layer",
         body: [
           "Jason is tied to the Leonida Keys and Brian Heder’s smuggling network. Lucia is tied to Leonida Penitentiary and the broader Vice City story. Boobie Ike, Dre’Quan Priest and Real Dimez are strongly connected to Vice City’s nightlife and music economy. Those relationships help readers understand where narrative networks may cluster even before a final map is released.",
-          "Keep “character association” separate from exact location coordinates. A character can be associated with a region without Rockstar having published the precise address of a business or safehouse.",
+          "A character can be associated with a region without Rockstar having published the precise address of a business or safehouse, so these links describe where each story network sits, not exact map positions.",
         ],
       },
       {
-        heading: "Beyond “location + description”",
+        heading: "Is the leaked GTA 6 map official?",
         body: [
-          "Use columns for official name, geography type, confirmed source, associated characters, known businesses/institutions, travel mode relevance and status. For example, Leonida Keys can connect to Jason/Brian and watercraft; Grassrivers can connect to wetlands, wildlife and airboat-style travel; Mount Kalaga can connect to outdoor exploration.",
-          "The value of that table is that it turns scattered official marketing into one consistent, comparable set of records.",
-        ],
-      },
-      {
-        heading: "How to handle leaks without contaminating the hub",
-        body: [
-          "If a leaked development map is important enough to cover, place it in a separate reported/leaked section with date, source context and a warning that development builds can change. Do not merge leaked place names into the confirmed region table merely because a reconstruction looks convincing.",
-          "After Rockstar publishes the final map, compare it with earlier reconstructions in an analysis article rather than preserving pre-release leak data as the canonical geography.",
+          "No. A leak can come from genuine development material without being the final map, and development builds change. Place names from leaked or reconstructed maps are not added to the confirmed region table on this page.",
+          "Official named regions and Rockstar's own footage are the reliable layer. Community maps are useful for discussion, but treat them as reconstructions.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 map,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not published an official measurement of the map or the region placement of every named business. Where the evidence stops, this page says “not published” or “not confirmed” rather than turning an estimate into a fact.",
+        ],
+      },
+      {
+        heading: "Bottom line",
+        body: [
+          "The GTA 6 map is a state-scale world centred on Vice City. The confirmed regions cover dense city streets, islands, wetlands, industrial areas, coastal communities and national-park wilderness. Reports put it at roughly twice the size of GTA V's map, but Rockstar has not published an official measurement.",
         ],
       },
     ],
@@ -1224,6 +1211,11 @@ export const pages: SitePage[] = [
         label: "GamesRadar - GTA 6 Locations",
         url: "https://www.gamesradar.com/games/grand-theft-auto/gta-6-locations/",
       },
+      {
+        label:
+          "TweakTown - GTA 6's map is roughly twice GTA 5's (reporting Edge magazine, October 2026)",
+        url: "https://www.tweaktown.com/news/114382/gta-6s-map-is-roughly-twice-gta-5s-and-almost-as-big-as-gta-4-gta-5-and-rdr2-combined/index.html",
+      },
     ],
     related: [
       {
@@ -1238,11 +1230,15 @@ export const pages: SitePage[] = [
         href: "/gta-6-leonida",
         label: "Leonida",
       },
+      {
+        href: "/analysis/gta-6-map-vs-gta-5",
+        label: "GTA 6 map vs GTA 5: how Leonida compares",
+      },
     ],
-    lastVerified: "2026-09-07",
+    lastVerified: "2026-11-20",
     breadcrumb: [
       {
-        label: "GTA 6 Map: Vice City, Leonida and Every Confirmed Region",
+        label: "GTA 6 Map: Size, Regions and Cities of Leonida",
       },
     ],
   },
@@ -1896,14 +1892,14 @@ export const pages: SitePage[] = [
     path: "/gta-6-release-date",
     status: "scheduled",
     publishAt: "2026-08-31T13:00:00Z",
-    title: "GTA 6 Release Date: November 19, 2026 - Platforms, Preload and Countdown",
-    seoTitle: "GTA 6 Release Date: November 19, 2026 - Platforms, Preload and Countdown",
+    title: "GTA 6 Release Date: Out Now Since November 19, 2026",
+    seoTitle: "GTA 6 Release Date: Out Now on PS5 and Xbox Series X|S",
     metaDescription:
-      "GTA 6 launches November 19, 2026 on PS5 and Xbox Series X|S. No PC date announced. Digital pre-load opens November 12 for eligible pre-orders.",
+      "GTA 6 launched November 19, 2026 on PS5 and Xbox Series X|S. Rockstar hasn't announced a PC version. Platforms, editions, price and how the date changed.",
     primaryKeyword: "GTA 6 release date",
     intro: [
-      "Answer first: Grand Theft Auto VI launches on Thursday, November 19, 2026 for PlayStation 5 and Xbox Series X|S. Rockstar has not announced a PC release date.",
-      "Rockstar confirmed the current launch date after moving GTA 6 later in its development schedule. The date now appears consistently across Rockstar's GTA VI website, Rockstar Store, PlayStation Store and Take-Two investor communications.",
+      "GTA 6 is out now. Grand Theft Auto VI launched on Thursday, November 19, 2026 for PlayStation 5 and Xbox Series X|S. Rockstar has not announced a PC version or a PC release date.",
+      "November 19 was the date Rockstar confirmed after moving GTA 6 later in its development schedule. It appeared consistently across Rockstar's GTA VI website, Rockstar Store, PlayStation Store and Take-Two investor communications, and Rockstar announced the game's availability on launch day.",
     ],
     sections: [
       {
@@ -1911,14 +1907,14 @@ export const pages: SitePage[] = [
         table: {
           head: ["Question", "Confirmed answer"],
           rows: [
-            ["GTA 6 release date", "November 19, 2026"],
+            ["GTA 6 release date", "November 19, 2026 (out now)"],
             ["PS5", "Yes"],
             ["PS5 Pro Enhanced", "Listed by PlayStation"],
             ["Xbox Series X|S", "Yes"],
             ["PC", "Not announced"],
             ["PS4", "Not announced; not a launch platform"],
             ["Xbox One", "Not announced; not a launch platform"],
-            ["Digital pre-load", "November 12, 2026 for eligible digital pre-orders"],
+            ["Digital pre-load", "Opened before launch for eligible digital pre-orders"],
           ],
         },
       },
@@ -1926,30 +1922,29 @@ export const pages: SitePage[] = [
         heading: "Why the date changed",
         body: [
           "Rockstar said the additional development time was needed to finish the game with the level of polish players expect. That explanation came directly from Rockstar when it announced the November 19 date.",
-          "For a game of GTA 6's scale, launch-date rumors are inevitable. Our policy is simple: the date on this page changes only when Rockstar or Take-Two changes it.",
+          "Rockstar kept to that date, and the game launched on November 19, 2026.",
         ],
       },
       {
-        heading: "What platforms will GTA 6 launch on?",
+        heading: "What platforms is GTA 6 on?",
         body: [
-          "The confirmed launch platforms are PlayStation 5 and Xbox Series X|S.",
+          "GTA 6 is available on PlayStation 5 and Xbox Series X|S.",
           "The PlayStation Store also lists the game as PS5 Pro Enhanced and notes support for DualSense vibration and trigger effects. Xbox Series S is included under Rockstar's Xbox Series X|S announcement.",
-          "There is currently no official PS4 or Xbox One version.",
+          "There is no official PS4 or Xbox One version.",
         ],
       },
       {
-        heading: "What about GTA 6 on PC?",
+        heading: "Is GTA 6 on PC?",
         body: [
-          "Rockstar has not announced GTA 6 for PC.",
+          "No. Rockstar has not announced GTA 6 for PC, and its official GTA VI website lists only PlayStation 5 and Xbox Series X|S.",
           "Previous Rockstar releases are useful historical context but not a release schedule. GTA V arrived on PC well after its original console launch, while Red Dead Redemption 2 also reached PC after the console version. Those gaps show that a later PC release would not be unusual, but they do not prove a particular GTA 6 date.",
-          "See our dedicated GTA 6 PC release date guide for the evidence without the rumor inflation.",
+          "Our GTA 6 PC requirements page, linked at the end of this page, tracks the PC status.",
         ],
       },
       {
-        heading: "When can GTA 6 be preloaded?",
+        heading: "Could GTA 6 be preloaded?",
         body: [
-          "Rockstar says digital pre-orders can begin pre-loading on November 12, 2026.",
-          "That is one week before launch and is especially useful for a large open-world game. Rockstar has not published the final download size, so any exact storage requirement circulating before an official store listing should be treated cautiously.",
+          "Yes. Rockstar let eligible digital pre-orders pre-load the game ahead of the November 19 launch.",
         ],
       },
       {
@@ -1958,99 +1953,45 @@ export const pages: SitePage[] = [
           "US pricing is:",
           "Standard Edition: $79.99",
           "Ultimate Edition: $99.99",
-          "Pre-orders and qualifying purchases before November 20 include the Vintage Vice City Pack. Digital pre-orders also include a free month of GTA+ under Rockstar's current offer.",
-          "See our GTA 6 editions guide before choosing between Standard and Ultimate.",
+          "Rockstar's pre-order offer included the Vintage Vice City Pack for pre-orders and qualifying purchases made before November 20, 2026, and a free month of GTA+ with digital pre-orders.",
+          "Our GTA 6 editions guides, linked at the end of this page, compare Standard and Ultimate.",
         ],
       },
       {
-        heading: "Could GTA 6 be delayed again?",
+        heading: "Physical copies: code in a box",
         body: [
-          "Any unreleased game can theoretically move, but there is no current Rockstar announcement changing the November 19 date. Take-Two has continued to reference the same release window, and Rockstar is actively taking pre-orders.",
-          "We therefore list November 19 as confirmed, not “expected.”",
+          "Rockstar Support says the physical retail version is a code-in-box product, not a disc. Boxed copies contain a download code, so buyers should plan for the same large digital installation as digital buyers.",
         ],
       },
       {
-        heading: "Bottom line",
+        heading: "How the release date changed",
         body: [
-          "If you are buying GTA 6 on console, mark November 19, 2026. If you are waiting for PC, there is no official date yet.",
-          "This page is maintained as the site's canonical release-date source so that older news stories do not compete with or contradict the latest confirmed information.",
+          "GTA VI was previously associated with earlier launch windows before Rockstar announced November 19, 2026. Older articles and social posts quoting those dates are out of date: the game launched on November 19, 2026.",
+          "Release-time details can vary by storefront and region, so this page does not quote a universal unlock hour.",
         ],
       },
       {
-        heading: "Primary sources",
+        heading: "GTA 6 release FAQ",
         body: [
-          "Rockstar Games GTA VI official website; Rockstar Newswire release-date announcement; Take-Two Interactive June 24, 2026 pre-order announcement; PlayStation Store.",
-          "---",
-        ],
-      },
-      {
-        heading: "The verified release facts",
-        body: [
-          "Grand Theft Auto VI is scheduled to launch on November 19, 2026 for PlayStation 5 and Xbox Series X|S. Rockstar’s official site, its June preorder announcement and Take-Two’s corporate release all state the same date. That makes November 19 the correct canonical answer as of the latest verification.",
-          "Digital preloading begins November 12. Rockstar also says the physical retail version is a code-in-box product rather than a disc, and that it is available from November 12 to support preloading. The Standard Edition is $79.99 in the United States and the Ultimate Edition is $99.99.",
-        ],
-      },
-      {
-        heading: "Release-date timeline and prior changes",
-        body: [
-          "A release-date page should preserve history because older search results and social posts continue to circulate. GTA VI was previously associated with earlier launch windows before Rockstar announced November 19, 2026. The current page should put the present date first, then keep an “older dates” section that is clearly historical.",
-          "Superseded dates are always marked as such. An old date quoted without that framing is the most common way outdated GTA 6 release information keeps circulating, so each one here is paired with the wording “previously scheduled” and the date Rockstar changed it.",
-        ],
-      },
-      {
-        heading: "Launch timing, preload and format",
-        body: [
-          "Rockstar says preorders opened at midnight local time, and digital preload begins at local midnight on November 12. Exact playable unlock behavior can vary by storefront and region, so we do not quote a universal unlock hour unless the relevant store publishes one.",
-          "The code-in-box decision also deserves a prominent explanation because “physical” normally implies a disc. Rockstar Support explicitly says a disc is not included. Readers buying the boxed Standard Edition should expect a download code and should plan for the same large digital installation workflow as other digital buyers.",
-        ],
-      },
-      {
-        heading: "Platforms at launch",
-        body: [
-          "PS5 and Xbox Series X|S are the only launch platforms Rockstar currently lists. The PlayStation Store additionally labels the PS5 version as PS5 Pro Enhanced and supports DualSense vibration and trigger effects. There is no official PC launch date, and there is no announced PS4 or Xbox One version.",
-          "The release-date page should link rather than duplicate the full PC analysis. That keeps the main answer clean and allows the PC page to carry historical context without weakening the certainty of the launch-platform section.",
-        ],
-      },
-      {
-        heading: "What would justify changing this page",
-        body: [
-          "The canonical date should only change after a first-party source changes: Rockstar Games, Rockstar Support, Take-Two, PlayStation or Xbox storefront data. Retailer placeholder dates, social-media rumors and anonymous claims should never overwrite the official date.",
-          "A “Last verified” line sits near the top of this page for that reason. On a release-date question, knowing when the date, price and preload details were last checked matters nearly as much as the answer itself.",
-        ],
-      },
-      {
-        heading: "Release-day buyer checklist",
-        body: [
-          "Before launch, verify five items in one place: edition purchased, platform account, available storage, preload status and bonus eligibility. Because the physical box contains a download code rather than a disc, boxed buyers should also confirm they can redeem and download the game before launch. This is practical information competitors often separate across store FAQs.",
-          "On launch day, update the page only with confirmed unlock information from Rockstar or the platform stores. If server load, patches or regional rollout issues occur, cover those as dated news rather than rewriting the evergreen release facts.",
-        ],
-      },
-      {
-        heading: "Rumor control: dates that should not appear as current",
-        body: [
-          "Older launch windows, retailer placeholders and social posts may continue to rank after the date changes. Keep a short historical timeline and explicitly mark every superseded date. This allows the page to answer users who encounter old information without confusing the canonical answer.",
-          "A useful structured table has four fields: date/window, status, source, and replaced by. That creates a traceable history for both readers and automated systems.",
-        ],
-      },
-      {
-        heading: "Release-date FAQ that answers real intent",
-        body: [
-          "Is GTA VI delayed? The current official launch date is November 19, 2026. When can I preload? Rockstar says digital preload starts November 12 at local midnight. Is there a disc? Rockstar says the physical version is code-in-box and does not include a disc. Is PC launching the same day? No PC date has been announced.",
-          "These questions earn their place because they resolve genuine ambiguity around the launch. They do not need FAQ rich-result markup to be useful.",
+          "Is GTA 6 out? Yes, it launched on November 19, 2026 for PS5 and Xbox Series X|S. Is there a disc? Rockstar says the physical version is code-in-box and does not include a disc. Is GTA 6 on PC? No PC version has been announced.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 release date,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not announced a PC version, a PC release date or official PC system requirements.",
+        ],
+      },
+      {
+        heading: "Bottom line",
+        body: [
+          "GTA 6 is out now on PS5 and Xbox Series X|S, having launched on November 19, 2026. If you are waiting for PC, there is no official announcement yet.",
         ],
       },
     ],
@@ -2090,6 +2031,14 @@ export const pages: SitePage[] = [
         label: "Rockstar Support - GTA VI Platforms, Editions, and Versions",
         url: "https://support.rockstargames.com/articles/4QfG4FmZCf5W1gS8jy4UVT/grand-theft-auto-vi-platform-editions-and-versions",
       },
+      {
+        label: "Rockstar Games Newswire - Grand Theft Auto VI Now Available (November 19, 2026)",
+        url: "https://www.rockstargames.com/newswire/article/39akk424a9oo53/grand-theft-auto-vi-now-available",
+      },
+      {
+        label: "PlayStation Blog - Grand Theft Auto VI launches tomorrow, November 19",
+        url: "https://blog.playstation.com/2026/11/18/grand-theft-auto-vi-launches-tomorrow-november-19/",
+      },
     ],
     related: [
       {
@@ -2108,11 +2057,19 @@ export const pages: SitePage[] = [
         href: "/analysis/gta-6-standard-vs-ultimate",
         label: "Standard vs Ultimate",
       },
+      {
+        href: "/system-requirements",
+        label: "GTA 6 PC requirements and PC status",
+      },
+      {
+        href: "/news/gta-6-limited-edition-dualsense-controller",
+        label: "GTA 6 Limited Edition DualSense controllers",
+      },
     ],
-    lastVerified: "2026-08-31",
+    lastVerified: "2026-11-20",
     breadcrumb: [
       {
-        label: "GTA 6 Release Date: November 19, 2026 - Platforms, Preload and Countdown",
+        label: "GTA 6 Release Date: Out Now Since November 19, 2026",
       },
     ],
   },
@@ -2974,13 +2931,13 @@ export const pages: SitePage[] = [
     path: "/system-requirements",
     status: "scheduled",
     publishAt: "2026-09-05T13:00:00Z",
-    title: "GTA 6 PC System Requirements: No Official Specs Yet - Here’s What We Know",
-    seoTitle: "GTA 6 PC System Requirements: No Official Specs Yet - Here’s What We Know",
+    title: "GTA 6 PC System Requirements: Not Announced Yet",
+    seoTitle: "GTA 6 PC Requirements: Is GTA 6 on PC? (Status After Launch)",
     metaDescription:
-      "There are no official GTA 6 PC system requirements yet. We separate Rockstar-confirmed facts from fake minimum and recommended spec lists.",
+      "GTA 6 is out on PS5 and Xbox Series X|S, but Rockstar hasn't announced a PC version or official PC specs. What's confirmed, and which spec lists to ignore.",
     primaryKeyword: "GTA 6 PC requirements",
     intro: [
-      "There are no official GTA 6 PC system requirements because Rockstar has not announced a PC version of GTA 6.",
+      "There are no official GTA 6 PC system requirements because Rockstar has not announced a PC version of GTA 6. The game launched on November 19, 2026 for PlayStation 5 and Xbox Series X|S only.",
       "That means every current page claiming an “official minimum RTX 3060,” “recommended RTX 4070,” exact RAM requirement or fixed PC storage number is either estimating or fabricating information unless Rockstar has made a newer announcement.",
     ],
     sections: [
@@ -3001,7 +2958,7 @@ export const pages: SitePage[] = [
       {
         heading: "What we can learn from consoles",
         body: [
-          "GTA 6 is confirmed for PS5 and Xbox Series X|S. Those machines use AMD Zen 2-era CPUs, RDNA 2-family graphics and SSD storage architectures.",
+          "GTA 6 is available on PS5 and Xbox Series X|S. Those machines use AMD Zen 2-era CPUs, RDNA 2-family graphics and SSD storage architectures.",
           "That provides development context, but console specifications cannot be converted directly into PC minimum requirements. Consoles use fixed hardware, unified memory systems and platform-specific optimization.",
         ],
       },
@@ -3014,10 +2971,9 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Why speculative requirement pages rank",
+        heading: "Why you'll see estimated spec lists elsewhere",
         body: [
-          "Search demand exists years before developers publish real specs, so sites fill the gap with estimates. The problem is that estimated tables are often copied from one another until users mistake repeated numbers for official data.",
-          "Our policy is different: no fake minimum/recommended table.",
+          "Many sites publish estimated minimum and recommended specs to fill the gap. Those tables are often copied from one another until repeated numbers look official. They aren't: this page doesn't publish an estimated minimum or recommended table.",
         ],
       },
       {
@@ -3033,48 +2989,32 @@ export const pages: SitePage[] = [
         heading: "When will official specs appear?",
         body: [
           "Usually after the PC version itself is announced. At that point Rockstar can publish store pages, supported operating systems and minimum/recommended hardware.",
-          "Until then, the best PC planning page is one that admits what is unknown.",
+          "Until then, no minimum or recommended specs on any site are official.",
         ],
       },
       {
-        heading: "Bottom line",
-        body: [
-          "There is no trustworthy “official GTA 6 PC requirements” chart yet.",
-          "For release timing, see GTA 6 PC release date. This page will replace the unknown fields with Rockstar's specifications when they exist.",
-        ],
-      },
-      {
-        heading: "There are no official GTA VI PC requirements",
+        heading: "How to spot an unofficial spec list",
         body: [
           "Because Rockstar has not announced a PC version, it has also not published minimum or recommended PC specifications. Pages that list an exact CPU, GPU, RAM amount or storage requirement today are not quoting an official Rockstar spec sheet.",
-          "The strongest answer is therefore a negative one: no official GTA VI PC system requirements exist as of the last verification date.",
-        ],
-      },
-      {
-        heading: "Why “estimated requirements” are weak search content",
-        body: [
-          "Hardware estimates look helpful but age badly and are frequently copied across sites without a source. They also create a false precision problem: a predicted RTX model or RAM number can be repeated by AI systems as if it were confirmed.",
-          "If the site wants to discuss planning, frame it as general preparation - modern SSD storage, current drivers, sufficient free space - without inventing Rockstar’s future minimums.",
-        ],
-      },
-      {
-        heading: "How to publish the real requirements when they arrive",
-        body: [
-          "Capture the exact Rockstar source, publication date, minimum and recommended tiers, storage requirement, operating-system requirement and any upscaling or ray-tracing notes. Preserve the original table and add a “what changed” log if Rockstar revises it before launch.",
+          "Estimates age badly and are often copied between sites without a source, so a predicted graphics card or RAM figure can look confirmed when it isn't. For general preparation, modern SSD storage, current drivers and plenty of free space are sensible without guessing Rockstar's minimums.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 PC requirements,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not announced a PC version of GTA 6, a PC release date, or any official PC system requirements.",
+        ],
+      },
+      {
+        heading: "Bottom line",
+        body: [
+          "There is no official GTA 6 PC requirements chart, because there is no announced PC version yet. When Rockstar publishes PC specifications, this page will replace the “Not announced” fields with them.",
         ],
       },
     ],
@@ -3117,10 +3057,10 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-09-05",
+    lastVerified: "2026-11-20",
     breadcrumb: [
       {
-        label: "GTA 6 PC System Requirements: No Official Specs Yet - Here’s What We Know",
+        label: "GTA 6 PC System Requirements: Not Announced Yet",
       },
     ],
   },

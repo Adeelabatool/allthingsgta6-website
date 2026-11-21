@@ -4,9 +4,28 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
-import { wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
+import { allWiki, wikiBySlug, publicWiki, wikiTypes, type WikiEntry } from "@/data/wiki";
+import { parsePublishAt } from "@/lib/publishing";
 import { SECTION_CRUMBS, articleHead, type Crumb } from "@/lib/seo";
 import { liveLinks } from "@/lib/related";
+
+/**
+ * datePublished for a wiki entry: its own publishAt when it has one, otherwise
+ * the day its current revision went live. Never lastVerified, which is the
+ * modification date and is emitted as dateModified only. Entries with neither
+ * date omit datePublished rather than inventing one.
+ *
+ * The loader returns the entry with any landed revision already applied, which
+ * drops pendingRevision, so the revision's date is read from the raw entry. A
+ * revision still in the future is ignored, matching resolveRevision.
+ */
+export function wikiDatePublished(entry: WikiEntry, now: Date = new Date()): string {
+  if (entry.publishAt) return entry.publishAt;
+  const rev = allWiki.find((w) => w.type === entry.type && w.slug === entry.slug)?.pendingRevision;
+  if (!rev) return "";
+  const at = parsePublishAt(rev.publishAt);
+  return !Number.isNaN(at) && at <= now.getTime() ? rev.publishAt.slice(0, 10) : "";
+}
 
 /**
  * The one breadcrumb trail for a wiki entry.
@@ -67,7 +86,7 @@ function WikiEntryPage() {
         path={`/wiki/${w.type}/${w.slug}`}
         // Entities predating the lifecycle fields carry no publication date.
         // ArticleJsonLd omits the field rather than emitting an empty one.
-        datePublished={w.publishAt ?? w.lastVerified ?? ""}
+        datePublished={wikiDatePublished(w)}
         dateModified={w.lastVerified}
         sources={w.sources}
       />

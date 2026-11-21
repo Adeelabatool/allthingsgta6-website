@@ -28,6 +28,8 @@ import { analyses, publicAnalyses, analysisBySlug } from "@/data/analysis";
 import { ALWAYS_LIVE } from "@/lib/related";
 import { renderSitemap, sitemapUrls, staticSitemapPaths } from "@/lib/sitemap";
 import { ArticleJsonLd } from "@/components/StructuredData";
+import { wikiDatePublished } from "@/routes/wiki.$type.$slug";
+import type { WikiEntry } from "@/data/wiki";
 import {
   articleHead,
   breadcrumbJsonLd,
@@ -1023,6 +1025,84 @@ for (const hub of ["gta-6-characters", "gta-6-map", "gta-6-vehicles", "gta-6-wea
   ok(
     `/${hub} reads the gated wiki accessor`,
     src.includes("publicWiki()") && !/\bitems: wiki\b/.test(src),
+  );
+}
+
+group("wiki datePublished: explicit date, landed revision, or nothing");
+// datePublished must come from a real publication date and never from
+// lastVerified, which is the modification date. The revision cases use real
+// entries because the helper reads the revision from the raw collection; their
+// preconditions are asserted so a data change fails loudly instead of silently.
+{
+  const own: WikiEntry = {
+    slug: "test-own-date",
+    type: "characters",
+    name: "Test",
+    overview: "Test entry.",
+    publishAt: "2026-09-15T13:00:00Z",
+    lastVerified: "2026-11-20",
+  };
+  ok(
+    "an entry with its own publishAt uses it, not lastVerified",
+    wikiDatePublished(own, new Date("2026-11-21T12:00:00Z")) === "2026-09-15T13:00:00Z",
+  );
+
+  const jason = wiki.find((w) => w.type === "characters" && w.slug === "jason")!;
+  ok(
+    "precondition: jason has no publishAt and a revision dated 2026-09-11T13:00:00Z",
+    jason.publishAt === undefined && jason.pendingRevision?.publishAt === "2026-09-11T13:00:00Z",
+  );
+  ok(
+    "a revision whose date has passed supplies its day as datePublished",
+    wikiDatePublished(jason, new Date("2026-11-21T12:00:00Z")) === "2026-09-11",
+  );
+  ok(
+    "a revision applies from its exact activation instant, matching resolveRevision",
+    wikiDatePublished(jason, new Date("2026-09-11T13:00:00Z")) === "2026-09-11",
+  );
+  ok(
+    "a revision still in the future supplies no datePublished, even with lastVerified set",
+    wikiDatePublished({ ...jason, lastVerified: "2026-09-01" }, new Date("2026-09-11T12:59:59Z")) ===
+      "",
+  );
+
+  const undatedEntry = wiki.find((w) => w.type === "map" && w.slug === "rural-areas")!;
+  ok(
+    "precondition: rural-areas has neither publishAt nor a revision",
+    undatedEntry.publishAt === undefined && undatedEntry.pendingRevision === undefined,
+  );
+  ok(
+    "an entry with neither date supplies no datePublished",
+    wikiDatePublished(undatedEntry, new Date("2026-11-21T12:00:00Z")) === "",
+  );
+  const verifiedOnly: WikiEntry = {
+    slug: "test-verified-only",
+    type: "map",
+    name: "Test",
+    overview: "Test entry.",
+    lastVerified: "2026-11-20",
+  };
+  ok(
+    "lastVerified alone never becomes datePublished",
+    wikiDatePublished(verifiedOnly, new Date("2026-11-21T12:00:00Z")) === "",
+  );
+  ok(
+    "and the rendered Article omits datePublished for it",
+    !(
+      "datePublished" in
+      extractLd(
+        renderToStaticMarkup(
+          <ArticleJsonLd
+            type="Article"
+            headline={undatedEntry.name}
+            description={undatedEntry.overview}
+            path={`/wiki/${undatedEntry.type}/${undatedEntry.slug}`}
+            datePublished={wikiDatePublished(undatedEntry)}
+            dateModified={undatedEntry.lastVerified}
+          />,
+        ),
+      )
+    ),
   );
 }
 

@@ -437,10 +437,10 @@ export const wiki: WikiEntry[] = [
     slug: "jason",
     pendingRevision: {
       publishAt: "2026-09-11T13:00:00Z",
-      lastVerified: "2026-09-11",
-      note: "Day 15 of the 30-day plan: upgraded entity page.",
+      lastVerified: "2026-11-20",
+      note: "Day 15 of the 30-day plan: upgraded entity page. Nov 2026: merged duplicate sections, added quick facts.",
       changes: {
-        seoTitle: "Jason Duval in GTA 6: Backstory, Role and Everything Rockstar Has Confirmed",
+        seoTitle: "Jason Duval in GTA 6: Backstory, Role and Quick Facts",
         metaDescription:
           "Jason Duval is one of GTA 6’s two protagonists. Here’s his confirmed Army background, Leonida Keys connection and relationship with Lucia.",
         overview:
@@ -460,6 +460,9 @@ export const wiki: WikiEntry[] = [
                 ["Background", "Troubled teens; later served in the Army"],
                 ["Current connection", "Works around local drug runners in the Keys"],
                 ["Setting link", "Leonida Keys"],
+                ["Age", "Not publicly confirmed"],
+                ["Height", "Not publicly confirmed"],
+                ["Voice actor", "Not publicly confirmed by Rockstar"],
               ],
             },
           },
@@ -468,7 +471,7 @@ export const wiki: WikiEntry[] = [
             body: [
               "Rockstar says Jason grew up around grifters and crooks. After a troubled adolescence, he joined the Army in an attempt to move away from that life.",
               "It did not stick.",
-              "He later ended up in the Keys doing work for local drug runners, placing him back inside the kind of criminal environment he tried to leave.",
+              "He later ended up in the Keys doing work for local drug runners, placing him back inside the kind of criminal environment he tried to leave. At the start of the story he is connected to Brian Heder and lives at one of Brian’s properties in exchange for helping with local shakedowns.",
               "That history gives Jason a different starting point from GTA V's protagonists. He is not presented as an established kingpin or retired millionaire criminal. He appears to be someone still trying to decide what kind of life he actually wants.",
             ],
           },
@@ -477,76 +480,46 @@ export const wiki: WikiEntry[] = [
             body: [
               "Rockstar frames meeting Lucia as potentially the best or worst thing to happen to Jason.",
               "The official story premise says an easy score goes wrong and leaves the pair caught in a criminal conspiracy across Leonida. They are forced to rely on each other.",
-              "The Extended Look reinforces that partnership with domestic scenes, driving, gunfights and jobs in which their relationship appears inseparable from the gameplay.",
+              "The Extended Look reinforces that partnership: the two are repeatedly shown acting as partners in robberies, travel and domestic scenes, so the relationship is both emotional and part of the gameplay.",
             ],
           },
           {
             heading: "Is Jason based on Bonnie and Clyde?",
             body: [
               "The internet frequently uses “Bonnie and Clyde” as shorthand for Jason and Lucia because they are a romantic criminal pair.",
-              "That is a useful cultural comparison, but Rockstar's current official character pages are more specific about their own backgrounds than about labeling them as direct copies of the historical couple.",
+              "That is a useful cultural comparison, but Rockstar's official character pages describe their own backgrounds rather than labelling them as a copy of the historical couple.",
             ],
           },
           {
             heading: "Who voices Jason?",
             body: [
-              "Do not treat fan casting or voice-actor identification threads as confirmed unless Rockstar, the actor or official credits verify the role.",
-              "This page will add the performer once there is a reliable source.",
+              "Rockstar's official character profile does not name Jason's voice actor. Fan casting and voice-matching threads are not confirmation, so this page will add the performer only once Rockstar, the actor or the game's credits can be checked.",
             ],
           },
           {
             heading: "Jason in the Extended Look",
             body: [
               "The August showcase gives Jason more personality than the early trailers. He is shown in quiet scenes as well as violent ones, helping establish the contrast between his desire for an easier life and the increasingly dangerous choices around him.",
-            ],
-          },
-          {
-            heading: "Bottom line",
-            body: [
-              "Jason's defining tension is simple: he wants stability but has the skills, connections and circumstances that keep pushing him toward crime.",
-              "Read our Lucia Caminos profile and complete GTA 6 character guide.",
-            ],
-          },
-          {
-            heading: "Primary source",
-            body: [
-              "Rockstar Games - Jason Duval official “Only in Leonida” profile and GTA VI Extended Look.",
-              "---",
-            ],
-          },
-          {
-            heading: "Jason Duval: confirmed biography",
-            body: [
-              "Rockstar says Jason grew up around grifters and crooks, spent time in the Army after troubled teenage years, and later worked for local drug runners in the Keys. At the start of the story he is connected to Brian Heder and lives at one of Brian’s properties in exchange for helping with local shakedowns.",
-              "Those details establish Jason as someone already embedded in Leonida’s lower-level criminal economy before the central conspiracy escalates.",
-            ],
-          },
-          {
-            heading: "Jason and Lucia",
-            body: [
-              "Rockstar frames meeting Lucia as potentially the best or worst thing to happen to Jason. The two are repeatedly shown acting as partners in robberies, travel and domestic scenes. The relationship is therefore both emotional and mechanical: the game’s central story depends on their reliance on each other.",
-              "Avoid reducing the pair to a “Bonnie and Clyde” label unless clearly presented as a comparison rather than Rockstar’s formal description.",
-            ],
-          },
-          {
-            heading: "Observed gameplay role",
-            body: [
-              "The Extended Look shows Jason driving, shooting, participating in robberies and moving through domestic/free-roam spaces. It supports the conclusion that he is a central playable protagonist, but it does not yet define every exclusive ability or progression tree.",
-              "Keep ability claims in an “observed” or “reported” table until Rockstar publishes a formal gameplay overview.",
+              "It also shows Jason driving, shooting, taking part in robberies and moving through domestic and free-roam spaces. Rockstar has not published a breakdown of abilities exclusive to Jason.",
             ],
           },
           {
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “Jason Duval GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+              "Rockstar has not published Jason's age, height, voice actor or a list of abilities exclusive to him.",
+            ],
+          },
+          {
+            heading: "Bottom line",
+            body: [
+              "Jason's defining tension is simple: he wants stability but has the skills, connections and circumstances that keep pushing him toward crime.",
+              "Lucia Caminos's profile and the full GTA 6 character guide are linked alongside this page.",
             ],
           },
         ],
@@ -591,7 +564,7 @@ export const wiki: WikiEntry[] = [
       },
     },
     type: "characters",
-    name: "Jason",
+    name: "Jason Duval",
     overview:
       "Jason is one of two playable protagonists in Grand Theft Auto VI. Rockstar frames him as someone who has 'been involved in criminal life' and drawn to trouble; he forms the calmer half of the Jason–Lucia duo.",
     background:
@@ -600,28 +573,28 @@ export const wiki: WikiEntry[] = [
       "Co-protagonist alongside Lucia. The pair is positioned as a modern Bonnie-and-Clyde, with Jason providing tactical execution to Lucia's instinct.",
     details: [
       { label: "Status", value: "Playable protagonist" },
-      { label: "Partner", value: "Lucia" },
-      { label: "Region", value: "Leonida / Vice City" },
-      { label: "Archetype", value: "Calm operator" },
+      { label: "Partner", value: "Lucia Caminos" },
+      { label: "Region", value: "Leonida Keys" },
     ],
     related: [
-      { type: "characters", href: "/wiki/characters/lucia", label: "Lucia" },
+      { type: "characters", href: "/wiki/characters/lucia", label: "Lucia Caminos" },
       { type: "pillar", href: "/gta-6-characters", label: "GTA 6 Characters Hub" },
       { type: "map", href: "/wiki/map/vice-city", label: "Vice City" },
+      { type: "pillar", href: "/gta-6-map", label: "GTA 6 map: the Leonida Keys and other regions" },
     ],
     trivia: [
       "First confirmed playable male protagonist since Trevor, Michael, and Franklin in GTA V.",
-      "Voice actor remains unannounced as of 2026.",
+      "Voice actor not publicly confirmed by Rockstar.",
     ],
   },
   {
     slug: "lucia",
     pendingRevision: {
       publishAt: "2026-09-12T13:00:00Z",
-      lastVerified: "2026-09-12",
-      note: "Day 16 of the 30-day plan: upgraded entity page.",
+      lastVerified: "2026-11-20",
+      note: "Day 16 of the 30-day plan: upgraded entity page. Nov 2026: merged duplicate sections, added quick facts.",
       changes: {
-        seoTitle: "Lucia Caminos in GTA 6: Backstory, Prison History and Role Explained",
+        seoTitle: "Lucia Caminos in GTA 6: Backstory, Family and Role Explained",
         metaDescription:
           "Lucia Caminos is one of GTA 6’s two playable protagonists. Here’s what Rockstar confirms about her family, prison history, Jason and ambitions.",
         overview:
@@ -647,6 +620,10 @@ export const wiki: WikiEntry[] = [
                   "Earlier family connection",
                   "Rockstar references the family's days in Liberty City",
                 ],
+                ["Age", "Not publicly confirmed"],
+                ["Height", "Not publicly confirmed"],
+                ["Heritage", "Not publicly confirmed by Rockstar"],
+                ["Voice actor", "Not publicly confirmed by Rockstar"],
               ],
             },
           },
@@ -677,61 +654,33 @@ export const wiki: WikiEntry[] = [
             heading: "Is Lucia the first female GTA protagonist?",
             body: [
               "She is the first confirmed playable woman at the center of a modern mainline 3D-era GTA story.",
-              "Be careful with absolute “first ever in GTA history” phrasing because earlier 2D-era GTA releases allowed female player characters.",
+              "She is not the first woman players could control in the series, though: earlier 2D-era GTA releases allowed female player characters. If Rockstar describes her place in franchise history in specific words, this page will quote them.",
             ],
           },
           {
-            heading: "Lucia's fighting ability",
+            heading: "Lucia's fighting ability and gameplay",
             body: [
               "Rockstar's biography says her father taught her to fight from a very young age. Official footage backs up the idea that she is physically capable, but exact combat stats or character-specific skill systems have not been published.",
-            ],
-          },
-          {
-            heading: "Bottom line",
-            body: [
-              "Lucia's story is about control: after prison and years of family struggle, she is trying to stop reacting to circumstances and start shaping them.",
-              "Read Jason Duval and all GTA 6 characters.",
-            ],
-          },
-          {
-            heading: "Primary source",
-            body: [
-              "Rockstar Games - Lucia Caminos official profile, GTA VI trailers and Extended Look.",
-              "---",
-            ],
-          },
-          {
-            heading: "Lucia Caminos: confirmed biography",
-            body: [
-              "Rockstar says Lucia’s father taught her to fight from a very young age. Fighting for her family led to Leonida Penitentiary, and luck helped her get out. Her stated motivation is to pursue the better life her mother dreamed of, with Jason potentially becoming part of her escape from the odds stacked against her.",
-              "This makes family, incarceration and ambition the strongest confirmed pillars of her biography.",
-            ],
-          },
-          {
-            heading: "How to describe Lucia accurately in franchise history",
-            body: [
-              "Lucia is a central playable woman in a modern mainline 3D-era Grand Theft Auto story. Avoid the blanket phrase “first female GTA protagonist ever,” because early GTA titles allowed female character choices. Precise wording protects the page from an easy factual criticism and is more useful for knowledge engines.",
-              "If Rockstar later describes her historical status in a specific way, quote that wording instead.",
-            ],
-          },
-          {
-            heading: "Lucia’s gameplay portrayal",
-            body: [
-              "Official footage presents Lucia as an active participant in robberies, gunfights, driving and the partnership with Jason. Her prison history is directly established; claims about unique skills, stat bonuses or exclusive mechanics remain unconfirmed unless Rockstar documents them.",
+              "Official footage shows Lucia taking an active part in robberies, gunfights, driving and the partnership with Jason. Rockstar has not documented unique skills, stat bonuses or mechanics exclusive to her.",
             ],
           },
           {
             heading: "How to read the evidence labels",
             body: [
               "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-              "For “Lucia Caminos GTA 6,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
             ],
           },
           {
             heading: "What is still not confirmed",
             body: [
-              "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-              "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+              "Rockstar has not published Lucia's age, height, heritage, voice actor or a list of abilities exclusive to her.",
+            ],
+          },
+          {
+            heading: "Bottom line",
+            body: [
+              "Lucia's story is about control: after prison and years of family struggle, she is trying to stop reacting to circumstances and start shaping them.",
+              "Jason Duval's profile and the full GTA 6 character guide are linked alongside this page.",
             ],
           },
         ],
@@ -776,7 +725,7 @@ export const wiki: WikiEntry[] = [
       },
     },
     type: "characters",
-    name: "Lucia",
+    name: "Lucia Caminos",
     overview:
       "Lucia is the first confirmed female protagonist in a mainline Grand Theft Auto title. She opens the reveal trailer leaving incarceration.",
     background:
@@ -785,16 +734,15 @@ export const wiki: WikiEntry[] = [
       "Co-protagonist. The trailer frames her as the driving force of the duo's escalating crimes.",
     details: [
       { label: "Status", value: "Playable protagonist" },
-      { label: "Partner", value: "Jason" },
+      { label: "Partner", value: "Jason Duval" },
       { label: "Region", value: "Leonida / Vice City" },
-      { label: "Archetype", value: "Driven instigator" },
     ],
     related: [
-      { type: "characters", href: "/wiki/characters/jason", label: "Jason" },
+      { type: "characters", href: "/wiki/characters/jason", label: "Jason Duval" },
       { type: "pillar", href: "/gta-6-characters", label: "GTA 6 Characters Hub" },
     ],
     trivia: [
-      "First female lead protagonist in mainline GTA history.",
+      "First confirmed playable woman at the center of a modern mainline 3D-era GTA story; earlier 2D-era games let players choose female characters.",
       "Her opening scene mirrors classic crime-film prison-release tropes.",
     ],
   },
