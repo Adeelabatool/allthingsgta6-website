@@ -676,7 +676,7 @@ export const news: NewsItem[] = [
       {
         heading: "What Rockstar still has not fully explained",
         body: [
-          "Several major questions remain open: the exact map boundaries, PC release timing, PC system requirements, the final GTA Online plan for GTA 6, detailed performance modes, full mission structure and the complete vehicle and weapon rosters.",
+          "Several major questions remain open: the exact map boundaries, PC release timing, PC system requirements, [the final GTA Online plan for GTA 6](/gta-6-online), detailed performance modes, full mission structure and the complete vehicle and weapon rosters.",
           "That distinction matters. The Extended Look gives us much more evidence, but it does not turn every pre-release rumor into fact.",
         ],
       },
@@ -684,7 +684,7 @@ export const news: NewsItem[] = [
         heading: "Bottom line",
         body: [
           "The Extended Look is the most useful GTA 6 source released so far because it shows the game functioning as a world rather than as a montage of cinematic reveals. GTA 6 still looks unmistakably like Grand Theft Auto, but the new footage suggests Rockstar is pushing hardest on environmental density, character interaction and the number of believable things happening between major missions.",
-          "For continuously updated information, see our GTA 6 release date, GTA 6 map, characters, vehicles and weapons hubs.",
+          "For continuously updated information, see our [GTA 6 release date](/gta-6-release-date), [GTA 6 map](/gta-6-map), [characters](/gta-6-characters), [vehicles](/gta-6-vehicles) and [weapons](/gta-6-weapons) hubs.",
         ],
       },
       {
@@ -886,18 +886,18 @@ export const news: NewsItem[] = [
         heading: "The most important content updates for fans",
         body: [
           "If you only read five pages after the August reveal, make them these:",
-          "GTA 6 Extended Look breakdown",
+          "[GTA 6 Extended Look breakdown](/news/gta-6-extended-look-breakdown)",
           "GTA 6 release date",
           "GTA 6 map",
           "GTA 6 characters",
-          "GTA 6 gameplay",
+          "[GTA 6 gameplay](/gta-6-gameplay)",
           "Those pages will be updated as Rockstar publishes more official material.",
         ],
       },
       {
         heading: "What to watch next",
         body: [
-          "The remaining pre-release questions are now narrower and more useful: final performance modes, exact map detail, a complete mission/gameplay explanation, GTA Online's relationship to GTA 6 and whether Rockstar will announce a PC version before or after the console launch.",
+          "The remaining pre-release questions are now narrower and more useful: final performance modes, exact map detail, a complete mission/gameplay explanation, [GTA Online's relationship to GTA 6](/gta-6-online) and whether Rockstar will announce a PC version before or after the console launch.",
           "The site will treat those as open questions until Rockstar or Take-Two provides verifiable information.",
         ],
       },

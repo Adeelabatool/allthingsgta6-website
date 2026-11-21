@@ -29,6 +29,7 @@ import { ALWAYS_LIVE } from "@/lib/related";
 import { renderSitemap, sitemapUrls, staticSitemapPaths } from "@/lib/sitemap";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { wikiDatePublished } from "@/routes/wiki.$type.$slug";
+import { InlineText, parseInlineLinks, stripInlineLinks } from "@/components/InlineText";
 import type { WikiEntry } from "@/data/wiki";
 import {
   articleHead,
@@ -1104,6 +1105,69 @@ group("wiki datePublished: explicit date, landed revision, or nothing");
       )
     ),
   );
+}
+
+group("inline links in body copy");
+{
+  const html = (text: string, now?: Date) => renderToStaticMarkup(<InlineText text={text} now={now} />);
+  const LIVE_NOW = new Date("2026-11-21T12:00:00Z");
+
+  ok(
+    "parser splits text and internal links",
+    JSON.stringify(parseInlineLinks("See the [GTA 6 map](/gta-6-map) now.")) ===
+      JSON.stringify([
+        { kind: "text", text: "See the " },
+        { kind: "link", text: "GTA 6 map", href: "/gta-6-map" },
+        { kind: "text", text: " now." },
+      ]),
+  );
+  ok("plain text without markup is returned unchanged", html("No links here.") === "No links here.");
+  ok(
+    "a live target renders as an anchor",
+    html("See the [GTA 6 map](/gta-6-map).", LIVE_NOW).includes('<a href="/gta-6-map"') &&
+      html("See the [GTA 6 map](/gta-6-map).", LIVE_NOW).includes(">GTA 6 map</a>"),
+  );
+  const draft = html("Read [the PC guide](/gta-6-pc-release-date).", LIVE_NOW);
+  ok("an unpublished target renders its anchor text without a link", !draft.includes("<a") && draft.includes("the PC guide"));
+  const unknown = html("Read [a missing page](/does-not-exist).", LIVE_NOW);
+  ok("an unknown route renders as plain text, never a broken link", !unknown.includes("<a") && unknown.includes("a missing page"));
+  const scheduled = html("See [GTA 6 online](/gta-6-online).", new Date("2026-09-01T00:00:00Z"));
+  ok("a page that is not yet published at render time is not linked", !scheduled.includes("<a"));
+  const external = html("Visit [elsewhere](https://example.com).", LIVE_NOW);
+  ok("external URLs are not parsed as links", !external.includes("<a") && external.includes("[elsewhere](https://example.com)"));
+  ok("markup is never left visible for a valid link", !html("[GTA 6 map](/gta-6-map)", LIVE_NOW).includes("]("));
+  ok("stripInlineLinks keeps the anchor text", stripInlineLinks("See [the map](/gta-6-map).") === "See the map.");
+
+  // Every inline link authored in published content must point at a live route,
+  // so a typo or a retired page fails the build instead of shipping plain text.
+  const live = <T extends { pendingRevision?: unknown }>(items: T[]) =>
+    items.filter((e) => isPubliclyVisible(e as Publishable, LIVE_NOW)).map((e) => resolveRevision(e as any, LIVE_NOW));
+  const bodies: { where: string; text: string }[] = [];
+  const collect = (where: string, e: { intro?: string[]; sections?: { body?: string[] }[] }) => {
+    for (const t of e.intro ?? []) bodies.push({ where, text: t });
+    for (const s of e.sections ?? []) for (const t of s.body ?? []) bodies.push({ where, text: t });
+  };
+  for (const p of live(pages)) collect(p.path, p);
+  for (const w of live(wiki)) collect(`/wiki/${w.type}/${w.slug}`, w);
+  for (const n of live(news)) collect(`/news/${n.slug}`, n);
+  for (const a of live(analyses)) collect(`/analysis/${a.slug}`, a);
+  const authored = bodies.flatMap(({ where, text }) =>
+    parseInlineLinks(text)
+      .filter((s) => s.kind === "link")
+      .map((s) => ({ where, href: (s as { href: string }).href })),
+  );
+  const broken = authored.filter((l) => !isLinkTargetLive(l.href, LIVE_NOW));
+  ok(`published content contains inline links (${authored.length})`, authored.length > 0);
+  ok(
+    "every inline link in published content resolves to a live page",
+    broken.length === 0 || (console.log("   broken:", broken), false),
+  );
+  ok(
+    "no inline link points back to its own page",
+    authored.every((l) => l.href !== l.where),
+  );
+  const malformed = bodies.filter(({ text }) => /\]\(\s*[^/\s)]/.test(text) || /\[[^\]]*\]\(\/[^)]*\s/.test(text));
+  ok("no malformed link markup in published content", malformed.length === 0 || (console.log("   malformed:", malformed.map((m) => m.where)), false));
 }
 
 console.log(

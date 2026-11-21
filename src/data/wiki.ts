@@ -104,7 +104,7 @@ export const wiki: WikiEntry[] = [
         heading: "Bottom line",
         body: [
           "Cal looks like one of GTA 6's classic Rockstar supporting characters: funny on the surface, socially specific, and potentially useful to the protagonists in ways that make sense inside the satire.",
-          "See all GTA 6 characters and Jason Duval.",
+          "See [all GTA 6 characters](/gta-6-characters) and [Jason Duval](/wiki/characters/jason).",
         ],
       },
       {
@@ -351,7 +351,7 @@ export const wiki: WikiEntry[] = [
         heading: "Bottom line",
         body: [
           "Raul represents the professional, higher-risk end of GTA 6's criminal ecosystem. Where Cal is an eccentric friend and Boobie is rooted in nightlife, Raul is defined by scores, crews and escalating danger.",
-          "See all GTA 6 characters and our GTA 6 gameplay hub.",
+          "See [all GTA 6 characters](/gta-6-characters) and our [GTA 6 gameplay hub](/gta-6-gameplay).",
         ],
       },
       {
@@ -507,7 +507,7 @@ export const wiki: WikiEntry[] = [
             heading: "Bottom line",
             body: [
               "Jason's defining tension is simple: he wants stability but has the skills, connections and circumstances that keep pushing him toward crime.",
-              "Lucia Caminos's profile and the full GTA 6 character guide are linked alongside this page.",
+              "Read [Lucia Caminos's profile](/wiki/characters/lucia) and the [full GTA 6 character guide](/gta-6-characters).",
             ],
           },
         ],
@@ -668,7 +668,7 @@ export const wiki: WikiEntry[] = [
             heading: "Bottom line",
             body: [
               "Lucia's story is about control: after prison and years of family struggle, she is trying to stop reacting to circumstances and start shaping them.",
-              "Jason Duval's profile and the full GTA 6 character guide are linked alongside this page.",
+              "Read [Jason Duval's profile](/wiki/characters/jason) and the [full GTA 6 character guide](/gta-6-characters).",
             ],
           },
         ],
@@ -845,7 +845,7 @@ export const wiki: WikiEntry[] = [
             heading: "What can players do in Vice City?",
             body: [
               "The Extended Look shows driving, robberies, police pursuits, nightlife, apartment scenes, sports, shopping/customization environments and criminal activity across the city.",
-              "Rockstar has not yet published a final activity directory, so our GTA 6 activities guide separates clearly playable activities from things merely visible in footage.",
+              "Rockstar has not yet published a final activity directory, so our [GTA 6 activities guide](/gta-6-activities) separates clearly playable activities from things merely visible in footage.",
             ],
           },
           {
@@ -866,7 +866,7 @@ export const wiki: WikiEntry[] = [
             heading: "Bottom line",
             body: [
               "GTA 6's Vice City keeps the sun, neon and excess of the classic setting but relocates it into the social-media era and a far larger state-scale world.",
-              "See GTA 6 map and all confirmed locations.",
+              "See the [GTA 6 map](/gta-6-map) and [all confirmed locations](/gta-6-locations).",
             ],
           },
           {

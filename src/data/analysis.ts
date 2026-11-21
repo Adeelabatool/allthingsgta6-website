@@ -107,7 +107,7 @@ export const analyses: AnalysisArticle[] = [
           "Best for most players: Standard Edition.",
           "Best for collectors/customizers: Ultimate Edition.",
           "The $20 gap is modest, but paying more only makes sense if you actually care about the included content.",
-          "See the full Ultimate Edition list before buying.",
+          "See the full [Ultimate Edition list](/gta-6-ultimate-edition) before buying.",
         ],
       },
       {
@@ -413,7 +413,7 @@ export const analyses: AnalysisArticle[] = [
         body: [
           "GTA 6 is clearly a generational expansion over GTA V, but an unofficial square-mile multiplier does not capture that difference.",
           "The best comparison is scale + density + regional variety + simulation.",
-          "See the GTA 6 map hub for continuously updated geography.",
+          "See the [GTA 6 map hub](/gta-6-map) for continuously updated geography.",
         ],
       },
       {
@@ -573,14 +573,14 @@ export const analyses: AnalysisArticle[] = [
               "complete social-media mechanics;",
               "every building being enterable;",
               "a fixed weapon inventory system;",
-              "a specific GTA Online structure.",
+              "a specific [GTA Online structure](/gta-6-online).",
               "Those claims often grew around the trailer rather than from it.",
             ],
           },
           {
             heading: "Why Trailer 1 still matters",
             body: [
-              "Later reveals add detail, but Trailer 1 remains the clearest statement of GTA 6's tone: a hyper-visible, performative, chaotic Leonida where people are constantly watching and recording one another.",
+              "Later reveals, covered in our [GTA 6 trailers guide](/gta-6-trailers), add detail, but Trailer 1 remains the clearest statement of GTA 6's tone: a hyper-visible, performative, chaotic Leonida where people are constantly watching and recording one another.",
             ],
           },
           {

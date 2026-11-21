@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { ArticleJsonLd } from "@/components/StructuredData";
 import { EvidenceStatusTable } from "@/components/Evidence";
 import { LastVerified } from "@/components/LastVerified";
+import { InlineText } from "@/components/InlineText";
 import { newsBySlug, publicNews, type NewsItem } from "@/data/news";
 import type { ArticleImage } from "@/data/pages";
 import { SECTION_CRUMBS, articleHead, newsCategoryCrumb } from "@/lib/seo";
@@ -109,7 +110,7 @@ function NewsArticle() {
 
         {n.intro?.map((p, i) => (
           <p key={i} className="mt-3 text-foreground/90 leading-relaxed">
-            {p}
+            <InlineText text={p} />
           </p>
         ))}
 
@@ -119,7 +120,7 @@ function NewsArticle() {
               <h2 className="text-xl md:text-2xl font-extrabold tracking-tight">{sec.heading}</h2>
               {sec.body?.map((para, i) => (
                 <p key={i} className="mt-3 text-foreground/90 leading-relaxed">
-                  {para}
+                  <InlineText text={para} />
                 </p>
               ))}
               {sec.table ? <BodyTable table={sec.table} /> : null}
