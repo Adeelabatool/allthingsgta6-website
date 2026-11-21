@@ -586,13 +586,13 @@ export const pages: SitePage[] = [
     status: "scheduled",
     publishAt: "2026-09-10T13:00:00Z",
     title: "GTA 6 Leonida Explained: Every Confirmed Region in Rockstar’s Florida-Inspired State",
-    seoTitle:
-      "GTA 6 Leonida Explained: Every Confirmed Region in Rockstar’s Florida-Inspired State",
+    seoTitle: "GTA 6 Leonida: Where GTA 6 Takes Place and Every Region",
     metaDescription:
       "Leonida is GTA 6’s fictional Florida-inspired state. Learn what Rockstar has confirmed about Vice City, the Keys, Grassrivers and other regions.",
     primaryKeyword: "GTA 6 Leonida",
     intro: [
       "Leonida is the fictional US state where Grand Theft Auto VI takes place. [Vice City](/wiki/map/vice-city) sits inside it, but Rockstar's official world material makes clear that the game stretches across a much broader mix of urban, coastal, wetland, industrial and wilderness environments.",
+      "For how big the map is, see our [GTA 6 map guide](/gta-6-map). For named cities and landmarks, see our [GTA 6 locations guide](/gta-6-locations).",
     ],
     sections: [
       {
@@ -743,6 +743,7 @@ export const pages: SitePage[] = [
     primaryKeyword: "GTA 6 locations",
     intro: [
       "Rockstar has confirmed that GTA 6 extends well beyond Vice City. The game takes place across Leonida, a fictional state inspired by Florida, and official promotional material has named six major areas so far.",
+      "This page lists the named places in those areas. For how big the map is, see our [GTA 6 map guide](/gta-6-map).",
     ],
     sections: [
       {
@@ -923,6 +924,7 @@ export const pages: SitePage[] = [
     intro: [
       "GTA 6 is set in the fictional state of [Leonida](/gta-6-leonida), with Vice City as its central urban setting. Rockstar has named six headline regions: Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park.",
       "How big is it? Rockstar has not published an official square-mile or square-kilometre measurement. Press reports from a visit to Rockstar North describe Leonida as roughly twice the size of GTA V's map. That is third-party reporting, not an official Rockstar measurement.",
+      "This page covers the map's size and regions. For a list of named cities and landmarks, see our [GTA 6 locations guide](/gta-6-locations).",
     ],
     sections: [
       {
@@ -1498,6 +1500,7 @@ export const pages: SitePage[] = [
     intro: [
       "GTA 6 is out now. It launched on PlayStation 5 and Xbox Series X|S on November 19, 2026.",
       "Rockstar has not announced a PC version, and PS4 and Xbox One are not supported.",
+      "This page covers which consoles run GTA 6. For the latest on a PC version, see our [GTA 6 PC requirements page](/system-requirements).",
     ],
     sections: [
       {
@@ -1650,6 +1653,7 @@ export const pages: SitePage[] = [
     intro: [
       "GTA 6 has an official price. The Standard Edition costs $79.99 in the United States, while the Ultimate Edition costs $99.99.",
       "Those prices were announced by Take-Two and are reflected on Rockstar and PlayStation storefronts.",
+      "This page covers what each edition costs. For the full list of Ultimate Edition contents, see our [GTA 6 Ultimate Edition guide](/gta-6-ultimate-edition). If you're deciding which one to buy, read [Standard vs Ultimate: which edition to buy](/analysis/gta-6-standard-vs-ultimate).",
     ],
     sections: [
       {
@@ -1813,6 +1817,7 @@ export const pages: SitePage[] = [
     intro: [
       "GTA 6 is out now. Grand Theft Auto VI launched on Thursday, November 19, 2026 for PlayStation 5 and Xbox Series X|S. Rockstar has not announced a PC version or a PC release date.",
       "November 19 was the date Rockstar confirmed after moving GTA 6 later in its development schedule. It appeared consistently across Rockstar's GTA VI website, Rockstar Store, PlayStation Store and Take-Two investor communications, and Rockstar announced the game's availability on launch day.",
+      "This page covers when GTA 6 came out and how the date changed. For PC status, see our [GTA 6 PC requirements page](/system-requirements). For what it costs, see our [GTA 6 price guide](/gta-6-price).",
     ],
     sections: [
       {
@@ -1998,6 +2003,7 @@ export const pages: SitePage[] = [
     intro: [
       "Rockstar’s official GTA VI video page lists five main videos: Trailer 1, Trailer 2, Grand Theft Auto VI: An Extended Look, the Grand Theft Auto VI Launch Trailer and Grand Theft Auto VI: Out Now.",
       "Each serves a different purpose. Trailer 1 introduced Leonida's culture. Trailer 2 expanded Jason and Lucia's story. The Extended Look finally gave players a much longer view of the game in motion.",
+      "This is our main guide to GTA 6's official videos. For a detailed look at the first trailer, read our [Trailer 1 breakdown](/analysis/trailer-1-breakdown).",
     ],
     sections: [
       {
@@ -2165,6 +2171,7 @@ export const pages: SitePage[] = [
     intro: [
       "The Grand Theft Auto VI Ultimate Edition costs $99.99 in the United States, $20 more than the $79.99 Standard Edition. It includes the full game plus an Ultimate Edition Upgrade containing exclusive vehicles, weapons, styles and locations tied to Jason and Lucia's single-player story.",
       "Unlike years of speculative “collector's edition” lists, Rockstar has now published the actual package.",
+      "This page covers what the Ultimate Edition includes. For how pricing works outside the US, see our [GTA 6 price guide](/gta-6-price).",
     ],
     sections: [
       {
@@ -2800,6 +2807,7 @@ export const pages: SitePage[] = [
     intro: [
       "There are no official GTA 6 PC system requirements because Rockstar has not announced a PC version of GTA 6. The game [launched on November 19, 2026](/gta-6-release-date) for [PlayStation 5 and Xbox Series X|S](/gta-6-platforms) only.",
       "That means every current page claiming an “official minimum RTX 3060,” “recommended RTX 4070,” exact RAM requirement or fixed PC storage number is either estimating or fabricating information unless Rockstar has made a newer announcement.",
+      "This is our main page for GTA 6 on PC. It tracks the PC status and will list official specs only if Rockstar publishes them.",
     ],
     sections: [
       {

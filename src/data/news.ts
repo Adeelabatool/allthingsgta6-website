@@ -1154,6 +1154,12 @@ export const news: NewsItem[] = [
   {
     slug: "rockstar-confirms-gta-6-release-window",
     title: "Rockstar Confirms GTA 6 Release Date: November 19, 2026",
+    seoTitle: "Rockstar Confirms GTA 6 Release Date: November 19, 2026",
+    metaDescription:
+      "Take-Two reaffirmed GTA 6's November 19, 2026 launch on PS5 and Xbox Series X|S ahead of release. The game launched on that date as planned.",
+    intro: [
+      "Update: GTA 6 launched as planned on November 19, 2026. For the current release details, see our [GTA 6 release date page](/gta-6-release-date).",
+    ],
     summary:
       "Rockstar Games has reaffirmed the Grand Theft Auto VI launch date of November 19, 2026 on PS5 and Xbox Series X|S, with pre-orders live worldwide.",
     category: "rockstar-updates",
@@ -1177,6 +1183,12 @@ export const news: NewsItem[] = [
   {
     slug: "gta-6-trailer-breakdown-news",
     title: "GTA 6 Trailer Breakdown: Every Detail You Missed",
+    seoTitle: "GTA 6 Reveal Trailer Breakdown: Every Detail You Missed",
+    metaDescription:
+      "A detail-by-detail look at the GTA 6 reveal trailer: Jason and Lucia, a modern Vice City, dense crowds, wildlife and Rockstar's updated lighting.",
+    intro: [
+      "Update: For every official GTA 6 video in one place, see our [GTA 6 trailers guide](/gta-6-trailers). For a deeper look at the first trailer, read our [Trailer 1 breakdown](/analysis/trailer-1-breakdown).",
+    ],
     summary:
       "A frame-by-frame analysis of the GTA VI reveal trailer reveals new characters, vehicles, and locations across Vice City.",
     category: "trailer-news",
@@ -1197,6 +1209,12 @@ export const news: NewsItem[] = [
   {
     slug: "release-delay-rumor-explained",
     title: "GTA 6 Release Delay Rumor: What's Actually Happening",
+    seoTitle: "GTA 6 Release Delay Rumor: What Actually Happened",
+    metaDescription:
+      "An April 2026 analyst note hinted at a GTA 6 delay. Take-Two kept the November 19, 2026 date, and the game launched on schedule on PS5 and Xbox Series X|S.",
+    intro: [
+      "Update: There was no further delay. GTA 6 launched on November 19, 2026 for PS5 and Xbox Series X|S. Our [GTA 6 release date page](/gta-6-release-date) explains how the date changed over time.",
+    ],
     summary:
       "Rumors of a Q4 2026 slip surfaced this week. Here's what's substantiated and what's noise.",
     category: "release-updates",
@@ -1212,6 +1230,12 @@ export const news: NewsItem[] = [
   {
     slug: "community-reaction-report-trailer",
     title: "Community Reaction Report: First Trailer Hits 200M Views",
+    seoTitle: "GTA 6 Reveal Trailer Views: Community Reaction Report",
+    metaDescription:
+      "The GTA 6 reveal trailer broke YouTube's 24-hour record for a non-music video. How fans on Reddit, X and TikTok reacted, and what the numbers meant.",
+    intro: [
+      "Update: For every official GTA 6 video, see our [GTA 6 trailers guide](/gta-6-trailers).",
+    ],
     summary:
       "The GTA VI reveal trailer crossed 200 million views, breaking YouTube's 24-hour record for a non-music video.",
     category: "community-reactions",
@@ -1227,6 +1251,9 @@ export const news: NewsItem[] = [
   {
     slug: "insider-leak-analysis",
     title: "Revisiting the 2022 GTA 6 Leak: What Was Confirmed, What Wasn't",
+    seoTitle: "The 2022 GTA 6 Leak: What Was Confirmed and What Wasn't",
+    metaDescription:
+      "Rockstar confirmed the September 2022 GTA 6 leak was real. We track which leaked details were later confirmed and which ones remain unverified.",
     summary:
       "The September 2022 breach leaked dozens of development clips. Here we track which specific claims have since been confirmed by Rockstar — and which remain unverified.",
     category: "leaks",
@@ -1245,6 +1272,12 @@ export const news: NewsItem[] = [
   {
     slug: "map-speculation-update",
     title: "GTA 6 Map Speculation: The State of Leonida and Beyond",
+    seoTitle: "GTA 6 Map Speculation Before Launch: Leonida and Size",
+    metaDescription:
+      "Before launch, trailer frames pointed to a GTA 6 map across Leonida, with fan estimates of about twice GTA V's size. What was confirmed and what wasn't.",
+    intro: [
+      "Update: GTA 6 is out. Our [GTA 6 map guide](/gta-6-map) covers the six confirmed regions and what has been reported about the map's size.",
+    ],
     summary:
       "Trailer frames point to a map set across the fictional state of Leonida, with fan estimates putting it roughly 2x the size of GTA V's San Andreas.",
     category: "leaks",
@@ -1264,6 +1297,9 @@ export const news: NewsItem[] = [
   {
     slug: "gameplay-rumor-breakdown",
     title: "Gameplay Rumor Breakdown: Dynamic Robbery System Returns",
+    seoTitle: "GTA 6 Robbery System Rumor: Dynamic Robberies Explained",
+    metaDescription:
+      "A March 2026 rumor said GTA 6 would let players rob stores, banks and armored trucks, with police response scaling up. What the report claimed and implied.",
     summary:
       "Reports indicate GTA VI will expand the heist system with dynamic, repeatable robberies across Vice City.",
     category: "leaks",
@@ -1279,6 +1315,12 @@ export const news: NewsItem[] = [
   {
     slug: "pc-release-discussion",
     title: "GTA 6 PC Release: Why Rockstar Stays Console-First",
+    seoTitle: "GTA 6 PC Release: Why Rockstar Launched Console-First",
+    metaDescription:
+      "GTA 6 launched on PS5 and Xbox Series X|S without a PC version. Why Rockstar releases on console first, and what RDR2's 13-month PC gap suggests.",
+    intro: [
+      "Update: GTA 6 launched on PS5 and Xbox Series X|S on November 19, 2026, and Rockstar still has not announced a PC version. We track the PC status on our [GTA 6 PC requirements page](/system-requirements).",
+    ],
     summary:
       "Rockstar's pattern of delayed PC releases continues. We examine the strategic reasoning.",
     category: "release-updates",
@@ -1294,8 +1336,14 @@ export const news: NewsItem[] = [
   {
     slug: "pre-order-rumors",
     title: "Pre-Order Rumors: Collector's Edition Details Leak",
+    seoTitle: "GTA 6 Collector's Edition Leak vs Official Pricing",
+    metaDescription:
+      "March 2026 retailer listings showed a $149.99 GTA 6 Collector's Edition. Rockstar's official lineup is Standard at $79.99 and Ultimate at $99.99.",
+    intro: [
+      "Update: For confirmed prices, see our [GTA 6 price page](/gta-6-price). For what the top edition includes, see our [GTA 6 Ultimate Edition guide](/gta-6-ultimate-edition).",
+    ],
     summary:
-      "Retailer listings briefly appeared in March 2026 showing a three-tier edition lineup topped by a $149.99 Collector's Edition. Rockstar's later official pricing did not match them. Superseded — see our GTA 6 price page for the confirmed figures.",
+      "Retailer listings briefly appeared in March 2026 showing a three-tier edition lineup topped by a $149.99 Collector's Edition. Rockstar's later official pricing did not match them.",
     category: "leaks",
     date: "2026-03-05",
     source: { label: "GameStop Listing Cache", url: "https://www.gamestop.com" },
@@ -1309,6 +1357,12 @@ export const news: NewsItem[] = [
   {
     slug: "trailer-2-expectations",
     title: "Trailer 2 Expectations: Gameplay Reveal Imminent",
+    seoTitle: "GTA 6 Trailer 2 Expectations: What We Predicted",
+    metaDescription:
+      "Before Trailer 2, Rockstar's past marketing pointed to a gameplay-focused reveal. What we expected: character switching, robberies and Vice City's verticality.",
+    intro: [
+      "Update: Trailer 2 is out. For every official GTA 6 video and what each one revealed, see our [GTA 6 trailers guide](/gta-6-trailers).",
+    ],
     summary:
       "Pattern analysis of Rockstar's marketing cadence points to a gameplay-focused Trailer 2 in late spring.",
     category: "trailer-news",

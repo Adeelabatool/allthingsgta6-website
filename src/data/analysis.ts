@@ -48,7 +48,10 @@ export const analyses: AnalysisArticle[] = [
     seoTitle: "GTA 6 Standard vs Ultimate Edition: Which One Should You Buy?",
     metaDescription:
       "Compare GTA 6 Standard vs Ultimate Edition, including the $79.99 vs $99.99 price, bonuses, exclusive content and who each version is best for.",
-    intro: ["The Standard Edition costs $79.99 in the US. The Ultimate Edition costs $99.99."],
+    intro: [
+      "The Standard Edition costs $79.99 in the US. The Ultimate Edition costs $99.99.",
+      "This guide helps you decide which one to buy. For the full list of Ultimate Edition contents, see our [GTA 6 Ultimate Edition guide](/gta-6-ultimate-edition). For how pricing works outside the US, see our [GTA 6 price guide](/gta-6-price).",
+    ],
     sections: [
       {
         heading: "Standard vs Ultimate",
@@ -699,6 +702,8 @@ export const analyses: AnalysisArticle[] = [
       },
     },
     title: "GTA 6 vs GTA 5: The Generational Gap",
+    metaDescription:
+      "How does GTA 6 compare with GTA 5? Our analysis of scope, simulation depth, economy and online play, and whether GTA 6 is a real generational leap.",
     hook: "How does a game shipping 13 years after its predecessor justify the wait?",
     context:
       "GTA V (2013) defined the seventh-console-generation open world. GTA VI ships into a 2026 market dominated by live-service games and rising production costs.",
@@ -734,6 +739,12 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "map-realism-analysis",
     title: "Map Realism Analysis: How Close Is Leonida to Florida?",
+    seoTitle: "How Close Is GTA 6's Leonida to Real Florida?",
+    metaDescription:
+      "How much real Florida is in GTA 6's Leonida? We compare Vice City, the Keys and the swamps with Miami and the Everglades, and look at the satire.",
+    intro: [
+      "For where GTA 6 takes place and every confirmed region, see our [GTA 6 Leonida guide](/gta-6-leonida).",
+    ],
     hook: "Rockstar's worlds are caricatures of real places. How much real Florida is in Leonida?",
     context:
       "Leonida draws from Florida geography — Miami, Keys, Everglades, panhandle. The mix is selective, not literal.",
@@ -766,6 +777,9 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "rockstar-storytelling-style",
     title: "Rockstar's Storytelling Style: From CJ to Lucia",
+    seoTitle: "Rockstar Storytelling: From CJ to GTA 6's Jason and Lucia",
+    metaDescription:
+      "How Rockstar's storytelling evolved from GTA 3's silent hero to GTA V's three leads and GTA 6's Jason and Lucia, and what that means for GTA 6's story.",
     hook: "How has Rockstar's narrative voice evolved across two decades of protagonists?",
     context:
       "From GTA III's silent Claude to GTA V's tri-protagonist structure to GTA VI's Bonnie-and-Clyde duo, Rockstar's storytelling has progressively centered character relationships.",
@@ -799,6 +813,9 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "physics-system-predictions",
     title: "Physics System Predictions: What GTA 6's Physics Layer Could Bring",
+    seoTitle: "GTA 6 Physics Predictions: Ragdoll, Vehicles, Destruction",
+    metaDescription:
+      "What could GTA 6's physics bring? Pre-launch predictions for character ragdoll, vehicle handling and damage, and destruction, based on RDR2 and GTA V.",
     hook: "RDR2's physics still impress in 2026. What will GTA VI build on top?",
     context:
       "Rockstar's RAGE engine has paired with NaturalMotion's Euphoria for procedural character physics in earlier titles. \u201cEuphoria 2.0\u201d is not an announced product name, and Rockstar has not said what GTA VI uses. Everything below is prediction from prior Rockstar games, not a described feature set.",
@@ -828,6 +845,9 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "ai-behavior-improvements",
     title: "AI Behavior Improvements: Beyond Pedestrians Bumping Into Walls",
+    seoTitle: "GTA 6 AI Behavior: Pre-Launch Predictions for NPCs",
+    metaDescription:
+      "Before launch, GTA 6's trailers hinted at smarter NPCs. Our predictions for pedestrian routines, police AI and combat AI, compared with GTA V.",
     hook: "GTA V's NPCs were notoriously dumb. What does GTA VI fix?",
     context:
       "NPC AI is the single biggest immersion-breaker in open-world games. GTA VI's trailer suggests substantial behavior upgrades.",
@@ -859,6 +879,12 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "release-timeline-theory",
     title: "Release Timeline Theory: Why November 19, 2026 Is the Date",
+    seoTitle: "Why GTA 6 Released on November 19, 2026: Timeline Theory",
+    metaDescription:
+      "Why did Rockstar pick November 19, 2026 for GTA 6? Our analysis of Take-Two's fiscal calendar, the console hardware cycle and the Black Friday window.",
+    intro: [
+      "Update: GTA 6 launched on November 19, 2026 as planned. For the full release details, see our [GTA 6 release date page](/gta-6-release-date).",
+    ],
     hook: "Rockstar's date selection is never accidental. What does November 19 signal?",
     context:
       "Rockstar confirmed November 19, 2026 — a Thursday exactly one week before Black Friday, deep in Take-Two's FY27 holiday quarter. The date is loaded with strategic meaning.",
@@ -899,6 +925,12 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "multiplayer-expectations",
     title: "Multiplayer Expectations: GTA Online's Successor",
+    seoTitle: "GTA 6 Multiplayer: Expectations for GTA Online's Successor",
+    metaDescription:
+      "Pre-launch predictions for GTA 6's online mode: launch scope, monetization and cross-platform play, based on how GTA Online grew over 12 years.",
+    intro: [
+      "Update: For what Rockstar has and hasn't confirmed about GTA 6's online mode, see our [GTA 6 Online page](/gta-6-online).",
+    ],
     hook: "GTA Online generated $8B+ over 12 years. How does Rockstar follow that?",
     context:
       "GTA Online launched in 2013 as a small online mode and grew into a billion-dollar live service. Its successor faces different market expectations.",
@@ -934,6 +966,9 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "engine-analysis",
     title: "Engine Analysis: What's New in Rockstar's Engine for GTA 6",
+    seoTitle: "GTA 6 Engine Analysis: What Changed in Rockstar's RAGE",
+    metaDescription:
+      "What's new in the RAGE engine behind GTA 6? A pre-launch look at rendering, NVMe streaming and tooling, and why RAGE 9 is only a community nickname.",
     hook: "Rockstar's RAGE engine powers every modern title. What changed for GTA VI?",
     context:
       "RAGE has evolved across GTA IV, RDR, GTA V, and RDR2. GTA VI represents the largest single-version jump since GTA V. One caveat before anything below: \u201cRAGE 9\u201d is community shorthand, not a version Rockstar has published. Treat the name as unconfirmed and the analysis as being about observable changes, not a numbered release.",
@@ -966,6 +1001,9 @@ export const analyses: AnalysisArticle[] = [
   {
     slug: "marketing-strategy-breakdown",
     title: "Marketing Strategy Breakdown: The Anti-Marketing Playbook",
+    seoTitle: "GTA 6 Marketing Strategy: Rockstar's Anti-Marketing Playbook",
+    metaDescription:
+      "Rockstar barely markets GTA 6, yet it dominates the conversation. How scarcity, controlled reveals and free press coverage do the work instead.",
     hook: "Rockstar barely markets. How does that work?",
     context:
       "Most AAA games rely on aggressive marketing. Rockstar uses scarcity, controlled reveals, and earned media to dominate cultural conversation.",
