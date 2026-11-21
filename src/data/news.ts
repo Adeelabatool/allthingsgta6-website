@@ -75,6 +75,7 @@ export const news: NewsItem[] = [
       "Rockstar has announced Grand Theft Auto VI: The Album — 34 tracks with Atlantic Records, out November 19, 2026. Here are the six songs revealed so far.",
     schemaType: "NewsArticle",
     intro: [
+      "Update, November 21, 2026: GTA 6 launched on November 19, 2026, the release date Rockstar announced for Grand Theft Auto VI: The Album.",
       "Rockstar Games has officially announced Grand Theft Auto VI: The Album, a 34-track music collection created in partnership with Atlantic Records and launching alongside GTA 6 on November 19, 2026.",
       "Six songs are already available to stream, featuring artists including Travis Scott, Yung Lean, Future, Metro Boomin, PinkPantheress, Fred again.., Morgan Wallen, Rauw Alejandro and Keith Richards. The other 28 tracks have not yet been revealed.",
       "Rockstar is also preparing physical vinyl and CD editions of the album and says more information about GTA 6's dynamic score and the next evolution of its in-game radio is still to come.",
@@ -301,9 +302,9 @@ export const news: NewsItem[] = [
     category: "release-updates",
     date: "2026-09-10",
     lastVerified: "2026-09-10",
-    seoTitle: "GTA 6 DualSense Controllers: Price, Preorder Date and Release Details",
+    seoTitle: "GTA 6 DualSense Controllers: Price, Release and Where to Buy",
     metaDescription:
-      "Sony's GTA 6 Limited Edition DualSense controllers cost $84.99 / EUR 84.99 / GBP 74.99. Preorders open September 10 and both launch November 19, 2026 alongside GTA 6.",
+      "Sony's GTA 6 Black and White Limited Edition DualSense controllers cost $84.99 / EUR 84.99 / GBP 74.99, with release set for November 19, 2026.",
     schemaType: "NewsArticle",
     heroImage: {
       url: "https://blog.playstation.com/uploads/2026/09/d839f6d8bdb082ff7b1abe44ca635ee2648003fd.jpg",
@@ -311,6 +312,7 @@ export const news: NewsItem[] = [
       credit: "Image: Sony Interactive Entertainment / PlayStation Blog",
     },
     intro: [
+      "Update, November 21, 2026: GTA 6 launched on November 19, 2026, the same day Sony set as the start of the controllers' release. Availability varies by region, so check PlayStation Direct or your regional PlayStation store for current stock.",
       "Sony has officially revealed two Grand Theft Auto VI Limited Edition DualSense wireless controllers for PS5, with both designs launching alongside GTA 6 on November 19, 2026. The GTA VI Black Limited Edition and GTA VI White Limited Edition cost $84.99 in the US, EUR 84.99 in Europe, GBP 74.99 in the UK and 12,480 yen in Japan, with preorders beginning September 10.",
       "This is not simply GTA VI artwork printed over a standard colorway. Sony says both controllers use a shimmering, colour-shifting finish inspired by Vice City's sunsets and neon nightlife, molded palm-tree details and official Grand Theft Auto VI branding.",
       "There is also a more important detail for players rather than collectors: Sony has confirmed that GTA 6 will use the DualSense controller's haptic feedback and adaptive triggers on PS5.",
@@ -1066,7 +1068,6 @@ export const news: NewsItem[] = [
         heading: "Preorder eligibility in plain English",
         body: [
           "Rockstar says all GTA VI preorders and purchases made before November 20, 2026 receive the Vintage Vice City Pack. Digital preorders also include a free month of GTA+. The crucial distinction is that the GTA+ month is a digital preorder benefit, while the Vintage Vice City Pack has broader eligibility under Rockstar’s published wording.",
-          "The guide should state the cutoff in a table and repeat it in the buying recommendation. That prevents users from assuming all bonuses disappear the moment launch begins.",
         ],
       },
       {
@@ -1087,14 +1088,6 @@ export const news: NewsItem[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 preorder,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],

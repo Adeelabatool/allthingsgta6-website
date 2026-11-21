@@ -82,15 +82,11 @@ export const pages: SitePage[] = [
       {
         heading: "Activities shown with strong gameplay evidence",
         body: [
-          "### Kayaking",
-          "Water recreation appears as a controlled activity, fitting Leonida's emphasis on coastlines, rivers and wetlands.",
-          "### Racing",
-          "Street-racing imagery and interface-like presentation support racing as a playable activity rather than background scenery.",
-          "### Exercise and gym activity",
-          "Workout scenes appear in the Extended Look, and reporting around Rockstar's preview has connected exercise with character physique.",
-          "Until the final game is testable, avoid publishing exact muscle-stat formulas.",
-          "### Parachuting",
-          "Parachuting appears in official material, continuing a familiar GTA activity in a much larger world.",
+          "Kayaking: Water recreation appears as a controlled activity, fitting Leonida's emphasis on coastlines, rivers and wetlands.",
+          "Racing: Street-racing imagery and interface-like presentation support racing as a playable activity rather than background scenery.",
+          "Exercise and gym activity: Workout scenes appear in the Extended Look, and reporting around Rockstar's preview has connected exercise with character physique.",
+          "Rockstar has not published how exercise affects character stats, so any exact formula is a guess.",
+          "Parachuting: Parachuting appears in official material, continuing a familiar GTA activity in a much larger world.",
         ],
       },
       {
@@ -118,7 +114,7 @@ export const pages: SitePage[] = [
         heading: "What not to call confirmed yet",
         body: [
           "Be careful with lists that include hunting, fishing, surfing, bowling, golf or dozens of other activities solely because an object or location appears in the background.",
-          "A good pre-release guide should use three labels:",
+          "This page uses three labels:",
           "Playable shown",
           "Visible / likely interactive",
           "Not confirmed",
@@ -134,36 +130,26 @@ export const pages: SitePage[] = [
       {
         heading: "Classify activities by evidence strength",
         body: [
-          "The Extended Look and current reporting show a mixture of clearly playable activities, short gameplay montages and cinematic background behavior. Put each activity in a table with “shown in gameplay,” “shown in world,” or “reported by preview” rather than calling the whole list confirmed minigames.",
-          "This simple taxonomy is the page’s information-gain advantage.",
+          "The Extended Look and current reporting show a mixture of clearly playable activities, short gameplay montages and cinematic background behavior. Not every activity on the list is a confirmed minigame: some are shown in gameplay, some appear only in the world, and some come from preview reports.",
         ],
       },
       {
         heading: "Water and outdoor activities",
         body: [
           "Scuba diving, boats and kayaking/canoeing are among the strongest water-related observations around the Extended Look. They fit Leonida’s Keys, wetlands and coastline, making water travel more structurally important than a one-off side activity.",
-          "Link these activities to Leonida Keys, Grassrivers and the vehicle database where appropriate.",
         ],
       },
       {
         heading: "Sports, nightlife and downtime",
         body: [
           "Basketball is visible in recent footage, while nightlife, bars and clubs, domestic scenes and social spaces are repeatedly shown. We separate an activity you can actually play from a location that merely contains people doing something in the background — footage alone rarely settles which is which.",
-          "After launch, convert this pre-release evidence table into a proper activity guide with locations, rewards and unlock requirements.",
+          "GTA 6 is now out. Locations, rewards and unlock requirements will be added here once they are verified in the game.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 activities,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -414,25 +400,18 @@ export const pages: SitePage[] = [
       {
         heading: "Core gameplay shown so far",
         body: [
-          "### Driving",
-          "Cars remain central to the GTA loop, but Leonida adds a wider mix of environments: dense Vice City streets, highways, island roads and rural/wetland routes.",
-          "### Character switching",
-          "Jason and Lucia can both be controlled, and the Extended Look visibly moves between them.",
+          "Driving: Cars remain central to the GTA loop, but Leonida adds a wider mix of environments: dense Vice City streets, highways, island roads and rural/wetland routes.",
+          "Character switching: Jason and Lucia can both be controlled, and the Extended Look visibly moves between them.",
           "Rockstar has not yet explained every rule governing when switching is available.",
-          "### Gunplay",
-          "The footage shows cover-based and open combat, close-range encounters and multiple firearms.",
+          "Gunplay: The footage shows cover-based and open combat, close-range encounters and multiple firearms.",
           "Animations and weapon handling appear more deliberate than GTA V, although exact mechanical stats are not public.",
-          "### Police chases",
-          "Wanted-level encounters remain a major part of the game. The new footage includes police vehicles, pursuits and armed escalation.",
-          "A complete wanted-system guide should wait until Rockstar or reviewers can test how detection and escalation actually work.",
-          "### Robberies and criminal jobs",
-          "The story premise itself begins with an easy score going wrong. The Extended Look also contains robbery-style situations and criminal planning.",
-          "It is safe to say scores are central to the narrative; it is not yet safe to publish a complete “dynamic robbery system” as a confirmed mechanic without Rockstar documentation.",
-          "### Activities",
-          "Rockstar shows basketball, exercise, racing, water activities and other downtime.",
+          "Police chases: Wanted-level encounters remain a major part of the game. The new footage includes police vehicles, pursuits and armed escalation.",
+          "Rockstar has not published a full explanation of how detection and escalation work.",
+          "Robberies and criminal jobs: The story premise itself begins with an easy score going wrong. The Extended Look also contains robbery-style situations and criminal planning.",
+          "Robberies are clearly central to the story, but Rockstar has not documented a complete “dynamic robbery system.”",
+          "Activities: Rockstar shows basketball, exercise, racing, water activities and other downtime.",
           "See GTA 6 activities and minigames for a status-by-status list.",
-          "### Exploration and interiors",
-          "The showcase moves through apartments, nightlife spaces, stores and other interiors.",
+          "Exploration and interiors: The showcase moves through apartments, nightlife spaces, stores and other interiors.",
           "This supports a denser interactive world but does not validate the “70% of buildings are enterable” style of viral claim.",
         ],
       },
@@ -446,13 +425,7 @@ export const pages: SitePage[] = [
       {
         heading: "What remains unknown",
         body: [
-          "full mission list;",
-          "exact inventory rules;",
-          "final performance modes;",
-          "complete wanted-level mechanics;",
-          "GTA Online integration;",
-          "PC controls/specifications;",
-          "exact map boundary.",
+          "Rockstar has not fully documented the mission list, economy, property ownership, skill trees, inventory limits, wanted-level mechanics, mission replay, difficulty options, fast travel, performance modes, online integration, PC support, progression or the exact map boundary.",
         ],
       },
       {
@@ -465,105 +438,84 @@ export const pages: SitePage[] = [
         heading: "The gameplay feature matrix",
         body: [
           "The August Extended Look finally gives GTA VI enough official in-game footage to describe gameplay as a set of systems rather than a run of trailer moments. Those systems are protagonists, movement, driving, combat, crime planning, wanted response, world interaction, activities, customization, economy and exploration.",
-          "For each system, include an evidence status and source. This makes the page durable as new trailers add details.",
         ],
       },
       {
         heading: "Two-protagonist play",
         body: [
           "Jason and Lucia are the core playable pair. Official footage shows them together and apart, participating in robberies and daily life. Contemporary breakdowns identify switching behavior, but Rockstar has not yet published a complete ruleset for free-roam switching or mission restrictions.",
-          "The answer should therefore be “two playable protagonists are confirmed; the full switching system is not yet formally documented.”",
+          "In short: two playable protagonists are confirmed, but the full switching system has not been formally documented.",
         ],
       },
       {
         heading: "Crime planning and robbery flow",
         body: [
           "The Extended Look spends meaningful time on robberies, escape driving and police pursuit. That suggests the crime loop involves more than arriving at a marker and shooting. PC Gamer highlights descriptions, tactical choices and crime-related UI observations.",
-          "However, do not call every robbery a “heist system” with GTA Online-style setup boards unless the footage or Rockstar explicitly shows that structure.",
+          "Not every robbery shown should be read as a GTA Online-style “heist system” with setup boards unless Rockstar shows that structure.",
         ],
       },
       {
         heading: "Combat and inventory",
         body: [
           "Official footage shows third-person shooting, in-car combat and a weapon wheel. PC Gamer reports more targeted aiming and a separate item-management feel. These observations can be tracked as individual mechanics with screenshots and timestamps.",
-          "The gameplay page should link to the weapons page for item identification and keep only system-level explanation here.",
+          "Individual weapons are covered on our GTA 6 weapons page.",
         ],
       },
       {
         heading: "Police and wanted response",
         body: [
           "The footage and contemporary analysis point to a more descriptive police response: authorities may receive information about character appearance, vehicle and whether Jason and Lucia are together. A six-star wanted display is also observed in coverage of the Extended Look.",
-          "The dedicated wanted-system page should carry the granular evidence. The gameplay hub should summarize the change and link out.",
+          "Our police and wanted-level guide covers this in more detail.",
         ],
       },
       {
         heading: "Driving, vehicles and damage",
         body: [
           "The showcase contains extended driving and a major pursuit. Media coverage notes crashes, tire shooting and environmental damage. Treat these as observed examples, not a complete vehicle-physics specification.",
-          "When Rockstar publishes vehicle classes or customization rules, add them to the vehicle database and summarize only the player-facing system here.",
+          "Vehicle classes and customization rules are not covered here yet. Our GTA 6 vehicles page tracks what Rockstar has shown.",
         ],
       },
       {
         heading: "Activities and lifestyle systems",
         body: [
-          "Basketball, scuba diving, boating/kayaking, nightlife and domestic scenes appear across the Extended Look and current coverage. These moments support a broader “life between crimes” interpretation, but each activity should be categorized by what is actually shown.",
-          "A useful label set is Playable shown, Interaction shown, World activity shown, and Cinematic/background only.",
+          "Basketball, scuba diving, boating/kayaking, nightlife and domestic scenes appear across the Extended Look and current coverage. These moments support a broader “life between crimes” interpretation, but not every activity shown is confirmed as playable.",
         ],
       },
       {
         heading: "World simulation and NPC behavior",
         body: [
           "One reason the reveal feels different from older GTA footage is density: crowds, traffic, wildlife and social behavior are repeatedly foregrounded. WIRED and other outlets discuss more dynamic NPC behavior, while official footage provides the visual evidence.",
-          "Avoid assigning AI-system names or claiming specific persistent routines unless Rockstar documents them. Describe what players can see, then leave implementation details open.",
+          "This page doesn’t use AI-system names unless Rockstar documents them, and describes only what the footage shows.",
         ],
       },
       {
-        heading: "What remains unknown",
+        heading: "Gameplay features at a glance",
         body: [
-          "Rockstar has not fully documented the economy, property ownership, skill trees, complete inventory limits, mission replay, difficulty options, fast travel, online integration or full progression system. A good gameplay hub is explicit about these gaps.",
-          "That makes future updates straightforward: every newly confirmed system has a pre-existing place in the matrix.",
-        ],
-      },
-      {
-        heading: "Gameplay evidence matrix for publication",
-        body: [
-          "A compact matrix can list: two playable protagonists - Confirmed; long-form PS5 in-game footage - Confirmed; character switching - Observed/reported; six-star wanted display - Observed; descriptive police information - Reported from footage analysis; basketball and scuba - Observed; PC features - Unknown; online systems - Unknown. This gives the page a defensible summary users can scan in seconds.",
-          "The matrix should be updated after every major Rockstar video. Keep the original source date so readers can distinguish launch-era confirmation from older pre-release observation.",
+          "Two playable protagonists - Confirmed; long-form PS5 in-game footage - Confirmed; character switching - Observed/reported; six-star wanted display - Observed; descriptive police information - Reported from footage analysis; basketball and scuba - Observed; PC features - Unknown; online systems - Unknown.",
         ],
       },
       {
         heading: "Mission design: what the reveal suggests and what it does not prove",
         body: [
           "The footage presents scripted robberies, shootouts and escapes, sometimes with cinematic transitions. That supports a familiar Rockstar mission structure with a strong narrative layer. It does not yet prove how open-ended mission solutions are, how often objectives can be approached in different orders, or whether every set piece shown is player-controlled throughout.",
-          "Analysis can discuss the tension between cinematic direction and systemic freedom, but keep that discussion separate from the feature matrix.",
         ],
       },
       {
         heading: "Lifestyle, customization and economy signals",
         body: [
-          "Apartment scenes, clothing, vehicles, businesses and premium edition locations suggest a meaningful layer of lifestyle customization and spending. Rockstar has not yet published a complete economy or property system, so avoid claiming purchasable apartments, dynamic rent or business ownership unless shown or stated.",
-          "Use the edition page as a source for named shops/services and the gameplay page for what players are actually shown doing.",
+          "Apartment scenes, clothing, vehicles, businesses and premium edition locations suggest a meaningful layer of lifestyle customization and spending. Rockstar has not yet published a complete economy or property system, so purchasable apartments, dynamic rent and business ownership are not confirmed unless shown or stated.",
         ],
       },
       {
         heading: "Accessibility and settings: still largely unknown",
         body: [
-          "Rockstar has not yet published a full accessibility/options list for GTA VI. Do not copy GTA V or Red Dead Redemption 2 settings into a “GTA VI features” list. After platform/store pages or official documentation add accessibility details, build a dedicated section with exact feature names.",
-          "This is a meaningful pre-launch gap and a future opportunity for high-value utility content.",
+          "Rockstar has not yet published a full accessibility or options list for GTA VI. Settings from GTA V or Red Dead Redemption 2 should not be assumed to carry over.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 gameplay,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -661,7 +613,6 @@ export const pages: SitePage[] = [
           "Port Gellhorn",
           "Ambrosia",
           "Mount Kalaga National Park",
-          "Those names should form the backbone of a GTA 6 location database because they come from Rockstar directly.",
         ],
       },
       {
@@ -684,7 +635,7 @@ export const pages: SitePage[] = [
         heading: "Is Leonida bigger than GTA V's San Andreas?",
         body: [
           "Rockstar has used superlative language about the scale and immersion of GTA 6, and recent reporting has described an extremely large map.",
-          "However, until Rockstar publishes a final measured map, exact square-mile comparisons should be treated as reported or estimated information.",
+          "Rockstar has not published an official measurement, so exact square-mile comparisons are estimates or third-party reports.",
           "Our GTA 6 map vs GTA 5 article separates official claims from community measurements.",
         ],
       },
@@ -698,14 +649,13 @@ export const pages: SitePage[] = [
         heading: "Leonida is more than “Florida in GTA”",
         body: [
           "Leonida is Rockstar’s fictional state containing Vice City and the surrounding regions. The official region lineup spans tropical islands, wetlands, rundown coastal towns, industrial territory and national-park wilderness. That variety gives the state its own internal geography and economy.",
-          "The state page should therefore answer “what is Leonida?” first, then explain how its regions differ and how characters move through them.",
         ],
       },
       {
         heading: "A region matrix by environment and economy",
         body: [
           "Vice City: dense urban economy, nightlife and tourism. Leonida Keys: islands, boats and smuggling networks. Grassrivers: wetlands and wildlife. Port Gellhorn: rougher coastal economy. Ambrosia: industrial production. Mount Kalaga: wilderness and outdoor recreation. Reading the regions by environment and economy tells you something useful about each one without inventing mission content Rockstar has not shown.",
-          "As additional official entities appear, add them under these environmental/economic categories.",
+          "New official places will be added under these categories.",
         ],
       },
       {
@@ -718,14 +668,12 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Leonida,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not published an official measurement of Leonida or a full list of its towns.",
         ],
       },
     ],
@@ -866,47 +814,42 @@ export const pages: SitePage[] = [
       {
         heading: "Explore the world",
         body: [
-          "Use this page as the parent index, then move into individual guides:",
+          "Start here, then explore the individual guides:",
           "GTA 6 Map",
           "Vice City",
           "Leonida",
           "Leonida Keys",
           "Grassrivers",
-          "As Rockstar publishes more names, each confirmed region should receive its own entity page rather than bloating one generic map article.",
         ],
       },
       {
         heading: "The six confirmed headline regions",
         body: [
-          "The location index should begin with Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park. All six are first-party location entities on Rockstar’s GTA VI site or official media.",
-          "Each location entry should eventually include type, associated characters, visible businesses, first reveal source and an evidence status. That is more scalable than a conventional listicle.",
+          "The six headline regions are Vice City, Leonida Keys, Grassrivers, Port Gellhorn, Ambrosia and Mount Kalaga National Park. All six come from Rockstar’s GTA VI site or official media.",
         ],
       },
       {
-        heading: "From regions to a real gazetteer",
+        heading: "Named places and businesses",
         body: [
-          "Rockstar’s screenshots and edition benefits already expose named institutions and businesses. As additional official names appear, add them as subentries under the relevant region rather than mixing them with leaks. This creates a database-like page that can grow for years after launch.",
-          "For AI search, named-entity consistency is valuable: use one canonical spelling and one canonical URL for every location.",
+          "Rockstar’s screenshots and edition benefits already name some institutions and businesses. Names that come only from leaks are kept out of this list.",
         ],
       },
       {
         heading: "Real-world comparisons need labels",
         body: [
-          "Vice City is explicitly Rockstar’s fictional city in Leonida and is widely understood as Miami-inspired, but not every visual match should be presented as a one-to-one official counterpart. Use wording such as “resembles,” “appears inspired by,” or “community comparison” unless Rockstar names the real-world source.",
+          "Vice City is Rockstar’s fictional city in Leonida and is widely understood as Miami-inspired, but not every visual match is an official one-to-one counterpart. Unless Rockstar names the real-world source, this page uses words such as “resembles” or “appears inspired by.”",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 locations,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not placed every named business within a region, and a full list of towns and landmarks has not been verified here yet.",
         ],
       },
     ],
@@ -1252,14 +1195,14 @@ export const pages: SitePage[] = [
       "Will GTA 6 have an online mode? Here’s what Rockstar and Take-Two have actually confirmed, what GTA+ means, and what remains speculation.",
     primaryKeyword: "GTA 6 Online",
     intro: [
-      "GTA 6 is one of the biggest multiplayer search topics in gaming, but Rockstar's current pre-release messaging is still centered on Grand Theft Auto VI as a single-player experience.",
-      "That does not mean Rockstar is abandoning GTA Online. It means readers should distinguish what is commercially obvious from what has been formally announced for GTA 6.",
+      "GTA 6 is out now, but Rockstar has described Grand Theft Auto VI as a single-player experience, and its GTA VI website does not mention a GTA VI online mode.",
+      "That does not mean Rockstar is abandoning GTA Online. It means there is a difference between what seems likely and what has been formally announced for GTA 6.",
     ],
     sections: [
       {
         heading: "What is confirmed",
         body: [
-          "Take-Two's June 2026 announcement explicitly describes GTA 6 as a single-player experience launching November 19 on PS5 and Xbox Series X|S.",
+          "Take-Two's June 2026 announcement describes GTA 6 as a single-player experience for PS5 and Xbox Series X|S. The game launched on November 19, 2026.",
           "GTA+ continues to exist as Rockstar's subscription tied to the “ever-evolving world of GTA Online” and other benefits. Digital GTA 6 pre-orders currently include a free month of GTA+.",
         ],
       },
@@ -1282,7 +1225,7 @@ export const pages: SitePage[] = [
         heading: "Will GTA 6 eventually have online multiplayer?",
         body: [
           "It would be surprising if Rockstar did not build on GTA Online's enormous success, and Take-Two continues to discuss GTA Online as an evolving business.",
-          "But our editorial standard is to avoid turning business logic into product confirmation.",
+          "But a likely business decision is not the same as an announcement.",
           "The useful answer today is: an online future is highly plausible, but the GTA 6-specific structure and timing are not yet officially detailed.",
         ],
       },
@@ -1290,26 +1233,19 @@ export const pages: SitePage[] = [
         heading: "Does GTA+ prove GTA 6 Online launches immediately?",
         body: [
           "No.",
-          "The free GTA+ month attached to digital GTA 6 pre-orders can be used with current GTA Online and the GTA+ Games Library. It should not be presented as proof of a day-one GTA 6 multiplayer launch.",
+          "The free GTA+ month attached to digital GTA 6 pre-orders can be used with current GTA Online and the GTA+ Games Library. It is not proof of a GTA 6 multiplayer mode at launch.",
         ],
       },
       {
-        heading: "What should Rockstar clarify next?",
+        heading: "Open questions about GTA 6 Online",
         body: [
-          "Before November 19, players need answers to five practical questions:",
+          "Players are still waiting for answers to five practical questions:",
           "Is GTA 6 multiplayer available at launch?",
           "Does the new online world use the full Leonida map?",
           "Do GTA Online purchases or characters transfer?",
           "Will cross-play be supported?",
           "What role will GTA+ have?",
-          "Until Rockstar answers them, those sections should remain visibly marked Not announced.",
-        ],
-      },
-      {
-        heading: "Why a fact-only page can rank",
-        body: [
-          "Most GTA 6 Online pages are tempted to fill empty space with guesses. A cleaner page can be more useful by tracking exactly what changed and when.",
-          "Every official online announcement should be added to a dated changelog at the top of this page.",
+          "Until Rockstar answers them, this page lists them as not announced.",
         ],
       },
       {
@@ -1322,7 +1258,7 @@ export const pages: SitePage[] = [
       {
         heading: "What Rockstar has actually confirmed",
         body: [
-          "Rockstar’s June preorder announcement calls GTA VI a single-player experience coming November 19, 2026. That is the strongest current statement about the launch product. Rockstar has not published a detailed GTA VI-era online mode launch date, feature list or branding structure.",
+          "Rockstar’s June 2026 pre-order announcement describes GTA VI as a single-player experience, and the game launched on November 19, 2026. As of November 21, 2026, Rockstar’s GTA VI website does not mention a GTA VI online mode, launch date, feature list or branding.",
           "That is the starting point here, rather than an assumption that “GTA 6 Online” is a day-one product.",
         ],
       },
@@ -1330,28 +1266,19 @@ export const pages: SitePage[] = [
         heading: "GTA+ does not equal a GTA VI Online announcement",
         body: [
           "Digital GTA VI preorders include a free month of GTA+, and Take-Two describes GTA+ as a way to get more from the evolving world of GTA Online and access classic Rockstar titles. This is a current subscription benefit, not by itself proof of a specific GTA VI multiplayer launch schedule.",
-          "Keep GTA+, current GTA Online and hypothetical GTA VI-era multiplayer in separate sections.",
+          "GTA+, current GTA Online and any future GTA VI-era multiplayer are separate things.",
         ],
       },
       {
         heading: "What remains unknown",
         body: [
-          "Unknowns include launch timing, whether the online product uses a new name, cross-platform rules, player counts, progression carryover, monetization structure and whether it ships alongside or after the single-player release. These should remain explicitly unknown until Rockstar publishes details.",
-          "This restraint is the page’s competitive advantage in a query space filled with prediction.",
+          "Unknowns include launch timing, whether the online product uses a new name, cross-platform rules, player counts, progression carryover, monetization structure and whether it ships alongside or after the single-player release. All of these remain unknown until Rockstar publishes details.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Online,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1402,7 +1329,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-09-30",
+    lastVerified: "2026-11-21",
     breadcrumb: [
       {
         label: "GTA 6 Online: What Rockstar Has Actually Confirmed - and What It Hasn’t",
@@ -1486,7 +1413,6 @@ export const pages: SitePage[] = [
         heading: "The answer today",
         body: [
           "Rockstar has not announced a GTA VI PC release date. Its official platform pages list PS5 and Xbox Series X|S for November 19, 2026. Any specific PC date circulating today is therefore a prediction, leak or placeholder unless Rockstar changes that status.",
-          "This sentence should remain the first answer even if historical patterns make a later PC release seem likely.",
         ],
       },
       {
@@ -1507,14 +1433,6 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 PC release date,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -1575,11 +1493,11 @@ export const pages: SitePage[] = [
     title: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
     seoTitle: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
     metaDescription:
-      "GTA 6 launches on PS5 and Xbox Series X|S on November 19, 2026. Rockstar has not announced a PC version, and PS4 and Xbox One are not launch platforms.",
+      "GTA 6 launched on PS5 and Xbox Series X|S on November 19, 2026. Rockstar has not announced a PC version, and there is no PS4 or Xbox One version.",
     primaryKeyword: "GTA 6 platforms",
     intro: [
-      "GTA 6 launches on PlayStation 5 and Xbox Series X|S on November 19, 2026.",
-      "Rockstar has not announced a PC version, and PS4 and Xbox One are not listed as launch platforms.",
+      "GTA 6 is out now. It launched on PlayStation 5 and Xbox Series X|S on November 19, 2026.",
+      "Rockstar has not announced a PC version, and PS4 and Xbox One are not supported.",
     ],
     sections: [
       {
@@ -1616,7 +1534,7 @@ export const pages: SitePage[] = [
         heading: "Is GTA 6 coming to PC?",
         body: [
           "Possibly later, but “possibly” is not the same as confirmed.",
-          "Rockstar has not announced the PC edition or PC system requirements. Historical release patterns make a later port plausible, but no trustworthy page should turn that precedent into a fake date.",
+          "Rockstar has not announced the PC edition or PC system requirements. Historical release patterns make a later port plausible, but that history is not a release date.",
           "Read GTA 6 PC release date for a fact-only timeline.",
         ],
       },
@@ -1630,42 +1548,39 @@ export const pages: SitePage[] = [
       {
         heading: "Bottom line",
         body: [
-          "Buying for launch? Your choices are PS5/PS5 Pro or Xbox Series X|S.",
+          "Buying now? Your choices are PS5/PS5 Pro or Xbox Series X|S.",
           "Waiting for PC? Wait for Rockstar, not a retailer placeholder or rumor account.",
         ],
       },
       {
-        heading: "Platform status matrix",
+        heading: "Platform status at a glance",
         body: [
-          "PS5: confirmed for November 19, 2026. PS5 Pro: the PlayStation Store labels GTA VI as PS5 Pro Enhanced. Xbox Series X|S: confirmed for November 19, 2026. PC: not announced. PS4 and Xbox One: not announced and not listed as supported launch platforms.",
-          "This matrix should sit directly under the introduction because most searchers want a yes/no answer, not a history lesson.",
+          "PS5: available since November 19, 2026. PS5 Pro: the PlayStation Store labels GTA VI as PS5 Pro Enhanced. Xbox Series X|S: available since November 19, 2026. PC: not announced. PS4 and Xbox One: not announced and not supported.",
         ],
       },
       {
         heading: "What PS5-specific information is official",
         body: [
-          "PlayStation’s product page lists DualSense vibration and trigger-effect support, Remote Play, offline play for one player and PS5 Pro Enhanced status. These are store-level platform facts and can be cited directly.",
-          "Do not extrapolate equivalent Xbox controller features unless Microsoft or Rockstar documents them.",
+          "PlayStation’s product page lists DualSense vibration and trigger-effect support, Remote Play, offline play for one player and PS5 Pro Enhanced status. These details come directly from PlayStation's store listing.",
+          "This page doesn’t assume equivalent Xbox controller features unless Microsoft or Rockstar documents them.",
         ],
       },
       {
-        heading: "Why last-gen pages should avoid “impossible” language",
+        heading: "Is GTA 6 on PS4 or Xbox One?",
         body: [
-          "Rockstar has not announced PS4 or Xbox One versions. That is sufficient. It is unnecessary to claim those consoles “cannot run” GTA VI unless Rockstar says so. The factual status is simply that they are not supported in the announced launch lineup.",
+          "No. Rockstar has not announced PS4 or Xbox One versions, and its GTA VI website lists only PlayStation 5 and Xbox Series X|S. Rockstar has not said those older consoles “cannot run” the game; they are simply not supported.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 platforms,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not announced a PC version, a PC release date or PC system requirements, and it has not published a Series X vs Series S performance comparison.",
         ],
       },
     ],
@@ -1716,7 +1631,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-09-04",
+    lastVerified: "2026-11-21",
     breadcrumb: [
       {
         label: "What Platforms Is GTA 6 On? PS5, Xbox Series X|S and PC Status",
@@ -1790,8 +1705,8 @@ export const pages: SitePage[] = [
       {
         heading: "Is GTA 6 worth $79.99?",
         body: [
-          "That cannot be answered responsibly before review access and launch. What can be evaluated now is the package: one of Rockstar's largest single-player releases, a new Leonida setting, dual protagonists, and a much broader open-world presentation than GTA V.",
-          "Value is ultimately personal. Avoid treating hype as a review score months before release.",
+          "That depends on what you want from it. The package is one of Rockstar's largest single-player releases, with a new Leonida setting, dual protagonists, and a much broader open-world presentation than GTA V.",
+          "Value is ultimately personal, and hype is not a review score.",
         ],
       },
       {
@@ -1809,7 +1724,7 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Why regional pricing should be handled separately",
+        heading: "Prices outside the US",
         body: [
           "A US MSRP converted with a currency calculator is not another country’s official price. Regional storefronts may use different list prices, taxes and local policies, so regional figures appear here only once a platform or the Rockstar Store publishes them.",
           "That same rule applies to sales. A temporary retailer discount is not a new MSRP.",
@@ -1819,14 +1734,12 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 price,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "This page lists the US prices Rockstar announced. Official prices for other countries appear here only once a storefront publishes them.",
         ],
       },
     ],
@@ -1881,7 +1794,7 @@ export const pages: SitePage[] = [
         label: "GTA 6 Release Date",
       },
     ],
-    lastVerified: "2026-09-01",
+    lastVerified: "2026-11-21",
     breadcrumb: [
       {
         label: "GTA 6 Price Confirmed: Standard and Ultimate Edition Cost Explained",
@@ -2083,7 +1996,7 @@ export const pages: SitePage[] = [
       "Watch and understand every major official GTA 6 video: Trailer 1, Trailer 2 and Rockstar’s 2026 Extended Look, with key reveals from each.",
     primaryKeyword: "GTA 6 trailers",
     intro: [
-      "Rockstar has released three major long-form GTA 6 videos: Trailer 1, Trailer 2 and Grand Theft Auto VI: An Extended Look.",
+      "Rockstar’s official GTA VI video page lists five main videos: Trailer 1, Trailer 2, Grand Theft Auto VI: An Extended Look, the Grand Theft Auto VI Launch Trailer and Grand Theft Auto VI: Out Now.",
       "Each serves a different purpose. Trailer 1 introduced Leonida's culture. Trailer 2 expanded Jason and Lucia's story. The Extended Look finally gave players a much longer view of the game in motion.",
     ],
     sections: [
@@ -2123,37 +2036,23 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "What should come next?",
+        heading: "The launch trailer and later videos",
         body: [
-          "Rockstar could publish more trailers, technical explainers or launch-focused videos before November 19.",
+          "Rockstar’s official video page also lists a Grand Theft Auto VI Launch Trailer and a video titled Grand Theft Auto VI: Out Now. Their release dates and details will be added here once they are verified. Any further official Rockstar videos will be added here too.",
           "We do not use unofficial “Trailer 3 date” countdowns unless Rockstar announces one.",
         ],
       },
       {
-        heading: "Media archive strategy",
+        heading: "Rockstar’s official GTA VI videos",
         body: [
-          "Every new video should link outward to:",
-          "characters shown;",
-          "locations shown;",
-          "vehicles identified;",
-          "weapons shown;",
-          "gameplay features;",
-          "screenshots from the same reveal.",
-          "That turns the trailer hub into a map of the site's knowledge base rather than a list of YouTube embeds.",
-        ],
-      },
-      {
-        heading: "The official GTA VI video timeline",
-        body: [
-          "Rockstar’s media library currently centers three major GTA VI videos: Trailer 1, Trailer 2 and the August 27, 2026 Extended Look. The company also provides nine short character/media clips. A trailer hub should treat these as dated primary-source events, not just embeds.",
-          "Each video changed what could be stated confidently about the game. That change history is the page’s information-gain angle.",
+          "Rockstar’s media library centers on its main GTA VI videos: Trailer 1, Trailer 2, the August 27, 2026 Extended Look, the Launch Trailer and Grand Theft Auto VI: Out Now. The company also provides nine short character/media clips.",
+          "Each video changed what could be stated confidently about the game.",
         ],
       },
       {
         heading: "Trailer 1: setting and protagonists",
         body: [
           "Trailer 1 established the modern Leonida/Vice City setting and Lucia’s central role, while showing the social-media-saturated tone of the world. Later official material clarified Jason’s identity and greatly expanded the cast and region list.",
-          "The 2026 hub should annotate old observations that later became confirmed rather than preserving outdated uncertainty.",
         ],
       },
       {
@@ -2166,7 +2065,7 @@ export const pages: SitePage[] = [
       {
         heading: "Extended Look: systems over spectacle",
         body: [
-          "The Extended Look is the first long-form official in-game presentation and materially expands gameplay evidence: combat, wanted response, activities, driving and character partnership. It should therefore be treated as both a media event and a major evidence source across the wiki.",
+          "The Extended Look is the first long-form official in-game presentation and materially expands gameplay evidence: combat, wanted response, activities, driving and character partnership.",
           "When new official videos arrive, add a “what this changed” column to the timeline so users immediately understand why the video matters.",
         ],
       },
@@ -2178,45 +2077,21 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Video-by-video evidence table",
+        heading: "Video-by-video evidence",
         body: [
-          "Trailer 1 was released in December 2023 and runs about 1 minute 31 seconds on Rockstar’s current media pages. Trailer 2 arrived May 6, 2025 at roughly 2 minutes 47 seconds. The Extended Look arrived August 27, 2026 and runs roughly 26 minutes 48 seconds. Those durations and dates help the hub establish a reliable reveal chronology.",
-          "Add columns for primary themes, newly named characters, newly established locations, gameplay systems shown and pages updated. This turns a media list into an editorial index.",
+          "Trailer 1 was released in December 2023 and runs about 1 minute 31 seconds on Rockstar’s current media pages. Trailer 2 arrived May 6, 2025 at roughly 2 minutes 47 seconds. The Extended Look arrived August 27, 2026 and runs roughly 26 minutes 48 seconds.",
         ],
       },
       {
         heading: "What changed after each reveal",
         body: [
-          "After Trailer 1, the site could confidently build around Leonida, Vice City and Lucia. After Trailer 2 and the accompanying material, the character and location entity graph became much richer. After the Extended Look, gameplay, police, weapons, activities and vehicle behavior could be updated from long-form in-game footage.",
-          "That “what changed” layer is original analysis and gives the trailer hub long-term value after users have already watched the videos.",
-        ],
-      },
-      {
-        heading: "Embed strategy and image SEO",
-        body: [
-          "Use the official video embed or link where permitted, a descriptive thumbnail/hero image and supporting screenshots that correspond to the section being discussed. Google’s image guidance favors discoverable HTML images, relevant high-quality visuals and representative image metadata.",
-          "Do not turn the article into a screenshot dump. Every image should answer a nearby question or document a claim, with a descriptive filename and alt text.",
-        ],
-      },
-      {
-        heading: "Future trailer update protocol",
-        body: [
-          "When Rockstar releases another trailer, add it to the top timeline, publish a dedicated breakdown if there is enough new information, and update the evergreen entity/system pages it affects. The news story announces the event; the trailer page catalogs the source; the topic hubs absorb durable facts.",
-          "This workflow reduces cannibalization and keeps the site’s most authoritative URLs fresh.",
+          "Trailer 1 established Leonida, Vice City and Lucia. Trailer 2 and the material around it introduced much more of the cast and the places they live and work. The Extended Look added long-form in-game footage of gameplay, police, weapons, activities and vehicles.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 trailers,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],
@@ -2299,10 +2174,10 @@ export const pages: SitePage[] = [
           rows: [
             ["US price", "$99.99"],
             ["Full GTA 6 game", "Yes"],
-            ["Vintage Vice City Pack", "Included for qualifying pre-orders/purchases"],
+            ["Vintage Vice City Pack", "Included with pre-orders and purchases made before November 20, 2026"],
             ["Free GTA+ month", "Included with qualifying digital pre-orders"],
             ["Ultimate Edition Upgrade", "Yes"],
-            ["Launch date", "November 19, 2026"],
+            ["Released", "November 19, 2026"],
           ],
         },
       },
@@ -2318,7 +2193,7 @@ export const pages: SitePage[] = [
         heading: "Does Ultimate include early access?",
         body: [
           "Rockstar has not advertised early gameplay access as an Ultimate Edition benefit.",
-          "Eligible digital pre-orders can pre-load on November 12, but the game itself launches November 19.",
+          "Digital pre-orders could pre-load before launch, but that is not early access. GTA 6 launched on November 19, 2026.",
           "Do not confuse pre-loading with early access.",
         ],
       },
@@ -2335,21 +2210,21 @@ export const pages: SitePage[] = [
         heading: "Can you upgrade later?",
         body: [
           "Rockstar Store material indicates an Ultimate Edition upgrade path, and PlayStation listings show an Ultimate Edition Upgrade add-on. Availability can vary by storefront, so check your platform before assuming the same purchase flow everywhere.",
-          "That makes Standard a less risky choice for players who are undecided: you do not necessarily need to choose the more expensive version months before launch.",
+          "That makes Standard a less risky choice for players who are undecided, because you can upgrade later if you want the extra items.",
         ],
       },
       {
         heading: "What about the Vintage Vice City Pack?",
         body: [
           "The Vintage Vice City Pack is a pre-order/early-purchase incentive rather than the defining Ultimate-only bundle. Qualifying Standard buyers can also receive it.",
-          "That is why comparisons should separate pre-order bonuses from Ultimate Edition exclusives.",
+          "So the Vintage Vice City Pack is a pre-order and early-purchase bonus, not an Ultimate Edition exclusive.",
         ],
       },
       {
         heading: "Bottom line",
         body: [
           "GTA 6 Ultimate is not a different game. It is the base game plus a package of premium in-game content for $99.99 in the US.",
-          "For a direct side-by-side, see GTA 6 Standard vs Ultimate. For storefront timing and bonuses, see our GTA 6 pre-order guide.",
+          "For a direct side-by-side, see GTA 6 Standard vs Ultimate.",
         ],
       },
       {
@@ -2363,7 +2238,6 @@ export const pages: SitePage[] = [
         heading: "Official Ultimate Edition inventory",
         body: [
           "Named benefits include the 1995 Grotti Cheetah; Hawk and Little Morgan Revolvers; personalized weapon variants; Vice City Style; Jason’s Safehouse Vehicles; Ganado Retro Build; Rideout Customs Mod Shop; Sara’s Unisex Salon; Shitzu Squalo; Stock 305 Clothing Store; the 1967 Vapid Dominator Buggy; Electric Fang Tattoo Parlor; One-Eyed Willie’s Mod Shop; Goodtime Gear; PTT Youngin$ Illegal Goods Store/Compound labeling across Rockstar surfaces; and a Classic Car Collection.",
-          "This inventory is more useful when each item links to the relevant vehicle, weapon, business or customization page. That turns a commercial guide into a topical-authority hub rather than a dead-end sales summary.",
         ],
       },
       {
@@ -2377,14 +2251,12 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 Ultimate Edition,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "Rockstar has not announced any Ultimate-only missions or story content.",
         ],
       },
     ],
@@ -2457,7 +2329,7 @@ export const pages: SitePage[] = [
     primaryKeyword: "GTA 6 vehicles",
     intro: [
       "Vehicles are everywhere in GTA 6's official media: supercars crawl through Vice City traffic, bikes cut through streets, boats cross Leonida's coastline and aircraft fill the sky.",
-      "The challenge for a pre-release vehicle database is deciding what “confirmed” means. Our rule is simple: a vehicle belongs here when it appears in official Rockstar material or is named in official edition content.",
+      "GTA 6 is out, but this list still covers only vehicles from Rockstar's official material. Our rule is simple: a vehicle belongs here when it appears in official Rockstar material or is named in official edition content.",
     ],
     sections: [
       {
@@ -2485,7 +2357,7 @@ export const pages: SitePage[] = [
         heading: "Returning GTA brands",
         body: [
           "Official footage also shows the fictional vehicle-brand ecosystem GTA players already know.",
-          "Identifying a vehicle model from a two-second trailer shot can be difficult, so visual identifications should carry confidence labels instead of pretending every fan match is certain.",
+          "Identifying a vehicle model from a two-second trailer shot can be difficult, so visual identifications carry confidence labels here. Not every fan match is certain.",
         ],
       },
       {
@@ -2576,7 +2448,7 @@ export const pages: SitePage[] = [
       {
         heading: "Real-world counterparts are not official names",
         body: [
-          "GTA vehicles intentionally resemble real automobiles, but a likely Ferrari, Ford or Chevrolet inspiration should never replace the in-game name. Keep “real-world counterpart” in a separate field with language such as “resembles” or “commonly compared with.”",
+          "GTA vehicles intentionally resemble real cars, but a likely Ferrari, Ford or Chevrolet inspiration is not the in-game name. This page lists the in-game name first and uses words like “resembles” or “commonly compared with” for real-world matches.",
           "The distinction matters because a loose visual comparison is easily repeated until it hardens into a false factual identity.",
         ],
       },
@@ -2626,14 +2498,12 @@ export const pages: SitePage[] = [
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 vehicles,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
         ],
       },
       {
         heading: "What is still not confirmed",
         body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
+          "The full in-game vehicle list, stats and prices have not been verified here yet.",
         ],
       },
     ],
@@ -2809,7 +2679,7 @@ export const pages: SitePage[] = [
       {
         heading: "Melee weapons, explosives and equipment",
         body: [
-          "Do not force uncertain objects into the firearm count. Keep melee weapons, explosives and utility equipment in separate tables, and mark whether they are visibly carried, used, named or only background props.",
+          "Uncertain objects are not counted as firearms. Melee weapons, explosives and utility equipment are listed separately, marked by whether they are carried, used, named or only background props.",
           "This avoids the common error of calling every knife, bat or tool in a cinematic shot a confirmed usable weapon.",
         ],
       },
@@ -2821,16 +2691,16 @@ export const pages: SitePage[] = [
         ],
       },
       {
-        heading: "Update method after launch",
+        heading: "Weapon stats and prices",
         body: [
-          "After release, replace visual identification with in-game names, shop availability, prices, ammo type, capacity, unlock conditions and stat values. Keep the pre-launch evidence history in an archive or changelog so readers can see how identifications evolved.",
+          "GTA 6 is out. In-game weapon names, shop prices, ammo, capacity, unlock conditions and stats will be added here once they are verified in the game.",
         ],
       },
       {
-        heading: "Recommended weapon record schema",
+        heading: "How we identify weapons",
         body: [
-          "Each weapon record should include official/inferred name, category, source video or screenshot, timestamp/frame, character using it, whether it is fired or merely visible, customization evidence and confidence. After launch, add shop, price, ammo, capacity, unlock and stat fields.",
-          "This structure prevents a recurring problem in pre-release weapon lists: a background prop and a repeatedly used firearm are treated as equally confirmed.",
+          "For each weapon we note its name (official or inferred), category, the video or screenshot it appears in, who uses it, whether it is fired or only visible, any customization shown, and our confidence.",
+          "That way, a background prop is never treated the same as a weapon that is clearly used.",
         ],
       },
       {
@@ -2844,28 +2714,19 @@ export const pages: SitePage[] = [
         heading: "Combat evidence from official footage",
         body: [
           "The Extended Look gives the weapons page valuable system context: aiming reticles, tactical-looking target selection, a weapon wheel and in-car shooting are visible or highlighted in contemporary breakdowns. These observations can be linked to exact video moments instead of being described as generic “improved combat.”",
-          "If a feature is reported by press preview rather than obvious in the public video, preserve that distinction in the evidence column.",
+          "Features reported only by press previews, rather than shown in the public video, are labelled as reported.",
         ],
       },
       {
         heading: "Premium weapons versus base-game arsenal",
         body: [
-          "Hawk and Little Morgan Revolvers are tied to the Ultimate Edition benefit set. Do not imply every Standard Edition player begins with them. Likewise, personalized weapon variants and the preorder weapon pattern are edition/bonus facts, not proof of the entire customization system.",
-          "This separation helps commercial pages and gameplay pages stay accurate while still cross-linking around the same named weapon entities.",
+          "Hawk and Little Morgan Revolvers are tied to the Ultimate Edition benefit set. They are not a Standard Edition starting item. Likewise, personalized weapon variants and the preorder weapon pattern are edition/bonus facts, not proof of the entire customization system.",
         ],
       },
       {
         heading: "How to read the evidence labels",
         body: [
           "Confirmed means Rockstar Games, Take-Two or an official platform/store source states the fact directly. Observed means the detail is plainly visible in official footage or screenshots but has not been formally named or explained. Reported means a reputable outlet adds context that is not yet in Rockstar’s public documentation. Speculation means an interpretation or prediction and should never be mixed into the confirmed table.",
-          "For “GTA 6 weapons,” this matters because pre-release GTA coverage changes quickly. Labelling each claim by status means a later reveal can be added without quietly rewriting older observations as though they had always been official.",
-        ],
-      },
-      {
-        heading: "What is still not confirmed",
-        body: [
-          "Rockstar has not published every mechanic, every character, every location, every item or every platform detail. Where the evidence stops, we say so — “not announced” or “not yet confirmed” — rather than turning a reasonable assumption into a fact.",
-          "That restraint is deliberate. Knowing exactly where reliable knowledge ends is more useful to you than a confident guess.",
         ],
       },
     ],

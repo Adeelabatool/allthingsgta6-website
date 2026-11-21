@@ -8,7 +8,7 @@ export const Route = createFileRoute("/tools/")({
       path: "/tools",
       title: "GTA 6 Tools — Countdown, Hype Calculator, Comparator",
       description:
-        "Interactive GTA 6 tools: countdown to release, hype calculator, vehicle comparator, and interactive map.",
+        "Interactive GTA 6 tools: time since launch, hype calculator, vehicle comparator, and interactive map.",
       crumbs: [SECTION_CRUMBS.tools],
     }),
   component: ToolsIndex,
@@ -19,7 +19,7 @@ const tools = [
     href: "/tools/countdown",
     icon: "⏳",
     title: "Countdown Timer",
-    desc: "Live countdown to November 19, 2026.",
+    desc: "GTA 6 launched November 19, 2026. See the time since launch.",
   },
   {
     href: "/tools/hype-calculator",

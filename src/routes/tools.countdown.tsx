@@ -1,41 +1,21 @@
-import { createFileRoute } from "@tanstack/react-router";
-import { useEffect, useState } from "react";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteShell } from "@/components/SiteShell";
+import { Countdown } from "@/components/Countdown";
 import { SECTION_CRUMBS, pageHead } from "@/lib/seo";
-
-const RELEASE_DATE_ISO = "2026-11-19T00:00:00Z";
 
 export const Route = createFileRoute("/tools/countdown")({
   head: () =>
     pageHead({
       path: "/tools/countdown",
-      title: "GTA 6 Release Countdown — Live Timer to November 19, 2026",
+      title: "GTA 6 Countdown: The Game Is Out (Released November 19, 2026)",
       description:
-        "Live countdown to the Grand Theft Auto VI release date. Days, hours, minutes and seconds to November 19, 2026.",
+        "GTA 6 launched on November 19, 2026 for PS5 and Xbox Series X|S. See how long it has been out and where to start.",
       crumbs: [SECTION_CRUMBS.tools, { name: "Countdown", path: "/tools/countdown" }],
     }),
   component: CountdownPage,
 });
 
 function CountdownPage() {
-  const [now, setNow] = useState(() => Date.now());
-  useEffect(() => {
-    const t = setInterval(() => setNow(Date.now()), 1000);
-    return () => clearInterval(t);
-  }, []);
-  const target = new Date(RELEASE_DATE_ISO).getTime();
-  const diff = Math.max(0, target - now);
-  const d = Math.floor(diff / 86400000);
-  const h = Math.floor((diff % 86400000) / 3600000);
-  const m = Math.floor((diff % 3600000) / 60000);
-  const s = Math.floor((diff % 60000) / 1000);
-  const cells = [
-    ["Days", d],
-    ["Hours", h],
-    ["Minutes", m],
-    ["Seconds", s],
-  ] as const;
-
   return (
     <SiteShell>
       <div className="mx-auto max-w-5xl px-4 md:px-6 py-20 text-center">
@@ -43,27 +23,22 @@ function CountdownPage() {
           Countdown
         </div>
         <h1 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-tight">
-          GTA 6 launches on <span className="text-primary">November 19, 2026</span>
+          GTA 6 launched on <span className="text-primary">November 19, 2026</span>
         </h1>
         <p className="mt-4 text-muted-foreground">
-          Global release confirmed by Rockstar Games for November 19, 2026.
+          Grand Theft Auto VI is out on PlayStation 5 and Xbox Series X|S. The timer shows how long
+          it has been out.
         </p>
 
-        <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
-          {cells.map(([label, v]) => (
-            <div
-              key={label as string}
-              className="rounded-xl border border-border/60 bg-card p-8 shadow-lg"
-            >
-              <div className="font-mono text-5xl md:text-7xl font-bold text-primary tabular-nums">
-                {String(v).padStart(2, "0")}
-              </div>
-              <div className="mt-3 text-xs font-mono uppercase tracking-widest text-muted-foreground">
-                {label}
-              </div>
-            </div>
-          ))}
+        <div className="mt-12 text-left">
+          <Countdown variant="large" />
         </div>
+
+        <p className="mt-8">
+          <Link to="/gta-6-release-date" className="text-accent hover:underline">
+            Release date, platforms and editions →
+          </Link>
+        </p>
       </div>
     </SiteShell>
   );
